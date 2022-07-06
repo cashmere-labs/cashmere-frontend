@@ -1,0 +1,50 @@
+.layout {
+  z-index: 100000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s linear;
+}
+.body {
+  position: relative;
+  background: var(--modal-bg);
+  max-width: 95vw;
+  min-width: 200px;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: var(--shadow-1);
+  animation: main 0.2s linear;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  color: var(--text);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--main-bg);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes main {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} ;

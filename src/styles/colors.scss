@@ -1,0 +1,39 @@
+body {
+  --midnight: rgb(36, 36, 36);
+}
+
+body.light {
+  --text: var(--midnight);
+  --modal-bg: white;
+  --navbar-bg: white;
+  --main-bg: #f5f5f5;
+  --navbar-item: rgba(10, 10, 10, 0.5);
+  --navbar-active: var(--midnight);
+  --neutral-button-bg: rgb(242, 246, 250);
+  --swap-bg: white;
+  --swap-bg-dark: rgb(208, 206, 206);
+  --label: rgb(167, 167, 187);
+}
+
+body.dark {
+  --text: white;
+  --navbar-bg: rgb(36, 38, 76);
+  --main-bg: rgb(20, 22, 59);
+  --navbar-item: rgb(192, 189, 189);
+  --navbar-active: white;
+}
+
+body {
+  background-color: var(--main-bg);
+}
+
+.link {
+  text-decoration: none !important;
+  color: inherit;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+}

@@ -66,7 +66,7 @@ const Gauge = () => {
                   className={whichToken === 0 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div>CSM</div>
+              <div style={{ color: `var(--text)` }}>CSM</div>
             </div>
           </div>
           <div className={styles.veCSM}>
@@ -76,7 +76,7 @@ const Gauge = () => {
                   className={whichToken === 1 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div className={styles.text}>veCSM</div>
+              <div style={{ color: `var(--text)` }}>veCSM</div>
             </div>
           </div>
         </div>

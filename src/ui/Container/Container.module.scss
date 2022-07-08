@@ -6,24 +6,37 @@
 
 @media (max-width: 1920px) {
   .container {
-    max-width: 1600px;
+    max-width: 1800px;
   }
 }
 @media (max-width: 1600px) {
   .container {
-    max-width: 1400px;
+    max-width: 100px;
   }
 }
 @media (max-width: 1440px) {
   .container {
+    max-width: 1380px;
+  }
+}
+@media (max-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media (max-width: 1340px) {
+  .container {
     max-width: 1200px;
   }
 }
+
 @media (max-width: 1200px) {
   .container {
     max-width: 1120px;
   }
 }
+
 @media (max-width: 1120px) {
   .container {
     max-width: 992px;
@@ -36,4 +49,29 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+.flex-start {
+  justify-content: flex-start;
+  display: flex;
+}
+
+.flex-end {
+  justify-content: flex-end;
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+  display: flex;
+}
+
+.space-around {
+  justify-content: space-between;
+  display: flex;
 }

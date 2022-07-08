@@ -8,7 +8,11 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: var(--navbar-bg);
+  box-shadow: 1px 2px 2px #96969612;
   z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
   & nav {
     width: 100%;
   }
@@ -89,7 +93,6 @@
 }
 
 .buttons {
-  margin-left: auto;
   display: flex;
   align-items: center;
 }

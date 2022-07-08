@@ -12,9 +12,7 @@ import {
   useAccount,
 } from "ethylene/hooks";
 import { formatAddress } from "utils/formatAddress";
-import { MdAccountCircle } from "react-icons/md";
-import { IoMdWallet } from "react-icons/io";
-import { useModal } from "hooks";
+import { useModal, useTheme } from "hooks";
 import { toast } from "react-toastify";
 import WhiteLogo from "assets/images/testlogo.png";
 import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
@@ -31,6 +29,7 @@ const Navbar = ({
   const auth = useAuth();
   const { connect, disconnect } = useConnection();
   const { address } = useAccount();
+  const { theme } = useTheme();
   const { switchTo, isRightNetwork } = useRightNetwork(AVAX_FUJI_C_CHAIN);
 
   const LINKS = useMemo(() => {
@@ -41,12 +40,35 @@ const Navbar = ({
         soon: false,
         active: pathname === PATHS.home,
       },
+      {
+        name: "Swap",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.swap),
+      },
+      {
+        name: "Pool",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.pool),
+      },
+      {
+        name: "veCSM",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.veCSM),
+      },
+      {
+        name: "DAO",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.dao),
+      },
     ];
   }, [pathname]);
 
   const [show, setShow] = useState(false);
   const smallMenuRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLDivElement>(null);
   const modal = useModal();
 
   return (
@@ -103,32 +125,34 @@ const Navbar = ({
         </div>
       </Modal>
       <nav>
-        <Container className={styles.container}>
+        <Container justifyContent="space-between" className={styles.container}>
           <div className={styles.left}>
-            {/* <div className={styles.logoWrapper}>
+            <div className={styles.logoWrapper}>
               <Link className="link" to="/">
-                <img alt="logo" src={WhiteLogo} />
+                {/* <img alt="logo" src={WhiteLogo} /> */}
+                <span>Cashmere</span>
               </Link>
-            </div> */}
+            </div>
+          </div>
+
+          <div className={styles.links}>
+            {LINKS.map((item) => (
+              <div key={item.name} className={styles.linkWrapper}>
+                <Link
+                  className={clsnm(styles.link, item.active && styles.active)}
+                  to={item.soon ? "#" : item.url}
+                >
+                  {item.name}
+                </Link>
+                {item.soon && <span className={styles.soon}>SOON</span>}
+              </div>
+            ))}
           </div>
 
           <div className={styles.buttons}>
-            <div className={styles.links}>
-              {LINKS.map((item) => (
-                <div key={item.name} className={styles.linkWrapper}>
-                  <Link
-                    className={clsnm(styles.link, item.active && styles.active)}
-                    to={item.soon ? "#" : item.url}
-                  >
-                    {item.name}
-                  </Link>
-                  {item.soon && <span className={styles.soon}>SOON</span>}
-                </div>
-              ))}
-            </div>
-            {/* <Button
+            <Button
               textPosition="right"
-              height="48px"
+              height="40px"
               onClick={() => {
                 if (!auth) connect();
                 if (!isRightNetwork) {
@@ -137,19 +161,15 @@ const Navbar = ({
                   modal.open();
                 }
               }}
-              color={transparent && !neutralButton ? "red" : "neutral"}
+              color={theme === "light" ? "black" : "black"}
               className={clsnm(styles.themeChanger, styles.accountButton)}
             >
-              <span className={styles.walletIcon}>
-                {auth && isRightNetwork ? <MdAccountCircle /> : <IoMdWallet />}
-              </span>
-
               {!isRightNetwork && auth
-                ? "Switch to Goerli"
+                ? "Switch network"
                 : auth && address
                 ? `${formatAddress(address)}`
-                : "Connect"}
-            </Button> */}
+                : "Connect Wallet"}
+            </Button>
             <button
               onClick={() => {
                 setShow(!show);

@@ -1,6 +1,6 @@
 .wrapper {
   position: relative;
-  border-radius: 14px;
+  border-radius: 12px;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
   border: none !important;
@@ -43,6 +43,14 @@
     }
   }
 
+  &.black {
+    background: black;
+    color: white;
+    &:hover {
+      background: rgb(26, 26, 26);
+    }
+  }
+
   &.left {
     justify-content: flex-start;
   }
@@ -66,7 +74,7 @@
 .text {
   display: flex;
   align-items: center;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   line-height: 22px;
 

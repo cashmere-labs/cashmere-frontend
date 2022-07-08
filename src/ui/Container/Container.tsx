@@ -6,16 +6,31 @@ interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
   className?: string;
   children: ReactNode;
   elRef?: any;
+  justifyContent?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around";
 }
 
 const Container = ({
   children,
   className,
   elRef,
+  justifyContent,
   ...props
 }: ContainerProps) => {
   return (
-    <div ref={elRef} className={clsnm(styles.container, className)} {...props}>
+    <div
+      ref={elRef}
+      className={clsnm(
+        styles.container,
+        className,
+        justifyContent && styles[justifyContent]
+      )}
+      {...props}
+    >
       {children}
     </div>
   );

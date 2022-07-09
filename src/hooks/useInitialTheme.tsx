@@ -6,7 +6,7 @@ export const useInitialTheme = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const localStorageTheme = localStorage.getItem("CashmereTHeme");
+    const localStorageTheme = localStorage.getItem("CashmereTheme");
     if (localStorageTheme === "dark") {
       dispatch(setTheme("dark"));
       document.body.classList.remove("light");

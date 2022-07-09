@@ -11,12 +11,12 @@ export const useTheme = () => {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
       dispatch(setTheme("light"));
-      localStorage.setItem("theme", "light");
+      localStorage.setItem("CashmereTheme", "light");
     } else {
       document.body.classList.remove("light");
       document.body.classList.add("dark");
       dispatch(setTheme("dark"));
-      localStorage.setItem("theme", "dark");
+      localStorage.setItem("CashmereTheme", "dark");
     }
   };
 

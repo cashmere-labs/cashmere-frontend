@@ -4,13 +4,13 @@
   justify-content: space-between;
   width: 100%;
   position: relative;
-  height: 78px;
+  height: var(--navbar-height);
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: var(--navbar-bg);
   box-shadow: 1px 2px 2px #96969612;
   z-index: 1000;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   & nav {
@@ -71,7 +71,7 @@
   cursor: pointer;
   text-decoration: none;
   color: var(--navbar-item);
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   transition: 0.1s linear;
 
@@ -103,38 +103,40 @@
   color: var(--text);
   background-color: transparent;
   outline: none;
-  border: 2px solid var(--text);
-  height: 32px;
-  width: 32px;
   justify-content: center;
-  border-radius: 50%;
   flex-shrink: 0;
+  border: none;
+  outline: none;
   cursor: pointer;
   transition: 0.1s linear;
   margin-left: 12px;
-  &:hover {
-    background-color: var(--text);
-    border: 2px solid var(--text);
-    color: white;
-    transition: 0.1s linear;
-  }
 }
 
 .smallMenu {
-  top: 78px;
+  top: 0;
+  left: 0;
   position: fixed;
   display: none;
   background-color: var(--navbar-bg);
-  height: calc(100vh - 78px);
-  width: 100vw;
+  height: 100vh;
+  width: 85vw;
   z-index: 10000;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  box-shadow: 0px 3px 6px #00000029;
 
   &.transparent {
     background-color: black;
   }
+}
+.layer {
+  width: 15vw;
+  height: 100vh;
+  z-index: 10000;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .hide {
@@ -149,8 +151,8 @@
 }
 
 .themeChanger {
-  color: var(--text);
-  margin-left: 12px;
+  color: var(--icon-dark);
+  margin-left: 8px;
 }
 
 @media (max-width: 768px) {
@@ -179,10 +181,25 @@
     display: flex;
   }
   .smallMenu {
-    padding-top: 3rem;
     display: flex;
   }
+  .themeChangerMobile {
+    color: var(--icon-dark);
+  }
+  .smallMenuHeader {
+    height: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 12px;
+    box-shadow: 1px 2px 2px #96969612;
+  }
   .linkWrapper {
+    &:first-child {
+      margin-top: auto;
+    }
+
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     width: 100%;
@@ -200,8 +217,27 @@
     }
   }
   .link {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 200;
+  }
+  .smallLinks {
+    margin-top: auto;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+  .connectWalletMobileWrapper {
+    margin-top: auto;
+    width: 90%;
+
+    & button {
+      width: 100%;
+      justify-content: center;
+    }
   }
 }
 

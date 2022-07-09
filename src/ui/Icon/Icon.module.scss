@@ -1,0 +1,22 @@
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  & svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hoverable {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--hoverable-icon-bg);
+  }
+}

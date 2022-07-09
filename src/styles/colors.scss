@@ -4,14 +4,11 @@ body {
 
 body.light {
   --text: black;
-  --modal-bg: white;
   --navbar-bg: #f5f5f5;
   --main-bg: #f5f5f5;
   --navbar-item: #ababab;
   --navbar-active: black;
   --neutral-button-bg: rgb(242, 246, 250);
-  --swap-bg: white;
-  --swap-bg-dark: rgb(208, 206, 206);
   --label: rgb(167, 167, 187);
   --hoverable-icon-bg: rgb(240, 236, 236);
   --icon-dark: #999999;
@@ -19,14 +16,26 @@ body.light {
   --footer-bg: #f0f0f0;
   --footer-link: #9a9898;
   --footer-link-hover: black;
+  --footer-icon: rgb(185, 183, 183);
 }
 
 body.dark {
+  // Misc
   --text: white;
-  --navbar-bg: rgb(36, 38, 76);
-  --main-bg: rgb(20, 22, 59);
-  --navbar-item: rgb(192, 189, 189);
+  --main-bg: black;
+  --icon-dark: #999999;
+  --icon-light: rgb(185, 183, 183);
+
+  // Navbar
+  --navbar-bg: #232323;
+  --navbar-item: #4a4a4a;
   --navbar-active: white;
+
+  //Footer
+  --footer-bg: #232323;
+  --footer-link: #9c9c9c;
+  --footer-link-hover: white;
+  --footer-icon: #7e7c7c;
 }
 
 body {

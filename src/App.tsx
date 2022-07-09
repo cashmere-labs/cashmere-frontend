@@ -1,7 +1,7 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Home, Swap } from "pages";
+import { Swap } from "pages";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -1,6 +1,6 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Icon, Select, Option, Input } from "ui";
 import styles from "./SwapBox.module.scss";
 

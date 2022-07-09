@@ -3,20 +3,36 @@ body {
 }
 
 body.light {
+  // Misc
   --text: black;
-  --navbar-bg: #f5f5f5;
   --main-bg: #f5f5f5;
-  --navbar-item: #ababab;
-  --navbar-active: black;
-  --neutral-button-bg: rgb(242, 246, 250);
-  --label: rgb(167, 167, 187);
-  --hoverable-icon-bg: rgb(240, 236, 236);
   --icon-dark: #999999;
   --icon-light: rgb(185, 183, 183);
+  --neutral-button-bg: rgb(242, 246, 250);
+  --hoverable-icon-bg: rgb(240, 236, 236);
+
+  // Navbar
+  --navbar-bg: #f5f5f5;
+  --navbar-item: #ababab;
+  --navbar-active: black;
+
+  // Footer
   --footer-bg: #f0f0f0;
   --footer-link: #9a9898;
   --footer-link-hover: black;
   --footer-icon: rgb(185, 183, 183);
+
+  // Swap
+  --swap-box-bg: white;
+
+  // Select
+  --select-border: #ededed;
+  --select-bg: #fafafa;
+  --select-text: black;
+  --select-icon: black;
+  --select-options-bg: white;
+  --option-hover: #f2f2f2;
+  --option-active: #eeecec;
 }
 
 body.dark {
@@ -25,6 +41,8 @@ body.dark {
   --main-bg: black;
   --icon-dark: #999999;
   --icon-light: rgb(185, 183, 183);
+  --neutral-button-bg: rgb(242, 246, 250);
+  --hoverable-icon-bg: rgb(240, 236, 236);
 
   // Navbar
   --navbar-bg: #232323;
@@ -36,6 +54,18 @@ body.dark {
   --footer-link: #9c9c9c;
   --footer-link-hover: white;
   --footer-icon: #7e7c7c;
+
+  // Swap
+  --swap-box-bg: #232323;
+
+  // Select
+  --select-border: #ededed;
+  --select-bg: #fafafa;
+  --select-text: black;
+  --select-icon: black;
+  --select-options-bg: #313131;
+  --option-hover: #4a4a4a;
+  --option-active: #353434;
 }
 
 body {

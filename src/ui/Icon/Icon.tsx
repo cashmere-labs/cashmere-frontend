@@ -7,6 +7,7 @@ interface IconProps extends ComponentPropsWithoutRef<"div"> {
   hoverable?: boolean;
   hoverSize?: number;
   borderRadius?: string;
+  hoverPadding?: string;
 }
 
 const Icon = ({
@@ -16,12 +17,14 @@ const Icon = ({
   className,
   hoverable,
   hoverSize,
+  hoverPadding = "4px",
   borderRadius = "4px",
   ...props
 }: IconProps) => {
   let mainStyles = {
     fontSize: `${size}px`,
     borderRadius: borderRadius,
+    padding: hoverPadding,
     ...style,
   };
   if (hoverSize) {

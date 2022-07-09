@@ -1,0 +1,59 @@
+.menu {
+  border: 1px solid var(--select-border);
+  border-radius: 8px;
+  padding: 20px 12px;
+
+  background-color: var(--select-bg);
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.menuChevron {
+  padding-right: 32px !important;
+}
+
+.chevron {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.extendRight {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.extendLeft {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.isOpen {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.label {
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.labelPlaceholder {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.options {
+  background-color: var(--select-options-bg);
+  padding: 4px 8px;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 8px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}

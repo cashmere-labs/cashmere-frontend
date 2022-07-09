@@ -31,12 +31,23 @@
 }
 
 .logoWrapper {
-  width: 110px;
   flex-shrink: 0;
   margin-right: auto;
 
+  & a {
+    display: flex;
+    align-items: center;
+
+    & span {
+      font-family: "Rajdhani", sans-serif !important;
+      font-weight: 600 !important;
+      font-size: 18px;
+    }
+  }
+
   & img {
-    width: 100%;
+    margin-right: 0.5rem;
+    width: 40px;
   }
 }
 

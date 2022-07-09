@@ -6,21 +6,32 @@ body.light {
   --text: var(--midnight);
   --modal-bg: white;
   --navbar-bg: #f5f5f5;
-  --main-bg: #f5f5f5;
+  --main-bg: #F5F5F5;
   --navbar-item: rgba(10, 10, 10, 0.5);
   --navbar-active: var(--midnight);
   --neutral-button-bg: rgb(242, 246, 250);
   --swap-bg: white;
   --swap-bg-dark: rgb(208, 206, 206);
   --label: rgb(167, 167, 187);
+  --pool-bg: rgb(255,255,255);
+  --pool-bg-2: #efefef;
+  --pool-text-1: rgba(31, 31, 31, 0.9);
+  --pool-text-2: #1f1f1f;
+  --pool-text-3: #0b0b0b;
+
 }
 
 body.dark {
   --text: white;
   --navbar-bg: rgb(36, 38, 76);
-  --main-bg: rgb(20, 22, 59);
+  --main-bg: black;
   --navbar-item: rgb(192, 189, 189);
   --navbar-active: white;
+  --pool-bg: #232323;
+  --pool-bg-2: #232323;
+  --pool-text-1: white;
+  --pool-text-2: white;
+  --pool-text-3: white;
 }
 
 body {

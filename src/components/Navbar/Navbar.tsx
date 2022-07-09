@@ -52,6 +52,30 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         soon: false,
         active: pathname.startsWith(PATHS.dao),
       },
+      {
+        name: "Swap",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.swap),
+      },
+      {
+        name: "Pool",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.pool),
+      },
+      {
+        name: "veCSM",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.veCSM),
+      },
+      {
+        name: "DAO",
+        url: PATHS.home,
+        soon: false,
+        active: pathname.startsWith(PATHS.dao),
+      },
     ];
   }, [pathname]);
 

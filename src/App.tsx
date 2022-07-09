@@ -1,7 +1,7 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Home, Swap } from "pages";
+import { Swap, Pool } from "pages";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +23,7 @@ function App() {
         <Routes>
           <Route path={PATHS.home} element={<Navigate to={PATHS.swap} />} />
           <Route path={PATHS.swap} element={<Swap />} />
+          <Route path={PATHS.pool} element={<Pool/>} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
         <ToastContainer pauseOnHover={false} theme={theme} />

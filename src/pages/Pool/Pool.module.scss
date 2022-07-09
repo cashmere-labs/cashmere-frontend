@@ -1,0 +1,50 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whichPoolWrapper {
+    width: 1217px;
+
+    .titleWrapper {
+        margin: 32px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: red;
+        height: 56px;
+        border-radius: 16px;
+        background-color: var(--pool-bg-2);
+
+        .buttons {
+            display: flex;
+            margin-left: 6px;
+
+            .poolButtonOn {
+                background-color: white !important;
+            }
+
+            .poolButtonOff {
+                background-color: transparent !important;
+            }
+        }
+
+        .TVLInfo {
+            margin-right: 25px;
+            color: var(--pool-text-2);
+
+            .text2 {
+                font-weight: 600;
+                margin-left: 5px;
+
+            }
+        }
+    }
+
+    .bodyWrapper{
+        height: 535px;
+        background-color: var(--pool-bg);
+        border-radius: 25px;
+    }
+}

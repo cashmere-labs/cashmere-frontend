@@ -29,12 +29,6 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const LINKS = useMemo(() => {
     return [
       {
-        name: "Home",
-        url: PATHS.home,
-        soon: false,
-        active: pathname === PATHS.home,
-      },
-      {
         name: "Swap",
         url: PATHS.home,
         soon: false,

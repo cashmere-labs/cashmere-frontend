@@ -1,11 +1,7 @@
-import { Navbar } from "components";
+import { Footer, Navbar } from "components";
 
 const Home = () => {
-  return (
-    <>
-      <Navbar />
-    </>
-  );
+  return <></>;
 };
 
 export { Home };

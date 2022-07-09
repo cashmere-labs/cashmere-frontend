@@ -14,7 +14,8 @@ import {
 import { formatAddress } from "utils/formatAddress";
 import { useModal, useTheme } from "hooks";
 import { toast } from "react-toastify";
-import WhiteLogo from "assets/images/testlogo.png";
+import WhiteLogo from "assets/images/logos/white.svg";
+import BlackLogo from "assets/images/logos/black.svg";
 import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 
@@ -174,7 +175,10 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
           <div className={styles.left}>
             <div className={styles.logoWrapper}>
               <Link className="link" to="/">
-                {/* <img alt="logo" src={WhiteLogo} /> */}
+                <img
+                  alt="logo"
+                  src={theme === "dark" ? WhiteLogo : BlackLogo}
+                />
                 <span>Cashmere</span>
               </Link>
             </div>
@@ -216,10 +220,16 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         )}
       >
         <div className={styles.smallMenuHeader}>
-          <span>Cashmere</span>
+          <div className={styles.logoWrapper}>
+            <Link className="link" to="/">
+              <img alt="logo" src={theme === "dark" ? WhiteLogo : BlackLogo} />
+              <span>Cashmere</span>
+            </Link>
+          </div>
           <div className={styles.buttons}>
             <ThemeChangerButton mobile={true} />
             <Icon
+              style={{ color: `var(--icon-dark)` }}
               onClick={navbarMenuHandler}
               borderRadius="12px"
               hoverable

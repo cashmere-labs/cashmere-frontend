@@ -5,13 +5,14 @@ import { clsnm } from "utils/clsnm";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  color?: "blue" | "neutral" | "pink" | "ghost" | "red" | "black";
+  color?: "blue" | "neutral" | "pink" | "ghost" | "red" | "black" | "white";
   textPosition?: "center" | "left" | "right";
   height?: string;
   width?: string;
   fullwidth?: boolean;
   disabled?: boolean;
   loading?: boolean;
+  fontSize?: "fs14" | "fs16" | "fs18";
 }
 
 const Button = ({
@@ -24,6 +25,7 @@ const Button = ({
   fullwidth,
   disabled,
   loading,
+  fontSize = "fs14",
   ...props
 }: ButtonProps) => {
   const { theme } = useTheme();
@@ -52,8 +54,9 @@ const Button = ({
           styles.text,
           styles[color],
           styles[textPosition],
+          styles[fontSize],
           fullwidth && styles["fullwidth"],
-          loading && styles.loading
+          loading && styles.loading,
         )}
       >
         {children}

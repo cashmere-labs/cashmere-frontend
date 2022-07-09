@@ -2,17 +2,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0px 15px;
 }
 
+
 .whichPoolWrapper {
-    width: 1217px;
+    max-width: 1217px;
+    width: 100%;
 
     .titleWrapper {
         margin: 32px 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: red;
         height: 56px;
         border-radius: 16px;
         background-color: var(--pool-bg-2);
@@ -23,10 +27,16 @@
 
             .poolButtonOn {
                 background-color: white !important;
+                font-weight: 600;
+                font-size: 18px !important;
             }
 
             .poolButtonOff {
                 background-color: transparent !important;
+                color: var(--pool-text-6);
+                font-weight: 500;
+                font-size: 18px !important;
+
             }
         }
 
@@ -48,3 +58,5 @@
         border-radius: 25px;
     }
 }
+
+.trial{font-size: 18px !important;}

@@ -1,5 +1,5 @@
 import styles from "./Pool.module.scss";
-import { DepositDashboard, Navbar, Pools } from "components";
+import { DepositDashboard, Navbar, Pools, Footer } from "components";
 import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button } from "ui";
@@ -19,8 +19,9 @@ const Pool = () => {
               <Button
                 height="46px"
                 width="162px"
+                fontSize="fs18"
                 onClick={() => setWhichPool(false)}
-                color={theme === "light" ? "neutral" : "neutral"}
+                color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   whichPool ? styles.poolButtonOff : styles.poolButtonOn
                 )}
@@ -30,8 +31,9 @@ const Pool = () => {
               <Button
                 height="46px"
                 width="162px"
+                fontSize="fs18"
                 onClick={() => setWhichPool(true)}
-                color={theme === "light" ? "neutral" : "neutral"}
+                color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   !whichPool ? styles.poolButtonOff : styles.poolButtonOn
                 )}
@@ -47,6 +49,8 @@ const Pool = () => {
         </div>
         <Pools whichPool={whichPool}/>
       </div>
+
+      <Footer />
     </div>
   );
 };

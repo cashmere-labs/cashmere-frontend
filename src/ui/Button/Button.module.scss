@@ -43,6 +43,14 @@
     }
   }
 
+  &.white {
+    background: white;
+    color: #000000;
+    &:hover {
+      background: rgb(235, 235, 235);
+    }
+  }
+
   &.black {
     background: black;
     color: white;
@@ -68,6 +76,18 @@
 
   &.loading {
     pointer-events: none;
+  }
+
+  .fs14{
+    font-size: 14px;
+  }
+
+  .fs16{
+    font-size: 16px;
+  }
+
+  .fs18{
+    font-size: 18px;
   }
 }
 
@@ -104,3 +124,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+

@@ -1,7 +1,12 @@
 .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .dashboard {
-        width: 1217px;
+        max-width: 1217px;
+        width: 100%;
         border-radius: 25px;
         background: var(--pool-bg);
         padding-top: 12px;
@@ -48,7 +53,7 @@
             .line {
                 width: 100%;
                 height: 0;
-                border: solid 1px #f5f5f5;
+                border: solid 1px var(--pool-text-8);
             }
 
             .datas {

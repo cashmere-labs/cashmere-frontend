@@ -21,8 +21,9 @@ const DepositDashboard = () => {
         <Button
           height="40px"
           width="156px"
+          fontSize="fs16"
           onClick={() => {}}
-          color={theme === "light" ? "black" : "neutral"}
+          color={theme === "light" ? "black" : "white"}
           className={clsnm(styles.claimAll)}
         >
           Claim All

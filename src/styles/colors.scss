@@ -53,6 +53,9 @@ body.light {
   --pool-text-3: #0b0b0b;
   --pool-text-4: #adadad;
   --pool-text-5: #c3c3c3;
+  --pool-text-6: black;
+  --pool-text-7: white;
+  --pool-text-8: #f5f5f5;
 }
 
 body.dark {
@@ -99,13 +102,16 @@ body.dark {
   --close-icon: #545454;
 
   // Pool
-  --pool-bg: black; // Check it
+  --pool-bg: #232323;
   --pool-bg-2: #232323;
   --pool-text-1: white;
   --pool-text-2: white;
   --pool-text-3: white;
   --pool-text-4: #adadad;
   --pool-text-5: #c3c3c3;
+  --pool-text-6: white;
+  --pool-text-7: black;
+  --pool-text-8: #2D2D2D;
 }
 
 body {

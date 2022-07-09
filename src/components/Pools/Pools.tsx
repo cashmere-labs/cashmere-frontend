@@ -112,6 +112,7 @@ const Pools = ({ whichPool }: Pools) => {
               <Button
                 height="40px"
                 width="156px"
+                fontSize="fs16"
                 onClick={() => setBodyCount(bodyCount + 10)}
                 color={theme === "light" ? "black" : "neutral"}
                 className={clsnm(

@@ -183,8 +183,10 @@ const SwapBox = () => {
           hideRightBorder
           optionRenderer={() => (
             <>
-              {options.map((item) => (
-                <Option value={item.name}>{item.name}</Option>
+              {options.map((item, key) => (
+                <Option key={key} value={item.name}>
+                  {item.name}
+                </Option>
               ))}
             </>
           )}
@@ -200,8 +202,10 @@ const SwapBox = () => {
           options={options}
           optionRenderer={() => (
             <>
-              {options.map((item) => (
-                <Option value={item.name}>{item.name}</Option>
+              {options.map((item, key) => (
+                <Option key={key} value={item.name}>
+                  {item.name}
+                </Option>
               ))}
             </>
           )}

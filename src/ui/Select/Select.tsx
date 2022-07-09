@@ -31,6 +31,7 @@ const Select = ({
   optionRenderer,
   options,
   value,
+  setValue,
   extendRight = false,
   extendLeft = false,
   hideLeftBorder,

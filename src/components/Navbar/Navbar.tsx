@@ -14,10 +14,9 @@ import {
 import { formatAddress } from "utils/formatAddress";
 import { useModal, useTheme } from "hooks";
 import { toast } from "react-toastify";
-import WhiteLogo from "assets/images/logos/white.svg";
-import BlackLogo from "assets/images/logos/black.svg";
 import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
+import { Logo } from "components";
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const { pathname } = useLocation();
@@ -173,15 +172,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       <nav style={{ height: `var(--navbar-height)`, display: "flex" }}>
         <Container justifyContent="space-between" className={styles.container}>
           <div className={styles.left}>
-            <div className={styles.logoWrapper}>
-              <Link className="link" to="/">
-                <img
-                  alt="logo"
-                  src={theme === "dark" ? WhiteLogo : BlackLogo}
-                />
-                <span>Cashmere</span>
-              </Link>
-            </div>
+            <Logo />
           </div>
 
           <div className={styles.links}>
@@ -220,12 +211,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         )}
       >
         <div className={styles.smallMenuHeader}>
-          <div className={styles.logoWrapper}>
-            <Link className="link" to="/">
-              <img alt="logo" src={theme === "dark" ? WhiteLogo : BlackLogo} />
-              <span>Cashmere</span>
-            </Link>
-          </div>
+          <Logo />
           <div className={styles.buttons}>
             <ThemeChangerButton mobile={true} />
             <Icon

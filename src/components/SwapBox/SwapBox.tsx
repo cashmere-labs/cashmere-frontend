@@ -10,6 +10,55 @@ const SwapBox = () => {
       name: "asfafs",
       label: "asfafs",
     },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
+    {
+      name: "asfafs",
+      label: "asfafs",
+    },
   ];
 
   const SwapContentBox = ({
@@ -91,15 +140,27 @@ const SwapBox = () => {
             </>
           )}
         />
-        <Input className={styles.input} extendLeft hideLeftBorder />
+        <Input
+          placeholder="Enter amount"
+          className={styles.input}
+          extendLeft
+          hideLeftBorder
+        />
       </Row>
+      {/* FROM ENDS */}
 
       {/* ROTATE CIRCLE */}
-      <Row marginTop={10} justifyContent="center">
-        <Icon size={26} style={{ color: `var(--icon-dark)` }} hoverable>
+      <Row marginTop={20} marginBottom={8} justifyContent="center">
+        <Icon
+          borderRadius="8px"
+          size={26}
+          style={{ color: `var(--icon-dark)` }}
+          hoverable
+        >
           <RotateIcon />
         </Icon>
       </Row>
+      {/* ROTATE CIRCLE ENDS */}
 
       {/* TO */}
       <Row
@@ -112,6 +173,7 @@ const SwapBox = () => {
       </Row>
       <Row marginBottom={12}>
         <Select
+          containerClassName={styles.select}
           extendRight
           isFullWidth
           menuRenderer={() => "asfa"}
@@ -128,6 +190,7 @@ const SwapBox = () => {
           )}
         />
         <Select
+          containerClassName={styles.select}
           extendRight
           extendLeft
           isFullWidth
@@ -143,7 +206,15 @@ const SwapBox = () => {
             </>
           )}
         />
+        <Input
+          placeholder="Enter amount"
+          className={styles.input}
+          extendLeft
+          hideLeftBorder
+        />
       </Row>
+      {/* TO ENDS */}
+
       <SwapContentBox
         left={<span>Rate after fee</span>}
         right={<span>1 UST = 1.017 USDT</span>}

@@ -1,7 +1,6 @@
-
-import DAI from "../../assets/pool/dai.png"
-import USDC from "../../assets/pool/usdc.png"
-import USDT from "../../assets/pool/usdt.png"
+import DAI from "../../assets/pool/dai.png";
+import USDC from "../../assets/pool/usdc.png";
+import USDT from "../../assets/pool/usdt.png";
 
 export const GlobalData = [
   {
@@ -368,16 +367,6 @@ export const GlobalData = [
 
 export const PersonalData = [
   {
-    logo: DAI,
-    name: "DAI",
-    CR: "154.89",
-    network: "Optimism",
-    liquidity: "57,390,124",
-    volume: "390.124",
-    veapr: "3.9 -> 21.2",
-    myTotalApr: "25.2331",
-  },
-  {
     logo: USDC,
     name: "USDC",
     CR: "154.89",
@@ -390,6 +379,16 @@ export const PersonalData = [
   {
     logo: USDT,
     name: "USDT",
+    CR: "154.89",
+    network: "Optimism",
+    liquidity: "57,390,124",
+    volume: "390.124",
+    veapr: "3.9 -> 21.2",
+    myTotalApr: "25.2331",
+  },
+  {
+    logo: DAI,
+    name: "DAI",
     CR: "154.89",
     network: "Optimism",
     liquidity: "57,390,124",

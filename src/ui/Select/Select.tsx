@@ -21,6 +21,9 @@ interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   optionsClassName?: string;
   containerClassName?: string;
   hideChevron?: boolean;
+  hideLeftBorder?: boolean;
+  hideRightBorder?: boolean;
+  height?: "58px";
 }
 
 const Select = ({
@@ -38,6 +41,9 @@ const Select = ({
   menuClassName,
   optionsClassName,
   hideChevron,
+  hideLeftBorder,
+  hideRightBorder,
+  height = "58px",
   ...props
 }: SelectProps) => {
   const { isOpen, close, open } = useModal();
@@ -53,7 +59,7 @@ const Select = ({
   const menuWidth = useMemo(() => {
     if (!reference.current || !isFullWidth) return null;
     return (reference.current as any).offsetWidth;
-  }, [isFullWidth, menuRenderer]);
+  }, [isFullWidth, menuRenderer, isOpen]);
 
   return (
     <div
@@ -72,6 +78,7 @@ const Select = ({
         </span>
       )}
       <div
+        style={{ height }}
         onClick={isOpen ? close : open}
         ref={reference}
         className={clsnm(
@@ -80,7 +87,9 @@ const Select = ({
           extendLeft && styles.extendLeft,
           isOpen && styles.isOpen,
           menuClassName,
-          !hideChevron && styles.menuChevron
+          !hideChevron && styles.menuChevron,
+          hideRightBorder && styles.hideRightBorder,
+          hideLeftBorder && styles.hideLeftBorder
         )}
       >
         {menuRenderer ? menuRenderer(isOpen) : value}

@@ -16,7 +16,7 @@ import { useModal, useTheme } from "hooks";
 import { toast } from "react-toastify";
 import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
-import { Logo } from "components";
+import { Logo, Row } from "components";
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const { pathname } = useLocation();
@@ -108,7 +108,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         onClick={toggleTheme}
         className={mobile ? styles.themeChangerMobile : styles.themeChanger}
         borderRadius="12px"
-        hoverSize={40}
+        hoverSize={36}
         hoverable
       >
         {theme === "dark" ? <IoMdMoon /> : <IoMdSunny />}
@@ -125,10 +125,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         <div className={styles.modal}>
           <span>Ethereum Account</span>
           <div className={styles.inner}>
-            <div
-              style={{ justifyContent: "space-between" }}
-              className={styles.row}
-            >
+            <Row justifyContent="space-between">
               <span>Connected</span>
               <Button
                 onClick={() => {
@@ -139,7 +136,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
               >
                 Disconnect
               </Button>
-            </div>
+            </Row>
             {address && (
               <div
                 style={{ justifyContent: "space-between" }}
@@ -220,7 +217,6 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
               borderRadius="12px"
               hoverable
               hoverSize={40}
-              size={20}
             >
               <FaTimes />
             </Icon>

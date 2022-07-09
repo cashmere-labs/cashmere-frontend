@@ -1,4 +1,5 @@
 import { SettingsIcon } from "assets/icons";
+import { Row } from "components";
 import { Icon, Select, Option } from "ui";
 import styles from "./SwapBox.module.scss";
 
@@ -13,7 +14,7 @@ const SwapBox = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <span>Swap</span>
+        <span style={{ color: `var(--text)`, fontSize: "16px" }}>Swap</span>
         <Icon
           style={{ color: `var(--icon-dark)` }}
           hoverPadding="6px"
@@ -23,13 +24,24 @@ const SwapBox = () => {
           <SettingsIcon />
         </Icon>
       </div>
+      <Row
+        className={styles.inputLabel}
+        marginTop={24}
+        marginBottom={6}
+        justifyContent="space-between"
+      >
+        <span>From</span>
+        <span>BALANCE: 124124</span>
+      </Row>
       <div className={styles.row}>
         <Select
           extendRight
+          isFullWidth
           menuRenderer={() => "asfa"}
           value={"asfas"}
           setValue={() => undefined}
           options={options}
+          hideRightBorder
           optionRenderer={() => (
             <>
               {options.map((item) => (
@@ -41,6 +53,7 @@ const SwapBox = () => {
         <Select
           extendRight
           extendLeft
+          isFullWidth
           menuRenderer={() => "asfa"}
           value={"asfas"}
           setValue={() => undefined}

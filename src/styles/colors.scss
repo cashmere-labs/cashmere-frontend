@@ -24,6 +24,7 @@ body.light {
 
   // Swap
   --swap-box-bg: white;
+  --swap-box-border: #efefef;
 
   // Select
   --select-border: #ededed;
@@ -33,6 +34,11 @@ body.light {
   --select-options-bg: white;
   --option-hover: #f2f2f2;
   --option-active: #eeecec;
+
+  // Input
+  --input-border: #ededed;
+  --input-bg: #fafafa;
+  --input-text: black;
 }
 
 body.dark {
@@ -57,6 +63,7 @@ body.dark {
 
   // Swap
   --swap-box-bg: #232323;
+  --swap-box-border: #383838;
 
   // Select
   --select-border: #383838;
@@ -66,6 +73,11 @@ body.dark {
   --select-options-bg: #313131;
   --option-hover: #4a4a4a;
   --option-active: #353434;
+
+  // Input
+  --input-border: #383838;
+  --input-bg: #1a1a1a;
+  --input-text: white;
 }
 
 body {

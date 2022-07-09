@@ -1,8 +1,9 @@
 import { useModal, useOnClickOutside, usePopper } from "hooks";
-import { ComponentPropsWithoutRef, ReactNode, useMemo } from "react";
+import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Icon } from "ui/Icon/Icon";
 import { clsnm } from "utils/clsnm";
+import { mergeRefs } from "utils/mergeRefs";
 import styles from "./Select.module.scss";
 
 interface SelectProps extends ComponentPropsWithoutRef<"div"> {
@@ -32,6 +33,8 @@ const Select = ({
   value,
   extendRight = false,
   extendLeft = false,
+  hideLeftBorder,
+  hideRightBorder,
   menuRenderer,
   label,
   labelPlaceholder,
@@ -41,30 +44,26 @@ const Select = ({
   menuClassName,
   optionsClassName,
   hideChevron,
-  hideLeftBorder,
-  hideRightBorder,
   height = "58px",
   ...props
 }: SelectProps) => {
   const { isOpen, close, open } = useModal();
 
-  const { reference, floating, popperStyles } = usePopper({
-    deps: [options, isOpen],
-  });
-
+  const { reference, floating, popperStyles } = usePopper();
   const ref = useOnClickOutside<HTMLDivElement>(() => {
     close();
   });
 
+  const menuRef = useRef<HTMLDivElement>(null);
   const menuWidth = useMemo(() => {
-    if (!reference.current || !isFullWidth) return null;
-    return (reference.current as any).offsetWidth;
+    if (!menuRef.current || !isFullWidth) return null;
+    return menuRef.current.offsetWidth;
   }, [isFullWidth, menuRenderer, isOpen]);
 
   return (
     <div
       {...props}
-      ref={ref}
+      ref={mergeRefs(ref, menuRef)}
       className={clsnm(styles.wrapper, containerClassName)}
     >
       {(label || labelPlaceholder) && (
@@ -94,7 +93,7 @@ const Select = ({
       >
         {menuRenderer ? menuRenderer(isOpen) : value}
         {!hideChevron && (
-          <Icon size={14} className={styles.chevron}>
+          <Icon size={12} className={styles.chevron}>
             {isOpen ? <FaChevronUp /> : <FaChevronDown />}
           </Icon>
         )}
@@ -104,7 +103,7 @@ const Select = ({
         <div
           style={{
             ...popperStyles,
-            width: isFullWidth ? menuWidth : undefined,
+            width: isFullWidth && menuWidth ? menuWidth : undefined,
           }}
           ref={floating}
           className={clsnm(styles.options, optionsClassName)}

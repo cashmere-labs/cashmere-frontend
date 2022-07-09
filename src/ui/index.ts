@@ -6,3 +6,4 @@ export { Spinner } from "./Spinner/Spinner";
 export { Layout } from "./Layout/Layout";
 export { Select } from "./Select/Select";
 export { Option } from "./Select/Option";
+export { Input } from "./Input/Input";

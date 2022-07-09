@@ -23,6 +23,24 @@
   }
 }
 
+.select {
+  width: 80%;
+}
+.input {
+  width: 100%;
+}
+
+.swapContentBox {
+  border-radius: 8px;
+  padding: 18px 12px;
+  border: 1px solid var(--swap-box-border);
+
+  & span {
+    font-size: 14px;
+    color: var(--text);
+  }
+}
+
 @media (max-width: 768px) {
   .wrapper {
     margin: 0px;

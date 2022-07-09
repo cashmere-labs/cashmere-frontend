@@ -15,11 +15,13 @@
   position: relative;
   background: var(--modal-bg);
   max-width: 95vw;
-  min-width: 200px;
+  min-width: 500px;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem;
+  padding-top: 2.5rem;
   box-shadow: var(--shadow-1);
   animation: main 0.2s linear;
+  color: var(--text);
 }
 .close {
   position: absolute;
@@ -27,12 +29,15 @@
   right: 12px;
   cursor: pointer;
   color: var(--text);
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
+
+  background-color: var(--close-bg);
+  color: var(--close-icon);
 
   &:hover {
     background-color: var(--main-bg);

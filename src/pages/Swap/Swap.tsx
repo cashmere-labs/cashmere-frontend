@@ -1,5 +1,6 @@
 import { Footer, Navbar, SwapBox } from "components";
-import { Layout } from "ui";
+import { useModal } from "hooks";
+import { Layout, Modal } from "ui";
 import styles from "./Swap.module.scss";
 
 const Swap = () => {

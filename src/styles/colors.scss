@@ -39,6 +39,11 @@ body.light {
   --input-border: #ededed;
   --input-bg: #fafafa;
   --input-text: black;
+
+  // Modal
+  --modal-bg: #f4f4f5;
+  --close-bg: #dbdbdb;
+  --close-icon: #9a9a9a;
 }
 
 body.dark {
@@ -78,6 +83,11 @@ body.dark {
   --input-border: #383838;
   --input-bg: #1a1a1a;
   --input-text: white;
+
+  // Modal
+  --modal-bg: #232323;
+  --close-bg: black;
+  --close-icon: #545454;
 }
 
 body {

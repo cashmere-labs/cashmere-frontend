@@ -1,6 +1,7 @@
 import { useOnClickOutside } from "hooks/useOnClickOutside";
 import { ReactNode, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
+import { Icon } from "ui";
 import { clsnm } from "utils/clsnm";
 import styles from "./Modal.module.scss";
 
@@ -39,9 +40,15 @@ const Modal = ({
       className={styles.layout}
     >
       <div ref={outsideRef} className={clsnm(styles.body, className)}>
-        <div onClick={close} className={styles.close}>
+        <Icon
+          hoverable
+          onClick={close}
+          className={styles.close}
+          borderRadius="50%"
+        >
           <IoMdClose />
-        </div>
+        </Icon>
+
         {children}
       </div>
     </div>

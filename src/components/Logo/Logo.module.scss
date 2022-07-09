@@ -1,0 +1,28 @@
+.logoWrapper {
+  flex-shrink: 0;
+  margin-right: auto;
+
+  & a {
+    display: flex;
+    align-items: center;
+
+    & span {
+      font-family: "Rajdhani", sans-serif !important;
+      font-weight: 600 !important;
+      font-size: 18px;
+    }
+  }
+
+  & img {
+    margin-right: 0.5rem;
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logoWrapper {
+    & img {
+      width: 34px;
+    }
+  }
+}

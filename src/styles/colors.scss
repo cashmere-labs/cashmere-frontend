@@ -44,6 +44,15 @@ body.light {
   --modal-bg: #f4f4f5;
   --close-bg: #dbdbdb;
   --close-icon: #9a9a9a;
+
+  // Pool
+  --pool-bg: rgb(255, 255, 255);
+  --pool-bg-2: #efefef;
+  --pool-text-1: rgba(31, 31, 31, 0.9);
+  --pool-text-2: #1f1f1f;
+  --pool-text-3: #0b0b0b;
+  --pool-text-4: #adadad;
+  --pool-text-5: #c3c3c3;
 }
 
 body.dark {
@@ -88,6 +97,15 @@ body.dark {
   --modal-bg: #232323;
   --close-bg: black;
   --close-icon: #545454;
+
+  // Pool
+  --pool-bg: black; // Check it
+  --pool-bg-2: #232323;
+  --pool-text-1: white;
+  --pool-text-2: white;
+  --pool-text-3: white;
+  --pool-text-4: #adadad;
+  --pool-text-5: #c3c3c3;
 }
 
 body {
@@ -98,6 +116,7 @@ body {
   text-decoration: none !important;
   color: inherit;
 }
+
 .icon {
   display: flex;
   justify-content: center;

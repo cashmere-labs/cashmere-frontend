@@ -36,7 +36,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       },
       {
         name: "Pool",
-        url: PATHS.home,
+        url: PATHS.pool,
         soon: false,
         active: pathname.startsWith(PATHS.pool),
       },

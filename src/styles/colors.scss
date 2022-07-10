@@ -53,6 +53,10 @@ body.light {
   --pool-text-3: #0b0b0b;
   --pool-text-4: #adadad;
   --pool-text-5: #c3c3c3;
+
+  // Tooltip
+  --tooltip-bg: black;
+  --tooltip-color: white;
 }
 
 body.dark {
@@ -106,6 +110,10 @@ body.dark {
   --pool-text-3: white;
   --pool-text-4: #adadad;
   --pool-text-5: #c3c3c3;
+
+  // Tooltip
+  --tooltip-bg: white;
+  --tooltip-color: black;
 }
 
 body {

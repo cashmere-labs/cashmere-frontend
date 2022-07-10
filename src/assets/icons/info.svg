@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+    <g data-name="Group 37">
+        <g data-name="Ellipse 2" style="stroke:currentColor;stroke-width:.7px;fill:none">
+            <circle cx="8" cy="8" r="8" style="stroke:none"/>
+            <circle cx="8" cy="8" r="7.65" style="fill:none"/>
+        </g>
+        <path data-name="Path 369" d="M.72-7.152V-8.2q0-.24.189-.24h.822q.189 0 .189.228v1.056q0 .24-.189.24H.909Q.72-6.912.72-7.152zm0 6.9v-5.616q0-.252.189-.252h.813q.2 0 .2.252v5.616a.331.331 0 0 1-.043.2.188.188 0 0 1-.148.052H.918Q.72 0 .72-.252z" transform="translate(6.68 12.218)" style="fill:currentColor"/>
+    </g>
+</svg>

@@ -28,10 +28,18 @@ export const usePopper = ({
     whileElementsMounted: autoUpdate,
   });
 
+  const _top = placement.includes("bottom")
+    ? (y || 0) + topDistance
+    : (y || 0) - topDistance;
+
+  const _left = placement.includes("right")
+    ? (x || 0) + leftDistance
+    : (x || 0) - leftDistance;
+
   const popperStyles = {
     position: floatingStrategy,
-    top: y || 0 + topDistance,
-    left: x || 0 + leftDistance,
+    top: _top,
+    left: _left,
     zIndex: 10,
   };
 

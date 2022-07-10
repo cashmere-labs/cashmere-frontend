@@ -1,6 +1,6 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
-import { ReactNode } from "react";
+import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
 import { Icon, Select, Option, Input } from "ui";
 import styles from "./SwapBox.module.scss";
 
@@ -60,26 +60,6 @@ const SwapBox = () => {
       label: "asfafs",
     },
   ];
-
-  const SwapContentBox = ({
-    left,
-    right,
-  }: {
-    left: ReactNode;
-    right: ReactNode;
-  }) => {
-    return (
-      <Row
-        justifyContent="space-between"
-        marginTop={12}
-        marginBottom={12}
-        className={styles.swapContentBox}
-      >
-        {left}
-        {right}
-      </Row>
-    );
-  };
 
   return (
     <div className={styles.wrapper}>
@@ -218,23 +198,7 @@ const SwapBox = () => {
         />
       </Row>
       {/* TO ENDS */}
-
-      <SwapContentBox
-        left={<span>Rate after fee</span>}
-        right={<span>1 UST = 1.017 USDT</span>}
-      />
-      <SwapContentBox
-        left={<span>Rate after fee</span>}
-        right={<span>1 UST = 1.017 USDT</span>}
-      />
-      <SwapContentBox
-        left={<span>Rate after fee</span>}
-        right={<span>1 UST = 1.017 USDT</span>}
-      />
-      <SwapContentBox
-        left={<span>Rate after fee</span>}
-        right={<span>1 UST = 1.017 USDT</span>}
-      />
+      <SwapBoxDetails />
     </div>
   );
 };

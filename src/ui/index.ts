@@ -7,3 +7,4 @@ export { Layout } from "./Layout/Layout";
 export { Select } from "./Select/Select";
 export { Option } from "./Select/Option";
 export { Input } from "./Input/Input";
+export { Tooltip } from "./Tooltip/Tooltip";

@@ -214,8 +214,9 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
               return (
                 <div
                   className={clsnm(
-                    styles.phoneTableWrapper,
-                    bodyOpenGlobal[i] === true && styles.openIt
+                    bodyOpenGlobal[i] === true
+                      ? styles.openIt
+                      : styles.phoneTableWrapper
                   )}
                   key={i}
                 >
@@ -251,54 +252,168 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                       src={theme === "light" ? DOWNBLACK : DOWNWHITE}
                     ></img>
                   </div>
+                  {bodyOpenGlobal[i] === true && (
+                    <div className={styles.openDatas}>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Network</div>
+                        <div>{data.network}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Liquidity</div>
+                        <div>${data.liquidity}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Volume (24h)</div>
+                        <div>${data.volume}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>
+                          VEAPR{" "}
+                          <img
+                            src={theme === "light" ? INFOBLACK : INFOWHITE}
+                            className={styles.info}
+                          ></img>
+                        </div>
+                        <div>{data.veapr}%</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>My Total APR</div>
+                        <div>{data.myTotalApr}%</div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             }
           })
         : PersonalData.map((data, i) => {
             if (i < bodyCount) {
-              return (
-                <div
+              if (bodyOpenPersonal[i]) {
+                return (
+                  <div
                   className={clsnm(
-                    styles.phoneTableWrapper,
-                    bodyOpenPersonal[i] === true && styles.openIt
+                    bodyOpenPersonal[i] === true
+                      ? styles.openIt
+                      : styles.phoneTableWrapper
                   )}
                   key={i}
                 >
-                  <div className={styles.line}></div>
-                  <div className={styles.titles}>
-                    <div className={styles.title}>
-                      <div className={styles.logoAndName}>
-                        {data.logo && (
+                    <div className={styles.line}></div>
+                    <div className={styles.titles}>
+                      <div className={styles.title}>
+                        <div className={styles.logoAndName}>
+                          {data.logo && (
+                            <img
+                              style={{ width: "25px", marginRight: "8.5px" }}
+                              src={data.logo}
+                            ></img>
+                          )}
+                          <span>{data.name}</span>
+                        </div>
+                        <div className={styles.cRatio}>
+                          <span>Compensation Ratio: %154.89</span>
+                          &nbsp;
                           <img
-                            style={{ width: "25px", marginRight: "8.5px" }}
-                            src={data.logo}
+                            src={theme === "light" ? INFOBLACK : INFOWHITE}
+                            className={styles.info}
                           ></img>
-                        )}
-                        <span>{data.name}</span>
+                        </div>
                       </div>
-                      <div className={styles.cRatio}>
-                        <span>Compensation Ratio: %154.89</span>
-                        &nbsp;
-                        <img
-                          src={theme === "light" ? INFOBLACK : INFOWHITE}
-                          className={styles.info}
-                        ></img>
+                      <img
+                        onClick={() =>
+                          updateMyArray(
+                            bodyOpenPersonal,
+                            setBodyOpenPersonal,
+                            i
+                          )
+                        }
+                        className={clsnm(
+                          styles.modalKey,
+                          bodyOpenPersonal[i] && styles.reverse
+                        )}
+                        src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                      ></img>
+                    </div>
+                    {bodyOpenPersonal[i] === true && (
+                    <div className={styles.openDatas}>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Network</div>
+                        <div>{data.network}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Liquidity</div>
+                        <div>${data.liquidity}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>Volume (24h)</div>
+                        <div>${data.volume}</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>
+                          VEAPR{" "}
+                          <img
+                            src={theme === "light" ? INFOBLACK : INFOWHITE}
+                            className={styles.info}
+                          ></img>
+                        </div>
+                        <div>{data.veapr}%</div>
+                      </div>
+                      <div className={styles.openData}>
+                        <div className={styles.text1}>My Total APR</div>
+                        <div>{data.myTotalApr}%</div>
                       </div>
                     </div>
-                    <img
-                      onClick={() =>
-                        updateMyArray(bodyOpenPersonal, setBodyOpenPersonal, i)
-                      }
-                      className={clsnm(
-                        styles.modalKey,
-                        bodyOpenPersonal[i] && styles.reverse
-                      )}
-                      src={theme === "light" ? DOWNBLACK : DOWNWHITE}
-                    ></img>
+                  )}
                   </div>
-                </div>
-              );
+                );
+              } else {
+                return (
+                  <div
+                    className={clsnm(
+                      styles.phoneTableWrapper,
+                      bodyOpenPersonal[i] === true && styles.openIt
+                    )}
+                    key={i}
+                  >
+                    <div className={styles.line}></div>
+                    <div className={styles.titles}>
+                      <div className={styles.title}>
+                        <div className={styles.logoAndName}>
+                          {data.logo && (
+                            <img
+                              style={{ width: "25px", marginRight: "8.5px" }}
+                              src={data.logo}
+                            ></img>
+                          )}
+                          <span>{data.name}</span>
+                        </div>
+                        <div className={styles.cRatio}>
+                          <span>Compensation Ratio: %154.89</span>
+                          &nbsp;
+                          <img
+                            src={theme === "light" ? INFOBLACK : INFOWHITE}
+                            className={styles.info}
+                          ></img>
+                        </div>
+                      </div>
+                      <img
+                        onClick={() =>
+                          updateMyArray(
+                            bodyOpenPersonal,
+                            setBodyOpenPersonal,
+                            i
+                          )
+                        }
+                        className={clsnm(
+                          styles.modalKey,
+                          bodyOpenPersonal[i] && styles.reverse
+                        )}
+                        src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                      ></img>
+                    </div>
+                  </div>
+                );
+              }
             }
           })}
     </>

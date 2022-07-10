@@ -2,26 +2,26 @@ import styles from "./Pools.module.scss";
 import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button } from "ui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PersonalData, GlobalData } from "./datas";
 import INFOBLACK from "../../assets/pool/info-black.png";
 import INFOWHITE from "../../assets/pool/info-white.png";
 import { useMediaQuery } from "react-responsive";
 import { GrDown } from "react-icons/gr";
+import DOWNBLACK from "../../assets/pool/down-icon-black.png";
+import DOWNWHITE from "../../assets/pool/down-icon-white.png";
 
 interface Pools {
   whichPool?: boolean;
+  bodyCount: number;
+  setBodyCount: any;
 }
 
-const Pools = ({ whichPool }: Pools) => {
+const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
   const { theme } = useTheme();
-  const [bodyCount, setBodyCount] = useState(6);
-  {
-    console.log(GlobalData.length);
-  }
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
@@ -172,67 +172,134 @@ const PhoneTitle = () => {
 };
 
 const PhoneTable = ({ whichPool, bodyCount }: Table) => {
+  const [bodyOpenGlobal, setBodyOpenGlobal] = useState<{
+    [key: number]: boolean;
+  }>({});
+  const [bodyOpenPersonal, setBodyOpenPersonal] = useState<{
+    [key: number]: boolean;
+  }>({});
+
+  useEffect(() => {
+    let firstArray = [];
+    for (let i = 0; i < GlobalData.length; i++) {
+      firstArray[i] = false;
+    }
+    setBodyOpenGlobal(firstArray);
+
+    firstArray = [];
+    for (let i = 0; i < PersonalData.length; i++) {
+      firstArray[i] = false;
+    }
+    setBodyOpenPersonal(firstArray);
+  }, []);
+
+  const updateMyArray = (
+    oldArray: any,
+    setOldArray: any,
+    whichIndex: number
+  ) => {
+    let x: boolean = oldArray[whichIndex];
+    setOldArray((items: any) => {
+      return items.map((item: any, i: number) => {
+        return whichIndex === i ? !item : item;
+      });
+    });
+  };
   const { theme } = useTheme();
   return (
     <>
       {!whichPool
         ? GlobalData.map((data, i) => {
-            return (
-              <div className={styles.phoneTableWrapper}>
-                <div className={styles.line}></div>
-                <div className={styles.titles}>
-                  <div className={styles.title}>
-                    <div className={styles.logoAndName}>
-                      {data.logo && (
+            if (i < bodyCount) {
+              return (
+                <div
+                  className={clsnm(
+                    styles.phoneTableWrapper,
+                    bodyOpenGlobal[i] === true && styles.openIt
+                  )}
+                  key={i}
+                >
+                  <div className={styles.line}></div>
+                  <div className={styles.titles}>
+                    <div className={styles.title}>
+                      <div className={styles.logoAndName}>
+                        {data.logo && (
+                          <img
+                            style={{ width: "25px", marginRight: "8.5px" }}
+                            src={data.logo}
+                          ></img>
+                        )}
+                        <span className={styles.name}>{data.name}</span>
+                      </div>
+                      <div className={styles.cRatio}>
+                        <span>Compensation Ratio: %154.89</span>
+                        &nbsp;
                         <img
-                          style={{ width: "25px", marginRight: "8.5px" }}
-                          src={data.logo}
+                          src={theme === "light" ? INFOBLACK : INFOWHITE}
+                          className={styles.info}
                         ></img>
+                      </div>
+                    </div>
+                    <img
+                      onClick={() =>
+                        updateMyArray(bodyOpenGlobal, setBodyOpenGlobal, i)
+                      }
+                      className={clsnm(
+                        styles.modalKey,
+                        bodyOpenGlobal[i] && styles.reverse
                       )}
-                      <span className={styles.name}>{data.name}</span>
-                    </div>
-                    <div className={styles.cRatio}>
-                      <span>Compensation Ratio: %154.89</span>
-                      &nbsp;
-                      <img
-                        src={theme === "light" ? INFOBLACK : INFOWHITE}
-                        className={styles.info}
-                      ></img>
-                    </div>
+                      src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                    ></img>
                   </div>
-                  <GrDown className={styles.modalKey} color="red" />
                 </div>
-              </div>
-            );
+              );
+            }
           })
         : PersonalData.map((data, i) => {
-            return (
-              <div className={styles.phoneTableWrapper}>
-                <div className={styles.line}></div>
-                <div className={styles.titles}>
-                  <div className={styles.title}>
-                    <div className={styles.logoAndName}>
-                      {data.logo && (
+            if (i < bodyCount) {
+              return (
+                <div
+                  className={clsnm(
+                    styles.phoneTableWrapper,
+                    bodyOpenPersonal[i] === true && styles.openIt
+                  )}
+                  key={i}
+                >
+                  <div className={styles.line}></div>
+                  <div className={styles.titles}>
+                    <div className={styles.title}>
+                      <div className={styles.logoAndName}>
+                        {data.logo && (
+                          <img
+                            style={{ width: "25px", marginRight: "8.5px" }}
+                            src={data.logo}
+                          ></img>
+                        )}
+                        <span>{data.name}</span>
+                      </div>
+                      <div className={styles.cRatio}>
+                        <span>Compensation Ratio: %154.89</span>
+                        &nbsp;
                         <img
-                          style={{ width: "25px", marginRight: "8.5px" }}
-                          src={data.logo}
+                          src={theme === "light" ? INFOBLACK : INFOWHITE}
+                          className={styles.info}
                         ></img>
+                      </div>
+                    </div>
+                    <img
+                      onClick={() =>
+                        updateMyArray(bodyOpenPersonal, setBodyOpenPersonal, i)
+                      }
+                      className={clsnm(
+                        styles.modalKey,
+                        bodyOpenPersonal[i] && styles.reverse
                       )}
-                      <span>{data.name}</span>
-                    </div>
-                    <div className={styles.cRatio}>
-                      <span>Compensation Ratio: %154.89</span>
-                      &nbsp;
-                      <img
-                        src={theme === "light" ? INFOBLACK : INFOWHITE}
-                        className={styles.info}
-                      ></img>
-                    </div>
+                      src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                    ></img>
                   </div>
-                  <GrDown className={styles.modalKey}/>
                 </div>
-              </div>
-            );
+              );
+            }
           })}
     </>
   );

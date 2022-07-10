@@ -11,7 +11,10 @@ const Pool = () => {
     query: "(max-width: 850px)",
   });
   const [whichPool, setWhichPool] = useState(false);
+  const [bodyCount, setBodyCount] = useState(6);
   const { theme } = useTheme();
+
+
   return (
     <div>
       <Navbar />
@@ -24,7 +27,10 @@ const Pool = () => {
                 height="46px"
                 width={isPhoneOrPC ? "102px" : "162px"}
                 fontSize={isPhoneOrPC ? "fs14" : "fs18"}
-                onClick={() => setWhichPool(false)}
+                onClick={() => {
+                  setWhichPool(false);
+                  setBodyCount(6);
+                }}
                 color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   whichPool ? styles.poolButtonOff : styles.poolButtonOn
@@ -37,7 +43,10 @@ const Pool = () => {
                 height="46px"
                 width={isPhoneOrPC ? "102px" : "162px"}
                 fontSize={isPhoneOrPC ? "fs14" : "fs18"}
-                onClick={() => setWhichPool(true)}
+                onClick={() => {
+                  setWhichPool(true);
+                  setBodyCount(6);
+                }}
                 color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   !whichPool ? styles.poolButtonOff : styles.poolButtonOn
@@ -53,7 +62,11 @@ const Pool = () => {
             </div>
           </div>
         </div>
-        <Pools whichPool={whichPool} />
+        <Pools
+          whichPool={whichPool}
+          bodyCount={bodyCount}
+          setBodyCount={setBodyCount}
+        />
       </div>
 
       <Footer />

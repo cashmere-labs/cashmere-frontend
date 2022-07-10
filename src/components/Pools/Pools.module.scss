@@ -288,7 +288,7 @@
                 display: flex;
                 align-items: center;
 
-                .name{
+                .name {
                     font-weight: 600;
                     font-size: 14px;
                     color: var(--pool-text-6);
@@ -310,6 +310,22 @@
 
         .modalKey {
             margin: 0px 8px;
+            width: 12px;
+
+            &:hover {
+                transform: scale(1.5);
+                transition: transform 0.1s;
+            }
+        }
+
+        .reverse {
+            transform: rotate(180deg);
+
+            &:hover {
+                transform: scale(1.5) rotate(180deg);
+                transition: transform 0.1s;
+
+            }
         }
     }
 

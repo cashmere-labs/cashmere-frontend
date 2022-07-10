@@ -48,6 +48,7 @@ body.light {
   // Pool
   --pool-bg: rgb(255, 255, 255);
   --pool-bg-2: #efefef;
+  --pool-bg-3: #f5f5f5;
   --pool-text-1: rgba(31, 31, 31, 0.9);
   --pool-text-2: #1f1f1f;
   --pool-text-3: #0b0b0b;
@@ -56,6 +57,7 @@ body.light {
   --pool-text-6: black;
   --pool-text-7: white;
   --pool-text-8: #f5f5f5;
+  --pool-text-9: #eaeaea;
 }
 
 body.dark {
@@ -104,6 +106,7 @@ body.dark {
   // Pool
   --pool-bg: #232323;
   --pool-bg-2: #232323;
+  --pool-bg-3: #2D2D2D;
   --pool-text-1: white;
   --pool-text-2: white;
   --pool-text-3: white;
@@ -112,6 +115,7 @@ body.dark {
   --pool-text-6: white;
   --pool-text-7: black;
   --pool-text-8: #2D2D2D;
+  --pool-text-9: #4f4f4f;
 }
 
 body {

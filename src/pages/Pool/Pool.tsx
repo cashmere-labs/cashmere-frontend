@@ -4,8 +4,12 @@ import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button } from "ui";
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Pool = () => {
+  const isPhoneOrPC = useMediaQuery({
+    query: "(max-width: 850px)",
+  });
   const [whichPool, setWhichPool] = useState(false);
   const { theme } = useTheme();
   return (
@@ -18,25 +22,27 @@ const Pool = () => {
             <div className={styles.buttons}>
               <Button
                 height="46px"
-                width="162px"
-                fontSize="fs18"
+                width={isPhoneOrPC ? "102px" : "162px"}
+                fontSize={isPhoneOrPC ? "fs14" : "fs18"}
                 onClick={() => setWhichPool(false)}
                 color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   whichPool ? styles.poolButtonOff : styles.poolButtonOn
                 )}
+                fontWeight={whichPool ? "fw500" : "fw600"}
               >
                 All Pools
               </Button>
               <Button
                 height="46px"
-                width="162px"
-                fontSize="fs18"
+                width={isPhoneOrPC ? "102px" : "162px"}
+                fontSize={isPhoneOrPC ? "fs14" : "fs18"}
                 onClick={() => setWhichPool(true)}
                 color={theme === "light" ? "white" : "white"}
                 className={clsnm(
                   !whichPool ? styles.poolButtonOff : styles.poolButtonOn
                 )}
+                fontWeight={!whichPool ? "fw500" : "fw600"}
               >
                 My Pools
               </Button>
@@ -47,7 +53,7 @@ const Pool = () => {
             </div>
           </div>
         </div>
-        <Pools whichPool={whichPool}/>
+        <Pools whichPool={whichPool} />
       </div>
 
       <Footer />

@@ -14,8 +14,8 @@ const DepositDashboard = () => {
             <span className={styles.text2}>$2.890,12</span>
           </div>
           <div className={styles.DBText}>
-            <span>MY TOTAL DEPOSIT</span>
-            <span className={styles.text2}>$2.890,12</span>
+            <span>MY TOTAL REWARDS</span>
+            <span className={styles.text2}>$1.890,24</span>
           </div>
         </div>
         <Button

@@ -4,9 +4,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px 25px;
 }
-
 
 .whichPoolWrapper {
     max-width: 1217px;
@@ -27,15 +26,11 @@
 
             .poolButtonOn {
                 background-color: white !important;
-                font-weight: 600;
-                font-size: 18px !important;
             }
 
             .poolButtonOff {
                 background-color: transparent !important;
                 color: var(--pool-text-6);
-                font-weight: 500;
-                font-size: 18px !important;
 
             }
         }
@@ -59,4 +54,34 @@
     }
 }
 
-.trial{font-size: 18px !important;}
+
+@media (max-width: 850px) {
+    .wrapper{
+        padding: 0px 0px;
+    }
+
+    .whichPoolWrapper {
+        max-width: 850px;
+
+        .titleWrapper {
+            margin: 17px 0px 0px 0px;
+            border-radius: 0px;
+
+            .buttons {
+                margin-left: 19px;
+            }
+
+            .TVLInfo {
+                margin-right: 19px;
+                font-size: 14px;
+            }
+        }
+
+        .bodyWrapper{
+            height: 535px;
+            background-color: var(--pool-bg);
+            border-radius: 25px;
+        }
+    }
+
+}

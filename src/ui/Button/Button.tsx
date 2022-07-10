@@ -13,6 +13,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   disabled?: boolean;
   loading?: boolean;
   fontSize?: "fs14" | "fs16" | "fs18";
+  fontWeight?: "fw400" | "fw500" | "fw600" | "fw700";
 }
 
 const Button = ({
@@ -26,6 +27,7 @@ const Button = ({
   disabled,
   loading,
   fontSize = "fs14",
+  fontWeight = "fw500",
   ...props
 }: ButtonProps) => {
   const { theme } = useTheme();
@@ -55,6 +57,7 @@ const Button = ({
           styles[color],
           styles[textPosition],
           styles[fontSize],
+          styles[fontWeight],
           fullwidth && styles["fullwidth"],
           loading && styles.loading,
         )}

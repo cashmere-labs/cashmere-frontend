@@ -48,7 +48,7 @@ const SwapBoxDetails = ({ ...props }) => {
           >
             <span>1 UST = 1.017 USDT</span>
             <Icon
-              style={{ color: `var(--icon-dark)`, marginLeft: "8pxa" }}
+              style={{ color: `var(--icon-dark)`, marginLeft: "8px" }}
               hoverable
             >
               <RotateIcon />

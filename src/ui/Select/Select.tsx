@@ -1,7 +1,7 @@
 import { useModal, useOnClickOutside, usePopper } from "hooks";
 import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { Icon } from "ui/Icon/Icon";
+import { Icon } from "ui";
 import { clsnm } from "utils/clsnm";
 import { mergeRefs } from "utils/mergeRefs";
 import styles from "./Select.module.scss";

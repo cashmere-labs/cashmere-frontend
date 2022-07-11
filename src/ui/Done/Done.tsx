@@ -1,23 +1,28 @@
-import styles from "./Submitted.module.scss";
-import SubmittedIcon from "assets/icons/submitted.png";
+import styles from "./Done.module.scss";
 import ExitBlack from "assets/icons/exit-black.png";
 import ExitWhite from "assets/icons/exit-white.png";
 import { useTheme } from "hooks";
 import { Button } from "ui";
 import { useMediaQuery } from "react-responsive";
+import DoneGif from "assets/gifs/done.gif";
 
-const Submitted = () => {
+const Done = () => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 700px)",
   });
   const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>
-        <img
-          className={styles.exit}
-          src={theme === "light" ? ExitBlack : ExitWhite}
-        ></img>
-      <img src={SubmittedIcon} className={styles.submittedIcon}></img>
+      <img
+        className={styles.exit}
+        src={theme === "light" ? ExitBlack : ExitWhite}
+      ></img>
+      <img
+        src={DoneGif}
+        alt="Submitted..."
+        className={styles.submittedIcon}
+      ></img>
+
       <div className={styles.text}>Transaction Submitted</div>
       <Button
         height={isPhoneOrPC ? "45px" : "71px"}
@@ -39,4 +44,4 @@ const Submitted = () => {
   );
 };
 
-export { Submitted };
+export { Done };

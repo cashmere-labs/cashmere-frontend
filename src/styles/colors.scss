@@ -63,9 +63,16 @@ body.light {
   --tooltip-bg: black;
   --tooltip-color: white;
 
-  // Submitted
+  // Done
   --submitted-bg: #f4f4f5;
   --submitted-text-1: black;
+
+  // Waiting
+  --waiting-bg-1: #f4f4f5;
+  --waiting-bg-2: #fafafa;
+  --waiting-text-1: #1f1f1f;
+  --waiting-text-2: black;
+  --waiting-border-1: #ededed;
 }
 
 body.dark {
@@ -129,9 +136,16 @@ body.dark {
   --tooltip-bg: white;
   --tooltip-color: black;
 
-  // Submitted
+  // Done
   --submitted-bg: #232323;
   --submitted-text-1: white;
+
+  // Waiting
+  --waiting-bg-1: #232323;
+  --waiting-bg-2: #1A1A1A;
+  --waiting-text-1: white;
+  --waiting-text-2: white;
+  --waiting-border-1: #383838;
 }
 
 body {

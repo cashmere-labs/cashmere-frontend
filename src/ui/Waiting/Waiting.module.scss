@@ -1,0 +1,137 @@
+.wrapper {
+    max-width: 662px;
+    width: 100%;
+    height: 454px;
+    border-radius: 24px;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07), inset 1px 1px 2px 0 rgba(255, 255, 255, 0.76);
+    background-color: var(--waiting-bg-1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .exit {
+        width: 34px;
+        height: 34px;
+        position: absolute;
+        right: 17px;
+        top: 17px;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all 0.1s;
+        }
+    }
+
+    .waitingGif {
+        width: 97px;
+    }
+
+    .text1 {
+        font-size: 18px;
+        color: var(--waiting-text-1);
+        margin-top: 23px;
+        margin-bottom: 13px;
+        font-weight: 600;
+    }
+
+    .text2 {
+        font-size: 16px;
+        color: var(--waiting-text-1);
+        margin-bottom: 26px;
+    }
+
+    .text3 {
+        font-size: 18px;
+        color: var(--waiting-text-1);
+        margin-bottom: 18px;
+    }
+
+    .values {
+        width: 524px;
+        height: 71px;
+        border-radius: 8px;
+        border: solid 1px var(--waiting-border-1);
+        background-color: var(--waiting-bg-2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 20px;
+        color: var(--waiting-text-2);
+
+        .value1 {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-right: solid 1px var(--waiting-border-1);
+
+            .icon {
+                width: 28px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 700px) {
+    .wrapper {
+        max-width: 359px;
+        width: 100%;
+        height: 322px;
+        border-radius: 19px;
+
+        .exit {
+            width: 29px;
+            height: 29px;
+            right: 14px;
+            top: 14px;
+        }
+
+        .waitingGif {
+            width: 65px;
+            margin-top: 20px;
+        }
+
+        .text1 {
+            font-size: 16px;
+            color: var(--waiting-text-1);
+            margin-top: 23px;
+            margin-bottom: 12px;
+        }
+
+        .text2 {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .text3 {
+            font-size: 14px;
+            margin-bottom: 31px;
+        }
+
+        .values {
+            width: 319px;
+            padding: 0px 20px;
+            font-size: 14px;
+
+            .value1 {
+
+                .icon {
+                    width: 28px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

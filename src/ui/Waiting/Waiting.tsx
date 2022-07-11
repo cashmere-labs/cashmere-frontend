@@ -5,6 +5,7 @@ import { useTheme } from "hooks";
 import { Button } from "ui";
 import { useMediaQuery } from "react-responsive";
 import WaitingGif from "assets/gifs/loading.gif";
+import SkewLoader from "react-spinners/SkewLoader";
 
 interface WaitingProps {
   functionName: string;
@@ -13,7 +14,7 @@ interface WaitingProps {
   icon?: any;
 }
 
-const Waiting = ({ functionName,  iconName, value , icon}: WaitingProps) => {
+const Waiting = ({ functionName, iconName, value, icon }: WaitingProps) => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 700px)",
   });
@@ -24,11 +25,10 @@ const Waiting = ({ functionName,  iconName, value , icon}: WaitingProps) => {
         className={styles.exit}
         src={theme === "light" ? ExitBlack : ExitWhite}
       ></img>
-      <img
-        src={WaitingGif}
-        alt="Waiting..."
-        className={styles.waitingGif}
-      ></img>
+      <SkewLoader
+        className={styles.loader}
+        color={theme === "light" ? "black" : "#fff"}
+      />
 
       <div className={styles.text1}>Waiting For Confirmation</div>
 
@@ -38,7 +38,7 @@ const Waiting = ({ functionName,  iconName, value , icon}: WaitingProps) => {
       <div className={styles.text3}>{functionName}</div>
       <div className={styles.values}>
         <div className={styles.value1}>
-          <img className={styles.icon} src={icon} ></img> {iconName}
+          <img className={styles.icon} src={icon}></img> {iconName}
         </div>
         <div className={styles.value2}>{value}</div>
       </div>

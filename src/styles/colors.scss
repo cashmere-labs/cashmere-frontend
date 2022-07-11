@@ -62,6 +62,10 @@ body.light {
   // Tooltip
   --tooltip-bg: black;
   --tooltip-color: white;
+
+  // Submitted
+  --submitted-bg: #f4f4f5;
+  --submitted-text-1: black;
 }
 
 body.dark {
@@ -124,6 +128,10 @@ body.dark {
   // Tooltip
   --tooltip-bg: white;
   --tooltip-color: black;
+
+  // Submitted
+  --submitted-bg: #232323;
+  --submitted-text-1: white;
 }
 
 body {

@@ -5,7 +5,7 @@ import { clsnm } from "utils/clsnm";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  color?: "blue" | "neutral" | "pink" | "ghost" | "red" | "black" | "white";
+  color?: "blue" | "neutral" | "pink" | "ghost" | "red" | "black" | "white" | "transparentWhite" | "transparentBlack";
   textPosition?: "center" | "left" | "right";
   height?: string;
   width?: string;

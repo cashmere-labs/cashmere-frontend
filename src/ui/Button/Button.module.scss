@@ -51,6 +51,18 @@
     }
   }
 
+  &.transparentWhite{
+    background: transparent;
+    border: solid 1px #e5e5e5 !important;
+    color: black !important;
+  }
+
+  &.transparentBlack{
+    background: transparent;
+    border: solid 1px #5D5D5D !important;
+    color: white !important;
+  }
+
   &.black {
     background: black;
     color: white;

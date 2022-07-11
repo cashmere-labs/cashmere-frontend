@@ -42,7 +42,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       },
       {
         name: "veCSM",
-        url: PATHS.home,
+        url: PATHS.veCSM,
         soon: false,
         active: pathname.startsWith(PATHS.veCSM),
       },

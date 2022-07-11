@@ -1,16 +1,13 @@
 import styles from "./Pools.module.scss";
 import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { Button } from "ui";
 import { useEffect, useState } from "react";
 import { PersonalData, GlobalData } from "./datas";
-import INFOBLACK from "../../assets/pool/info-black.png";
-import INFOWHITE from "../../assets/pool/info-white.png";
 import { useMediaQuery } from "react-responsive";
-import { GrDown } from "react-icons/gr";
 import DOWNBLACK from "../../assets/pool/down-icon-black.png";
 import DOWNWHITE from "../../assets/pool/down-icon-white.png";
-
+import { Icon, Tooltip, Button } from "ui";
+import { InfoIcon } from "assets/icons";
 interface Pools {
   whichPool?: boolean;
   bodyCount: number;
@@ -42,14 +39,14 @@ const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
                 height="40px"
                 width="156px"
                 onClick={() => setBodyCount(bodyCount + 10)}
-                color={theme === "light" ? "black" : "neutral"}
+                color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
                   theme === "light" ? styles.white : styles.black
                 )}
               >
                 more
-              </Button>{" "}
+              </Button>
             </div>
           )
         : GlobalData.length > bodyCount && (
@@ -59,7 +56,7 @@ const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
                 width="156px"
                 fontSize="fs16"
                 onClick={() => setBodyCount(bodyCount + 10)}
-                color={theme === "light" ? "black" : "neutral"}
+                color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
                   theme === "light" ? styles.white : styles.black
@@ -112,7 +109,12 @@ const DesktopTable = ({ whichPool, bodyCount }: Table) => {
                       <span>{data.name}</span>
                     </span>
                     <span className={styles.cRatio}>
-                      Compensation Ratio: %154.89 <span>i</span>
+                      Compensation Ratio: %154.89{" "}
+                      <Tooltip placement="top" content="Content coming here">
+                        <Icon size={16}>
+                          <InfoIcon />
+                        </Icon>
+                      </Tooltip>
                     </span>
                   </div>
                   <div className={styles.data2}>{data.network}</div>
@@ -142,11 +144,11 @@ const DesktopTable = ({ whichPool, bodyCount }: Table) => {
                       </span>
                       <span className={styles.cRatio}>
                         <span>Compensation Ratio: %154.89</span>
-                        &nbsp;
-                        <img
-                          src={theme === "light" ? INFOBLACK : INFOWHITE}
-                          className={styles.info}
-                        ></img>
+                        <Tooltip placement="top" content="Content coming here">
+                          <Icon size={16}>
+                            <InfoIcon />
+                          </Icon>
+                        </Tooltip>
                       </span>
                     </div>
                     <div className={styles.data2}>{data.network}</div>
@@ -234,11 +236,11 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                       </div>
                       <div className={styles.cRatio}>
                         <span>Compensation Ratio: %154.89</span>
-                        &nbsp;
-                        <img
-                          src={theme === "light" ? INFOBLACK : INFOWHITE}
-                          className={styles.info}
-                        ></img>
+                        <Tooltip placement="top" content="Content coming here">
+                          <Icon size={16}>
+                            <InfoIcon />
+                          </Icon>
+                        </Tooltip>
                       </div>
                     </div>
                     <img
@@ -269,10 +271,14 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                       <div className={styles.openData}>
                         <div className={styles.text1}>
                           VEAPR{" "}
-                          <img
-                            src={theme === "light" ? INFOBLACK : INFOWHITE}
-                            className={styles.info}
-                          ></img>
+                          <Tooltip
+                            placement="top"
+                            content="Content coming here"
+                          >
+                            <Icon size={16}>
+                              <InfoIcon />
+                            </Icon>
+                          </Tooltip>
                         </div>
                         <div>{data.veapr}%</div>
                       </div>
@@ -291,13 +297,13 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
               if (bodyOpenPersonal[i]) {
                 return (
                   <div
-                  className={clsnm(
-                    bodyOpenPersonal[i] === true
-                      ? styles.openIt
-                      : styles.phoneTableWrapper
-                  )}
-                  key={i}
-                >
+                    className={clsnm(
+                      bodyOpenPersonal[i] === true
+                        ? styles.openIt
+                        : styles.phoneTableWrapper
+                    )}
+                    key={i}
+                  >
                     <div className={styles.line}></div>
                     <div className={styles.titles}>
                       <div className={styles.title}>
@@ -312,11 +318,14 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                         </div>
                         <div className={styles.cRatio}>
                           <span>Compensation Ratio: %154.89</span>
-                          &nbsp;
-                          <img
-                            src={theme === "light" ? INFOBLACK : INFOWHITE}
-                            className={styles.info}
-                          ></img>
+                          <Tooltip
+                            placement="top"
+                            content="Content coming here"
+                          >
+                            <Icon size={16}>
+                              <InfoIcon />
+                            </Icon>
+                          </Tooltip>
                         </div>
                       </div>
                       <img
@@ -335,35 +344,39 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                       ></img>
                     </div>
                     {bodyOpenPersonal[i] === true && (
-                    <div className={styles.openDatas}>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>Network</div>
-                        <div>{data.network}</div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>Liquidity</div>
-                        <div>${data.liquidity}</div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>Volume (24h)</div>
-                        <div>${data.volume}</div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>
-                          VEAPR{" "}
-                          <img
-                            src={theme === "light" ? INFOBLACK : INFOWHITE}
-                            className={styles.info}
-                          ></img>
+                      <div className={styles.openDatas}>
+                        <div className={styles.openData}>
+                          <div className={styles.text1}>Network</div>
+                          <div>{data.network}</div>
                         </div>
-                        <div>{data.veapr}%</div>
+                        <div className={styles.openData}>
+                          <div className={styles.text1}>Liquidity</div>
+                          <div>${data.liquidity}</div>
+                        </div>
+                        <div className={styles.openData}>
+                          <div className={styles.text1}>Volume (24h)</div>
+                          <div>${data.volume}</div>
+                        </div>
+                        <div className={styles.openData}>
+                          <div className={styles.text1}>
+                            VEAPR{" "}
+                            <Tooltip
+                              placement="top"
+                              content="Content coming here"
+                            >
+                              <Icon size={14}>
+                                <InfoIcon />
+                              </Icon>
+                            </Tooltip>
+                          </div>
+                          <div>{data.veapr}%</div>
+                        </div>
+                        <div className={styles.openData}>
+                          <div className={styles.text1}>My Total APR</div>
+                          <div>{data.myTotalApr}%</div>
+                        </div>
                       </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>My Total APR</div>
-                        <div>{data.myTotalApr}%</div>
-                      </div>
-                    </div>
-                  )}
+                    )}
                   </div>
                 );
               } else {
@@ -389,11 +402,14 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                         </div>
                         <div className={styles.cRatio}>
                           <span>Compensation Ratio: %154.89</span>
-                          &nbsp;
-                          <img
-                            src={theme === "light" ? INFOBLACK : INFOWHITE}
-                            className={styles.info}
-                          ></img>
+                          <Tooltip
+                            placement="top"
+                            content="Content coming here"
+                          >
+                            <Icon size={16}>
+                              <InfoIcon />
+                            </Icon>
+                          </Tooltip>
                         </div>
                       </div>
                       <img

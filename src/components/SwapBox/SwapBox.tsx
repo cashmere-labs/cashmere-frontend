@@ -3,7 +3,8 @@ import { Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
 import { Aurora, Dai, Polygon, Tetherus } from "constants/tokens";
 import { useTheme } from "hooks";
-import { useState } from "react";
+import React, { ReactElement, ReactNode, useState } from "react";
+import { FaChevronRight } from "react-icons/fa";
 import { Token } from "types/token";
 import { Icon, Select, Option, Input, Button } from "ui";
 import styles from "./SwapBox.module.scss";
@@ -209,15 +210,51 @@ const SwapBox = () => {
       >
         Swap
       </Button>
+      <PathRenderer path={[Aurora, Polygon, Dai]} />
     </div>
   );
 };
 
-const TokenRenderer = ({ token }: { token: Token }) => {
+const TokenRenderer = ({
+  token,
+  imgSize = 24,
+}: {
+  token: Token;
+  imgSize?: number;
+}) => {
   return (
-    <Row alignItems="center">
-      <img style={{ marginRight: "8px" }} width={24} src={token.imageUrl} />
-      <span>{token.name}</span>
+    <Row style={{ width: "max-content" }} alignItems="center">
+      <img
+        style={{ marginRight: "8px" }}
+        width={imgSize}
+        src={token.imageUrl}
+      />
+      <span style={{ color: `var(--text)` }}>{token.name}</span>
+    </Row>
+  );
+};
+
+const PathRenderer = ({ path }: { path: Token[] }): ReactElement => {
+  return (
+    <Row
+      marginBottom={8}
+      style={{ width: "max-content", marginLeft: "auto", marginRight: "auto" }}
+      justifyContent="center"
+    >
+      {path.map((item, key) => (
+        <Row
+          style={{ marginRight: key !== path.length - 1 ? "24px" : "0px" }}
+          justifyContent="center"
+          key={key}
+        >
+          <TokenRenderer token={item} imgSize={20} />
+          {key !== path.length - 1 && (
+            <Icon style={{ marginLeft: "16px", color: `var(--text)` }}>
+              <FaChevronRight />
+            </Icon>
+          )}
+        </Row>
+      ))}
     </Row>
   );
 };

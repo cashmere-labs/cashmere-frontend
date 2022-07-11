@@ -5,7 +5,16 @@ import { clsnm } from "utils/clsnm";
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
-  color?: "blue" | "neutral" | "pink" | "ghost" | "red" | "black" | "white" | "transparentWhite" | "transparentBlack";
+  color?:
+    | "blue"
+    | "neutral"
+    | "pink"
+    | "ghost"
+    | "red"
+    | "black"
+    | "white"
+    | "transparentWhite"
+    | "transparentBlack";
   textPosition?: "center" | "left" | "right";
   height?: string;
   width?: string;
@@ -25,6 +34,7 @@ const Button = ({
   width,
   fullwidth,
   disabled,
+  style = {},
   loading,
   fontSize = "fs14",
   fontWeight = "fw500",
@@ -34,7 +44,7 @@ const Button = ({
 
   return (
     <button
-      style={{ height: height, width: width ? width : undefined }}
+      style={{ height: height, width: width ? width : undefined, ...style }}
       className={clsnm(
         styles.wrapper,
         styles[color],
@@ -59,7 +69,7 @@ const Button = ({
           styles[fontSize],
           styles[fontWeight],
           fullwidth && styles["fullwidth"],
-          loading && styles.loading,
+          loading && styles.loading
         )}
       >
         {children}

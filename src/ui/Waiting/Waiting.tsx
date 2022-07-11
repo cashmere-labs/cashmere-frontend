@@ -6,7 +6,6 @@ import { Button } from "ui";
 import { useMediaQuery } from "react-responsive";
 import SkewLoader from "react-spinners/SkewLoader";
 
-
 interface WaitingProps {
   functionName: string;
   iconName: any;
@@ -29,9 +28,6 @@ const Waiting = ({ functionName, iconName, value, icon }: WaitingProps) => {
         className={styles.loader}
         color={theme === "light" ? "black" : "#fff"}
       />
-
-      
-
 
       <div className={styles.text1}>Waiting For Confirmation</div>
 

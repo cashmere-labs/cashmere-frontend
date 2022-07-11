@@ -9,7 +9,7 @@ import styles from "./Select.module.scss";
 interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   value: any;
   setValue?: (to: any) => void;
-  optionRenderer: () => ReactNode;
+  optionRenderer: (close: () => void) => ReactNode;
   menuRenderer?: (isOpen: boolean) => ReactNode;
   options: any[];
   extendRight?: boolean;
@@ -109,7 +109,7 @@ const Select = ({
           ref={floating}
           className={clsnm(styles.options, optionsClassName)}
         >
-          {optionRenderer()}
+          {optionRenderer(close)}
         </div>
       )}
     </div>

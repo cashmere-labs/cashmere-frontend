@@ -14,7 +14,7 @@ const VeCSM = () => {
           functionName="Proposal Vote"
           value="24.689.905"
         />
-        <Done/>
+        {/* <Done/> */}
       </div>
       <Footer />
     </>

@@ -14,14 +14,16 @@
 .body {
   position: relative;
   background: var(--modal-bg);
-  max-width: 95vw;
-  min-width: 500px;
   border-radius: 12px;
   padding: 1.5rem;
   padding-top: 2.5rem;
   box-shadow: var(--shadow-1);
   animation: main 0.2s linear;
   color: var(--text);
+
+  @media (max-width: 512px) {
+    max-width: 95vw !important;
+  }
 }
 .close {
   position: absolute;

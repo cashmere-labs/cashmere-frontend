@@ -14,7 +14,7 @@ export const SwapSettings = ({
   swapSettings: SwapSettingsType;
 }) => {
   return (
-    <Modal isOpen={modal.isOpen} close={modal.close}>
+    <Modal className={styles.modal} isOpen={modal.isOpen} close={modal.close}>
       <Column alignItems="flex-start">
         <span className={styles.label}>Swap</span>
         <Row alignItems="center" marginTop={4} marginBottom={12}>
@@ -35,14 +35,14 @@ export const SwapSettings = ({
         <Row>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="0.0%" />}
               labelPlacement="right"
             />
           </div>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="0.5%" />}
               labelPlacement="right"
             />
@@ -76,14 +76,14 @@ export const SwapSettings = ({
         <Row marginBottom={12}>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="0.0%" />}
               labelPlacement="right"
             />
           </div>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="0.5%" />}
               labelPlacement="right"
             />
@@ -115,14 +115,14 @@ export const SwapSettings = ({
         <Row>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="No" />}
               labelPlacement="right"
             />
           </div>
           <div>
             <Radio
-              style={{ marginRight: "20px" }}
+              className={styles.radio}
               label={<SwapSettingsBadge content="Yes" />}
               labelPlacement="right"
             />

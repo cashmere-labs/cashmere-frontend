@@ -19,3 +19,20 @@
   border-radius: 8px;
   background: var(--swap-badge-bg);
 }
+
+.modal {
+  padding: 40px;
+  width: 512px;
+
+  @media (max-width: 512px) {
+    padding: 24px 12px;
+  }
+}
+
+.radio {
+  margin-right: 20px;
+
+  @media (max-width: 512px) {
+    margin-right: 6px;
+  }
+}

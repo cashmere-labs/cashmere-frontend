@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
 import { Icon } from "ui/Icon/Icon";
+import { clsnm } from "utils/clsnm";
 import styles from "./Radio.module.scss";
 
 interface RadioProps extends ComponentPropsWithoutRef<"div"> {
@@ -13,12 +14,13 @@ const Radio = ({
   isChecked,
   labelPlacement = "left",
   label,
+  className,
   ...props
 }: RadioProps) => {
   return (
-    <div {...props} className={styles.wrapper}>
+    <div {...props} className={clsnm(styles.wrapper, className)}>
       {labelPlacement === "left" && label && (
-        <span style={{ marginRight: "8px" }}>{label}</span>
+        <span style={{ marginRight: "6px" }}>{label}</span>
       )}
       {isChecked ? (
         <Icon size={22} className={styles.selected}>
@@ -30,7 +32,7 @@ const Radio = ({
         </Icon>
       )}
       {labelPlacement === "right" && label && (
-        <span style={{ marginLeft: "8px" }}>{label}</span>
+        <span style={{ marginLeft: "6px" }}>{label}</span>
       )}
     </div>
   );

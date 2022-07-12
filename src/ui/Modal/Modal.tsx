@@ -1,5 +1,5 @@
 import { useOnClickOutside } from "hooks/useOnClickOutside";
-import { ReactNode, useEffect } from "react";
+import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { Icon } from "ui";
 import { clsnm } from "utils/clsnm";
@@ -11,6 +11,7 @@ type ModalProps = {
   close: () => void;
   closeOnClickOutside?: boolean;
   className?: string;
+  bodyProps?: ComponentPropsWithoutRef<"div">;
 };
 
 const Modal = ({
@@ -19,6 +20,7 @@ const Modal = ({
   close,
   closeOnClickOutside = true,
   className,
+  bodyProps = {},
 }: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -39,7 +41,11 @@ const Modal = ({
       style={{ animationTimingFunction: "linear" }}
       className={styles.layout}
     >
-      <div ref={outsideRef} className={clsnm(styles.body, className)}>
+      <div
+        {...bodyProps}
+        ref={outsideRef}
+        className={clsnm(styles.body, className)}
+      >
         <Icon
           hoverable
           onClick={close}

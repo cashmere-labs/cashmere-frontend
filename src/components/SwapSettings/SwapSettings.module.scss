@@ -1,0 +1,21 @@
+.divider {
+  width: 100%;
+  display: flex;
+  box-shadow: inset 1px 1px 2px #ffffffc3, 1px 2px 2px #00000012;
+  border-radius: 24px;
+  height: 5px;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+
+.label {
+  color: var(--subtext);
+  font-weight: 500;
+  font-size: 12;
+}
+
+.badge {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--swap-badge-bg);
+}

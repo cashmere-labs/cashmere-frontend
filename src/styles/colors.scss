@@ -5,6 +5,7 @@ body {
 body.light {
   // Misc
   --text: black;
+  --subtext: rgba(0, 0, 0, 0.478);
   --main-bg: #f5f5f5;
   --icon-dark: #999999;
   --icon-light: rgb(185, 183, 183);
@@ -25,6 +26,9 @@ body.light {
   // Swap
   --swap-box-bg: white;
   --swap-box-border: #efefef;
+  --swap-badge-bg: #f4f4f5;
+  --swap-badge-border: rgb(52, 52, 52);
+  --swap-divider: black;
 
   // Select
   --select-border: #ededed;
@@ -78,6 +82,7 @@ body.light {
 body.dark {
   // Misc
   --text: white;
+  --subtext: rgba(205, 205, 205, 0.478);
   --main-bg: black;
   --icon-dark: #999999;
   --icon-light: rgb(185, 183, 183);
@@ -98,6 +103,9 @@ body.dark {
   // Swap
   --swap-box-bg: #232323;
   --swap-box-border: #383838;
+  --swap-divider: #ffffff;
+  --swap-badge-bg: #1a1a1a;
+  --swap-badge-border: #383838;
 
   // Select
   --select-border: #383838;
@@ -121,7 +129,7 @@ body.dark {
   // Pool
   --pool-bg: #232323;
   --pool-bg-2: #232323;
-  --pool-bg-3: #2D2D2D;
+  --pool-bg-3: #2d2d2d;
   --pool-text-1: white;
   --pool-text-2: white;
   --pool-text-3: white;
@@ -129,7 +137,7 @@ body.dark {
   --pool-text-5: #c3c3c3;
   --pool-text-6: white;
   --pool-text-7: black;
-  --pool-text-8: #2D2D2D;
+  --pool-text-8: #2d2d2d;
   --pool-text-9: #727272;
 
   // Tooltip
@@ -142,7 +150,7 @@ body.dark {
 
   // Waiting
   --waiting-bg-1: #232323;
-  --waiting-bg-2: #1A1A1A;
+  --waiting-bg-2: #1a1a1a;
   --waiting-text-1: white;
   --waiting-text-2: white;
   --waiting-border-1: #383838;

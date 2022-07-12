@@ -1,16 +1,21 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
-import { Aurora, Dai, Polygon, Tetherus } from "constants/tokens";
-import { useTheme } from "hooks";
-import React, { ReactElement, ReactNode, useState } from "react";
+import { SwapSettings } from "components/SwapSettings/SwapSettings";
+import { useSwapSettings } from "components/SwapSettings/useSwapSettings";
+import { Aurora, Polygon } from "constants/networks";
+import { Dai, Tetherus } from "constants/tokens";
+import { useModal, useTheme } from "hooks";
+import React, { ReactElement, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { Network } from "types/network";
 import { Token } from "types/token";
 import { Icon, Select, Option, Input, Button } from "ui";
 import styles from "./SwapBox.module.scss";
 
 const SwapBox = () => {
-  const options = [Aurora, Tetherus, Dai, Polygon];
+  const tokenOptions = [Tetherus, Dai];
+  const networkOptions = [Polygon, Aurora];
 
   const { theme } = useTheme();
   const [state, setState] = useState({
@@ -24,17 +29,22 @@ const SwapBox = () => {
     let _state = { ...state };
     _state.fromfrom = state.tofrom;
     _state.fromto = state.toto;
-    _state.tofrom = state.fromto;
-    _state.toto = state.fromfrom;
+    _state.tofrom = state.fromfrom;
+    _state.toto = state.fromto;
 
     setState(_state);
   };
 
+  const swapSettingsModal = useModal();
+  const swapSettings = useSwapSettings();
+
   return (
     <div className={styles.wrapper}>
+      <SwapSettings modal={swapSettingsModal} swapSettings={swapSettings} />
       <div className={styles.header}>
         <span style={{ color: `var(--text)`, fontSize: "16px" }}>Swap</span>
         <Icon
+          onClick={swapSettingsModal.open}
           style={{ color: `var(--icon-dark)` }}
           hoverPadding="6px"
           size={16}
@@ -59,14 +69,16 @@ const SwapBox = () => {
           containerClassName={styles.select}
           extendRight
           isFullWidth
-          menuRenderer={() => <TokenRenderer token={state.fromfrom} />}
+          menuRenderer={() => (
+            <TokenOrNetworkRenderer tokenOrNetwork={state.fromfrom} />
+          )}
           value={state.fromfrom}
           setValue={() => undefined}
-          options={options}
+          options={networkOptions}
           hideRightBorder
           optionRenderer={(close) => (
             <>
-              {options.map((item, key) => (
+              {networkOptions.map((item, key) => (
                 <Option
                   onClick={() => {
                     setState({ ...state, fromfrom: item });
@@ -76,7 +88,7 @@ const SwapBox = () => {
                   key={key}
                   value={item.name}
                 >
-                  <TokenRenderer token={item} />
+                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
                 </Option>
               ))}
             </>
@@ -87,13 +99,15 @@ const SwapBox = () => {
           extendRight
           extendLeft
           isFullWidth
-          menuRenderer={() => <TokenRenderer token={state.fromto} />}
+          menuRenderer={() => (
+            <TokenOrNetworkRenderer tokenOrNetwork={state.fromto} />
+          )}
           value={state.fromto}
           setValue={() => undefined}
-          options={options}
+          options={tokenOptions}
           optionRenderer={(close) => (
             <>
-              {options.map((item, key) => (
+              {tokenOptions.map((item, key) => (
                 <Option
                   style={{ marginRight: "8px" }}
                   key={key}
@@ -103,7 +117,7 @@ const SwapBox = () => {
                     close?.();
                   }}
                 >
-                  <TokenRenderer token={item} />
+                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
                 </Option>
               ))}
             </>
@@ -146,13 +160,15 @@ const SwapBox = () => {
           containerClassName={styles.select}
           extendRight
           isFullWidth
-          menuRenderer={() => <TokenRenderer token={state.tofrom} />}
+          menuRenderer={() => (
+            <TokenOrNetworkRenderer tokenOrNetwork={state.tofrom} />
+          )}
           value={state.tofrom}
-          options={options}
+          options={networkOptions}
           hideRightBorder
           optionRenderer={(close) => (
             <>
-              {options.map((item, key) => (
+              {networkOptions.map((item, key) => (
                 <Option
                   style={{ marginRight: "8px" }}
                   key={key}
@@ -162,7 +178,7 @@ const SwapBox = () => {
                   }}
                   value={item.name}
                 >
-                  <TokenRenderer token={item} />
+                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
                 </Option>
               ))}
             </>
@@ -174,11 +190,13 @@ const SwapBox = () => {
           extendLeft
           isFullWidth
           value={state.toto}
-          menuRenderer={() => <TokenRenderer token={state.toto} />}
-          options={options}
+          menuRenderer={() => (
+            <TokenOrNetworkRenderer tokenOrNetwork={state.toto} />
+          )}
+          options={tokenOptions}
           optionRenderer={(close) => (
             <>
-              {options.map((item, key) => (
+              {tokenOptions.map((item, key) => (
                 <Option
                   onClick={() => {
                     setState({ ...state, toto: item });
@@ -187,7 +205,7 @@ const SwapBox = () => {
                   key={key}
                   value={item.name}
                 >
-                  <TokenRenderer token={item} />
+                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
                 </Option>
               ))}
             </>
@@ -210,16 +228,16 @@ const SwapBox = () => {
       >
         Swap
       </Button>
-      <PathRenderer path={[Aurora, Polygon, Dai]} />
+      <PathRenderer path={[Aurora, Polygon]} />
     </div>
   );
 };
 
-const TokenRenderer = ({
-  token,
+const TokenOrNetworkRenderer = ({
+  tokenOrNetwork,
   imgSize = 24,
 }: {
-  token: Token;
+  tokenOrNetwork: Token | Network;
   imgSize?: number;
 }) => {
   return (
@@ -227,14 +245,14 @@ const TokenRenderer = ({
       <img
         style={{ marginRight: "8px" }}
         width={imgSize}
-        src={token.imageUrl}
+        src={tokenOrNetwork.imageUrl}
       />
-      <span style={{ color: `var(--text)` }}>{token.name}</span>
+      <span style={{ color: `var(--text)` }}>{tokenOrNetwork.name}</span>
     </Row>
   );
 };
 
-const PathRenderer = ({ path }: { path: Token[] }): ReactElement => {
+const PathRenderer = ({ path }: { path: Network[] }): ReactElement => {
   return (
     <Row
       marginBottom={8}
@@ -247,7 +265,7 @@ const PathRenderer = ({ path }: { path: Token[] }): ReactElement => {
           justifyContent="center"
           key={key}
         >
-          <TokenRenderer token={item} imgSize={20} />
+          <TokenOrNetworkRenderer tokenOrNetwork={item} imgSize={20} />
           {key !== path.length - 1 && (
             <Icon style={{ marginLeft: "16px", color: `var(--text)` }}>
               <FaChevronRight />

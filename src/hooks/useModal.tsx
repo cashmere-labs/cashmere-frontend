@@ -1,6 +1,12 @@
 import { useCallback, useMemo, useState } from "react";
 
-export const useModal = () => {
+export type ModalController = {
+  isOpen: boolean;
+  open: () => void;
+  close: () => void;
+};
+
+export const useModal = (): ModalController => {
   const [isOpen, setIsOpen] = useState(false);
 
   const open = useCallback(() => setIsOpen(true), []);

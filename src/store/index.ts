@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import themeSlice from "store/slicers/theme";
+import poolSlice from "store/slicers/pool";
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice,
+    pool: poolSlice,
   },
   middleware: (getDefaultMiddleware) => {
     const customizedMiddleware = getDefaultMiddleware({

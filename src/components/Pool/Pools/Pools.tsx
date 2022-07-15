@@ -4,17 +4,18 @@ import { clsnm } from "utils/clsnm";
 import { useEffect, useState } from "react";
 import { PersonalData, GlobalData } from "./datas";
 import { useMediaQuery } from "react-responsive";
-import DOWNBLACK from "../../assets/pool/down-icon-black.png";
-import DOWNWHITE from "../../assets/pool/down-icon-white.png";
+import DOWNBLACK from "assets/pool/down-icon-black.png";
+import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { Icon, Tooltip, Button } from "ui";
 import { InfoIcon } from "assets/icons";
-interface Pools {
-  whichPool?: boolean;
-  bodyCount: number;
-  setBodyCount: any;
-}
+import { useSelector } from "react-redux";
+import { usePoolStates } from "hooks";
 
-const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
+const Pools = () => {
+  const whichPool = useSelector((state:any) => state.pool.whichPool);
+  const poolCount = useSelector((state:any) => state.pool.poolCount);
+
+  const {changeWhichPool, increasePoolCount, resetPoolCount} = usePoolStates()
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
@@ -24,21 +25,21 @@ const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
       <div className={styles.dashboard}>
         {isPhoneOrLaptop ? <PhoneTitle /> : <DesktopTitle />}
         {isPhoneOrLaptop ? (
-          <PhoneTable whichPool={whichPool} bodyCount={bodyCount} />
+          <PhoneTable whichPool={whichPool} bodyCount={poolCount} />
         ) : (
-          <DesktopTable whichPool={whichPool} bodyCount={bodyCount} />
+          <DesktopTable whichPool={whichPool} bodyCount={poolCount} />
         )}
       </div>
       <div className={styles.footer}>
         The base emission rate is currently 1.5 CSM per second.
       </div>
       {whichPool
-        ? PersonalData.length > bodyCount && (
+        ? PersonalData.length > poolCount && (
             <div className={styles.more}>
               <Button
                 height="40px"
                 width="156px"
-                onClick={() => setBodyCount(bodyCount + 10)}
+                onClick={() => increasePoolCount()}
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
@@ -49,13 +50,13 @@ const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
               </Button>
             </div>
           )
-        : GlobalData.length > bodyCount && (
+        : GlobalData.length > poolCount && (
             <div className={styles.more}>
               <Button
                 height="40px"
                 width="156px"
                 fontSize="fs16"
-                onClick={() => setBodyCount(bodyCount + 10)}
+                onClick={() => increasePoolCount()}
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,

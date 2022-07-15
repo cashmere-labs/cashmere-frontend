@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@
         }
     }
 
-    .bodyWrapper{
+    .bodyWrapper {
         height: 535px;
         background-color: var(--pool-bg);
         border-radius: 25px;
@@ -56,7 +56,7 @@
 
 
 @media (max-width: 850px) {
-    .wrapper{
+    .wrapper {
         padding: 0px 0px;
     }
 
@@ -74,10 +74,48 @@
             .TVLInfo {
                 margin-right: 19px;
                 font-size: 14px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
-        .bodyWrapper{
+        .bodyWrapper {
+            height: 535px;
+            background-color: var(--pool-bg);
+            border-radius: 25px;
+        }
+    }
+
+}
+
+
+@media (max-width: 370px) {
+    .wrapper {
+        padding: 0px 0px;
+    }
+
+    .whichPoolWrapper {
+        max-width: 850px;
+
+        .titleWrapper {
+            margin: 17px 0px 0px 0px;
+            border-radius: 0px;
+
+            .buttons {
+                margin-left: 19px;
+            }
+
+            .TVLInfo {
+                margin-right: 19px;
+                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+
+        .bodyWrapper {
             height: 535px;
             background-color: var(--pool-bg);
             border-radius: 25px;

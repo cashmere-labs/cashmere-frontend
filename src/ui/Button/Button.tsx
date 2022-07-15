@@ -21,7 +21,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   fullwidth?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  fontSize?: "fs14" | "fs16" | "fs18";
+  fontSize?: "fs12" |"fs14" | "fs16" | "fs18";
   fontWeight?: "fw400" | "fw500" | "fw600" | "fw700";
 }
 

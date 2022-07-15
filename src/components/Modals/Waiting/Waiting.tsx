@@ -2,8 +2,6 @@ import styles from "./Waiting.module.scss";
 import ExitBlack from "assets/icons/exit-black.png";
 import ExitWhite from "assets/icons/exit-white.png";
 import { useTheme } from "hooks";
-import { Button } from "ui";
-import { useMediaQuery } from "react-responsive";
 import SkewLoader from "react-spinners/SkewLoader";
 
 interface WaitingProps {
@@ -14,9 +12,6 @@ interface WaitingProps {
 }
 
 const Waiting = ({ functionName, iconName, value, icon }: WaitingProps) => {
-  const isPhoneOrPC = useMediaQuery({
-    query: "(max-width: 700px)",
-  });
   const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>

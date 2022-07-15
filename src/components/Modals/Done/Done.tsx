@@ -10,6 +10,11 @@ const Done = () => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 700px)",
   });
+
+  const minWidth = useMediaQuery({
+    query: "(max-width: 370px)",
+  });
+
   const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>
@@ -32,7 +37,7 @@ const Done = () => {
       <div className={styles.text}>Transaction Submitted</div>
       <Button
         height={isPhoneOrPC ? "45px" : "71px"}
-        width={isPhoneOrPC ? "325px" : "524px"}
+        width={isPhoneOrPC ? minWidth ? "260px" : "325px" : "524px"}
         color={theme === "light" ? "transparentWhite" : "transparentBlack"}
         className={styles.button1}
       >
@@ -40,7 +45,7 @@ const Done = () => {
       </Button>
       <Button
         height={isPhoneOrPC ? "34px" : "56px"}
-        width={isPhoneOrPC ? "325px" : "524px"}
+        width={isPhoneOrPC ? minWidth ? "260px" : "325px" : "524px"}
         color={theme === "light" ? "black" : "white"}
         className={styles.button2}
       >

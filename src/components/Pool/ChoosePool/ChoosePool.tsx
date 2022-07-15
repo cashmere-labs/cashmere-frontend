@@ -1,10 +1,7 @@
-import { ComponentPropsWithoutRef } from "react";
 import { clsnm } from "utils/clsnm";
 import styles from "./ChoosePool.module.scss";
-import { DepositDashboard, Navbar, Pools, Footer } from "components";
-import { useModal, useTheme } from "hooks";
-import { Button, Layout } from "ui";
-import { useState } from "react";
+import { useTheme } from "hooks";
+import { Button } from "ui";
 import { useMediaQuery } from "react-responsive";
 import { usePoolStates } from "hooks";
 import { useSelector } from "react-redux";
@@ -16,9 +13,8 @@ const ChoosePool = () => {
   const minWidth = useMediaQuery({
     query: "(max-width: 350px)",
   });
-  const {resetPoolCount, increasePoolCount, changeWhichPool } = usePoolStates()
+  const { resetPoolCount, changeWhichPool } = usePoolStates();
   const whichPool = useSelector((state: any) => state.pool.whichPool);
-  const poolCount = useSelector((state:any) => state.pool.poolCount)
   const { theme } = useTheme();
   return (
     <div className={styles.whichPoolWrapper}>

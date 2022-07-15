@@ -1,5 +1,5 @@
 import styles from "./Pools.module.scss";
-import { useModal, useTheme } from "hooks";
+import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { useEffect, useState } from "react";
 import { PersonalData, GlobalData } from "./datas";
@@ -12,10 +12,11 @@ import { useSelector } from "react-redux";
 import { usePoolStates } from "hooks";
 
 const Pools = () => {
-  const whichPool = useSelector((state:any) => state.pool.whichPool);
-  const poolCount = useSelector((state:any) => state.pool.poolCount);
+  const whichPool = useSelector((state: any) => state.pool.whichPool);
+  const poolCount = useSelector((state: any) => state.pool.poolCount);
 
-  const {changeWhichPool, increasePoolCount, resetPoolCount} = usePoolStates()
+  const { changeWhichPool, increasePoolCount, resetPoolCount } =
+    usePoolStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });

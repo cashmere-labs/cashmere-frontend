@@ -1,0 +1,104 @@
+.wrapper {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .app {
+        width: 100%;
+        max-width: 1217px;
+        height: 90px;
+        border-radius: 24px;
+        background-color: var(--pool-bg);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 25px 0px 37px;
+
+        .text{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .text > :nth-child(1) {
+            color: var(--veCSM-text-1);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .text > :nth-child(2) {
+            color: var(--veCSM-text-2);
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+}
+
+.rewardWrapper {
+
+    .DBTexts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 640px;
+        width: 100%;
+        margin-left: 37px;
+
+        .DBText {
+            color: var(--pool-text-2);
+
+            .text2 {
+                font-weight: 700;
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .claimAll {
+        margin-right: 25px;
+        margin-left: 40px;
+
+    }
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        margin-top: 8px;
+        padding: 0px 8px;
+    }
+
+    .rewardWrapper {
+        width: 100%;
+        max-width: 830px;
+        height: 128px;
+        flex-direction: column;
+        justify-content: space-around;
+
+
+        .DBTexts {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 600px;
+            width: 100%;
+            height: 41px;
+            font-size: 14px;
+            margin-left: 0px;
+            padding: 0px 17px;
+
+            .DBText {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+
+        .claimAll {
+            margin-right: 0px;
+            margin-left: 0px;
+            max-width: 325px !important;
+            width: 95% !important;
+        }
+    }
+}

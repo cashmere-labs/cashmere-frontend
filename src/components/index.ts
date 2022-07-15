@@ -3,6 +3,8 @@ export { Footer } from "./Footer/Footer";
 export { Logo } from "./Logo/Logo";
 export { SwapBox } from "./SwapBox/SwapBox";
 export { Row } from "./Row/Row";
-export {DepositDashboard} from "./Pool/DepositDashboard/DepositDashboard";
-export {Pools} from "./Pool/Pools/Pools"
-export {ChoosePool} from "./Pool/ChoosePool/ChoosePool"
+export { DepositDashboard } from "./Pool/DepositDashboard/DepositDashboard";
+export { Pools } from "./Pool/Pools/Pools";
+export { ChoosePool } from "./Pool/ChoosePool/ChoosePool";
+export { ClaimDashboard } from "./VeCSM/ClaimDashboard/ClaimDashboard";
+export { ChooseValidator } from "./VeCSM/ChooseValidator/ChooseValidator";

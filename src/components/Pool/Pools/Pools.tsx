@@ -97,7 +97,7 @@ const DesktopTable = ({ whichPool, bodyCount }: Table) => {
       {whichPool
         ? PersonalData.map((data, i) => {
             return (
-              <div className={styles.tableBody}>
+              <div className={styles.tableBody} key={i}>
                 <div className={styles.line}></div>
                 <div className={styles.datas}>
                   <div className={styles.data1}>
@@ -131,7 +131,7 @@ const DesktopTable = ({ whichPool, bodyCount }: Table) => {
         : GlobalData.map((data, i) => {
             if (i < bodyCount) {
               return (
-                <div className={styles.tableBody}>
+                <div className={styles.tableBody} key={i}>
                   <div className={styles.line}></div>
                   <div className={styles.datas}>
                     <div className={styles.data1}>

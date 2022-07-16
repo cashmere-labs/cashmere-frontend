@@ -9,9 +9,6 @@ const ChooseValidator = () => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 650px)",
   });
-  const minWidth = useMediaQuery({
-    query: "(max-width: 350px)",
-  });
   const { resetValidatorCount, changeIsActive } =
     useVeCSMStates();
   const isActive = useSelector((state: any) => state.veCSM.isActive);

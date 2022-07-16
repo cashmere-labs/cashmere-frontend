@@ -50,6 +50,14 @@
     }
 }
 
+@media (max-width: 850px) {
+    .wrapper {
+        .whichValidatorWrapper {
+            margin: 25px 0px 0px 0px;
+            border-radius: 0px;
+        }
+    }
+}
 
 @media (max-width: 650px) {
     .wrapper {
@@ -57,12 +65,11 @@
         width: 100%;
 
         .whichValidatorWrapper {
-            margin: 32px 0px;
+            margin: 25px 0px 0px 0px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 56px;
-            border-radius: 16px;
             background-color: var(--veCSM-bg-2);
 
             .buttons {

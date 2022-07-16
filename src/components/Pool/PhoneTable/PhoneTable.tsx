@@ -16,7 +16,7 @@ interface Table {
 const PoolPhoneTitle = () => {
   return (
     <div className={styles.tableTitle}>
-      <div className={styles.title1}>Name</div>
+      <div>Name</div>
     </div>
   );
 };
@@ -78,6 +78,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                           <img
                             style={{ width: "25px", marginRight: "8.5px" }}
                             src={data.logo}
+                            alt="Logo"
                           ></img>
                         )}
                         <span className={styles.name}>{data.name}</span>
@@ -100,6 +101,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                         bodyOpenGlobal[i] && styles.reverse
                       )}
                       src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                      alt="Down button"
                     ></img>
                   </div>
                   {bodyOpenGlobal[i] === true && (
@@ -160,6 +162,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                             <img
                               style={{ width: "25px", marginRight: "8.5px" }}
                               src={data.logo}
+                              alt="Logo"
                             ></img>
                           )}
                           <span>{data.name}</span>
@@ -189,6 +192,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                           bodyOpenPersonal[i] && styles.reverse
                         )}
                         src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                        alt="down button"
                       ></img>
                     </div>
                     {bodyOpenPersonal[i] === true && (
@@ -244,6 +248,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                             <img
                               style={{ width: "25px", marginRight: "8.5px" }}
                               src={data.logo}
+                              alt="Logo"
                             ></img>
                           )}
                           <span>{data.name}</span>
@@ -273,6 +278,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                           bodyOpenPersonal[i] && styles.reverse
                         )}
                         src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                        alt="down button"
                       ></img>
                     </div>
                   </div>

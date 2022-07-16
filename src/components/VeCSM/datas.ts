@@ -1,7 +1,3 @@
-import DAI from "assets/pool/dai.png";
-import USDC from "assets/pool/usdc.png";
-import USDT from "assets/pool/usdt.png";
-
 export const ActiveValidators = [
   {
     name: "Cashmere DAO",

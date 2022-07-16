@@ -1,32 +1,36 @@
 .tableTitle {
-    height: 72px;
+    height: 46px;
     display: flex;
     align-items: center;
-    margin-left: 36.4px;
+    padding: 0px 8px;
     color: var(--veCSM-text-1);
     font-weight: 600;
+    font-size: 13px;
 }
 
 .tableTitle> :nth-child(1) {
-    width: 12%;
+    width: 11.25%;
 }
 
 .tableTitle> :nth-child(2) {
-    width: 22.5%;
+    width: 29.25%;
 }
 
 .tableTitle> :nth-child(3) {
-    width: 28.5%;
+    width: 36.50%;
 }
 
 .tableTitle> :nth-child(4) {
-    width: 37%;
+    display: flex;
+    justify-content: end;
+    width: 23%;
 }
 
 
 .tableBody {
     display: flex;
     flex-direction: column;
+    background-color: var(--veCSM-bg-1);
 
     .line {
         width: 100%;
@@ -36,38 +40,51 @@
 
     .datas{
         display: flex;
-        padding: 15.5px 0px;
-        padding-left: 36.4px;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: var(--veCSM-text-4);
     }
 
-
-    .datas> :nth-child(1) {
-        width: 12%;
-        font-weight: 600;
-        color: var(--veCSM-text-4);
-    }
-
-    .datas> :nth-child(2) {
-        width: 22.5%;
-    }
-
-    .datas> :nth-child(3) {
-        width: 28.5%;
-    }
-
-    .datas> :nth-child(4) {
-        width: 8%;
+    .datas > :nth-child(1) {
+        margin-top: 22.5px;
+        margin-bottom: 3.5px;
+        padding: 0px 10px;
+        width: 100%;
         display: flex;
-        justify-content: center;
+        font-size: 13px;
+        font-weight: 600;
     }
 
-    .datas> :nth-child(5) {
-        width: 29%;
-        padding-right: 25px;
+    .datas > :nth-child(2) {
+        margin: 15px 0px;
+        max-width: 600px;
+        width: 100%;
+        padding: 0px 8px;
+    }
+
+    .datas > :nth-child(1) > :nth-child(1){
+        width: 11.25%;
+        font-size: 14px;
+    }
+
+    .datas > :nth-child(1) > :nth-child(2){
+        width: 29.25%;
+    }
+
+    .datas > :nth-child(1) > :nth-child(3){
+        width: 36.50%;
+    }
+
+    .datas > :nth-child(1) > :nth-child(4){
+        width: 23%;
+        padding-right: 7px;
         display: flex;
         justify-content: end;
+
+    }
+
+    button{
+        width: 100% !important;
     }
 }

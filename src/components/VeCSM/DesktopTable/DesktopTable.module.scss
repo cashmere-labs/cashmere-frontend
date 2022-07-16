@@ -20,7 +20,11 @@
 }
 
 .tableTitle> :nth-child(4) {
-    width: 37%;
+    width: 9%;
+}
+
+.tableTitle> :nth-child(5) {
+    width: 28%;
 }
 
 
@@ -59,13 +63,13 @@
     }
 
     .datas> :nth-child(4) {
-        width: 8%;
+        width: 9%;
         display: flex;
         justify-content: center;
     }
 
     .datas> :nth-child(5) {
-        width: 29%;
+        width: 28%;
         padding-right: 25px;
         display: flex;
         justify-content: end;

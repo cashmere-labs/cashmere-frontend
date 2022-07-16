@@ -1,5 +1,4 @@
 import styles from "./DesktopTable.module.scss";
-import { useTheme } from "hooks";
 import { PersonalData, GlobalData } from "../datas";
 import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
@@ -23,7 +22,7 @@ const PoolDesktopTitle = () => {
 };
 
 const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
-  const { theme } = useTheme();
+  
   return (
     <>
       {whichPool
@@ -37,6 +36,7 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
                         <img
                           style={{ width: "25px", marginRight: "14.5px" }}
                           src={data.logo}
+                          alt="Logo of Token"
                         ></img>
                       )}
                       <span>{data.name}</span>
@@ -71,6 +71,7 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
                           <img
                             style={{ width: "25px", marginRight: "14.5px" }}
                             src={data.logo}
+                            alt="Logo"
                           ></img>
                         )}
                         <span>{data.name}</span>

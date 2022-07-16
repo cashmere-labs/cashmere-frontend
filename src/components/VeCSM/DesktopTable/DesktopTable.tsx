@@ -1,9 +1,7 @@
 import styles from "./DesktopTable.module.scss";
 import { useTheme } from "hooks";
 import { ActiveValidators, InactiveValidators } from "../datas";
-import { Icon, Tooltip, Button } from "ui";
-import { InfoIcon } from "assets/icons";
-import { clsnm } from "utils/clsnm";
+import { Button } from "ui";
 
 interface Table {
   whichValidator: boolean;
@@ -17,6 +15,7 @@ const VeCSMDesktopTitle = () => {
       <div>Name</div>
       <div>Voting Power</div>
       <div>Commission</div>
+      <div></div>
     </div>
   );
 };
@@ -49,6 +48,8 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                   </div>
                 </div>
               );
+            } else {
+              return(<></>)
             }
           })
         : ActiveValidators.map((data: any, i: number) => {
@@ -74,6 +75,8 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                   </div>
                 </div>
               );
+            } else {
+              return(<></>)
             }
           })}
     </>

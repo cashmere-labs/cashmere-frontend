@@ -12,7 +12,7 @@ const ChooseValidator = () => {
   const minWidth = useMediaQuery({
     query: "(max-width: 350px)",
   });
-  const { resetValidatorCount, changeIsActive, increaseValidatorCount } =
+  const { resetValidatorCount, changeIsActive } =
     useVeCSMStates();
   const isActive = useSelector((state: any) => state.veCSM.isActive);
   const { theme } = useTheme();

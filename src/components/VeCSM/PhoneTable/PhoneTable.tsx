@@ -2,15 +2,15 @@ import styles from "./PhoneTable.module.scss";
 import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { useEffect, useState } from "react";
-import { PersonalData, GlobalData } from "../datas";
+import { ActiveValidators, InactiveValidators } from "../datas";
 import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
 
 interface Table {
-  whichPool?: boolean;
-  bodyCount: number;
+  whichValidator: boolean;
+  validatorCount: number;
 }
 
 const VeCSMPhoneTitle = () => {
@@ -21,7 +21,7 @@ const VeCSMPhoneTitle = () => {
   );
 };
 
-const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
+const VeCSMPhoneTable = ({ whichValidator, validatorCount }: Table) => {
   const [bodyOpenGlobal, setBodyOpenGlobal] = useState<{
     [key: number]: boolean;
   }>({});
@@ -31,13 +31,13 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
 
   useEffect(() => {
     let firstArray = [];
-    for (let i = 0; i < GlobalData.length; i++) {
+    for (let i = 0; i < ActiveValidators.length; i++) {
       firstArray[i] = false;
     }
     setBodyOpenGlobal(firstArray);
 
     firstArray = [];
-    for (let i = 0; i < PersonalData.length; i++) {
+    for (let i = 0; i < InactiveValidators.length; i++) {
       firstArray[i] = false;
     }
     setBodyOpenPersonal(firstArray);
@@ -58,9 +58,9 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
   const { theme } = useTheme();
   return (
     <>
-      {!whichPool
-        ? GlobalData.map((data, i) => {
-            if (i < bodyCount) {
+      {!whichValidator
+        ? ActiveValidators.map((data, i) => {
+            if (i < validatorCount) {
               return (
                 <div
                   className={clsnm(
@@ -74,12 +74,6 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                   <div className={styles.titles}>
                     <div className={styles.title}>
                       <div className={styles.logoAndName}>
-                        {data.logo && (
-                          <img
-                            style={{ width: "25px", marginRight: "8.5px" }}
-                            src={data.logo}
-                          ></img>
-                        )}
                         <span className={styles.name}>{data.name}</span>
                       </div>
                       <div className={styles.cRatio}>
@@ -105,18 +99,6 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                   {bodyOpenGlobal[i] === true && (
                     <div className={styles.openDatas}>
                       <div className={styles.openData}>
-                        <div className={styles.text1}>Network</div>
-                        <div>{data.network}</div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>Liquidity</div>
-                        <div>${data.liquidity}</div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>Volume (24h)</div>
-                        <div>${data.volume}</div>
-                      </div>
-                      <div className={styles.openData}>
                         <div className={styles.text1}>
                           VEAPR{" "}
                           <Tooltip
@@ -128,11 +110,9 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                             </Icon>
                           </Tooltip>
                         </div>
-                        <div>{data.veapr}%</div>
                       </div>
                       <div className={styles.openData}>
                         <div className={styles.text1}>My Total APR</div>
-                        <div>{data.myTotalApr}%</div>
                       </div>
                     </div>
                   )}
@@ -140,8 +120,8 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
               );
             }
           })
-        : PersonalData.map((data, i) => {
-            if (i < bodyCount) {
+        : InactiveValidators.map((data, i) => {
+            if (i < validatorCount) {
               if (bodyOpenPersonal[i]) {
                 return (
                   <div
@@ -156,12 +136,6 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                     <div className={styles.titles}>
                       <div className={styles.title}>
                         <div className={styles.logoAndName}>
-                          {data.logo && (
-                            <img
-                              style={{ width: "25px", marginRight: "8.5px" }}
-                              src={data.logo}
-                            ></img>
-                          )}
                           <span>{data.name}</span>
                         </div>
                         <div className={styles.cRatio}>
@@ -194,18 +168,6 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                     {bodyOpenPersonal[i] === true && (
                       <div className={styles.openDatas}>
                         <div className={styles.openData}>
-                          <div className={styles.text1}>Network</div>
-                          <div>{data.network}</div>
-                        </div>
-                        <div className={styles.openData}>
-                          <div className={styles.text1}>Liquidity</div>
-                          <div>${data.liquidity}</div>
-                        </div>
-                        <div className={styles.openData}>
-                          <div className={styles.text1}>Volume (24h)</div>
-                          <div>${data.volume}</div>
-                        </div>
-                        <div className={styles.openData}>
                           <div className={styles.text1}>
                             VEAPR{" "}
                             <Tooltip
@@ -217,11 +179,9 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                               </Icon>
                             </Tooltip>
                           </div>
-                          <div>{data.veapr}%</div>
                         </div>
                         <div className={styles.openData}>
                           <div className={styles.text1}>My Total APR</div>
-                          <div>{data.myTotalApr}%</div>
                         </div>
                       </div>
                     )}
@@ -240,12 +200,6 @@ const VeCSMPhoneTable = ({ whichPool, bodyCount }: Table) => {
                     <div className={styles.titles}>
                       <div className={styles.title}>
                         <div className={styles.logoAndName}>
-                          {data.logo && (
-                            <img
-                              style={{ width: "25px", marginRight: "8.5px" }}
-                              src={data.logo}
-                            ></img>
-                          )}
                           <span>{data.name}</span>
                         </div>
                         <div className={styles.cRatio}>

@@ -30,7 +30,6 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
         ? PersonalData.map((data, i) => {
             return (
               <div className={styles.tableBody} key={i}>
-                <div className={styles.line}></div>
                 <div className={styles.datas}>
                   <div className={styles.data1}>
                     <span className={styles.logoAndName}>

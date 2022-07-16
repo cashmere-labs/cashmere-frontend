@@ -1,11 +1,11 @@
-import styles from "./Pools.module.scss";
+import styles from "./Validators.module.scss";
 import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { PersonalData, GlobalData } from "../datas";
+import { ActiveValidators, InactiveValidators } from "../datas";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "ui";
 import { useSelector } from "react-redux";
-import { usePoolStates } from "hooks";
+import { useVeCSMStates } from "hooks";
 import {
   VeCSMDesktopTable,
   VeCSMDesktopTitle,
@@ -14,10 +14,14 @@ import {
 } from "components";
 
 const Validators = () => {
-  const whichPool = useSelector((state: any) => state.pool.whichPool);
-  const poolCount = useSelector((state: any) => state.pool.poolCount);
+  const whichValidator = useSelector(
+    (state: any) => state.veCSM.isActive
+  );
+  const validatorCount = useSelector(
+    (state: any) => state.veCSM.validatorCount
+  );
 
-  const { increasePoolCount } = usePoolStates();
+  const { increaseValidatorCount } = useVeCSMStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
@@ -27,21 +31,27 @@ const Validators = () => {
       <div className={styles.dashboard}>
         {isPhoneOrLaptop ? <VeCSMPhoneTitle /> : <VeCSMDesktopTitle />}
         {isPhoneOrLaptop ? (
-          <VeCSMPhoneTable whichPool={whichPool} bodyCount={poolCount} />
+          <VeCSMPhoneTable
+            whichValidator={whichValidator}
+            validatorCount={validatorCount}
+          />
         ) : (
-          <VeCSMDesktopTable whichPool={whichPool} bodyCount={poolCount} />
+          <VeCSMDesktopTable
+            whichValidator={whichValidator}
+            validatorCount={validatorCount}
+          />
         )}
       </div>
       <div className={styles.footer}>
         The base emission rate is currently 1.5 CSM per second.
       </div>
-      {whichPool
-        ? PersonalData.length > poolCount && (
+      {whichValidator
+        ? InactiveValidators.length > validatorCount && (
             <div className={styles.more}>
               <Button
                 height="40px"
                 width="156px"
-                onClick={() => increasePoolCount()}
+                onClick={() => increaseValidatorCount()}
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
@@ -52,13 +62,13 @@ const Validators = () => {
               </Button>
             </div>
           )
-        : GlobalData.length > poolCount && (
+        : ActiveValidators.length > validatorCount && (
             <div className={styles.more}>
               <Button
                 height="40px"
                 width="156px"
                 fontSize="fs16"
-                onClick={() => increasePoolCount()}
+                onClick={() => increaseValidatorCount()}
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,

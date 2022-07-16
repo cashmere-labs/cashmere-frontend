@@ -1,12 +1,3 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0px 25px;
-}
-
 .whichPoolWrapper {
     max-width: 1217px;
     width: 100%;
@@ -57,15 +48,12 @@
 
 
 @media (max-width: 850px) {
-    .wrapper {
-        padding: 0px 0px;
-    }
 
     .whichPoolWrapper {
         max-width: 850px;
 
         .titleWrapper {
-            margin: 17px 0px 0px 0px;
+            margin: 20px 0px 0px 0px;
             border-radius: 0px;
 
             .buttons {
@@ -92,9 +80,6 @@
 
 
 @media (max-width: 370px) {
-    .wrapper {
-        padding: 0px 0px;
-    }
 
     .whichPoolWrapper {
         max-width: 850px;

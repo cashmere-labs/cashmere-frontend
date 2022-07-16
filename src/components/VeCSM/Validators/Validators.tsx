@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { usePoolStates } from "hooks";
 import { PoolPhoneTable, PoolPhoneTitle, PoolDesktopTable, PoolDesktopTitle } from "components";
 
-const Pools = () => {
+const Validators = () => {
   const whichPool = useSelector((state: any) => state.pool.whichPool);
   const poolCount = useSelector((state: any) => state.pool.poolCount);
 
@@ -68,4 +68,4 @@ const Pools = () => {
   );
 };
 
-export { Pools };
+export { Validators };

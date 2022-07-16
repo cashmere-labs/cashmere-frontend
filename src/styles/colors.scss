@@ -29,6 +29,9 @@ body.light {
   --swap-badge-bg: #f4f4f5;
   --swap-badge-border: rgb(52, 52, 52);
   --swap-divider: black;
+  --swap-slippage-input-bg: #eaeaea;
+  --swap-settings-divider: inset 1px 1px 2px #ffffffc3, 1px 2px 2px #00000012;
+  --swap-settings-divider-bg: #f8f8f8 0% 0% no-repeat padding-box;
 
   // Select
   --select-border: #ededed;
@@ -126,6 +129,9 @@ body.dark {
   --swap-divider: #ffffff;
   --swap-badge-bg: #1a1a1a;
   --swap-badge-border: #383838;
+  --swap-slippage-input-bg: #1a1a1a;
+  --swap-settings-divider: inset 1px 1px 2px #55555529, 0px 1px 2px #00000003;
+  --swap-settings-divider-bg: #343434;
 
   // Select
   --select-border: #383838;
@@ -179,7 +185,7 @@ body.dark {
   --veCSM-bg-1: #232323;
   --veCSM-bg-2: #232323;
   --veCSM-text-1: #adadad;
-  --veCSM-text-2: #FFFFFF;
+  --veCSM-text-2: #ffffff;
   --veCSM-text-3: white;
   --veCSM-text-4: white;
   --veCSM-text-5: #2D2D2D;
@@ -194,8 +200,6 @@ body.dark {
   --DAO-text-3: white;
   --DAO-text-4: white;
   --DAO-text-5: #868686;
-
-
 }
 
 body {

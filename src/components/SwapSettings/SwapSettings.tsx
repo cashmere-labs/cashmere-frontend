@@ -6,6 +6,8 @@ import { ModalController } from "hooks/useModal";
 import { Icon, Modal, Radio, Tooltip } from "ui";
 import styles from "./SwapSettings.module.scss";
 
+const regexp = /^-?\d*\.?\d*$/;
+
 export const SwapSettings = ({
   modal,
   swapSettings,
@@ -35,6 +37,8 @@ export const SwapSettings = ({
         <Row>
           <div>
             <Radio
+              isChecked={swapSettings.swapSlippage === "0.0"}
+              onClick={() => swapSettings.setSwapSlippage("0.0")}
               className={styles.radio}
               label={<SwapSettingsBadge content="0.0%" />}
               labelPlacement="right"
@@ -42,6 +46,8 @@ export const SwapSettings = ({
           </div>
           <div>
             <Radio
+              isChecked={swapSettings.swapSlippage === "0.5"}
+              onClick={() => swapSettings.setSwapSlippage("0.5")}
               className={styles.radio}
               label={<SwapSettingsBadge content="0.5%" />}
               labelPlacement="right"
@@ -49,6 +55,8 @@ export const SwapSettings = ({
           </div>
           <div>
             <Radio
+              isChecked={swapSettings.swapSlippage === "1"}
+              onClick={() => swapSettings.setSwapSlippage("1")}
               label={<SwapSettingsBadge content="1%" />}
               labelPlacement="right"
             />
@@ -76,13 +84,17 @@ export const SwapSettings = ({
         <Row marginBottom={12}>
           <div>
             <Radio
+              onClick={() => swapSettings.setWithdrawSlippage("0.0")}
               className={styles.radio}
               label={<SwapSettingsBadge content="0.0%" />}
               labelPlacement="right"
+              isChecked={swapSettings.withdrawSlippage === "0.0"}
             />
           </div>
           <div>
             <Radio
+              isChecked={swapSettings.withdrawSlippage === "0.5"}
+              onClick={() => swapSettings.setWithdrawSlippage("0.5")}
               className={styles.radio}
               label={<SwapSettingsBadge content="0.5%" />}
               labelPlacement="right"
@@ -90,6 +102,8 @@ export const SwapSettings = ({
           </div>
           <div>
             <Radio
+              isChecked={swapSettings.withdrawSlippage === "1"}
+              onClick={() => swapSettings.setWithdrawSlippage("1")}
               label={<SwapSettingsBadge content="1%" />}
               labelPlacement="right"
             />
@@ -115,6 +129,8 @@ export const SwapSettings = ({
         <Row>
           <div>
             <Radio
+              onClick={() => swapSettings.setWithDrawInOtherTokens(false)}
+              isChecked={!swapSettings.withDrawInOtherTokens}
               className={styles.radio}
               label={<SwapSettingsBadge content="No" />}
               labelPlacement="right"
@@ -122,6 +138,8 @@ export const SwapSettings = ({
           </div>
           <div>
             <Radio
+              onClick={() => swapSettings.setWithDrawInOtherTokens(true)}
+              isChecked={swapSettings.withDrawInOtherTokens}
               className={styles.radio}
               label={<SwapSettingsBadge content="Yes" />}
               labelPlacement="right"
@@ -148,6 +166,23 @@ export const SwapSettings = ({
           </Tooltip>
         </Row>
       </Column>
+      <Row>
+        <input
+          value={swapSettings.deadline}
+          onChange={(e) => {
+            if (
+              !regexp.test(e.target.value) ||
+              e.target.value.includes("-") ||
+              e.target.value.length > 2
+            ) {
+              return;
+            }
+            swapSettings.setDeadline(e.target.value);
+          }}
+          className={styles.input}
+        />
+        <span>Seconds</span>
+      </Row>
     </Modal>
   );
 };

@@ -9,7 +9,7 @@ interface Table {
   bodyCount: number;
 }
 
-const PoolDesktopTitle = () => {
+const VeCSMDesktopTitle = () => {
   return (
     <div className={styles.tableTitle}>
       <div className={styles.title1}>Name</div>
@@ -22,7 +22,7 @@ const PoolDesktopTitle = () => {
   );
 };
 
-const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
+const VeCSMDesktopTable = ({ whichPool, bodyCount }: Table) => {
   const { theme } = useTheme();
   return (
     <>
@@ -99,4 +99,4 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
   );
 };
 
-export { PoolDesktopTable, PoolDesktopTitle };
+export { VeCSMDesktopTable, VeCSMDesktopTitle };

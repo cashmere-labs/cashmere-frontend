@@ -6,7 +6,12 @@ import { useMediaQuery } from "react-responsive";
 import { Button } from "ui";
 import { useSelector } from "react-redux";
 import { usePoolStates } from "hooks";
-import { PoolPhoneTable, PoolPhoneTitle, PoolDesktopTable, PoolDesktopTitle } from "components";
+import {
+  VeCSMDesktopTable,
+  VeCSMDesktopTitle,
+  VeCSMPhoneTable,
+  VeCSMPhoneTitle,
+} from "components";
 
 const Validators = () => {
   const whichPool = useSelector((state: any) => state.pool.whichPool);
@@ -20,11 +25,11 @@ const Validators = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
-        {isPhoneOrLaptop ? <PoolPhoneTitle /> : <PoolDesktopTitle />}
+        {isPhoneOrLaptop ? <VeCSMPhoneTitle /> : <VeCSMDesktopTitle />}
         {isPhoneOrLaptop ? (
-          <PoolPhoneTable whichPool={whichPool} bodyCount={poolCount} />
+          <VeCSMPhoneTable whichPool={whichPool} bodyCount={poolCount} />
         ) : (
-          <PoolDesktopTable whichPool={whichPool} bodyCount={poolCount} />
+          <VeCSMDesktopTable whichPool={whichPool} bodyCount={poolCount} />
         )}
       </div>
       <div className={styles.footer}>

@@ -1,7 +1,7 @@
 import { Footer, Navbar } from "components";
 import styles from "./DAO.module.scss";
 import { Layout } from "ui";
-import { ExecutingModal } from "components";
+import { ExecutedModal } from "components";
 
 const DAO = () => {
   return (
@@ -9,7 +9,7 @@ const DAO = () => {
       <Navbar />
       <div className={styles.wrapper}>
         <div>
-          <ExecutingModal />
+          <ExecutedModal />
         </div>
       </div>
       <Footer />

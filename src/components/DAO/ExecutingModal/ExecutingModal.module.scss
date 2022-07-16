@@ -208,6 +208,10 @@
 
     .infoRow> :nth-child(2) {
         width: 100%;
+
+        .tip {
+            display: flex;
+        }
     }
 
     .infoRow> :nth-child(2)> :nth-child(1) {

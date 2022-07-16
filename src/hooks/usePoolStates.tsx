@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setWhichPool, setPoolCount } from "store/slicers/pool";
+
 export const usePoolStates = () => {
   const poolCount = useSelector((state: any) => state.pool.poolCount);
   const dispatch = useDispatch();
 
-  const changeWhichPool = (newState:boolean) => {
+  const changeWhichPool = (newState: boolean) => {
     dispatch(setWhichPool(newState));
   };
 

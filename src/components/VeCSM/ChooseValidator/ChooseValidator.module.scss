@@ -1,24 +1,15 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0px 25px;
-}
-
-.whichPoolWrapper {
     max-width: 1217px;
     width: 100%;
 
-    .titleWrapper {
+    .whichValidatorWrapper {
         margin: 32px 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 56px;
         border-radius: 16px;
-        background-color: var(--pool-bg-2);
+        background-color: var(--veCSM-bg-2);
 
         .buttons {
             display: flex;
@@ -30,20 +21,24 @@
 
             .poolButtonOff {
                 background-color: transparent !important;
-                color: var(--pool-text-6);
+                color: var(--veCSM-text-3);
 
             }
         }
 
-        .TVLInfo {
-            margin-right: 25px;
-            color: var(--pool-text-2);
+        .BecomeValidator {
+            margin-right: 6px;
+            color: var(--veCSM-text-2);
             display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            height: 46px;
+            padding: 0px 19px;
+            border-radius: 10px;
 
-            .text2 {
-                font-weight: 600;
-                margin-left: 5px;
-
+            &:hover{
+                transform: scale(1.025);
             }
         }
     }

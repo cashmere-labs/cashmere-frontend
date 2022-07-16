@@ -1,0 +1,11 @@
+.wrapper{
+    background-color: black;
+}
+
+.wrapper > :nth-child(1){
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px;
+    width: 100%;
+
+}

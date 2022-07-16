@@ -108,7 +108,7 @@ const ExecutingModal = () => {
             placeholder="Amount"
             className={styles.input}
             extendLeft
-            hideBorder
+            hideBorder={true}
           />
           <Button
             height="25px"
@@ -124,8 +124,8 @@ const ExecutingModal = () => {
         </div>
         <div>
           <Button
-            height="34px"
-            width="300px"
+            height={isPhoneOrLaptop ? "34px" : "56px"}
+            width={isPhoneOrLaptop ? "300px" : "514px"}
             fontSize={"fs16"}
             fontWeight="fw600"
             onClick={() => {}}
@@ -134,8 +134,8 @@ const ExecutingModal = () => {
             Yes
           </Button>
           <Button
-            height="34px"
-            width="300px"
+            height={isPhoneOrLaptop ? "34px" : "56px"}
+            width={isPhoneOrLaptop ? "300px" : "514px"}
             fontSize={"fs16"}
             fontWeight="fw600"
             onClick={() => {}}

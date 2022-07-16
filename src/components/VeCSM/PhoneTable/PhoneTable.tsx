@@ -1,12 +1,7 @@
 import styles from "./PhoneTable.module.scss";
 import { useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { useEffect, useState } from "react";
 import { ActiveValidators, InactiveValidators } from "../datas";
-import DOWNBLACK from "assets/pool/down-icon-black.png";
-import DOWNWHITE from "assets/pool/down-icon-white.png";
-import { Icon, Tooltip } from "ui";
-import { InfoIcon } from "assets/icons";
+import { Icon, Tooltip, Button } from "ui";
 
 interface Table {
   whichValidator: boolean;
@@ -16,226 +11,71 @@ interface Table {
 const VeCSMPhoneTitle = () => {
   return (
     <div className={styles.tableTitle}>
-      <div className={styles.title1}>Name</div>
+      <div>Rank</div>
+      <div>Name</div>
+      <div>Voting Power</div>
+      <div>Commission</div>
     </div>
   );
 };
 
 const VeCSMPhoneTable = ({ whichValidator, validatorCount }: Table) => {
-  const [bodyOpenGlobal, setBodyOpenGlobal] = useState<{
-    [key: number]: boolean;
-  }>({});
-  const [bodyOpenPersonal, setBodyOpenPersonal] = useState<{
-    [key: number]: boolean;
-  }>({});
-
-  useEffect(() => {
-    let firstArray = [];
-    for (let i = 0; i < ActiveValidators.length; i++) {
-      firstArray[i] = false;
-    }
-    setBodyOpenGlobal(firstArray);
-
-    firstArray = [];
-    for (let i = 0; i < InactiveValidators.length; i++) {
-      firstArray[i] = false;
-    }
-    setBodyOpenPersonal(firstArray);
-  }, []);
-
-  const updateMyArray = (
-    oldArray: any,
-    setOldArray: any,
-    whichIndex: number
-  ) => {
-    let x: boolean = oldArray[whichIndex];
-    setOldArray((items: any) => {
-      return items.map((item: any, i: number) => {
-        return whichIndex === i ? !item : item;
-      });
-    });
-  };
   const { theme } = useTheme();
   return (
     <>
-      {!whichValidator
-        ? ActiveValidators.map((data, i) => {
+      {whichValidator
+        ? InactiveValidators.map((data: any, i: number) => {
             if (i < validatorCount) {
               return (
-                <div
-                  className={clsnm(
-                    bodyOpenGlobal[i] === true
-                      ? styles.openIt
-                      : styles.phoneTableWrapper
-                  )}
-                  key={i}
-                >
+                <div className={styles.tableBody} key={i}>
                   <div className={styles.line}></div>
-                  <div className={styles.titles}>
-                    <div className={styles.title}>
-                      <div className={styles.logoAndName}>
-                        <span className={styles.name}>{data.name}</span>
-                      </div>
-                      <div className={styles.cRatio}>
-                        <span>Compensation Ratio: %154.89</span>
-                        <Tooltip placement="top" content="Content coming here">
-                          <Icon size={16}>
-                            <InfoIcon />
-                          </Icon>
-                        </Tooltip>
-                      </div>
+                  <div className={styles.datas}>
+                    <div>{i + 1}</div>
+                    <div>{data.name}</div>
+                    <div>{data.votingPower} veCSM</div>
+                    <div>%{data.commission}</div>
+                    <div>
+                      <Button
+                        height="40px"
+                        width="156px"
+                        color={theme === "light" ? "transparentWhite" : "transparentBlack"}
+                        fontWeight="fw600"
+                      >
+                        Manage
+                      </Button>
                     </div>
-                    <img
-                      onClick={() =>
-                        updateMyArray(bodyOpenGlobal, setBodyOpenGlobal, i)
-                      }
-                      className={clsnm(
-                        styles.modalKey,
-                        bodyOpenGlobal[i] && styles.reverse
-                      )}
-                      src={theme === "light" ? DOWNBLACK : DOWNWHITE}
-                    ></img>
                   </div>
-                  {bodyOpenGlobal[i] === true && (
-                    <div className={styles.openDatas}>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>
-                          VEAPR{" "}
-                          <Tooltip
-                            placement="top"
-                            content="Content coming here"
-                          >
-                            <Icon size={16}>
-                              <InfoIcon />
-                            </Icon>
-                          </Tooltip>
-                        </div>
-                      </div>
-                      <div className={styles.openData}>
-                        <div className={styles.text1}>My Total APR</div>
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             }
           })
-        : InactiveValidators.map((data, i) => {
+        : ActiveValidators.map((data: any, i: number) => {
             if (i < validatorCount) {
-              if (bodyOpenPersonal[i]) {
-                return (
-                  <div
-                    className={clsnm(
-                      bodyOpenPersonal[i] === true
-                        ? styles.openIt
-                        : styles.phoneTableWrapper
-                    )}
-                    key={i}
-                  >
-                    <div className={styles.line}></div>
-                    <div className={styles.titles}>
-                      <div className={styles.title}>
-                        <div className={styles.logoAndName}>
-                          <span>{data.name}</span>
-                        </div>
-                        <div className={styles.cRatio}>
-                          <span>Compensation Ratio: %154.89</span>
-                          <Tooltip
-                            placement="top"
-                            content="Content coming here"
-                          >
-                            <Icon size={16}>
-                              <InfoIcon />
-                            </Icon>
-                          </Tooltip>
-                        </div>
-                      </div>
-                      <img
-                        onClick={() =>
-                          updateMyArray(
-                            bodyOpenPersonal,
-                            setBodyOpenPersonal,
-                            i
-                          )
-                        }
-                        className={clsnm(
-                          styles.modalKey,
-                          bodyOpenPersonal[i] && styles.reverse
-                        )}
-                        src={theme === "light" ? DOWNBLACK : DOWNWHITE}
-                      ></img>
-                    </div>
-                    {bodyOpenPersonal[i] === true && (
-                      <div className={styles.openDatas}>
-                        <div className={styles.openData}>
-                          <div className={styles.text1}>
-                            VEAPR{" "}
-                            <Tooltip
-                              placement="top"
-                              content="Content coming here"
-                            >
-                              <Icon size={14}>
-                                <InfoIcon />
-                              </Icon>
-                            </Tooltip>
-                          </div>
-                        </div>
-                        <div className={styles.openData}>
-                          <div className={styles.text1}>My Total APR</div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    className={clsnm(
-                      styles.phoneTableWrapper,
-                      bodyOpenPersonal[i] === true && styles.openIt
-                    )}
-                    key={i}
-                  >
-                    <div className={styles.line}></div>
-                    <div className={styles.titles}>
-                      <div className={styles.title}>
-                        <div className={styles.logoAndName}>
-                          <span>{data.name}</span>
-                        </div>
-                        <div className={styles.cRatio}>
-                          <span>Compensation Ratio: %154.89</span>
-                          <Tooltip
-                            placement="top"
-                            content="Content coming here"
-                          >
-                            <Icon size={16}>
-                              <InfoIcon />
-                            </Icon>
-                          </Tooltip>
-                        </div>
-                      </div>
-                      <img
-                        onClick={() =>
-                          updateMyArray(
-                            bodyOpenPersonal,
-                            setBodyOpenPersonal,
-                            i
-                          )
-                        }
-                        className={clsnm(
-                          styles.modalKey,
-                          bodyOpenPersonal[i] && styles.reverse
-                        )}
-                        src={theme === "light" ? DOWNBLACK : DOWNWHITE}
-                      ></img>
+              return (
+                <div className={styles.tableBody} key={i}>
+                  <div className={styles.line}></div>
+                  <div className={styles.datas}>
+                    <div>{i + 1}</div>
+                    <div>{data.name}</div>
+                    <div>{data.votingPower} veCSM</div>
+                    <div>%{data.commission}</div>
+                    <div>
+                      <Button
+                        height="40px"
+                        width="156px"
+                        color={theme === "light" ? "transparentWhite" : "transparentBlack"}
+                        fontWeight="fw600"
+                      >
+                        Manage
+                      </Button>
                     </div>
                   </div>
-                );
-              }
+                </div>
+              );
             }
           })}
     </>
   );
 };
 
-export { VeCSMPhoneTitle, VeCSMPhoneTable };
+export { VeCSMPhoneTable, VeCSMPhoneTitle };

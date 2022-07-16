@@ -23,6 +23,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   loading?: boolean;
   fontSize?: "fs12" |"fs14" | "fs16" | "fs18";
   fontWeight?: "fw400" | "fw500" | "fw600" | "fw700";
+  lineHeight?: "lhNormal" | "lh22"
 }
 
 const Button = ({
@@ -38,6 +39,7 @@ const Button = ({
   loading,
   fontSize = "fs14",
   fontWeight = "fw500",
+  lineHeight = "lh22",
   ...props
 }: ButtonProps) => {
   const { theme } = useTheme();
@@ -68,6 +70,7 @@ const Button = ({
           styles[textPosition],
           styles[fontSize],
           styles[fontWeight],
+          styles[lineHeight],
           fullwidth && styles["fullwidth"],
           loading && styles.loading
         )}

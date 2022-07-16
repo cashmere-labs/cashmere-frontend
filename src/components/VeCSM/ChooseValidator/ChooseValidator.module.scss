@@ -37,7 +37,7 @@
             padding: 0px 19px;
             border-radius: 10px;
 
-            &:hover{
+            &:hover {
                 transform: scale(1.025);
             }
         }
@@ -51,28 +51,52 @@
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 650px) {
     .wrapper {
-        padding: 0px 0px;
-    }
+        max-width: 1217px;
+        width: 100%;
 
-    .whichPoolWrapper {
-        max-width: 850px;
-
-        .titleWrapper {
-            margin: 17px 0px 0px 0px;
-            border-radius: 0px;
+        .whichValidatorWrapper {
+            margin: 32px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+            border-radius: 16px;
+            background-color: var(--veCSM-bg-2);
 
             .buttons {
-                margin-left: 19px;
+                display: flex;
+                margin-left: 6px;
+
+                .poolButtonOn {
+                    background-color: white !important;
+                }
+
+                .poolButtonOff {
+                    background-color: transparent !important;
+                    color: var(--veCSM-text-3);
+
+                }
             }
 
-            .TVLInfo {
-                margin-right: 19px;
-                font-size: 14px;
+            .BecomeValidator {
+                margin-right: 6px;
+                color: var(--veCSM-text-2);
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
+                font-size: 18px;
+                height: 36px;
+                padding: 0px 19px;
+                border-radius: 10px;
+                font-size: 14px;
+                width: 120px;
+
+                &:hover {
+                    transform: scale(1.025);
+                }
             }
         }
 
@@ -82,7 +106,6 @@
             border-radius: 25px;
         }
     }
-
 }
 
 

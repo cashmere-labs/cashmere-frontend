@@ -1,174 +1,73 @@
-@media (max-width: 850px) {
-    .tableTitle {
+.tableTitle {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    margin-left: 36.4px;
+    color: var(--veCSM-text-1);
+    font-weight: 600;
+}
+
+.tableTitle> :nth-child(1) {
+    width: 12%;
+}
+
+.tableTitle> :nth-child(2) {
+    width: 22.5%;
+}
+
+.tableTitle> :nth-child(3) {
+    width: 28.5%;
+}
+
+.tableTitle> :nth-child(4) {
+    width: 37%;
+}
+
+
+.tableBody {
+    display: flex;
+    flex-direction: column;
+
+    .line {
+        width: 100%;
+        height: 0;
+        border: solid 1px var(--veCSM-text-5);
+    }
+
+    .datas{
         display: flex;
+        padding: 15.5px 0px;
+        padding-left: 36.4px;
+        justify-content: center;
         align-items: center;
-        color: var(--pool-text-4);
+        color: var(--veCSM-text-4);
+    }
+
+
+    .datas> :nth-child(1) {
+        width: 12%;
         font-weight: 600;
-        height: 46.5px;
-        margin-left: 16px;
+        color: var(--veCSM-text-4);
     }
 
-    .phoneTableWrapper {
+    .datas> :nth-child(2) {
+        width: 22.5%;
+    }
+
+    .datas> :nth-child(3) {
+        width: 28.5%;
+    }
+
+    .datas> :nth-child(4) {
+        width: 8%;
         display: flex;
-        flex-direction: column;
-        height: 57px;
-
-        .line {
-            width: 100%;
-            height: 0;
-            border: solid 1px var(--pool-text-9);
-        }
-
-        .titles {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-
-            .title {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .logoAndName {
-                    margin-left: 16px;
-                    display: flex;
-                    align-items: center;
-                    font-weight: 600;
-                    font-size: 14px;
-                    color: var(--pool-text-6);
-                }
-
-                .cRatio {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: right;
-                    font-size: 13px;
-                    color: var(--pool-text-1);
-                }
-            }
-
-            .modalKey {
-                margin: 0px 8px;
-                width: 12px;
-
-                &:hover {
-                    transform: scale(1.5);
-                    transition: transform 0.1s;
-                }
-            }
-
-            .reverse {
-                transform: rotate(180deg);
-
-                &:hover {
-                    transform: scale(1.5) rotate(180deg);
-                    transition: transform 0.1s;
-
-                }
-            }
-        }
+        justify-content: center;
     }
 
-
-    .openIt {
+    .datas> :nth-child(5) {
+        width: 29%;
+        padding-right: 25px;
         display: flex;
-        flex-direction: column;
-        height: 264px;
-        background-color: var(--pool-bg);
-
-        .line {
-            width: 100%;
-            height: 0;
-            border: solid 1px var(--pool-text-9);
-        }
-
-        .openDatas {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin: 0px 16px;
-            margin-top: 9px;
-            height: 164px;
-
-
-
-            .openData {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                font-size: 14px;
-                color: var(--pool-text-3);
-
-                .text1 {
-                    color: var(--pool-text-4);
-                    font-weight: 600;
-                    display: flex;
-                    align-items: center;
-                    ;
-                    font-size: 14px;
-                }
-
-            }
-        }
-
-        .titles {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 15px 0px;
-
-            .title {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .logoAndName {
-                    margin-left: 16px;
-                    display: flex;
-                    align-items: center;
-
-                    .name {
-                        font-weight: 600;
-                        font-size: 14px;
-                        color: var(--pool-text-6);
-                    }
-                }
-
-                .cRatio {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    text-align: right;
-                    font-size: 13px;
-                    color: var(--pool-text-1);
-                }
-            }
-
-            .modalKey {
-                margin: 0px 8px;
-                width: 12px;
-
-                &:hover {
-                    transform: scale(1.5);
-                    transition: transform 0.1s;
-                }
-            }
-
-            .reverse {
-                transform: rotate(180deg);
-
-                &:hover {
-                    transform: scale(1.5) rotate(180deg);
-                    transition: transform 0.1s;
-
-                }
-            }
-        }
+        justify-content: end;
     }
-
 }

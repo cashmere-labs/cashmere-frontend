@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const ChooseValidator = () => {
   const isPhoneOrPC = useMediaQuery({
-    query: "(max-width: 850px)",
+    query: "(max-width: 650px)",
   });
   const minWidth = useMediaQuery({
     query: "(max-width: 350px)",
@@ -21,9 +21,9 @@ const ChooseValidator = () => {
       <div className={styles.whichValidatorWrapper}>
         <div className={styles.buttons}>
           <Button
-            height="46px"
-            width={isPhoneOrPC ? (minWidth ? "95px" : "102px") : "204px"}
-            fontSize={isPhoneOrPC ? (minWidth ? "fs12" : "fs14") : "fs18"}
+            height={isPhoneOrPC ? ("36px") : "46px"}
+            width={isPhoneOrPC ? ("102px") : "204px"}
+            fontSize={isPhoneOrPC ? ("fs14") : "fs18"}
             onClick={() => {
               changeIsActive(false);
               resetValidatorCount();
@@ -33,13 +33,14 @@ const ChooseValidator = () => {
               isActive ? styles.poolButtonOff : styles.poolButtonOn
             )}
             fontWeight={isActive ? "fw500" : "fw600"}
+            lineHeight="lhNormal"
           >
             Active Validators
           </Button>
           <Button
-            height="46px"
-            width={isPhoneOrPC ? (minWidth ? "95px" : "102px") : "204px"}
-            fontSize={isPhoneOrPC ? (minWidth ? "fs12" : "fs14") : "fs18"}
+            height={isPhoneOrPC ? ("36px") : "46px"}
+            width={isPhoneOrPC ? ("102px") : "204px"}
+            fontSize={isPhoneOrPC ? ("fs14") : "fs18"}
             onClick={() => {
               changeIsActive(true);
               resetValidatorCount();
@@ -49,6 +50,7 @@ const ChooseValidator = () => {
               !isActive ? styles.poolButtonOff : styles.poolButtonOn
             )}
             fontWeight={!isActive ? "fw500" : "fw600"}
+            lineHeight="lhNormal"
           >
             Inactive Validators
           </Button>

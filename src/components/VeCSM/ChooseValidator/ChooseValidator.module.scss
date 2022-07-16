@@ -1,0 +1,151 @@
+.wrapper {
+    max-width: 1217px;
+    width: 100%;
+
+    .whichValidatorWrapper {
+        margin: 32px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        border-radius: 16px;
+        background-color: var(--veCSM-bg-2);
+
+        .buttons {
+            display: flex;
+            margin-left: 6px;
+
+            .poolButtonOn {
+                background-color: white !important;
+            }
+
+            .poolButtonOff {
+                background-color: transparent !important;
+                color: var(--veCSM-text-3);
+
+            }
+        }
+
+        .BecomeValidator {
+            margin-right: 6px;
+            color: var(--veCSM-text-2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            height: 46px;
+            padding: 0px 19px;
+            border-radius: 10px;
+
+            &:hover {
+                transform: scale(1.025);
+            }
+        }
+    }
+
+    .bodyWrapper {
+        height: 535px;
+        background-color: var(--pool-bg);
+        border-radius: 25px;
+    }
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        .whichValidatorWrapper {
+            margin: 25px 0px 0px 0px;
+            border-radius: 0px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .wrapper {
+        max-width: 1217px;
+        width: 100%;
+
+        .whichValidatorWrapper {
+            margin: 25px 0px 0px 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+            background-color: var(--veCSM-bg-2);
+
+            .buttons {
+                display: flex;
+                margin-left: 6px;
+
+                .poolButtonOn {
+                    background-color: white !important;
+                }
+
+                .poolButtonOff {
+                    background-color: transparent !important;
+                    color: var(--veCSM-text-3);
+
+                }
+            }
+
+            .BecomeValidator {
+                margin-right: 6px;
+                color: var(--veCSM-text-2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 18px;
+                height: 36px;
+                padding: 0px 19px;
+                border-radius: 10px;
+                font-size: 14px;
+                width: 120px;
+
+                &:hover {
+                    transform: scale(1.025);
+                }
+            }
+        }
+
+        .bodyWrapper {
+            height: 535px;
+            background-color: var(--pool-bg);
+            border-radius: 25px;
+        }
+    }
+}
+
+
+@media (max-width: 370px) {
+    .wrapper {
+        padding: 0px 0px;
+    }
+
+    .whichPoolWrapper {
+        max-width: 850px;
+
+        .titleWrapper {
+            margin: 17px 0px 0px 0px;
+            border-radius: 0px;
+
+            .buttons {
+                margin-left: 19px;
+            }
+
+            .TVLInfo {
+                margin-right: 19px;
+                font-size: 12px;
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+
+        .bodyWrapper {
+            height: 535px;
+            background-color: var(--pool-bg);
+            border-radius: 25px;
+        }
+    }
+
+}

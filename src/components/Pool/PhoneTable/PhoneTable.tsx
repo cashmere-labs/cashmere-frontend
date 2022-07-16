@@ -1,179 +1,27 @@
-import styles from "./Pools.module.scss";
-import { useModal, useTheme } from "hooks";
+import styles from "./PhoneTable.module.scss";
+import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { useEffect, useState } from "react";
-import { PersonalData, GlobalData } from "./datas";
-import { useMediaQuery } from "react-responsive";
-import DOWNBLACK from "../../assets/pool/down-icon-black.png";
-import DOWNWHITE from "../../assets/pool/down-icon-white.png";
-import { Icon, Tooltip, Button } from "ui";
+import { PersonalData, GlobalData } from "../datas";
+import DOWNBLACK from "assets/pool/down-icon-black.png";
+import DOWNWHITE from "assets/pool/down-icon-white.png";
+import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
-interface Pools {
-  whichPool?: boolean;
-  bodyCount: number;
-  setBodyCount: any;
-}
-
-const Pools = ({ whichPool, bodyCount, setBodyCount }: Pools) => {
-  const isPhoneOrLaptop = useMediaQuery({
-    query: "(max-width: 850px)",
-  });
-  const { theme } = useTheme();
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.dashboard}>
-        {isPhoneOrLaptop ? <PhoneTitle /> : <DesktopTitle />}
-        {isPhoneOrLaptop ? (
-          <PhoneTable whichPool={whichPool} bodyCount={bodyCount} />
-        ) : (
-          <DesktopTable whichPool={whichPool} bodyCount={bodyCount} />
-        )}
-      </div>
-      <div className={styles.footer}>
-        The base emission rate is currently 1.5 CSM per second.
-      </div>
-      {whichPool
-        ? PersonalData.length > bodyCount && (
-            <div className={styles.more}>
-              <Button
-                height="40px"
-                width="156px"
-                onClick={() => setBodyCount(bodyCount + 10)}
-                color={theme === "light" ? "black" : "white"}
-                className={clsnm(
-                  styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
-                )}
-              >
-                more
-              </Button>
-            </div>
-          )
-        : GlobalData.length > bodyCount && (
-            <div className={styles.more}>
-              <Button
-                height="40px"
-                width="156px"
-                fontSize="fs16"
-                onClick={() => setBodyCount(bodyCount + 10)}
-                color={theme === "light" ? "black" : "white"}
-                className={clsnm(
-                  styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
-                )}
-              >
-                more
-              </Button>
-            </div>
-          )}
-    </div>
-  );
-};
 
 interface Table {
   whichPool?: boolean;
   bodyCount: number;
 }
 
-const DesktopTitle = () => {
+const PoolPhoneTitle = () => {
   return (
     <div className={styles.tableTitle}>
-      <div className={styles.title1}>Name</div>
-      <div className={styles.title2}>Network</div>
-      <div className={styles.title3}>Liquidity</div>
-      <div className={styles.title4}>Volume (24h)</div>
-      <div className={styles.title5}>VEAPR</div>
-      <div className={styles.title6}>My Total APR</div>
+      <div>Name</div>
     </div>
   );
 };
 
-const DesktopTable = ({ whichPool, bodyCount }: Table) => {
-  const { theme } = useTheme();
-  return (
-    <>
-      {whichPool
-        ? PersonalData.map((data, i) => {
-            return (
-              <div className={styles.tableBody}>
-                <div className={styles.line}></div>
-                <div className={styles.datas}>
-                  <div className={styles.data1}>
-                    <span className={styles.logoAndName}>
-                      {data.logo && (
-                        <img
-                          style={{ width: "25px", marginRight: "14.5px" }}
-                          src={data.logo}
-                        ></img>
-                      )}
-                      <span>{data.name}</span>
-                    </span>
-                    <span className={styles.cRatio}>
-                      Compensation Ratio: %154.89{" "}
-                      <Tooltip placement="top" content="Content coming here">
-                        <Icon size={16}>
-                          <InfoIcon />
-                        </Icon>
-                      </Tooltip>
-                    </span>
-                  </div>
-                  <div className={styles.data2}>{data.network}</div>
-                  <div className={styles.data3}>%{data.liquidity}</div>
-                  <div className={styles.data4}>%{data.volume}</div>
-                  <div className={styles.data5}>{data.veapr}%</div>
-                  <div className={styles.data6}>{data.myTotalApr}%</div>
-                </div>
-              </div>
-            );
-          })
-        : GlobalData.map((data, i) => {
-            if (i < bodyCount) {
-              return (
-                <div className={styles.tableBody}>
-                  <div className={styles.line}></div>
-                  <div className={styles.datas}>
-                    <div className={styles.data1}>
-                      <span className={styles.logoAndName}>
-                        {data.logo && (
-                          <img
-                            style={{ width: "25px", marginRight: "14.5px" }}
-                            src={data.logo}
-                          ></img>
-                        )}
-                        <span>{data.name}</span>
-                      </span>
-                      <span className={styles.cRatio}>
-                        <span>Compensation Ratio: %154.89</span>
-                        <Tooltip placement="top" content="Content coming here">
-                          <Icon size={16}>
-                            <InfoIcon />
-                          </Icon>
-                        </Tooltip>
-                      </span>
-                    </div>
-                    <div className={styles.data2}>{data.network}</div>
-                    <div className={styles.data3}>%{data.liquidity}</div>
-                    <div className={styles.data4}>%{data.volume}</div>
-                    <div className={styles.data5}>{data.veapr}%</div>
-                    <div className={styles.data6}>{data.myTotalApr}%</div>
-                  </div>
-                </div>
-              );
-            }
-          })}
-    </>
-  );
-};
-
-const PhoneTitle = () => {
-  return (
-    <div className={styles.tableTitle}>
-      <div className={styles.title1}>Name</div>
-    </div>
-  );
-};
-
-const PhoneTable = ({ whichPool, bodyCount }: Table) => {
+const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
   const [bodyOpenGlobal, setBodyOpenGlobal] = useState<{
     [key: number]: boolean;
   }>({});
@@ -230,6 +78,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                           <img
                             style={{ width: "25px", marginRight: "8.5px" }}
                             src={data.logo}
+                            alt="Logo"
                           ></img>
                         )}
                         <span className={styles.name}>{data.name}</span>
@@ -252,6 +101,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                         bodyOpenGlobal[i] && styles.reverse
                       )}
                       src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                      alt="Down button"
                     ></img>
                   </div>
                   {bodyOpenGlobal[i] === true && (
@@ -312,6 +162,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                             <img
                               style={{ width: "25px", marginRight: "8.5px" }}
                               src={data.logo}
+                              alt="Logo"
                             ></img>
                           )}
                           <span>{data.name}</span>
@@ -341,6 +192,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                           bodyOpenPersonal[i] && styles.reverse
                         )}
                         src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                        alt="down button"
                       ></img>
                     </div>
                     {bodyOpenPersonal[i] === true && (
@@ -396,6 +248,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                             <img
                               style={{ width: "25px", marginRight: "8.5px" }}
                               src={data.logo}
+                              alt="Logo"
                             ></img>
                           )}
                           <span>{data.name}</span>
@@ -425,6 +278,7 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
                           bodyOpenPersonal[i] && styles.reverse
                         )}
                         src={theme === "light" ? DOWNBLACK : DOWNWHITE}
+                        alt="down button"
                       ></img>
                     </div>
                   </div>
@@ -436,4 +290,4 @@ const PhoneTable = ({ whichPool, bodyCount }: Table) => {
   );
 };
 
-export { Pools, DesktopTable, DesktopTitle, PhoneTitle, PhoneTable };
+export { PoolPhoneTitle, PoolPhoneTable };

@@ -1,4 +1,5 @@
 .wrapper{
-    height: 1500px;
-    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

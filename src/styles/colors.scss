@@ -77,6 +77,15 @@ body.light {
   --waiting-text-1: #1f1f1f;
   --waiting-text-2: black;
   --waiting-border-1: #ededed;
+
+  // veCSM
+  --veCSM-bg-1: #fff;
+  --veCSM-bg-2: #efefef;
+  --veCSM-text-1: #adadad;
+  --veCSM-text-2: #1f1f1f;
+  --veCSM-text-3: black;
+  --veCSM-text-4: #0b0b0b;
+  --veCSM-text-5: #f5f5f5;
 }
 
 body.dark {
@@ -154,6 +163,15 @@ body.dark {
   --waiting-text-1: white;
   --waiting-text-2: white;
   --waiting-border-1: #383838;
+
+  // veCSM
+  --veCSM-bg-1: #232323;
+  --veCSM-bg-2: #232323;
+  --veCSM-text-1: #adadad;
+  --veCSM-text-2: #FFFFFF;
+  --veCSM-text-3: white;
+  --veCSM-text-4: white;
+  --veCSM-text-5: #2D2D2D;
 }
 
 body {

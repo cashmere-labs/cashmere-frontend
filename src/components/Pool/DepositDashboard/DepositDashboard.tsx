@@ -1,5 +1,5 @@
 import styles from "./DepositDashboard.module.scss";
-import { useModal, useTheme } from "hooks";
+import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button } from "ui";
 

@@ -14,11 +14,13 @@
     transform: scale(1.025);
     transition: 0.1s linear;
   }
+
   &.blue {
     background: linear-gradient(92.99deg, #01bffb 1.3%, #379aff 95.71%);
     box-shadow: inset -6px -4px 4px #016cdb, inset -2px 0px 21px #3e9afc,
       inset -30px -30px 60px #065ab0, inset -20px -20px 15px -12px #000000;
   }
+
   &.neutral {
     background: var(--neutral-button-bg);
   }
@@ -31,6 +33,7 @@
 
   &.ghost {
     background: transparent;
+
     &:hover {
       background: var(--neutral-button-bg);
     }
@@ -38,6 +41,7 @@
 
   &.red {
     background: #6f162e;
+
     &:hover {
       background: #621529;
     }
@@ -46,26 +50,28 @@
   &.white {
     background: white;
     color: #000000;
+
     &:hover {
       background: rgb(235, 235, 235);
     }
   }
 
-  &.transparentWhite{
+  &.transparentWhite {
     background: transparent;
     border: solid 1px #e5e5e5 !important;
     color: black !important;
   }
 
-  &.transparentBlack{
+  &.transparentBlack {
     background: transparent;
-    border: solid 1px #5D5D5D !important;
+    border: solid 1px #454545 !important;
     color: white !important;
   }
 
   &.black {
     background: black;
     color: white;
+
     &:hover {
       background: rgb(26, 26, 26);
     }
@@ -74,9 +80,11 @@
   &.left {
     justify-content: flex-start;
   }
+
   &.center {
     justify-content: center;
   }
+
   &.right {
     justify-content: flex-end;
   }
@@ -90,32 +98,40 @@
     pointer-events: none;
   }
 
-  .fs14{
+  .fs12 {
+    font-size: 12px;
+  }
+
+  .fs14 {
     font-size: 14px;
   }
 
-  .fs16{
+  .fs16 {
     font-size: 16px;
   }
 
-  .fs18{
+  .fs18 {
     font-size: 18px;
   }
 
-  .fw400{
+  .fw400 {
     font-weight: 400;
   }
 
-  .fw500{
+  .fw500 {
     font-weight: 500;
   }
 
-  .fw600{
+  .fw600 {
     font-weight: 600;
   }
 
-  .fw700{
+  .fw700 {
     font-weight: 700;
+  }
+
+  .lhNormal{
+    line-height: normal;
   }
 }
 
@@ -134,9 +150,11 @@
   &.blue {
     color: white;
   }
+
   &.pink {
     color: white;
   }
+
   &.neutral {
     color: var(--text);
   }

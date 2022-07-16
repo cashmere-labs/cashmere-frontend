@@ -25,3 +25,5 @@ export {
 } from "./VeCSM/PhoneTable/PhoneTable";
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
+export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";
+export { TokenOrNetworkRenderer } from "./TokenOrNetworkRenderer/TokenOrNetworkRenderer";

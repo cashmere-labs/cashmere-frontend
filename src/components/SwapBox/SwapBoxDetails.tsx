@@ -1,10 +1,11 @@
 import { InfoIcon, RotateIcon } from "assets/icons";
 import { Row } from "components/Row/Row";
 import { ReactNode } from "react";
+import { SwapDetailsData } from "types/swap";
 import { Icon, Tooltip } from "ui";
 import styles from "./SwapBox.module.scss";
 
-const SwapBoxDetails = ({ ...props }) => {
+const SwapBoxDetails = ({ data }: { data: SwapDetailsData }) => {
   const SwapContentBox = ({
     left,
     right,
@@ -31,7 +32,11 @@ const SwapBoxDetails = ({ ...props }) => {
         left={
           <Row>
             <span style={{ marginRight: "6px" }}>Rate after fee</span>
-            <Tooltip placement="top" content="Content coming here">
+            <Tooltip
+              padding="24px 36px"
+              placement="top"
+              content="Content coming here"
+            >
               <Icon size={16}>
                 <InfoIcon />
               </Icon>
@@ -46,7 +51,7 @@ const SwapBoxDetails = ({ ...props }) => {
               justifyContent: "flex-end",
             }}
           >
-            <span>1 UST = 1.017 USDT</span>
+            <span>{data.rataAfterFee}</span>
             <Icon
               style={{ color: `var(--icon-dark)`, marginLeft: "8px" }}
               hoverable
@@ -60,40 +65,54 @@ const SwapBoxDetails = ({ ...props }) => {
         left={
           <Row>
             <span style={{ marginRight: "6px" }}>Price Impact</span>
-            <Tooltip placement="top" content="Content coming here">
+            <Tooltip
+              padding="24px 36px"
+              placement="top"
+              content="Content coming here"
+            >
               <Icon size={16}>
                 <InfoIcon />
               </Icon>
             </Tooltip>
           </Row>
         }
-        right={<span style={{ whiteSpace: "nowrap" }}>1 UST = 1.017 USDT</span>}
+        right={<span style={{ whiteSpace: "nowrap" }}>{data.priceImpact}</span>}
       />
       <SwapContentBox
         left={
           <Row>
             <span style={{ marginRight: "6px" }}>Fee</span>
-            <Tooltip placement="top" content="Content coming here">
+            <Tooltip
+              padding="24px 36px"
+              placement="top"
+              content="Content coming here"
+            >
               <Icon size={16}>
                 <InfoIcon />
               </Icon>
             </Tooltip>
           </Row>
         }
-        right={<span style={{ whiteSpace: "nowrap" }}>1 UST = 1.017 USDT</span>}
+        right={<span style={{ whiteSpace: "nowrap" }}>{data.fee}</span>}
       />
       <SwapContentBox
         left={
           <Row>
             <span style={{ marginRight: "6px" }}>Minimum received</span>
-            <Tooltip placement="top" content="Content coming here">
+            <Tooltip
+              padding="24px 36px"
+              placement="top"
+              content="Content coming here"
+            >
               <Icon size={16}>
                 <InfoIcon />
               </Icon>
             </Tooltip>
           </Row>
         }
-        right={<span style={{ whiteSpace: "nowrap" }}>24.169.287 USDT</span>}
+        right={
+          <span style={{ whiteSpace: "nowrap" }}>{data.minimumReceived}</span>
+        }
       />
     </>
   );

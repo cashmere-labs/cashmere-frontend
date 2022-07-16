@@ -6,16 +6,24 @@ import { useSwapSettings } from "components/SwapSettings/useSwapSettings";
 import { Aurora, Polygon } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
 import { useModal, useTheme } from "hooks";
-import React, { ReactElement, useState } from "react";
+import { ReactElement, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
-import { Token } from "types/token";
+import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
 import { Icon, Select, Option, Input, Button } from "ui";
 import styles from "./SwapBox.module.scss";
+import { useAccount, useConnection } from "ethylene/hooks";
 
 const SwapBox = () => {
+  const { auth } = useAccount();
+  const { connect } = useConnection();
+
   const tokenOptions = [Tetherus, Dai];
   const networkOptions = [Polygon, Aurora];
+
+  const swapSettingsModal = useModal();
+  const swapConfirmationModal = useModal();
+  const swapSettings = useSwapSettings();
 
   const { theme } = useTheme();
   const [state, setState] = useState({
@@ -25,6 +33,9 @@ const SwapBox = () => {
     toto: Dai,
   });
 
+  /**
+   * @dev Reverse the from and to positions
+   */
   const reverse = () => {
     let _state = { ...state };
     _state.fromfrom = state.tofrom;
@@ -35,12 +46,56 @@ const SwapBox = () => {
     setState(_state);
   };
 
-  const swapSettingsModal = useModal();
-  const swapSettings = useSwapSettings();
+  /**
+   * @dev Handles swap action
+   */
+  const handleSwap = () => {
+    if (!auth) {
+      connect();
+      return;
+    }
+    swapConfirmationModal.open();
+  };
+
+  /**
+   * @dev Formats the swap button content
+   */
+  const getSwapButtonContent = () => {
+    if (!auth) return "Connect Wallet";
+    return "Swap";
+  };
+
+  /**
+   * @dev erc20Balance can be acquired a hook that is inside ethylene/hooks
+   *
+   * Check for docs:
+   * https://ethylene.itublockchain.com/docs/hooks/useERC20Balance
+   * const {balance} = useERC20Balance(props);
+   */
 
   return (
     <div className={styles.wrapper}>
       <SwapSettings modal={swapSettingsModal} swapSettings={swapSettings} />
+      <SwapConfirmation
+        data={{
+          rataAfterFee: "1 UST = 1.017 USDT",
+          priceImpact: "0.05%",
+          fee: "24.169.287 USDT",
+          minimumReceived: "15.6235 USDT",
+        }}
+        modalController={swapConfirmationModal}
+        swapSettings={swapSettings}
+        from={{
+          amount: "0",
+          network: state.fromfrom,
+          token: state.fromto,
+        }}
+        to={{
+          amount: "0",
+          network: state.tofrom,
+          token: state.toto,
+        }}
+      />
       <div className={styles.header}>
         <span style={{ color: `var(--text)`, fontSize: "16px" }}>Swap</span>
         <Icon
@@ -219,36 +274,25 @@ const SwapBox = () => {
         />
       </Row>
       {/* TO ENDS */}
-      <SwapBoxDetails />
+      <SwapBoxDetails
+        data={{
+          rataAfterFee: "1 UST = 1.017 USDT",
+          priceImpact: "0.05%",
+          fee: "24.169.287 USDT",
+          minimumReceived: "15.6235 USDT",
+        }}
+      />
       <Button
+        onClick={handleSwap}
         style={{ marginTop: "2rem", marginBottom: "1.5rem" }}
         height="56px"
         width="100%"
         color={theme === "dark" ? "white" : "black"}
       >
-        Swap
+        {getSwapButtonContent()}
       </Button>
       <PathRenderer path={[Aurora, Polygon]} />
     </div>
-  );
-};
-
-const TokenOrNetworkRenderer = ({
-  tokenOrNetwork,
-  imgSize = 24,
-}: {
-  tokenOrNetwork: Token | Network;
-  imgSize?: number;
-}) => {
-  return (
-    <Row style={{ width: "max-content" }} alignItems="center">
-      <img
-        style={{ marginRight: "8px" }}
-        width={imgSize}
-        src={tokenOrNetwork.imageUrl}
-      />
-      <span style={{ color: `var(--text)` }}>{tokenOrNetwork.name}</span>
-    </Row>
   );
 };
 

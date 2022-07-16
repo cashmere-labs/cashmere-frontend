@@ -6,6 +6,9 @@ export type ModalController = {
   close: () => void;
 };
 
+/**
+ * @dev Hook used to control modal state
+ */
 export const useModal = (): ModalController => {
   const [isOpen, setIsOpen] = useState(false);
 

@@ -21,7 +21,7 @@
   animation: main 0.2s linear;
   color: var(--text);
 
-  @media (max-width: 512px) {
+  @media (max-width: 768px) {
     max-width: 95vw !important;
   }
 }

@@ -7,9 +7,15 @@ interface TooltipProps {
   children: ReactNode;
   placement?: Placement;
   content: string;
+  padding?: string;
 }
 
-const Tooltip = ({ children, placement, content }: TooltipProps) => {
+const Tooltip = ({
+  children,
+  placement,
+  content,
+  padding = "8px 12px",
+}: TooltipProps) => {
   const { reference, floating, popperStyles } = usePopper({
     placement: placement,
     topDistance: 8,
@@ -52,6 +58,7 @@ const Tooltip = ({ children, placement, content }: TooltipProps) => {
         style={{
           ...popperStyles,
           opacity: isOpen ? 1 : 0,
+          padding: padding,
         }}
       >
         {content}

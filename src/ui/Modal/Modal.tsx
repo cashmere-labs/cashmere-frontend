@@ -12,6 +12,7 @@ type ModalProps = {
   closeOnClickOutside?: boolean;
   className?: string;
   bodyProps?: ComponentPropsWithoutRef<"div">;
+  width?: string;
 };
 
 const Modal = ({
@@ -21,6 +22,7 @@ const Modal = ({
   closeOnClickOutside = true,
   className,
   bodyProps = {},
+  width,
 }: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -45,6 +47,10 @@ const Modal = ({
         {...bodyProps}
         ref={outsideRef}
         className={clsnm(styles.body, className)}
+        style={{
+          width: width,
+          ...(bodyProps.style || {}),
+        }}
       >
         <Icon
           hoverable

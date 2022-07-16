@@ -15,6 +15,9 @@ export type SwapSettings = Readonly<{
   setDeadline: (to: string) => void;
 }>;
 
+/**
+ * @dev Hook used to get swap data and mutators
+ */
 export const useSwapSettings = (): SwapSettings => {
   const [swapSlippage, setSwapSlippage] = useState<SwapSlippagePercent>("0.5");
   const [withdrawSlippage, setWithdrawSlippage] =

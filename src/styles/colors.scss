@@ -28,10 +28,12 @@ body.light {
   --swap-box-border: #efefef;
   --swap-badge-bg: #f4f4f5;
   --swap-badge-border: rgb(52, 52, 52);
-  --swap-divider: black;
+  --swap-divider: #ededed;
   --swap-slippage-input-bg: #eaeaea;
   --swap-settings-divider: inset 1px 1px 2px #ffffffc3, 1px 2px 2px #00000012;
   --swap-settings-divider-bg: #f8f8f8 0% 0% no-repeat padding-box;
+  --swap-confirmation-bg: #f4f4f5;
+  --swap-confirmation-border: #ededed;
 
   // Select
   --select-border: #ededed;
@@ -67,8 +69,8 @@ body.light {
   --pool-text-9: #eaeaea;
 
   // Tooltip
-  --tooltip-bg: black;
-  --tooltip-color: white;
+  --tooltip-bg: white;
+  --tooltip-color: black;
 
   // Done
   --submitted-bg: #f4f4f5;
@@ -115,12 +117,14 @@ body.dark {
   // Swap
   --swap-box-bg: #232323;
   --swap-box-border: #383838;
-  --swap-divider: #ffffff;
+  --swap-divider: #383838;
   --swap-badge-bg: #1a1a1a;
   --swap-badge-border: #383838;
   --swap-slippage-input-bg: #1a1a1a;
   --swap-settings-divider: inset 1px 1px 2px #55555529, 0px 1px 2px #00000003;
   --swap-settings-divider-bg: #343434;
+  --swap-confirmation-bg: #1a1a1a;
+  --swap-confirmation-border: #383838;
 
   // Select
   --select-border: #383838;
@@ -156,8 +160,8 @@ body.dark {
   --pool-text-9: #727272;
 
   // Tooltip
-  --tooltip-bg: white;
-  --tooltip-color: black;
+  --tooltip-bg: black;
+  --tooltip-color: white;
 
   // Done
   --submitted-bg: #232323;

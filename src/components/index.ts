@@ -23,6 +23,8 @@ export {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "./VeCSM/PhoneTable/PhoneTable";
+export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";
+export { ExecutingModal } from "./DAO/ExecutingModal/ExecutingModal";
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
 export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";

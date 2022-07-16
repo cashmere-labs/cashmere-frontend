@@ -48,7 +48,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       },
       {
         name: "DAO",
-        url: PATHS.home,
+        url: PATHS.dao,
         soon: false,
         active: pathname.startsWith(PATHS.dao),
       },

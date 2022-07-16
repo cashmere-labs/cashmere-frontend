@@ -22,7 +22,7 @@ const PoolDesktopTitle = () => {
 };
 
 const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
-  
+
   return (
     <>
       {whichPool

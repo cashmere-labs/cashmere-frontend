@@ -12,6 +12,7 @@ interface InputProps extends ComponentPropsWithoutRef<"input"> {
   extendLeft?: boolean;
   hideLeftBorder?: boolean;
   hideRightBorder?: boolean;
+  hideBorder?: boolean,
   rightElClassName?: string;
   leftElClassName?: string;
 }
@@ -30,6 +31,7 @@ const Input = ({
   extendLeft = false,
   hideLeftBorder,
   hideRightBorder,
+  hideBorder,
   className,
   style,
   ...props
@@ -47,6 +49,7 @@ const Input = ({
           styles.input,
           hideLeftBorder && styles.hideLeftBorder,
           hideRightBorder && styles.hideRightBorder,
+          hideBorder && styles.hideBorder,
           extendLeft && styles.extendLeft,
           extendRight && styles.extendRight,
           rightEl && styles.rightEl,

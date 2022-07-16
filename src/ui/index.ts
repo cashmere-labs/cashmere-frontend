@@ -8,5 +8,3 @@ export { Select } from "./Select/Select";
 export { Option } from "./Select/Option";
 export { Input } from "./Input/Input";
 export { Tooltip } from "./Tooltip/Tooltip";
-export { Done } from "../components/Modals/Done/Done";
-export { Waiting } from "../components/Modals/Waiting/Waiting";

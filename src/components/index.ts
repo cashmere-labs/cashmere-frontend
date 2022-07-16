@@ -23,3 +23,5 @@ export {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "./VeCSM/PhoneTable/PhoneTable";
+export { Done } from "./Modals/Done/Done";
+export { Waiting } from "./Modals/Waiting/Waiting";

@@ -22,3 +22,5 @@ export {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "./VeCSM/PhoneTable/PhoneTable";
+export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";
+export { ExecutingModal } from "./DAO/ExecutingModal/ExecutingModal";

@@ -2,7 +2,14 @@ import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
 import { Swap, Pool, VeCSM, DAO } from "pages";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -28,10 +35,25 @@ function App() {
           <Route path={PATHS.dao} element={<DAO />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
+        <NavigationAnimator />
         <ToastContainer pauseOnHover={false} theme={theme} />
       </BrowserRouter>
     </>
   );
 }
+
+const NavigationAnimator = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.body.animate([{ opacity: 0.8 }, { opacity: 1 }], {
+      duration: 200,
+      fill: "forwards",
+    });
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
+
+  return null;
+};
 
 export default App;

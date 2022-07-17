@@ -132,7 +132,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
                   modal.close();
                   disconnect();
                 }}
-                color="pink"
+                color="black"
               >
                 Disconnect
               </Button>

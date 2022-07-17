@@ -16,6 +16,7 @@ body.light {
   --navbar-bg: #f5f5f5;
   --navbar-item: #ababab;
   --navbar-active: black;
+  --navbar-divider: #ededed;
 
   // Footer
   --footer-bg: #f0f0f0;
@@ -101,7 +102,7 @@ body.light {
   --DAO-text-2: #1f1f1f;
   --DAO-text-3: #363636;
   --DAO-text-4: black;
-  --DAO-text-5: #1f1f1f
+  --DAO-text-5: #1f1f1f;
 }
 
 body.dark {
@@ -118,6 +119,7 @@ body.dark {
   --navbar-bg: #232323;
   --navbar-item: #4a4a4a;
   --navbar-active: white;
+  --navbar-divider: #4a4a4a;
 
   //Footer
   --footer-bg: #232323;
@@ -192,7 +194,7 @@ body.dark {
   --veCSM-text-2: #ffffff;
   --veCSM-text-3: white;
   --veCSM-text-4: white;
-  --veCSM-text-5: #2D2D2D;
+  --veCSM-text-5: #2d2d2d;
 
   // DAO
   --DAO-bg-1: #232323;

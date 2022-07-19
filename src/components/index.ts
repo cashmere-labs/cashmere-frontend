@@ -29,3 +29,4 @@ export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
 export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";
 export { TokenOrNetworkRenderer } from "./TokenOrNetworkRenderer/TokenOrNetworkRenderer";
+export { ProposalModal} from "./DAO/ProposalModal/ProposalModal";

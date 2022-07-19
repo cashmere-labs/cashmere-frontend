@@ -24,7 +24,7 @@ interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   hideChevron?: boolean;
   hideLeftBorder?: boolean;
   hideRightBorder?: boolean;
-  height?: "58px";
+  height?: string;
 }
 
 const Select = ({

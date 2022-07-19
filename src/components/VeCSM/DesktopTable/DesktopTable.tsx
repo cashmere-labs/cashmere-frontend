@@ -2,6 +2,7 @@ import styles from "./DesktopTable.module.scss";
 import { useTheme } from "hooks";
 import { ActiveValidators, InactiveValidators } from "../datas";
 import { Button } from "ui";
+import { Fragment } from "react";
 
 interface Table {
   whichValidator: boolean;
@@ -49,7 +50,7 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                 </div>
               );
             } else {
-              return(<></>)
+              return(<Fragment key={i}></Fragment>)
             }
           })
         : ActiveValidators.map((data: any, i: number) => {
@@ -76,7 +77,7 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                 </div>
               );
             } else {
-              return(<></>)
+              return(<Fragment key={i}></Fragment>)
             }
           })}
     </>

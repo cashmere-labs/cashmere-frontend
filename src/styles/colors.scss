@@ -104,10 +104,13 @@ body.light {
   --DAO-text-4: black;
   --DAO-text-5: #1f1f1f;
 
-  // DAO Proposal
+  // DAO Proposal Modal
   --DAOProposal-bg-1: #fafafa;
   --DAOProposal-bg-2: #ededed;
   --DAOProposal-text-1: black;
+
+  // Become Validator Modal
+  --BecomeValidator-text-1: black;
 }
 
 body.dark {
@@ -212,10 +215,13 @@ body.dark {
   --DAO-text-4: white;
   --DAO-text-5: #868686;
 
-  // DAO Proposal
+  // DAO Proposal Modal
   --DAOProposal-bg-1: #1A1A1A;
   --DAOProposal-bg-2: #343434;
   --DAOProposal-text-1: white;
+
+  // Become Validator Modal
+  --BecomeValidator-text-1: white;
 }
 
 body {

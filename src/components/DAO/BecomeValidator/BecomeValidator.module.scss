@@ -1,0 +1,43 @@
+.wrapper{
+    max-width: 1291px;
+    width: 100%;
+    color: var(--BecomeValidator-text-1);
+
+    .title{
+        font-size: 20px;
+        font-weight: 500;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 19.5px;
+    }
+
+    .from{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 16.4px;
+    }
+
+    .from> :nth-child(1) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5.5px;
+    }
+
+    .commissionRate{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 51px;
+    }
+
+    .commissionRate> :nth-child(1) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5.5px;
+    }
+}

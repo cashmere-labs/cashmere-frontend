@@ -27,6 +27,7 @@ export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";
 export { ExecutingModal } from "./DAO/ExecutingModal/ExecutingModal";
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
+export { Warning } from "./Modals/Warning/Warning";
 export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";
 export { TokenOrNetworkRenderer } from "./TokenOrNetworkRenderer/TokenOrNetworkRenderer";
 export { ProposalModal } from "./DAO/ProposalModal/ProposalModal";

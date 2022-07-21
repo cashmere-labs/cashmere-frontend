@@ -3,15 +3,20 @@ export { Footer } from "./Footer/Footer";
 export { Logo } from "./Logo/Logo";
 export { SwapBox } from "./SwapBox/SwapBox";
 export { Row } from "./Row/Row";
-export { DepositDashboard } from "./Pool/DepositDashboard/DepositDashboard";
-export { Pools } from "./Pool/Pools/Pools";
+export { TokenOrNetworkRenderer } from "./TokenOrNetworkRenderer/TokenOrNetworkRenderer";
 export { Column } from "./Column/Column";
+
+// Pool
+export { Pools } from "./Pool/Pools/Pools";
+export { DepositDashboard } from "./Pool/DepositDashboard/DepositDashboard";
 export { ChoosePool } from "./Pool/ChoosePool/ChoosePool";
 export { PoolPhoneTable, PoolPhoneTitle } from "./Pool/PhoneTable/PhoneTable";
 export {
   PoolDesktopTable,
   PoolDesktopTitle,
 } from "./Pool/DesktopTable/DesktopTable";
+
+// veCSM
 export { ClaimDashboard } from "./VeCSM/ClaimDashboard/ClaimDashboard";
 export { ChooseValidator } from "./VeCSM/ChooseValidator/ChooseValidator";
 export { Validators } from "./VeCSM/Validators/Validators";
@@ -23,12 +28,16 @@ export {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "./VeCSM/PhoneTable/PhoneTable";
-export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";
-export { ExecutingModal } from "./DAO/ExecutingModal/ExecutingModal";
+
+// Modals
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
 export { Warning } from "./Modals/Warning/Warning";
+
+// DAO
+export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";
+export { ExecutingModal } from "./DAO/ExecutingModal/ExecutingModal";
 export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";
-export { TokenOrNetworkRenderer } from "./TokenOrNetworkRenderer/TokenOrNetworkRenderer";
 export { ProposalModal } from "./DAO/ProposalModal/ProposalModal";
 export { BecomeValidator } from "./DAO/BecomeValidator/BecomeValidator";
+export { UnlockModal } from "./DAO/UnlockModal/UnlockModal";

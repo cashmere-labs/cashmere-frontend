@@ -8,8 +8,10 @@
     border-radius: 19px;
     border: solid 1px #fceabb;
     background-color: #fff2cf;
+    padding-left: 5px;
+    padding-right: 5px;
 
-    @media(max-width: 500px){
+    @media(max-width: 500px) {
         max-width: 325px;
         padding-top: 18.5px;
     }
@@ -31,7 +33,7 @@
         padding-bottom: 2px;
         border-radius: 50%;
 
-        @media(max-width: 500px){
+        @media(max-width: 500px) {
             width: 24px;
             height: 24px;
             padding-bottom: 1.5px;
@@ -44,7 +46,7 @@
         color: #836a27;
         margin-left: 7.3px;
 
-        @media(max-width: 500px){
+        @media(max-width: 500px) {
             font-size: 16px;
         }
     }
@@ -56,9 +58,8 @@
     color: #836a27;
     margin-bottom: 26px;
 
-    @media(max-width: 500px){
+    @media(max-width: 500px) {
         font-size: 14px;
         margin-bottom: 20px;
     }
 }
-

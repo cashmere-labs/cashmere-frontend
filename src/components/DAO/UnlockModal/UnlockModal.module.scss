@@ -1,0 +1,124 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--UnlockModal-text-1);
+
+    @media(max-width:500px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 33px;
+
+        @media(max-width: 500) {
+            font-size: 16px;
+            margin-bottom: 19px;
+        }
+    }
+
+    .body {
+        margin-top: 29px;
+        width: 100%;
+        margin-bottom: 17.5px;
+
+        @media(max-width: 500) {
+            margin-top: 18.5px;
+        }
+
+        .balance {
+            margin-bottom: 9px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--UnlockModal-text-2);
+            text-align: right;
+
+            @media(max-width: 500) {
+                margin-bottom: 7px;
+                font-size: 12px;
+            }
+        }
+
+        .box {
+            max-width: 524px;
+            width: 100%;
+            height: 71px;
+            border-radius: 8px;
+            border: solid 1px #ededed;
+            background-color: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--UnlockModal-bg-2);
+            border: 1px solid var(--UnlockModal-bg-3);
+            position: relative;
+
+            .logo {
+                display: flex;
+                align-items: center;
+                padding-right: 10px;
+
+                img {
+                    width: 28px;
+                    height: 28px;
+                    margin-left: 19px;
+                    margin-right: 12px;
+
+                    @media(max-width: 500) {
+                        margin-left: 15px;
+                        margin-right: 10px;
+                    }
+                }
+
+                span {
+                    font-weight: 500;
+
+                    @media(max-width: 500) {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .input {
+                max-width: 261px;
+                width: 100%;
+                border-radius: 0px;
+
+                @media(max-width: 500) {
+                    max-width: 200px;
+                }
+
+            }
+
+            .maxButton {
+                position: absolute;
+                top: 23px;
+                right: 20px;
+            }
+        }
+    }
+
+    .remainig {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+        margin-bottom: 30px;
+
+        @media(max-width: 500) {
+            margin-bottom: 17px;
+            font-size: 13px;
+        }
+    }
+
+    .remainig> :nth-child(1) {
+        color: var(--UnlockModal-text-2);
+    }
+
+    .button {
+        width: 100%;
+    }
+}

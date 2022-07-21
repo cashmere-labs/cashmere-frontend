@@ -41,3 +41,4 @@ export { SwapConfirmation } from "./SwapConfirmation/SwapConfirmation";
 export { ProposalModal } from "./DAO/ProposalModal/ProposalModal";
 export { BecomeValidator } from "./DAO/BecomeValidator/BecomeValidator";
 export { UnlockModal } from "./DAO/UnlockModal/UnlockModal";
+export { LockModal } from "./DAO/LockModal/LockModal";

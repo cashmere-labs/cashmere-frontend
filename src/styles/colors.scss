@@ -122,6 +122,10 @@ body.light {
   --UnlockModal-bg-3: #ededed;
   --UnlockModal-text-1: black;
   --UnlockModal-text-2: #929292;
+
+  // Lock Modal
+  --LockModal-bg-1: #ededed;
+  --LockModal-text-1: black;
 }
 
 body.dark {
@@ -244,6 +248,10 @@ body.dark {
   --UnlockModal-bg-3: #383838;
   --UnlockModal-text-1: white;
   --UnlockModal-text-2: #919191;
+
+  // Lock Modal
+  --LockModal-bg-1: #383838;
+  --LockModal-text-1: white;
 }
 
 body {

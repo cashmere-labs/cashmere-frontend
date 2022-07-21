@@ -1,4 +1,4 @@
-import { Footer, Navbar, UnlockModal } from "components";
+import { Footer, Navbar, LockModal } from "components";
 import styles from "./DAO.module.scss";
 import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
@@ -15,7 +15,7 @@ const DAO = () => {
         <button onClick={unlockModal.open}> acil susam acil</button>
       </div>
       <div className={styles.wrapper}>
-        <UnlockModal modal={unlockModal} />
+        <LockModal modal={unlockModal} />
       </div>
       <Footer />
     </Layout>

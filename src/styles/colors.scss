@@ -110,7 +110,12 @@ body.light {
   --DAOProposal-text-1: black;
 
   // Become Validator Modal
+  --BecomeValidator-bg-1: white;
+  --BecomeValidator-bg-2: #fafafa;
+  --BecomeValidator-bg-3: #ededed;
   --BecomeValidator-text-1: black;
+  --BecomeValidator-text-2: #8F8F8F;
+  --BecomeValidator-text-3: white;
 }
 
 body.dark {
@@ -221,7 +226,12 @@ body.dark {
   --DAOProposal-text-1: white;
 
   // Become Validator Modal
+  --BecomeValidator-bg-1: #232323;
+  --BecomeValidator-bg-2: #1A1A1A;
+  --BecomeValidator-bg-3: #383838;
   --BecomeValidator-text-1: white;
+  --BecomeValidator-text-2: #8a8a8a;
+  --BecomeValidator-text-3: black;
 }
 
 body {

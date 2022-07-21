@@ -47,6 +47,12 @@
     }
   }
 
+  &.gray {
+    background: #E6E6E6;
+    border: solid 1px #e5e5e5 !important;
+    color: black !important;
+  }
+
   &.white {
     background: white;
     color: #000000;

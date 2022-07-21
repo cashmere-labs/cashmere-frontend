@@ -11,6 +11,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
     | "pink"
     | "ghost"
     | "red"
+    | "gray"
     | "black"
     | "white"
     | "transparentWhite"

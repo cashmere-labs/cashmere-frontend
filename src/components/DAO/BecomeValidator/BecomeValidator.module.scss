@@ -5,6 +5,11 @@
     padding-left: 35px;
     padding-right: 35px;
 
+    @media(max-width: 950px){
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
     .title {
         font-size: 20px;
         font-weight: 500;
@@ -49,7 +54,11 @@
         padding-top: 25px;
         padding-bottom: 36px;
         padding-left: 15px;
+        margin-bottom: 22px;
 
+        @media(max-width: 950px){
+            margin-bottom: 16px;
+        }
     }
 
     .body> :nth-child(1) {
@@ -112,8 +121,6 @@
             }
         }
 
-
-
         .vecsmInput {
             display: flex;
             flex-direction: column;
@@ -173,8 +180,8 @@
             margin-left: 23px;
             padding-top: 16px;
             margin-right: 15px;
+            width: 100%;
         }
-
     }
 
     .duration {
@@ -198,7 +205,156 @@
             span {
                 color: black !important;
                 font-weight: bold !important;
+            }
+        }
+    }
 
+    .phoneBody {
+        .csmInput {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 14px;
+
+            .balance {
+                margin-bottom: 8px;
+                font-size: 12px;
+                font-weight: 500;
+                color: var(--BecomeValidator-text-2);
+            }
+
+            .inputBox {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                background-color: var(--BecomeValidator-bg-2);
+                border: 1px solid var(--BecomeValidator-bg-3);
+                justify-content: space-between;
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin: 0px 15px 0px 11px;
+                    }
+
+                    span {
+                        margin-right: 90px;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        @media(max-width:400px){
+                            margin-right: 30px;
+                        }
+                    }
+                }
+
+                .input {
+                    width: 100%;
+                    margin: -1px;
+
+                    input {
+                        border-radius: 0px;
+                    }
+                }
+
+                .maxButton {
+                    top: 17px;
+                    right: 17px;
+                    position: absolute;
+                }
+            }
+        }
+
+        .vecsmInput {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin-bottom: 14px;
+
+            .initialVeCSM {
+                margin-bottom: 8px;
+                font-size: 12px;
+                font-weight: 500;
+                color: var(--BecomeValidator-text-2);
+            }
+
+            .inputBox {
+                width: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                background-color: var(--BecomeValidator-bg-2);
+                border: 1px solid var(--BecomeValidator-bg-3);
+                justify-content: space-between;
+
+                .logo {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin: 0px 15px 0px 11px;
+                    }
+
+                    span {
+                        margin-right: 72px;
+                        font-size: 14px;
+                        font-weight: 500;
+
+                        @media(max-width:400px){
+                            margin-right: 12px;
+                        }
+                    }
+                }
+
+                .input {
+                    width: 100%;
+                    margin: -1px;
+
+                    input {
+                        border-radius: 0px;
+                    }
+                }
+
+                .maxButton {
+                    top: 17px;
+                    right: 17px;
+                    position: absolute;
+                }
+            }
+        }
+
+        .lockButton {
+            margin-bottom: 12px;
+        }
+
+        .duration {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 0px;
+            margin: 0px -11px;
+            height: 56px;
+            border-radius: 0px;
+            background-color: var(--BecomeValidator-bg-2);
+            overflow-y: auto;
+            margin-bottom: 16px;
+            ;
+
+            button {
+                min-width: 100px;
+                border-color: transparent !important;
+            }
+
+            .active {
+                background-color: #EDEDED;
+
+                span {
+                    color: black !important;
+                    font-weight: bold !important;
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
 
+
 interface Table {
   whichPool?: boolean;
   bodyCount: number;

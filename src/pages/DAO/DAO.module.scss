@@ -1,12 +1,6 @@
-.wrapper{
-    background-color: rgb(182, 182, 182);
-
-}
-
-.wrapper > :nth-child(1){
+.wrapper {
+    margin-top: 83px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    margin: 50px 0px;
-    width: 100%;
-
 }

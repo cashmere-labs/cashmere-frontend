@@ -126,6 +126,13 @@ body.light {
   // Lock Modal
   --LockModal-bg-1: #ededed;
   --LockModal-text-1: black;
+
+  // DAO UpperPage
+  --upper-page-bg-1: #fff;
+  --upper-page-text-1: #1f1f1f;
+  --upper-page-text-2: #A5A5A5;
+  --upper-page-text-3: black;
+  --upper-page-text-4: #616161;
 }
 
 body.dark {
@@ -252,6 +259,13 @@ body.dark {
   // Lock Modal
   --LockModal-bg-1: #383838;
   --LockModal-text-1: white;
+
+  // DAO UpperPage
+  --upper-page-bg-1: #232323;
+  --upper-page-text-1: #fff;
+  --upper-page-text-2: #7B7B7B;
+  --upper-page-text-3: white;
+  --upper-page-text-4: #7B7B7B;
 }
 
 body {

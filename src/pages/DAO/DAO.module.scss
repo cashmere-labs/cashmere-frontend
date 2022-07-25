@@ -12,5 +12,10 @@
         max-width: 1217px;
         margin-top: 45px;
         gap: 10px;
+
+        @media(max-width: 950px){
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }

@@ -144,6 +144,11 @@ body.light {
   --gauge-boost-bg-6: #1f1f1f;
   --gauge-boost-text-1: #1f1f1f;
   --gauge-boost-text-2: #9B9B9B;
+
+  // Statistics
+  --statistics-bg-1: white;
+  --statistics-bg-2: #f7f7f7;
+  --statistics-text-1: #1f1f1f;
 }
 
 body.dark {
@@ -288,6 +293,11 @@ body.dark {
   --gauge-boost-bg-6: #848484;
   --gauge-boost-text-1: white;
   --gauge-boost-text-2: #919191;
+
+  // Statistics
+  --statistics-bg-1: #232323;
+  --statistics-bg-2: black;
+  --statistics-text-1: white;
 }
 
 body {

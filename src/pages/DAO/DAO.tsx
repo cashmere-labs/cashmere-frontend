@@ -1,4 +1,4 @@
-import { Footer, Navbar, UpperPage } from "components";
+import { Footer, Navbar, Statistics, UpperPage, Gauge } from "components";
 import styles from "./DAO.module.scss";
 import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
@@ -11,6 +11,10 @@ const DAO = () => {
       <Navbar />
       <div className={styles.wrapper}>
         <UpperPage />
+        <div className={styles.statAndGauge}>
+          <Statistics/>
+          <Gauge/>
+        </div>
       </div>
       <Footer />
     </Layout>

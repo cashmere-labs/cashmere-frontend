@@ -43,3 +43,5 @@ export { BecomeValidator } from "./DAO/BecomeValidator/BecomeValidator";
 export { UnlockModal } from "./DAO/UnlockModal/UnlockModal";
 export { LockModal } from "./DAO/LockModal/LockModal";
 export { UpperPage } from "./DAO/UpperPage/UpperPage";
+export { Statistics } from "./DAO/Statistics/Statistics";
+export { Gauge } from "./DAO/Gauge/Gauge";

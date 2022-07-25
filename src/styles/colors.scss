@@ -134,6 +134,11 @@ body.light {
   --upper-page-text-3: black;
   --upper-page-text-4: #616161;
   --upper-page-text-5: #1f1f1f;
+
+  // Gauge Boost Calculator
+  --gauge-boost-bg-1: #fff;
+  --gauge-boost-text-1: #1f1f1f;
+  --gauge-boost-text-2: #9B9B9B;
 }
 
 body.dark {
@@ -268,6 +273,11 @@ body.dark {
   --upper-page-text-3: white;
   --upper-page-text-4: #7B7B7B;
   --upper-page-text-5: #656565;
+
+  // Gauge Boost Calculator
+  --gauge-boost-bg-1: #232323;
+  --gauge-boost-text-1: white;
+  --gauge-boost-text-2: #919191;
 }
 
 body {

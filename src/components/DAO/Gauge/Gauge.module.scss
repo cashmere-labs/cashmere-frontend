@@ -1,0 +1,258 @@
+.wrapper {
+    max-width: 594px;
+    width: 100%;
+
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 14px;
+    }
+
+    .boxWrapper {
+        max-width: 594px;
+        width: 100%;
+        padding: 19px 19px 14px;
+        background-color: var(--gauge-boost-bg-1);
+        border-radius: 24px;
+
+        .options {
+            margin-bottom: 28px;
+        }
+
+
+        .input1 {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .input1>:nth-child(1) {
+            width: 100%;
+        }
+
+        .input1>:nth-child(1)>:nth-child(1) {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gauge-boost-text-2);
+            margin-bottom: 10px;
+        }
+
+        .input1>:nth-child(2) {
+            width: 100%;
+        }
+
+        .input1>:nth-child(2)>:nth-child(1) {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gauge-boost-text-2);
+            margin-bottom: 10px;
+        }
+
+        .whichToken {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .csm {
+                border: solid 1px rgba(255, 255, 255, 0.1);
+                background-color: #f4f4f5;
+                border-radius: 16px;
+                max-width: 172px;
+                width: 100%;
+                height: 56px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .bg {
+                    border-radius: 12px;
+                    background-color: #fff;
+                    max-width: 162px;
+                    width: 100%;
+                    height: 46px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .isSelected {
+                        position: absolute;
+                        width: 21px;
+                        height: 21px;
+                        background-color: #efefef;
+                        border-radius: 50%;
+                        top: 13px;
+                        left: 11px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+
+                        .yes {
+                            width: 13px;
+                            height: 13px;
+                            background-color: #1f1f1f;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+
+            .veCSM {
+                border: solid 1px rgba(255, 255, 255, 0.1);
+                background-color: #f4f4f5;
+                border-radius: 16px;
+                max-width: 172px;
+                width: 100%;
+                height: 56px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .bg {
+                    border-radius: 12px;
+                    background-color: #fff;
+                    max-width: 162px;
+                    width: 100%;
+                    height: 46px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .isSelected {
+                        position: absolute;
+                        width: 21px;
+                        height: 21px;
+                        background-color: #efefef;
+                        border-radius: 50%;
+                        top: 13px;
+                        left: 11px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+
+                        .yes {
+                            width: 13px;
+                            height: 13px;
+                            background-color: #1f1f1f;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .input2 {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 20px;
+            margin-bottom: 20px;
+
+            .myCSM {
+                width: 100%;
+            }
+
+            .myCSM>:nth-child(1) {
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--gauge-boost-text-2);
+                margin-bottom: 5px;
+            }
+
+            .myCSM>:nth-child(2) {
+                width: 100%;
+            }
+
+            .selectPart {
+                width: 100%;
+            }
+
+            .selectPart>:nth-child(1) {
+                display: flex;
+                justify-content: space-between;
+                font-size: 13px;
+                font-weight: 500;
+                color: var(--gauge-boost-text-2);
+                margin-bottom: 5px;
+            }
+        }
+
+        .input3 {
+            margin-bottom: 20px;
+        }
+
+        .input3>:nth-child(1) {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gauge-boost-text-2);
+            margin-bottom: 5px;
+        }
+
+        .calculate {
+            margin-bottom: 24px;
+        }
+
+        .boost {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 11.5px;
+            color: var(--gauge-boost-text-2);
+        }
+
+        .line {
+            height: 0px;
+            border: solid 1px #f4f4f4;
+            margin-bottom: 13px;
+        }
+
+        .maxBoost {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 11.5px;
+            color: var(--gauge-boost-text-2);
+        }
+
+        .minCSM {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 11.5px;
+            color: var(--gauge-boost-text-2);
+        }
+
+        .selectGauge {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 11.5px;
+            color: var(--gauge-boost-text-2);
+        }
+
+        .maxDeposit{
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 11.5px;
+            color: var(--gauge-boost-text-2);
+        }
+
+        .maxDeposit>:nth-child(2){
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+    }
+
+}

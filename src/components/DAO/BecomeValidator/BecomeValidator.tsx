@@ -1,5 +1,5 @@
 import styles from "./BecomeValidator.module.scss";
-import { Button, Modal, Input, Select, Option, Tooltip, Icon } from "ui";
+import { Button, Modal, Input, Tooltip, Icon } from "ui";
 import { ModalController } from "hooks/useModal";
 import { useTheme } from "hooks";
 import LOGOBLACK from "assets/images/cashmere.png";

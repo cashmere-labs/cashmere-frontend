@@ -16,17 +16,13 @@ const Statistics = () => {
             className={selected ? styles.selected : styles.not}
             onClick={() => setSelected(true)}
           >
-            <span style={{ color: theme === "light" ? "black" : "#EBEBEB" }}>
-              Gauge alloc.
-            </span>
+            <span style={{ color: `var(--text)` }}>Gauge alloc.</span>
           </div>
           <div
             className={!selected ? styles.selected : styles.not}
             onClick={() => setSelected(false)}
           >
-            <span style={{ color: theme === "light" ? "black" : "#EBEBEB" }}>
-              Dao Share
-            </span>
+            <span style={{ color: `var(--text)` }}>Dao Share</span>
           </div>
         </div>
         <div className={styles.graph}>

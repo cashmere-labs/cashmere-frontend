@@ -149,6 +149,30 @@ body.light {
   --statistics-bg-1: white;
   --statistics-bg-2: #f7f7f7;
   --statistics-text-1: #1f1f1f;
+
+  // Liquidity Stake Reward
+  --liquidity-stake-reward-bg-1: black;
+  --liquidity-stake-reward-bg-2: #fafafa;
+  --liquidity-stake-reward-bg-3: #ededed;
+  --liquidity-stake-reward-text-1: white;
+  --liquidity-stake-reward-text-2: #b5b5b5;
+
+  // Liquidity
+  --liquidity-bg-1: #e5e5e5;
+  --liquidity-bg-2: black;
+  --liquidity-bg-3: #efefef;
+  --liquidity-bg-4: black;
+  --liquidity-bg-5: #ededed;
+  --liquidity-bg-6: black;
+  --liquidity-bg-7: #ededed;
+  --liquidity-bg-8: #fafafa;
+  --liquidity-bg-9: #f8f8f8;
+  --liquidity-text-1: #1f1f1f;
+  --liquidity-text-2: white;
+  --liquidity-text-3: white;
+  --liquidity-text-4: #8b8b8b;
+  --liquidity-text-5: black;
+  --liquidity-text-6: rgba(31, 31, 31, 0.9);
 }
 
 body.dark {
@@ -298,6 +322,30 @@ body.dark {
   --statistics-bg-1: #232323;
   --statistics-bg-2: black;
   --statistics-text-1: white;
+
+  // Liquidity Stake Reward
+  --liquidity-stake-reward-bg-1: #212121;
+  --liquidity-stake-reward-bg-2: #1a1a1a;
+  --liquidity-stake-reward-bg-3: #383838;
+  --liquidity-stake-reward-text-1: white;
+  --liquidity-stake-reward-text-2: #676767;
+
+  // Liquidity
+  --liquidity-bg-1: #1a1a1a;
+  --liquidity-bg-2: #9f9f9f;
+  --liquidity-bg-3: #efefef;
+  --liquidity-bg-4: white;
+  --liquidity-bg-5: transparent;
+  --liquidity-bg-6: white;
+  --liquidity-bg-7: #343434;
+  --liquidity-bg-8: #1a1a1a;
+  --liquidity-bg-9: #2f2f2f;
+  --liquidity-text-1: #fff;
+  --liquidity-text-2: #b5b5b5;
+  --liquidity-text-3: black;
+  --liquidity-text-4: #919191;
+  --liquidity-text-5: white;
+  --liquidity-text-6: white;
 }
 
 body {

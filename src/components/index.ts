@@ -33,6 +33,7 @@ export {
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
 export { Warning } from "./Modals/Warning/Warning";
+export { LiquidityStakeReward } from "./Modals/LiquidityStakeReward/LiquidityStakeReward";
 
 // DAO
 export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";

@@ -1,15 +1,9 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Swap, Pool, VeCSM, DAO } from "pages";
+import { Home, Pool,Swap, VeCSM, DAO } from "pages";
+import { BrowserRouter, Route, Routes, Navigate,useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

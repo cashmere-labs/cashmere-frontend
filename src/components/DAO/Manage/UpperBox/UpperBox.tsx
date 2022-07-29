@@ -25,15 +25,28 @@ const UpperBox = () => {
               ></img>
               <div className={styles.text}>CSM</div>
             </div>
-            <Input
-              extendLeft
-              placeholder="Amount"
-              height={isPhoneOrPC ? "59px" : "71px"}
-            />
+            <div className={styles.button}>
+              <Button
+                width={"45px"}
+                height="25px"
+                fontSize="fs12"
+                fontWeight="fw600"
+                color={theme === "light" ? "white" : "white"}
+              >
+                MAX
+              </Button>
+            </div>
+            <div className={styles.input}>
+              <Input
+                extendLeft
+                placeholder="Amount"
+                height={isPhoneOrPC ? "55px" : "71px"}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.veCSM}>
-          <div className={styles.title}></div>
+          <div className={styles.title}>INITIAL VECSM </div>
           <div className={styles.box}>
             <div className={styles.pattern}>
               <img
@@ -44,37 +57,43 @@ const UpperBox = () => {
             </div>
             <div className={styles.button}>
               <Button
-                width={isPhoneOrPC ? "46px" : "65px"}
-                height="34px"
-                color={
-                  theme === "light" ? "transparentWhite" : "transparentBlack"
-                }
+                width={"45px"}
+                height="25px"
+                fontSize="fs12"
+                fontWeight="fw600"
+                color={theme === "light" ? "white" : "white"}
               >
                 MAX
               </Button>
             </div>
-            <Input
-              extendLeft
-              placeholder="Amount"
-              height={isPhoneOrPC ? "59px" : "71px"}
-            />
+            <div className={styles.input}>
+              <Input
+                extendLeft
+                placeholder="Amount"
+                height={isPhoneOrPC ? "59px" : "71px"}
+              />
+            </div>
           </div>
         </div>
         <div className={styles.result}>
-          <div className={styles.title}></div>
+          <div className={styles.title}>
+            AVERAGE LOCK TIME: <span>3.63 YEARS</span>
+          </div>
           <div className={styles.buttons}>
             <Button
-              width={isPhoneOrPC ? "46px" : "65px"}
-              height="34px"
+              width={isPhoneOrPC ? "46px" : "100%"}
+              height="40px"
+              fontWeight="fw600"
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
             >
               Lock
-            </Button>{" "}
+            </Button>
             <Button
-              width={isPhoneOrPC ? "46px" : "65px"}
-              height="34px"
+              width={isPhoneOrPC ? "46px" : "100%"}
+              height="40px"
+              fontWeight="fw600"
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }

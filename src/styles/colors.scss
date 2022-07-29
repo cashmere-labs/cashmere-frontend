@@ -176,6 +176,13 @@ body.light {
 
   // Manage
   --manage-text-1: #1f1f1f;
+
+  // UpperBox
+  --upper-box-bg-1: #fff;
+  --upper-box-bg-2: #fafafa;
+  --upper-box-bg-3: #ededed;
+  --upper-box-text-1: black;
+  --upper-box-text-2: #8c8c8c;
 }
 
 body.dark {
@@ -355,6 +362,10 @@ body.dark {
 
   // UpperBox
   --upper-box-bg-1: #232323;
+  --upper-box-bg-2: #1a1a1a;
+  --upper-box-bg-3: #383838;
+  --upper-box-text-1: white;
+  --upper-box-text-2: #919191;
 }
 
 body {

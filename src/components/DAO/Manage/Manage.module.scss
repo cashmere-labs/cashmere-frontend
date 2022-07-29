@@ -6,6 +6,7 @@
 
     .title{
         margin-top: 50px;
+        margin-bottom: 16px;
         max-width: 1217px;
         width: 100%;
         display: flex;
@@ -20,6 +21,10 @@
         opacity: 0.3;
     }
 
-
+    .upperBox{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 
 }

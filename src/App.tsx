@@ -1,11 +1,18 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Home, Pool,Swap, VeCSM, DAO } from "pages";
-import { BrowserRouter, Route, Routes, Navigate,useLocation } from "react-router-dom";
+import { Home, Pool, Swap, VeCSM, DAO } from "pages";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Test } from "pages/Test/Test";
 
 const Main = () => {
   useInitialTheme();
@@ -27,6 +34,7 @@ function App() {
           <Route path={PATHS.pool} element={<Pool />} />
           <Route path={PATHS.veCSM} element={<VeCSM />} />
           <Route path={PATHS.dao} element={<DAO />} />
+          <Route path={"/test"} element={<Test />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
         <NavigationAnimator />

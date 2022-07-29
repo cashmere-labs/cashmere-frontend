@@ -3,6 +3,7 @@ import CLOCK from "assets/icons/clock.png";
 import CALENDER from "assets/icons/calender.png";
 import LOGO from "assets/images/cashmereGray.png";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
+
 const Balance = () => {
   const value = 0.65;
   const divRef = useRef<HTMLDivElement>(null);
@@ -28,7 +29,7 @@ const Balance = () => {
       <div ref={divRef} className={styles.bar}>
         <div
           className={styles.value}
-          style={{ width: `${1217 * value}px` }}
+          style={{ width: `${121 * value}px` }}
         ></div>
       </div>
       <div className={styles.subTitle}>

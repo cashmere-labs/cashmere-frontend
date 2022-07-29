@@ -1,20 +1,29 @@
-.wrapper{
+.wrapper {
     max-width: 1217px;
     width: 100%;
 
-    .title{
+    @media(max-width:800px) {
+        padding: 0px 9px;
+    }
+
+    .title {
         display: flex;
         justify-content: space-between;
         font-weight: bold;
         color: var(--balance-text-1);
         margin-bottom: 20px;
 
-        .token{
+        @media(max-width:800px) {
+            margin-bottom: 11px;
+            font-size: 14px;
+        }
+
+        .token {
             font-weight: 500;
         }
     }
 
-    .bar{
+    .bar {
         max-width: 1217px;
         height: 20px;
         border-radius: 10px;
@@ -22,26 +31,46 @@
         border: solid 1px var(--balance-bg-3);
         margin-bottom: 20px;
 
-        .value{
+        @media(max-width:800px) {
+            margin-bottom: 11px;
+            height: 16px;
+        }
+
+        .value {
             background-color: var(--balance-bg-2);
             height: 20px;
             border-radius: 10px;
             margin: -1px;
+
+            @media(max-width:800px) {
+                height: 16px;
+            }
         }
     }
 
-    .subTitle{
+    .subTitle {
         display: flex;
         justify-content: space-between;
         margin-bottom: 30px;
         color: var(--balance-text-2);
+
+        @media(max-width:800px) {
+            height: 12px;
+            margin-bottom: 36px;
+        }
     }
 
-    .components{
+    .components {
         display: flex;
         justify-content: space-between;
         gap: 25px;
-        .component{
+
+        @media(max-width:800px) {
+            gap: 11px;
+            flex-direction: column;
+        }
+
+        .component {
             background-color: var(--upper-box-bg-1);
             border-radius: 24px;
             max-width: 387px;
@@ -52,22 +81,37 @@
             align-items: center;
             padding: 0px 25px;
 
-            .text{
+            @media(max-width:800px) {
+                max-width: none;
+                height: 87px;
+                border-radius: 16px;
+            }
+
+            .text {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
+
+                @media(max-width:800px) {
+                    gap: 9px;
+                }
             }
 
-            .text>:nth-child(1){
+            .text>:nth-child(1) {
                 color: var(--balance-text-1);
             }
 
-            .text>:nth-child(2){  font-size: 20px;
+            .text>:nth-child(2) {
+                font-size: 20px;
                 font-weight: 500;
                 color: #4bce6f;
+
+                @media(max-width:800px) {
+                    font-size: 16px;
+                }
             }
 
-            img{
+            img {
                 width: 35px;
                 height: 35px;
             }

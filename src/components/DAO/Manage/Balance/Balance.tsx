@@ -2,8 +2,21 @@ import styles from "./Balance.module.scss";
 import CLOCK from "assets/icons/clock.png";
 import CALENDER from "assets/icons/calender.png";
 import LOGO from "assets/images/cashmereGray.png";
+import { useRef, useState, useLayoutEffect, useEffect } from "react";
 const Balance = () => {
   const value = 0.65;
+  const divRef = useRef<HTMLDivElement>(null);
+  const [currentWidth, setCurrentWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    if (divRef.current === null) return;
+    setCurrentWidth(divRef.current.clientWidth);
+  }, []);
+
+  useEffect(() =>{
+    if(currentWidth<1000)  console.log(currentWidth)
+  }, []);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -12,8 +25,11 @@ const Balance = () => {
           562.93 <span className={styles.token}>veCSM</span>
         </div>
       </div>
-      <div className={styles.bar}>
-        <div className={styles.value} style={{width: `${1217 * value}px`}}></div>
+      <div ref={divRef} className={styles.bar}>
+        <div
+          className={styles.value}
+          style={{ width: `${1217 * value}px` }}
+        ></div>
       </div>
       <div className={styles.subTitle}>
         <div>Total veCSM supply: 358.47 M</div>

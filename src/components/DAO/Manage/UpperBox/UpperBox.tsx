@@ -13,7 +13,7 @@ const UpperBox = () => {
   const { theme } = useTheme();
 
   const isPhoneOrPC = useMediaQuery({
-    query: "(max-width: 600px)",
+    query: "(max-width: 800px)",
   });
 
   const [whichTime, setWhichTime] = useState(0);
@@ -84,7 +84,7 @@ const UpperBox = () => {
               <Input
                 extendLeft
                 placeholder="Amount"
-                height={isPhoneOrPC ? "59px" : "71px"}
+                height={isPhoneOrPC ? "55px" : "71px"}
               />
             </div>
           </div>
@@ -95,7 +95,7 @@ const UpperBox = () => {
           </div>
           <div className={styles.buttons}>
             <Button
-              width={isPhoneOrPC ? "46px" : "100%"}
+              width={"100%"}
               height="40px"
               fontWeight="fw600"
               color={
@@ -105,7 +105,7 @@ const UpperBox = () => {
               Lock
             </Button>
             <Button
-              width={isPhoneOrPC ? "46px" : "100%"}
+              width={ "100%"}
               height="40px"
               fontWeight="fw600"
               color={
@@ -136,7 +136,7 @@ const UpperBox = () => {
         </div>
         <div className={styles.customTime}>
           <div className={styles.time}>
-            <div className={styles.text}>
+            <div className={styles.textt}>
               <div>END DATE: </div>
               <Tooltip placement="top" content="Content coming here">
                 <Icon size={16}>

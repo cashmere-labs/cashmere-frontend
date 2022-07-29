@@ -183,6 +183,13 @@ body.light {
   --upper-box-bg-3: #ededed;
   --upper-box-text-1: black;
   --upper-box-text-2: #8c8c8c;
+
+  // Balance
+  --balance-bg-1: #e2e2e2;
+  --balance-bg-2: #c3c3c3;
+  --balance-bg-3: #e2e2e2;
+  --balance-text-1: #1f1f1f;
+  --balance-text-2: rgba(31, 31, 31, 0.5);
 }
 
 body.dark {
@@ -366,6 +373,13 @@ body.dark {
   --upper-box-bg-3: #383838;
   --upper-box-text-1: white;
   --upper-box-text-2: #919191;
+
+  // Balance
+  --balance-bg-1: black;
+  --balance-bg-2: #3e3e3e;
+  --balance-bg-3: #3e3e3e;
+  --balance-text-1: #fff;
+  --balance-text-2: #808080;
 }
 
 body {

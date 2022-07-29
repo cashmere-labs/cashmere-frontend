@@ -3,6 +3,8 @@
     width: 100%;
     align-items: center;
     flex-direction: column;
+    padding-left: 5px;
+    padding-right: 5px;
 
     .title{
         margin-top: 50px;
@@ -22,6 +24,13 @@
     }
 
     .upperBox{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    .balance{
         width: 100%;
         display: flex;
         justify-content: center;

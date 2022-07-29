@@ -3,7 +3,11 @@ import { useMediaQuery } from "react-responsive";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { useTheme } from "hooks";
-import { Input, Button } from "ui";
+import { Icon, Tooltip, Input, Button } from "ui";
+import { useState } from "react";
+import { clsnm } from "utils/clsnm";
+import { InfoIcon } from "assets/icons";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const UpperBox = () => {
   const { theme } = useTheme();
@@ -11,6 +15,16 @@ const UpperBox = () => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 600px)",
   });
+
+  const [whichTime, setWhichTime] = useState(0);
+  const durations = [
+    "1 Week",
+    "1 Month",
+    "3 Month",
+    "1 Year",
+    "2 Years",
+    "4 Years",
+  ];
 
   return (
     <div className={styles.wrapper}>
@@ -101,6 +115,43 @@ const UpperBox = () => {
               Withdraw
             </Button>
           </div>
+        </div>
+      </div>
+      <div className={styles.secondRow}>
+        <div className={styles.optionButtons}>
+          {durations.map((duration: string, i: number) => {
+            return (
+              <div
+              key={i}
+                onClick={() => setWhichTime(i)}
+                className={clsnm(
+                  styles.option,
+                  whichTime === i && styles.thisOne
+                )}
+              >
+                {duration}
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles.customTime}>
+          <div className={styles.time}>
+            <div className={styles.text}>
+              <div>END DATE: </div>
+              <Tooltip placement="top" content="Content coming here">
+                <Icon size={16}>
+                  <InfoIcon />
+                </Icon>
+              </Tooltip>
+            </div>
+            <div className={styles.set}>
+              29/02/2022
+              <span className={styles.icon}>
+                <FaChevronDown />
+              </span>
+            </div>
+          </div>
+          <div className={styles.text}>Increase Lock</div>
         </div>
       </div>
     </div>

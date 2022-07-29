@@ -1,14 +1,7 @@
 import styles from "./Reward.module.scss";
-import { Button, Input } from "ui";
+import { Button } from "ui";
 import { useTheme } from "hooks";
-import { Icon, Tooltip } from "ui";
-import { InfoIcon } from "assets/icons";
-import { useState } from "react";
-import WHITEPLUS from "assets/icons/whitePlus.png";
-import GRAYPLUS from "assets/icons/grayPlus.png";
-import MINUS from "assets/icons/minus.png";
 import { useMediaQuery } from "react-responsive";
-import DAI from "assets/pool/dai.png";
 
 const Reward = () => {
   const { theme } = useTheme();

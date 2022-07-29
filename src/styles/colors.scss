@@ -173,6 +173,9 @@ body.light {
   --liquidity-text-4: #8b8b8b;
   --liquidity-text-5: black;
   --liquidity-text-6: rgba(31, 31, 31, 0.9);
+
+  // Manage
+  --manage-text-1: #1f1f1f;
 }
 
 body.dark {
@@ -346,6 +349,12 @@ body.dark {
   --liquidity-text-4: #919191;
   --liquidity-text-5: white;
   --liquidity-text-6: white;
+
+  // Manage
+  --manage-text-1: white;
+
+  // UpperBox
+  --upper-box-bg-1: #232323;
 }
 
 body {

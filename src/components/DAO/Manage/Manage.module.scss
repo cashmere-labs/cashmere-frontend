@@ -1,0 +1,25 @@
+.wrapper{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+
+    .title{
+        margin-top: 50px;
+        max-width: 1217px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-weight: bold;
+    }
+
+    .title>:nth-child(2){
+        transform: rotate(270deg);
+        width: 8.8px;
+        opacity: 0.3;
+    }
+
+
+
+}

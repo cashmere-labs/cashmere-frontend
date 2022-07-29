@@ -1,4 +1,4 @@
-import { Footer, Navbar, LiquidityStakeReward, UpperPage, Gauge } from "components";
+import { Footer, Navbar, Manage } from "components";
 import styles from "./DAO.module.scss";
 import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
@@ -11,10 +11,8 @@ const DAO = () => {
   return (
     <Layout>
       <Navbar />
-      <button onClick={()=> trialModal.open()}>ac
-      </button>
       <div className={styles.wrapper}>
-        <LiquidityStakeReward modal={trialModal} />
+        <Manage />
       </div>
       <Footer />
     </Layout>

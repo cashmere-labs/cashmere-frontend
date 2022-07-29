@@ -49,3 +49,6 @@ export { LockModal } from "./DAO/LockModal/LockModal";
 export { UpperPage } from "./DAO/UpperPage/UpperPage";
 export { Statistics } from "./DAO/Statistics/Statistics";
 export { Gauge } from "./DAO/Gauge/Gauge";
+export { UpperBox } from "./DAO/Manage/UpperBox/UpperBox";
+export { Balance } from "./DAO/Manage/Balance/Balance";
+export { Manage } from "./DAO/Manage/Manage";

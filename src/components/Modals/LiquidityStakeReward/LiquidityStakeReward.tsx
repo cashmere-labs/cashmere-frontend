@@ -1,7 +1,7 @@
 import { ModalController } from "hooks/useModal";
 import { Modal } from "ui";
 import styles from "./LiquidityStakeReward.module.scss";
-import { Liquidity } from "components/Modals/LiquidityStakeReward/Liquidity";
+import { Liquidity, Reward, Stake } from "components";
 import { useState } from "react";
 
 const LiquidityStakeReward = ({ modal }: { modal: ModalController }) => {
@@ -37,9 +37,9 @@ const LiquidityStakeReward = ({ modal }: { modal: ModalController }) => {
       {whichComponent === 0 ? (
         <Liquidity />
       ) : whichComponent === 1 ? (
-        <Liquidity />
+        <Stake />
       ) : (
-        <Liquidity />
+        <Reward />
       )}
     </Modal>
   );

@@ -137,6 +137,7 @@ const Liquidity = () => {
         <Button
           width="100%"
           height={isPhoneOrPC ? "34px" : "56px"}
+          fontWeight="fw600"
           color={theme === "light" ? "black" : "white"}
         >
           {isPlus ? "Add Liquidity" : "Remove Liquidity"}

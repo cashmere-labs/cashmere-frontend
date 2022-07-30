@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  background-color: var(--poll-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow4);
+
+  padding: 20px 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 24px 12px;
+  }
+}

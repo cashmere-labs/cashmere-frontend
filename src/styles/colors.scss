@@ -114,7 +114,7 @@ body.light {
   --BecomeValidator-bg-2: #fafafa;
   --BecomeValidator-bg-3: #ededed;
   --BecomeValidator-text-1: black;
-  --BecomeValidator-text-2: #8F8F8F;
+  --BecomeValidator-text-2: #8f8f8f;
   --BecomeValidator-text-3: white;
 
   // Unlock Modal
@@ -130,7 +130,7 @@ body.light {
   // DAO UpperPage
   --upper-page-bg-1: #fff;
   --upper-page-text-1: #1f1f1f;
-  --upper-page-text-2: #A5A5A5;
+  --upper-page-text-2: #a5a5a5;
   --upper-page-text-3: black;
   --upper-page-text-4: #616161;
   --upper-page-text-5: #1f1f1f;
@@ -143,7 +143,7 @@ body.light {
   --gauge-boost-bg-5: white;
   --gauge-boost-bg-6: #1f1f1f;
   --gauge-boost-text-1: #1f1f1f;
-  --gauge-boost-text-2: #9B9B9B;
+  --gauge-boost-text-2: #9b9b9b;
 
   // Statistics
   --statistics-bg-1: white;
@@ -190,6 +190,10 @@ body.light {
   --balance-bg-3: #e2e2e2;
   --balance-text-1: #1f1f1f;
   --balance-text-2: rgba(31, 31, 31, 0.5);
+
+  // Poll
+  --poll-bg: white;
+  --poll-chartbox: #f5f5f5;
 }
 
 body.dark {
@@ -295,20 +299,20 @@ body.dark {
   --DAO-text-5: #868686;
 
   // DAO Proposal Modal
-  --DAOProposal-bg-1: #1A1A1A;
+  --DAOProposal-bg-1: #1a1a1a;
   --DAOProposal-bg-2: #343434;
   --DAOProposal-text-1: white;
 
   // Become Validator Modal
   --BecomeValidator-bg-1: #232323;
-  --BecomeValidator-bg-2: #1A1A1A;
+  --BecomeValidator-bg-2: #1a1a1a;
   --BecomeValidator-bg-3: #383838;
   --BecomeValidator-text-1: white;
   --BecomeValidator-text-2: #8a8a8a;
   --BecomeValidator-text-3: black;
 
   // Unlock Modal
-  --UnlockModal-bg-2: #1A1A1A;
+  --UnlockModal-bg-2: #1a1a1a;
   --UnlockModal-bg-3: #383838;
   --UnlockModal-text-1: white;
   --UnlockModal-text-2: #919191;
@@ -320,14 +324,14 @@ body.dark {
   // DAO UpperPage
   --upper-page-bg-1: #232323;
   --upper-page-text-1: #fff;
-  --upper-page-text-2: #7B7B7B;
+  --upper-page-text-2: #7b7b7b;
   --upper-page-text-3: white;
-  --upper-page-text-4: #7B7B7B;
+  --upper-page-text-4: #7b7b7b;
   --upper-page-text-5: #656565;
 
   // Gauge Boost Calculator
   --gauge-boost-bg-1: #232323;
-  --gauge-boost-bg-2: #2D2D2D;
+  --gauge-boost-bg-2: #2d2d2d;
   --gauge-boost-bg-3: #313131;
   --gauge-boost-bg-4: #1a1a1a;
   --gauge-boost-bg-5: #232323;
@@ -380,6 +384,10 @@ body.dark {
   --balance-bg-3: #3e3e3e;
   --balance-text-1: #fff;
   --balance-text-2: #808080;
+
+  // Poll
+  --poll-bg: #232323;
+  --poll-chartbox: #2f2f2f;
 }
 
 body {

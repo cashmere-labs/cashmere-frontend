@@ -12,6 +12,7 @@ interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
     | "flex-end"
     | "space-between"
     | "space-around";
+  compact?: boolean;
 }
 
 const Container = ({
@@ -19,6 +20,7 @@ const Container = ({
   className,
   elRef,
   justifyContent,
+  compact = false,
   ...props
 }: ContainerProps) => {
   return (
@@ -27,7 +29,8 @@ const Container = ({
       className={clsnm(
         styles.container,
         className,
-        justifyContent && styles[justifyContent]
+        justifyContent && styles[justifyContent],
+        compact ? styles.compact : styles.normal
       )}
       {...props}
     >

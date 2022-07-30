@@ -1,0 +1,22 @@
+.wrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.polls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.poll {
+  display: flex;
+  width: 100%;
+}

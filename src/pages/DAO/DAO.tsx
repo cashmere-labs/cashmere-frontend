@@ -1,4 +1,4 @@
-import { Footer, Navbar, Manage } from "components";
+import { Footer, Navbar, Manage, Polls } from "components";
 import styles from "./DAO.module.scss";
 import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
@@ -13,6 +13,7 @@ const DAO = () => {
       <Navbar />
       <div className={styles.wrapper}>
         <Manage />
+        <Polls />
       </div>
       <Footer />
     </Layout>

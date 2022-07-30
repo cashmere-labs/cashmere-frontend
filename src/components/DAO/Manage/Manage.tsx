@@ -1,9 +1,10 @@
 import styles from "./Manage.module.scss";
 import { Balance, UpperBox } from "components";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Container } from "ui";
 const Manage = () => {
   return (
-    <div className={styles.wrapper}>
+    <Container className={styles.wrapper} compact>
       <div className={styles.title}>
         <div>DAO POOLS</div>
         <FaChevronDown />
@@ -15,7 +16,7 @@ const Manage = () => {
       <div className={styles.balance}>
         <Balance />
       </div>
-    </div>
+    </Container>
   );
 };
 

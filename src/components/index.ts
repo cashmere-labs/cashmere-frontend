@@ -52,3 +52,5 @@ export { Gauge } from "./DAO/Gauge/Gauge";
 export { UpperBox } from "./DAO/Manage/UpperBox/UpperBox";
 export { Balance } from "./DAO/Manage/Balance/Balance";
 export { Manage } from "./DAO/Manage/Manage";
+export { Polls } from "./DAO/Polls/Polls";
+export { Poll } from "./Poll/Poll";

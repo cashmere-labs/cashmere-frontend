@@ -3,6 +3,7 @@ import styles from "./Poll.module.scss";
 import { ResponsivePie } from "@nivo/pie";
 import { useTheme } from "hooks";
 import { Column } from "components/Column/Column";
+import { Row } from "components/Row/Row";
 
 type PollData = {
   id: string;
@@ -30,8 +31,27 @@ const Poll = ({
 
   return (
     <div className={clsnm(styles.wrapper)}>
-      <div className={styles.text}></div>
-      <div className={styles.text}></div>
+      <Column className={styles.contentWrapper} justifyContent="space-between">
+        <Row justifyContent="flex-start">
+          <div className={styles.id}>ID: {id}</div>
+          <div className={styles.id} style={{ marginLeft: "12px" }}>
+            Multiple execute
+          </div>
+        </Row>
+
+        <span className={styles.content}>{title}</span>
+
+        <span className={styles.executed}>
+          {isExecuted ? "Executed" : "Not executed"}
+        </span>
+
+        <Column>
+          <span className={styles.date}>Estimated end time</span>
+          <span className={styles.date} style={{ marginTop: "0.5rem" }}>
+            {estimatedEndTime}
+          </span>
+        </Column>
+      </Column>
 
       <div className={styles.pollWrapper}>
         <ResponsivePie

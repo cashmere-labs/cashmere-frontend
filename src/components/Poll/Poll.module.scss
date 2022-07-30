@@ -17,6 +17,7 @@
   width: 350px;
   height: 350px;
   margin-left: auto;
+  flex-shrink: 0;
 }
 
 .pollCenter {
@@ -42,4 +43,36 @@
   color: var(--text);
   font-weight: 400;
   margin-top: 0.25rem;
+}
+
+.id {
+  &:first-child {
+    width: max-content;
+  }
+
+  color: var(--subtext);
+  width: 100%;
+  white-space: nowrap;
+}
+.content {
+  width: 100%;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.executed {
+  width: 100%;
+  color: var(--text);
+}
+.date {
+  color: var(--subtext);
+  width: 100%;
+}
+
+.contentWrapper {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 10;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }

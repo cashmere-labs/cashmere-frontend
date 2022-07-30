@@ -1,19 +1,29 @@
 import { Poll } from "components/Poll/Poll";
 import { Row } from "components/Row/Row";
 import { mockPollData } from "constants/mockPollData";
+import { useTheme } from "hooks";
 import { Button, Container } from "ui";
 import styles from "./Polls.module.scss";
 
 const Polls = () => {
+  const { theme } = useTheme();
+
   return (
     <Container className={styles.wrapper} compact>
-      <Row style={{ width: "100%" }} justifyContent="space-between">
+      <Row
+        style={{ width: "100%", marginBottom: "1rem" }}
+        justifyContent="space-between"
+      >
         <span className={styles.title}>Private polls</span>
         <Row justifyContent="flex-end">
-          <Button height="40px" color="neutral">
+          <Button height="40px" color={theme === "dark" ? "black" : "neutral"}>
             In Progress
           </Button>
-          <Button height="40px" color="black" style={{ marginLeft: "8px" }}>
+          <Button
+            height="40px"
+            color={theme === "dark" ? "white" : "black"}
+            style={{ marginLeft: "8px" }}
+          >
             Create Poll
           </Button>
         </Row>

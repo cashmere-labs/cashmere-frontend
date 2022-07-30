@@ -12,3 +12,34 @@
     padding: 24px 12px;
   }
 }
+.pollWrapper {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin-left: auto;
+}
+
+.pollCenter {
+  width: 175px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: var(--poll-chartbox);
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.voted {
+  font-size: 24px;
+  color: var(--subtext);
+  font-weight: 500;
+}
+
+.percent {
+  color: var(--text);
+  font-weight: 400;
+  margin-top: 0.25rem;
+}

@@ -38,6 +38,7 @@ export { Liquidity } from "./Modals/LiquidityStakeReward/Liquidity";
 export { Stake } from "./Modals/LiquidityStakeReward/Stake";
 export { Reward } from "./Modals/LiquidityStakeReward/Reward";
 export { UnstakeWarning } from "./Modals/UnstakeWarning/UnstakeWarning";
+export { BecomeValidatorError } from "./Modals/BecomeValidatorError/BecomeValidatorError";
 
 // DAO
 export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";

@@ -17,6 +17,7 @@ interface InputProps extends ComponentPropsWithoutRef<"input"> {
   rightElClassName?: string;
   leftElClassName?: string;
   error?: string;
+  absoluteError?: boolean;
 }
 
 const Input = ({
@@ -37,6 +38,7 @@ const Input = ({
   className,
   style,
   error,
+  absoluteError,
   ...props
 }: InputProps) => {
   return (
@@ -63,7 +65,12 @@ const Input = ({
       />
       {error && (
         <Alert
-          style={{ marginBottom: "16px", marginTop: "8px" }}
+          style={{
+            marginBottom: "16px",
+            marginTop: "8px",
+            position: absoluteError ? "absolute" : "relative",
+            bottom: absoluteError ? "-48px" : undefined,
+          }}
           label={error}
         />
       )}

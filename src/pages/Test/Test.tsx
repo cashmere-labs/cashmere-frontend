@@ -1,6 +1,11 @@
 import styles from "./Test.module.scss";
 import { ResponsivePie } from "@nivo/pie";
-import { ExecutingModal, ProposalModal, Statistics } from "components";
+import {
+  BecomeValidator,
+  ExecutingModal,
+  ProposalModal,
+  Statistics,
+} from "components";
 import { useModal } from "hooks";
 
 const data = [
@@ -30,7 +35,7 @@ const Test = () => {
   return (
     <div style={{ width: "500px", height: "500px" }}>
       <div onClick={modal.open}>Hey</div>
-      <Statistics />
+      <BecomeValidator modal={modal} />
     </div>
   );
 };

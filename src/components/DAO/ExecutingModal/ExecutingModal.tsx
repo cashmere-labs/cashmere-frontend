@@ -1,14 +1,16 @@
 import styles from "./ExecutingModal.module.scss";
-import ExitBlack from "assets/icons/exit-black.png";
-import ExitWhite from "assets/icons/exit-white.png";
-import { useTheme , useModal} from "hooks";
-import { Button, Input, Tooltip, Icon, Modal } from "ui";
+
+import { useTheme, useModal } from "hooks";
+import { Button, Input, Tooltip, Icon, Modal, Alert } from "ui";
 import { useMediaQuery } from "react-responsive";
 import { InfoIcon } from "assets/icons";
+import { ModalController } from "hooks/useModal";
+import { useState } from "react";
+import { useFormValidator } from "hooks/useFormValidator";
+import { isValidNumberInput } from "utils/isValidNumberInput";
 
-const ExecutingModal = () => {
+const ExecutingModal = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();
-  const modal = useModal();
   // const {ref} = useRef();
 
   const isPhoneOrLaptop = useMediaQuery({
@@ -18,16 +20,35 @@ const ExecutingModal = () => {
   const minWidth = useMediaQuery({
     query: "(max-width: 375px)",
   });
-
   const barRate = 0.78;
+
+  const [amount, setAmount] = useState<string>("");
+  const { validator, errors, setErrors } = useFormValidator();
+
+  const onSubmit = () => {
+    if (amount.trim() === "") {
+      validator.setError("amount", "Enter amount");
+    }
+
+    // TODO: Change 100 with real balance
+    if (Number(amount) > 100) {
+      validator.setError("amount", "Insufficient balance");
+    }
+
+    if (validator.hasError()) {
+      setErrors(validator.errors);
+      validator.clearErrors();
+    } else {
+      setErrors({});
+      validator.clearErrors();
+    }
+  };
+
   return (
-    // <Modal isOpen={modal.isOpen} close={modal.close}>
+    <Modal isOpen={modal.isOpen} close={modal.close}>
       <div className={styles.app}>
         <div className={styles.wrapper}>
-          <img
-            className={styles.exit}
-            src={theme === "light" ? ExitBlack : ExitWhite}
-          ></img>
+          <div></div>
           <div>
             <div className={styles.title}>
               <div>ID: 6</div>
@@ -110,6 +131,13 @@ const ExecutingModal = () => {
           <div>BALANCE 24,689.905</div>
           <div>
             <Input
+              value={amount}
+              onChange={(e) => {
+                if (!isValidNumberInput(e.target.value)) {
+                  return;
+                }
+                setAmount(e.target.value);
+              }}
               placeholder="Amount"
               className={styles.input}
               extendLeft
@@ -127,13 +155,18 @@ const ExecutingModal = () => {
             </Button>
             <div>VeCSM</div>
           </div>
+          {errors.amount ? (
+            <Alert style={{ marginTop: "8px" }} label={errors.amount} />
+          ) : (
+            <div></div>
+          )}
           <div>
             <Button
               height={isPhoneOrLaptop ? "34px" : "56px"}
               width={isPhoneOrLaptop ? "300px" : "514px"}
               fontSize={"fs16"}
               fontWeight="fw600"
-              onClick={() => {}}
+              onClick={onSubmit}
               color={theme === "light" ? "black" : "white"}
             >
               Yes
@@ -153,7 +186,7 @@ const ExecutingModal = () => {
           </div>
         </div>
       </div>
-    // </Modal>
+    </Modal>
   );
 };
 

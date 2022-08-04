@@ -20,6 +20,8 @@
   box-shadow: var(--shadow-1);
   animation: main 0.2s linear;
   color: var(--text);
+  overflow-y: auto;
+  max-height: 95vh !important;
 
   @media (max-width: 768px) {
     max-width: 95vw !important;

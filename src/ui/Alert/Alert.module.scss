@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  background-color: var(--alert-color);
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50% !important;
+}
+
+.text {
+  margin-left: 8px;
+  color: var(--alert-color);
+  font-weight: 600;
+}

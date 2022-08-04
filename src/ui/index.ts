@@ -9,3 +9,4 @@ export { Option } from "./Select/Option";
 export { Input } from "./Input/Input";
 export { Tooltip } from "./Tooltip/Tooltip";
 export { Radio } from "./Radio/Radio";
+export { Alert } from "./Alert/Alert";

@@ -53,9 +53,18 @@ const ProposalModal = ({ modal }: { modal: ModalController }) => {
     if (tokenAddress.trim() === "") {
       validator.setError("tokenAddress", "Address is required");
     }
+    // TODO: Replace 100 with real balance
+    if (Number(amount) > 100) {
+      validator.setError("amount", "Insufficient balance");
+    }
+    // TODO: Replace 100 with real balance
+    if (Number(depositAmount) > 100) {
+      validator.setError("depositAmount", "Insufficient balance");
+    }
 
     if (validator.hasError()) {
       setErrors(validator.errors);
+      validator.clearErrors();
       return;
     } else {
       validator.clearErrors();
@@ -94,6 +103,7 @@ const ProposalModal = ({ modal }: { modal: ModalController }) => {
       </div>
       <div className={styles.input}>
         <Input
+          error={errors.depositAmount}
           value={depositAmount}
           onChange={(e) => {
             if (!isValidNumberInput(e.target.value)) {
@@ -169,6 +179,7 @@ const ProposalModal = ({ modal }: { modal: ModalController }) => {
         <div className={styles.amount}>
           <div>Amount</div>
           <Input
+            error={errors.amount}
             value={amount}
             onChange={(e) => {
               if (!isValidNumberInput(e.target.value)) {

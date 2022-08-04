@@ -4,6 +4,7 @@ import { ResponsivePie } from "@nivo/pie";
 import { useTheme } from "hooks";
 import { Column } from "components/Column/Column";
 import { Row } from "components/Row/Row";
+import { useMediaQuery } from "react-responsive";
 
 type PollData = {
   id: string;
@@ -28,6 +29,9 @@ const Poll = ({
   votes,
 }: PollProps) => {
   const { theme } = useTheme();
+  const isSmall = useMediaQuery({
+    query: "(max-width: 540px)",
+  });
 
   return (
     <div className={clsnm(styles.wrapper)}>
@@ -70,9 +74,9 @@ const Poll = ({
           arcLinkLabelsSkipAngle={10}
           arcLinkLabelsTextOffset={5}
           arcLinkLabelsTextColor={theme === "dark" ? "white" : "black"}
-          arcLinkLabelsOffset={10}
+          arcLinkLabelsOffset={isSmall ? 2 : 10}
           arcLinkLabelsDiagonalLength={12}
-          arcLinkLabelsStraightLength={24}
+          arcLinkLabelsStraightLength={isSmall ? 5 : 24}
           enableArcLabels={false}
           arcLabelsRadiusOffset={0}
           arcLabelsTextColor={{

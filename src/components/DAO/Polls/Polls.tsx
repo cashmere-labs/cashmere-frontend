@@ -11,7 +11,8 @@ const Polls = () => {
   return (
     <Container className={styles.wrapper} compact>
       <Row
-        style={{ width: "100%", marginBottom: "1rem" }}
+        className={styles.headline}
+        style={{ marginBottom: "1rem" }}
         justifyContent="space-between"
       >
         <span className={styles.title}>Private polls</span>

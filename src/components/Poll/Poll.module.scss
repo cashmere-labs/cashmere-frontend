@@ -18,6 +18,20 @@
   height: 350px;
   margin-left: auto;
   flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    margin-right: auto;
+  }
+
+  @media (max-width: 540px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media (max-width: 320px) {
+    width: 260px;
+    height: 260px;
+  }
 }
 
 .pollCenter {
@@ -31,6 +45,16 @@
   transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
+
+  @media (max-width: 540px) {
+    width: 145px;
+    height: 150px;
+  }
+  @media (max-width: 320px) {
+    width: 90px;
+    height: 90px;
+    top: 42%;
+  }
 }
 
 .voted {
@@ -58,11 +82,12 @@
   width: 100%;
   color: var(--text);
   font-size: 20px;
+  margin: 8px 0px;
 }
-
 .executed {
   width: 100%;
   color: var(--text);
+  margin: 8px 0px;
 }
 .date {
   color: var(--subtext);

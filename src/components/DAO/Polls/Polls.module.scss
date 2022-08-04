@@ -7,6 +7,15 @@
   margin-bottom: 4rem;
 }
 
+.headline {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+}
+
 .title {
   color: var(--text);
   white-space: nowrap;
@@ -16,6 +25,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+  overflow-y: auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 0.95fr;
+    justify-content: center;
+  }
 }
 
 .poll {

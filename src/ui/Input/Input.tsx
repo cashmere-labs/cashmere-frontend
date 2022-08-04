@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+import { Alert } from "ui";
 import { clsnm } from "utils/clsnm";
 import styles from "./Input.module.scss";
 
@@ -12,9 +13,10 @@ interface InputProps extends ComponentPropsWithoutRef<"input"> {
   extendLeft?: boolean;
   hideLeftBorder?: boolean;
   hideRightBorder?: boolean;
-  hideBorder?: boolean,
+  hideBorder?: boolean;
   rightElClassName?: string;
   leftElClassName?: string;
+  error?: string;
 }
 
 const Input = ({
@@ -34,6 +36,7 @@ const Input = ({
   hideBorder,
   className,
   style,
+  error,
   ...props
 }: InputProps) => {
   return (
@@ -58,6 +61,12 @@ const Input = ({
         )}
         {...props}
       />
+      {error && (
+        <Alert
+          style={{ marginBottom: "16px", marginTop: "8px" }}
+          label={error}
+        />
+      )}
       {rightEl && (
         <div className={clsnm(styles.right, rightElClassName)}>{rightEl}</div>
       )}

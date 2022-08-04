@@ -1,6 +1,5 @@
 import { Footer, Navbar, SwapBox } from "components";
 import { useTitle } from "hooks/useTitle";
-import { useEffect } from "react";
 import { Layout } from "ui";
 import styles from "./Swap.module.scss";
 

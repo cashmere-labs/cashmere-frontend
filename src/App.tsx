@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Test } from "pages/Test/Test";
+import { Test2 } from "pages/Test2/Test2";
 
 const Main = () => {
   useInitialTheme();
@@ -35,6 +36,7 @@ function App() {
           <Route path={PATHS.veCSM} element={<VeCSM />} />
           <Route path={PATHS.dao} element={<DAO />} />
           <Route path={"/test"} element={<Test />} />
+          <Route path={"/test2"} element={<Test2 />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
         <NavigationAnimator />

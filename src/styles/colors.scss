@@ -194,6 +194,9 @@ body.light {
   // Poll
   --poll-bg: white;
   --poll-chartbox: #efeded;
+
+  // Unstake Warning
+  --unstake-warning-text-1: black;
 }
 
 body.dark {
@@ -388,6 +391,9 @@ body.dark {
   // Poll
   --poll-bg: #232323;
   --poll-chartbox: #2f2f2f;
+
+  // Unstake Warning
+  --unstake-warning-text-1: white;
 }
 
 body {

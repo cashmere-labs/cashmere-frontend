@@ -7,12 +7,16 @@ import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { InfoIcon } from "assets/icons";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
+import { useFormValidator } from "hooks/useFormValidator";
+import { ethers } from "ethers";
+import { isValidNumberInput } from "utils/isValidNumberInput";
 
 const BecomeValidator = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 950px)",
   });
+  const { validator, setErrors, errors } = useFormValidator();
 
   const durations = [
     "1 Week",
@@ -28,6 +32,41 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
 
   const [whichDuration, setWhichDuration] = useState<number>(0);
 
+  const [from, setFrom] = useState("");
+  const [rate, setRate] = useState("");
+  const [leftAmount, setLeftAmount] = useState<string>("");
+  const [rightAmount, setRightAmount] = useState<string>("");
+
+  const onSubmit = () => {
+    if (from.trim() === "" || !ethers.utils.isAddress(from)) {
+      validator.setError("from", "Invalid address");
+    }
+    if (rate.trim() === "") {
+      validator.setError("rate", "Please enter a valid rate");
+    }
+    if (leftAmount.trim() === "") {
+      validator.setError("leftAmount", "Enter amount");
+    }
+    // TODO: Replace 100 with real balance
+    if (Number(leftAmount) > 100) {
+      validator.setError("leftAmount", "Insufficient balance");
+    }
+    if (rightAmount.trim() === "") {
+      validator.setError("rightAmount", "Enter amount");
+    }
+    // TODO: Replace 100 with real balance
+    if (Number(rightAmount) > 100) {
+      validator.setError("rightAmount", "Insufficient balance");
+    }
+
+    if (validator.hasError()) {
+      setErrors(validator.errors);
+      validator.clearErrors();
+    } else {
+      setErrors({});
+    }
+  };
+
   return (
     <Modal isOpen={modal.isOpen} close={modal.close} className={styles.wrapper}>
       <div className={styles.title}>Become Validator</div>
@@ -40,7 +79,13 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
             </Icon>
           </Tooltip>
         </div>
-        <Input placeholder="From" height={isPhoneOrLaptop ? "59px" : "71px"} />
+        <Input
+          error={errors.from}
+          value={from}
+          onChange={(e) => setFrom(e.target.value)}
+          placeholder="From"
+          height={isPhoneOrLaptop ? "59px" : "71px"}
+        />
       </div>
       <div className={styles.commissionRate}>
         <div>
@@ -52,6 +97,9 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
           </Tooltip>
         </div>
         <Input
+          error={errors.rate}
+          value={rate}
+          onChange={(e) => setRate(e.target.value)}
           placeholder="Commission Rate"
           height={isPhoneOrLaptop ? "59px" : "71px"}
         />
@@ -72,7 +120,19 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                   </span>
                 </div>
                 <div className={styles.input}>
-                  <Input placeholder="Amount" height={"71px"} />
+                  <Input
+                    absoluteError
+                    value={leftAmount}
+                    error={errors.leftAmount}
+                    onChange={(e) => {
+                      if (!isValidNumberInput(e.target.value)) {
+                        return;
+                      }
+                      setLeftAmount(e.target.value);
+                    }}
+                    placeholder="Amount"
+                    height={"71px"}
+                  />
                 </div>
                 <div className={styles.maxButton}>
                   <Button
@@ -98,7 +158,19 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                   </span>
                 </div>
                 <div className={styles.input}>
-                  <Input placeholder="Amount" height={"71px"} />
+                  <Input
+                    value={rightAmount}
+                    onChange={(e) => {
+                      if (!isValidNumberInput(e.target.value)) {
+                        return;
+                      }
+                      setRightAmount(e.target.value);
+                    }}
+                    absoluteError
+                    error={errors.rightAmount}
+                    placeholder="Amount"
+                    height={"71px"}
+                  />
                 </div>
                 <div className={styles.maxButton}>
                   <Button
@@ -122,7 +194,15 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
               </Button>
             </div>
           </div>
-          <div className={styles.duration}>
+          <div
+            className={styles.duration}
+            style={{
+              marginTop:
+                errors.leftAmount != null || errors.rightAmount != null
+                  ? "40px"
+                  : undefined,
+            }}
+          >
             {durations.map((duration: string, i: number) => {
               return (
                 <Button
@@ -154,7 +234,19 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                 <span>CSM</span>
               </div>
               <div className={styles.input}>
-                <Input placeholder="Amount" height={"59px"} />
+                <Input
+                  absoluteError
+                  value={leftAmount}
+                  error={errors.leftAmount}
+                  onChange={(e) => {
+                    if (!isValidNumberInput(e.target.value)) {
+                      return;
+                    }
+                    setLeftAmount(e.target.value);
+                  }}
+                  placeholder="Amount"
+                  height={"59px"}
+                />
               </div>
               <div className={styles.maxButton}>
                 <Button
@@ -178,7 +270,19 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                 <span>veCSM</span>
               </div>
               <div className={styles.input}>
-                <Input placeholder="Amount" height={"71px"} />
+                <Input
+                  absoluteError
+                  value={rightAmount}
+                  error={errors.rightAmount}
+                  onChange={(e) => {
+                    if (!isValidNumberInput(e.target.value)) {
+                      return;
+                    }
+                    setRightAmount(e.target.value);
+                  }}
+                  placeholder="Amount"
+                  height={"71px"}
+                />
               </div>
               <div className={styles.maxButton}>
                 <Button
@@ -192,7 +296,12 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
             </div>
           </div>
 
-          <div className={styles.lockButton}>
+          <div
+            className={styles.lockButton}
+            style={{
+              marginTop: errors.rightAmount != null ? "40px" : undefined,
+            }}
+          >
             <Button
               width={"100%"}
               style={{ maxWidth: "885px" }}
@@ -221,11 +330,11 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
               );
             })}
           </div>
-
         </div>
       )}
       <div className={styles.submit}>
         <Button
+          onClick={onSubmit}
           width={"100%"}
           height={isPhoneOrLaptop ? "34px" : "56px"}
           color={theme === "light" ? "black" : "white"}

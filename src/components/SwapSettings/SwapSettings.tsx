@@ -3,7 +3,7 @@ import { Column } from "components/Column/Column";
 import { Row } from "components/Row/Row";
 import { SwapSettings as SwapSettingsType } from "components/SwapSettings/useSwapSettings";
 import { ModalController } from "hooks/useModal";
-import { Icon, Modal, Radio, Tooltip } from "ui";
+import { Alert, Icon, Modal, Radio, Tooltip } from "ui";
 import styles from "./SwapSettings.module.scss";
 
 const regexp = /^-?\d*\.?\d*$/;
@@ -182,6 +182,13 @@ export const SwapSettings = ({
           className={styles.input}
         />
         <span>Seconds</span>
+      </Row>
+      <Row marginTop={20}>
+        {(swapSettings.deadline.trim() !== "" &&
+          Number(swapSettings.deadline) < 30) ||
+          (swapSettings.swapSlippage === "0.0" && (
+            <Alert label="Your transaction may fail" />
+          ))}
       </Row>
     </Modal>
   );

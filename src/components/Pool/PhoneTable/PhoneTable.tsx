@@ -7,7 +7,8 @@ import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
-
+import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
+import { useDispatch } from "react-redux";
 
 interface Table {
   whichPool?: boolean;
@@ -57,6 +58,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
     });
   };
   const { theme } = useTheme();
+  const dispatch = useDispatch();
   return (
     <>
       {!whichPool
@@ -70,6 +72,10 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                       : styles.phoneTableWrapper
                   )}
                   key={i}
+                  onClick={() => {
+                    dispatch(setWhichPersonalModal(-1));
+                    dispatch(setWhichGlobalModal(i));
+                  }}
                 >
                   <div className={styles.line}></div>
                   <div className={styles.titles}>
@@ -154,6 +160,10 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                         : styles.phoneTableWrapper
                     )}
                     key={i}
+                    onClick={() => {
+                      dispatch(setWhichPersonalModal(i));
+                      dispatch(setWhichGlobalModal(-1));
+                    }}
                   >
                     <div className={styles.line}></div>
                     <div className={styles.titles}>

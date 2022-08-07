@@ -53,6 +53,7 @@
             .modalKey {
                 margin: 0px 8px;
                 width: 12px;
+                cursor: pointer;
 
                 &:hover {
                     transform: scale(1.5);
@@ -78,6 +79,7 @@
         flex-direction: column;
         height: 264px;
         background-color: var(--pool-bg);
+        cursor: pointer;
 
         .line {
             width: 100%;

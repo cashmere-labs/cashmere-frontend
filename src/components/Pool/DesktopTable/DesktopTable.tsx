@@ -2,6 +2,8 @@ import styles from "./DesktopTable.module.scss";
 import { PersonalData, GlobalData } from "../datas";
 import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
+import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Table {
   whichPool?: boolean;
@@ -22,13 +24,22 @@ const PoolDesktopTitle = () => {
 };
 
 const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
-
+  const dispatch = useDispatch();
+  const trial:any = useSelector((state:any) => state.pool.whichGlobalModal)
   return (
     <>
       {whichPool
         ? PersonalData.map((data, i) => {
             return (
-              <div className={styles.tableBody} key={i}>
+              <div
+                className={styles.tableBody}
+                key={i}
+                onClick={() => {
+                  dispatch(setWhichPersonalModal(i));
+                  dispatch(setWhichGlobalModal(-1));
+                  console.log(trial)
+                }}
+              >
                 <div className={styles.datas}>
                   <div className={styles.data1}>
                     <span className={styles.logoAndName}>
@@ -62,7 +73,14 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
         : GlobalData.map((data, i) => {
             if (i < bodyCount) {
               return (
-                <div className={styles.tableBody} key={i}>
+                <div
+                  className={styles.tableBody}
+                  key={i}
+                  onClick={() => {
+                    dispatch(setWhichPersonalModal(-1));
+                    dispatch(setWhichGlobalModal(i));
+                  }}
+                >
                   <div className={styles.line}></div>
                   <div className={styles.datas}>
                     <div className={styles.data1}>

@@ -1,9 +1,12 @@
 import styles from "./DepositDashboard.module.scss";
-import { useTheme } from "hooks";
+import { useTheme, useModal } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { Button } from "ui";
+import { Button, Modal } from "ui";
+import { Waiting } from "components/Modals/Waiting/Waiting";
+
 
 const DepositDashboard = () => {
+  const claimModal = useModal();
   const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>
@@ -22,12 +25,28 @@ const DepositDashboard = () => {
           height="40px"
           width="156px"
           fontSize="fs16"
-          onClick={() => {}}
+          onClick={() => claimModal.open()}
           color={theme === "light" ? "black" : "white"}
           className={clsnm(styles.claimAll)}
         >
           Claim All
         </Button>
+        <Modal
+          bodyProps={{
+            style: {
+              borderRadius: "16px",
+            },
+          }}
+          isOpen={claimModal.isOpen}
+          close={claimModal.close}
+        >
+          <Waiting
+            icon={null}
+            value="24.689.905"
+            iconName="veCSM"
+            functionName="Claim rewards"
+          />
+        </Modal>
       </div>
     </div>
   );

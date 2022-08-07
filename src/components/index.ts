@@ -33,10 +33,10 @@ export {
 export { Done } from "./Modals/Done/Done";
 export { Waiting } from "./Modals/Waiting/Waiting";
 export { Warning } from "./Modals/Warning/Warning";
-export { LiquidityStakeReward } from "./Modals/LiquidityStakeReward/LiquidityStakeReward";
-export { Liquidity } from "./Modals/LiquidityStakeReward/Liquidity";
-export { Stake } from "./Modals/LiquidityStakeReward/Stake";
-export { Reward } from "./Modals/LiquidityStakeReward/Reward";
+export { LiquidityStakeReward } from "./Pool/LiquidityStakeReward/LiquidityStakeReward";
+export { Liquidity } from "./Pool/LiquidityStakeReward/Liquidity";
+export { Stake } from "./Pool/LiquidityStakeReward/Stake";
+export { Reward } from "./Pool/LiquidityStakeReward/Reward";
 export { UnstakeWarning } from "./Modals/UnstakeWarning/UnstakeWarning";
 export { BecomeValidatorError } from "./Modals/BecomeValidatorError/BecomeValidatorError";
 

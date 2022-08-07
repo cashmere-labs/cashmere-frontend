@@ -12,9 +12,7 @@ const Test2 = () => {
     <Layout>
       <Navbar />
       <div className={styles.wrapper}>
-        {/* <button onClick={() => trialModal.open()}>acccc</button>
-        <BecomeValidatorError modal={trialModal} /> */}
-        <Manage/>
+        <Manage />
       </div>
       <Footer />
     </Layout>

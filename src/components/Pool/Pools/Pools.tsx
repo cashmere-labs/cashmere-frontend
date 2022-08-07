@@ -1,24 +1,56 @@
 import styles from "./Pools.module.scss";
-import { useTheme } from "hooks";
+import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { PersonalData, GlobalData } from "../datas";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "ui";
 import { useSelector } from "react-redux";
 import { usePoolStates } from "hooks";
-import { PoolPhoneTable, PoolPhoneTitle, PoolDesktopTable, PoolDesktopTitle } from "components";
+import {
+  PoolPhoneTable,
+  PoolPhoneTitle,
+  PoolDesktopTable,
+  PoolDesktopTitle,
+  LiquidityStakeReward,
+} from "components";
+import { useEffect } from "react";
 
 const Pools = () => {
   const whichPool = useSelector((state: any) => state.pool.whichPool);
   const poolCount = useSelector((state: any) => state.pool.poolCount);
+
+  const whichGlobalModal = useSelector(
+    (state: any) => state.pool.whichGlobalModal
+  );
+
+  const whichPersonalModal = useSelector(
+    (state: any) => state.pool.whichPersonalModal
+  );
+
+  const stakeModal = useModal();
 
   const { increasePoolCount } = usePoolStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
   const { theme } = useTheme();
+
+  useEffect(() => {
+    stakeModal.open();
+    if (whichPersonalModal === -1 && whichGlobalModal === -1) {
+      stakeModal.close();
+    }
+  }, [whichGlobalModal]);
+
+  useEffect(() => {
+    stakeModal.open();
+    if (whichPersonalModal === -1 && whichGlobalModal === -1) {
+      stakeModal.close();
+    }
+  }, [whichPersonalModal]);
   return (
     <div className={styles.wrapper}>
+      <LiquidityStakeReward modal={stakeModal} />
       <div className={styles.dashboard}>
         {isPhoneOrLaptop ? <PoolPhoneTitle /> : <PoolDesktopTitle />}
         {isPhoneOrLaptop ? (

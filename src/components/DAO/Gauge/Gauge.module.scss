@@ -122,6 +122,9 @@
             }
           }
         }
+        .bg:hover {
+          cursor: pointer;
+        }
       }
 
       .veCSM {
@@ -165,6 +168,9 @@
               border-radius: 50%;
             }
           }
+        }
+        .bg:hover {
+          cursor: pointer;
         }
       }
     }

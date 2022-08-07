@@ -51,6 +51,15 @@
     .selected {
       background-color: var(--statistics-bg-1);
     }
+    .selected:hover {
+      cursor: pointer;
+    }
+
+    .not:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: 0.1s ease-in;
+    }
 
     .graph {
       height: 400px;

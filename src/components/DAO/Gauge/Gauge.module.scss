@@ -1,309 +1,304 @@
 .wrapper {
-    max-width: 594px;
+  width: 50%;
+
+  @media (max-width: 992px) {
     width: 100%;
+  }
 
-    .title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 14px;
-        color: var(--gauge-boost-text-1);
+  .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    color: var(--gauge-boost-text-1);
 
-        @media(max-width: 600px) {
-            margin-top: 14px;
-            margin-bottom: 19px;
+    @media (max-width: 600px) {
+      margin-top: 14px;
+      margin-bottom: 19px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .boxWrapper {
+    width: 100%;
+    padding: 19px 19px 14px;
+    background-color: var(--gauge-boost-bg-1);
+    border-radius: 24px;
+
+    @media (max-width: 600px) {
+      padding: 8px 8px 23px;
+      border-radius: 0px;
+    }
+
+    .options {
+      margin-bottom: 28px;
+
+      @media (max-width: 600px) {
+        margin-bottom: 22px;
+      }
+    }
+
+    .input1 {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
+    }
+
+    .input1 > :nth-child(1) {
+      width: 100%;
+    }
+
+    .input1 > :nth-child(1) > :nth-child(1) {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gauge-boost-text-2);
+      margin-bottom: 10px;
+    }
+
+    .input1 > :nth-child(2) {
+      width: 100%;
+
+      @media (max-width: 600px) {
+        margin-top: 5px;
+      }
+    }
+
+    .input1 > :nth-child(2) > :nth-child(1) {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gauge-boost-text-2);
+      margin-bottom: 10px;
+    }
+
+    .whichToken {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      .csm {
+        border: solid 1px var(--gauge-boost-bg-3);
+        background-color: var(--gauge-boost-bg-4);
+        border-radius: 16px;
+        max-width: 172px;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bg {
+          border-radius: 12px;
+          background-color: var(--gauge-boost-bg-5);
+          max-width: 162px;
+          width: 100%;
+          height: 46px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .isSelected {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            background-color: var(--gauge-boost-bg-4);
+            border-radius: 50%;
+            top: 13px;
+            left: 11px;
             display: flex;
             justify-content: center;
-        }
-    }
-
-    .boxWrapper {
-        max-width: 594px;
-        width: 100%;
-        padding: 19px 19px 14px;
-        background-color: var(--gauge-boost-bg-1);
-        border-radius: 24px;
-
-        @media(max-width: 600px) {
-            padding: 8px 8px 23px;
-            border-radius: 0px;
-        }
-
-        .options {
-            margin-bottom: 28px;
-
-            @media(max-width: 600px) {
-                margin-bottom: 22px;
-            }
-        }
-
-
-        .input1 {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 20px;
-
-            @media(max-width: 600px) {
-                flex-direction: column;
-            }
-
-        }
-
-        .input1>:nth-child(1) {
-            width: 100%;
-        }
-
-        .input1>:nth-child(1)>:nth-child(1) {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--gauge-boost-text-2);
-            margin-bottom: 10px;
-        }
-
-        .input1>:nth-child(2) {
-            width: 100%;
-
-            @media(max-width: 600px) {
-                margin-top: 5px;
-            }
-        }
-
-        .input1>:nth-child(2)>:nth-child(1) {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--gauge-boost-text-2);
-            margin-bottom: 10px;
-        }
-
-        .whichToken {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-
-            .csm {
-                border: solid 1px var(--gauge-boost-bg-3);
-                background-color: var(--gauge-boost-bg-4);
-                border-radius: 16px;
-                max-width: 172px;
-                width: 100%;
-                height: 56px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .bg {
-                    border-radius: 12px;
-                    background-color: var(--gauge-boost-bg-5);
-                    max-width: 162px;
-                    width: 100%;
-                    height: 46px;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    .isSelected {
-                        position: absolute;
-                        width: 21px;
-                        height: 21px;
-                        background-color: var(--gauge-boost-bg-4);
-                        border-radius: 50%;
-                        top: 13px;
-                        left: 11px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-
-                        .yes {
-                            width: 13px;
-                            height: 13px;
-                            border-radius: 50%;
-                            background-color: var(--gauge-boost-bg-6);
-                        }
-                    }
-                }
-            }
-
-            .veCSM {
-                border: solid 1px var(--gauge-boost-bg-3);
-                background-color: var(--gauge-boost-bg-4);
-                border-radius: 16px;
-                max-width: 172px;
-                width: 100%;
-                height: 56px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .bg {
-                    border-radius: 12px;
-                    background-color: var(--gauge-boost-bg-5);
-                    max-width: 162px;
-                    width: 100%;
-                    height: 46px;
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    .isSelected {
-                        position: absolute;
-                        width: 21px;
-                        height: 21px;
-                        background-color: var(--gauge-boost-bg-4);
-                        border-radius: 50%;
-                        top: 13px;
-                        left: 11px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-
-                        .yes {
-                            width: 13px;
-                            height: 13px;
-                            background-color: var(--gauge-boost-bg-6);
-                            border-radius: 50%;
-                        }
-                    }
-                }
-            }
-        }
-
-        .input2 {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            gap: 20px;
-            margin-bottom: 20px;
-
-
-            @media(max-width: 600px) {
-                flex-direction: column;
-            }
-
-            .myCSM {
-                width: 100%;
-            }
-
-            .myCSM>:nth-child(1) {
-                font-size: 13px;
-                font-weight: 500;
-                color: var(--gauge-boost-text-2);
-                margin-bottom: 5px;
-            }
-
-            .myCSM>:nth-child(2) {
-                width: 100%;
-            }
-
-            .selectPart {
-                width: 100%;
-            }
-
-            .selectPart>:nth-child(1) {
-                display: flex;
-                justify-content: space-between;
-                font-size: 13px;
-                font-weight: 500;
-                color: var(--gauge-boost-text-2);
-                margin-bottom: 5px;
-            }
-        }
-
-        .input3 {
-            margin-bottom: 20px;
-        }
-
-        .input3>:nth-child(1) {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--gauge-boost-text-2);
-            margin-bottom: 5px;
-        }
-
-        .calculate {
-            margin-bottom: 24px;
-        }
-
-        .boost {
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 11.5px;
-            color: var(--gauge-boost-text-2);
-
-
-            @media(max-width: 600px) {
-                font-size: 13px;
-            }
-        }
-
-        .line {
-            height: 0px;
-            border: solid 1px var(--gauge-boost-bg-2);
-            margin-bottom: 13px;
-        }
-
-        .maxBoost {
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 11.5px;
-            color: var(--gauge-boost-text-2);
-
-            @media(max-width: 600px) {
-                font-size: 13px;
-            }
-        }
-
-        .minCSM {
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 11.5px;
-            color: var(--gauge-boost-text-2);
-
-            @media(max-width: 600px) {
-                font-size: 13px;
-            }
-        }
-
-        .selectGauge {
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 11.5px;
-            color: var(--gauge-boost-text-2);
-
-            @media(max-width: 600px) {
-                font-size: 13px;
-            }
-        }
-
-        .maxDeposit {
-            display: flex;
-            justify-content: space-between;
-            font-size: 15px;
-            font-weight: 500;
-            margin-bottom: 11.5px;
-            color: var(--gauge-boost-text-2);
-
-            @media(max-width: 600px) {
-                font-size: 13px;
-            }
-        }
-
-        .maxDeposit>:nth-child(2) {
-            display: flex;
             align-items: center;
-            gap: 13px;
+
+            .yes {
+              width: 13px;
+              height: 13px;
+              border-radius: 50%;
+              background-color: var(--gauge-boost-bg-6);
+            }
+          }
         }
+      }
+
+      .veCSM {
+        border: solid 1px var(--gauge-boost-bg-3);
+        background-color: var(--gauge-boost-bg-4);
+        border-radius: 16px;
+        max-width: 172px;
+        width: 100%;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .bg {
+          border-radius: 12px;
+          background-color: var(--gauge-boost-bg-5);
+          max-width: 162px;
+          width: 100%;
+          height: 46px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .isSelected {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            background-color: var(--gauge-boost-bg-4);
+            border-radius: 50%;
+            top: 13px;
+            left: 11px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .yes {
+              width: 13px;
+              height: 13px;
+              background-color: var(--gauge-boost-bg-6);
+              border-radius: 50%;
+            }
+          }
+        }
+      }
     }
 
+    .input2 {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 20px;
+      margin-bottom: 20px;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
+
+      .myCSM {
+        width: 100%;
+      }
+
+      .myCSM > :nth-child(1) {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gauge-boost-text-2);
+        margin-bottom: 5px;
+      }
+
+      .myCSM > :nth-child(2) {
+        width: 100%;
+      }
+
+      .selectPart {
+        width: 100%;
+      }
+
+      .selectPart > :nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gauge-boost-text-2);
+        margin-bottom: 5px;
+      }
+    }
+
+    .input3 {
+      margin-bottom: 20px;
+    }
+
+    .input3 > :nth-child(1) {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gauge-boost-text-2);
+      margin-bottom: 5px;
+    }
+
+    .calculate {
+      margin-bottom: 24px;
+    }
+
+    .boost {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 11.5px;
+      color: var(--gauge-boost-text-2);
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    .line {
+      height: 0px;
+      border: solid 1px var(--gauge-boost-bg-2);
+      margin-bottom: 13px;
+    }
+
+    .maxBoost {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 11.5px;
+      color: var(--gauge-boost-text-2);
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    .minCSM {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 11.5px;
+      color: var(--gauge-boost-text-2);
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    .selectGauge {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 11.5px;
+      color: var(--gauge-boost-text-2);
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    .maxDeposit {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 11.5px;
+      color: var(--gauge-boost-text-2);
+
+      @media (max-width: 600px) {
+        font-size: 13px;
+      }
+    }
+
+    .maxDeposit > :nth-child(2) {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+  }
 }

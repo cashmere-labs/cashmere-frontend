@@ -1,9 +1,8 @@
 .wrapper {
-  max-width: 594px;
-  width: 100%;
+  width: 50%;
 
-  @media (max-width: 590px) {
-    max-width: 95vw !important;
+  @media (max-width: 992px) {
+    width: 100%;
   }
 
   .title {

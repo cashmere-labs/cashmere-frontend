@@ -15,15 +15,10 @@ const Waiting = ({ functionName, iconName, value, icon }: WaitingProps) => {
   const { theme } = useTheme();
   return (
     <div className={styles.wrapper}>
-      <img
-        className={styles.exit}
-        src={theme === "light" ? ExitBlack : ExitWhite}
-      ></img>
       <SkewLoader
         className={styles.loader}
         color={theme === "light" ? "black" : "#fff"}
       />
-
       <div className={styles.text1}>Waiting For Confirmation</div>
 
       <div className={styles.text2}>

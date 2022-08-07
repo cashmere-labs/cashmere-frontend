@@ -1,360 +1,341 @@
 .wrapper {
-    max-width: 1291px;
+  max-width: 1291px;
+  width: 100%;
+  color: var(--BecomeValidator-text-1);
+  padding-left: 35px;
+  padding-right: 35px;
+
+  @media (max-width: 950px) {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
     width: 100%;
-    color: var(--BecomeValidator-text-1);
-    padding-left: 35px;
-    padding-right: 35px;
+    text-align: center;
+    margin-bottom: 19.5px;
+  }
 
-    @media(max-width: 950px){
-        padding-left: 11px;
-        padding-right: 11px;
+  .from {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 16.4px;
+  }
+
+  .from > :nth-child(1) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5.5px;
+  }
+
+  .commissionRate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 51px;
+  }
+
+  .commissionRate > :nth-child(1) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5.5px;
+  }
+
+  .body {
+    background-color: var(--BecomeValidator-bg-1);
+    border-radius: 24px;
+    padding-top: 25px;
+    padding-bottom: 36px;
+    padding-left: 15px;
+    margin-bottom: 22px;
+
+    @media (max-width: 950px) {
+      margin-bottom: 16px;
     }
+  }
 
-    .title {
-        font-size: 20px;
-        font-weight: 500;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 19.5px;
-    }
+  .body > :nth-child(1) {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 28px;
 
-    .from {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .csmInput {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 392px;
+      min-width: 260px;
+
+      .balance {
         font-size: 13px;
         font-weight: 500;
-        margin-bottom: 16.4px;
-    }
+        color: var(--BecomeValidator-text-2);
+        text-align: end;
+        margin-bottom: 6px;
+      }
 
-    .from> :nth-child(1) {
+      .insideBox {
         display: flex;
         align-items: center;
-        margin-bottom: 5.5px;
+        justify-content: space-between;
+        position: relative;
+        border-radius: 8px;
+        background-color: var(--BecomeValidator-bg-2);
+        border: 1px solid var(--BecomeValidator-bg-3);
+
+        .logo {
+          display: flex;
+          align-items: center;
+          margin-left: 25px;
+
+          @media (max-width: 1060px) {
+            margin-left: 5px;
+          }
+        }
+
+        .input {
+          margin: -1px;
+          max-width: 217px;
+          width: 100%;
+
+          input {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+          }
+        }
+      }
     }
 
-    .commissionRate {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .vecsmInput {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 392px;
+      margin-left: 30px;
+      min-width: 260px;
+
+      .balance {
         font-size: 13px;
         font-weight: 500;
-        margin-bottom: 51px;
-    }
+        color: var(--BecomeValidator-text-2);
+        text-align: end;
+        margin-bottom: 6px;
+      }
 
-    .commissionRate> :nth-child(1) {
+      .insideBox {
         display: flex;
         align-items: center;
-        margin-bottom: 5.5px;
-    }
+        justify-content: space-between;
+        position: relative;
+        border-radius: 8px;
+        background-color: var(--BecomeValidator-bg-2);
+        border: 1px solid var(--BecomeValidator-bg-3);
 
-    .body {
-        background-color: var(--BecomeValidator-bg-1);
-        border-radius: 24px;
-        padding-top: 25px;
-        padding-bottom: 36px;
-        padding-left: 15px;
-        margin-bottom: 22px;
+        .logo {
+          display: flex;
+          align-items: center;
+          margin-left: 25px;
 
-        @media(max-width: 950px){
-            margin-bottom: 16px;
+          @media (max-width: 1100px) {
+            margin-left: 5px;
+          }
         }
+
+        .input {
+          margin: -1px;
+          max-width: 217px;
+          width: 100%;
+
+          input {
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+          }
+        }
+      }
     }
 
-    .body> :nth-child(1) {
-        display: flex;
+    .lockButton {
+      margin-left: 23px;
+      padding-top: 16px;
+      margin-right: 15px;
+      width: 100%;
+    }
+  }
+
+  .duration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 15px;
+    height: 42px;
+    border-radius: 8px;
+    background-color: var(--BecomeValidator-bg-2);
+
+    button {
+      min-width: 100px;
+      border-color: transparent !important;
+    }
+
+    .active {
+      background-color: #ededed;
+
+      span {
+        color: black !important;
+        font-weight: bold !important;
+      }
+    }
+  }
+
+  .phoneBody {
+    .csmInput {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 14px;
+
+      .balance {
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--BecomeValidator-text-2);
+      }
+
+      .inputBox {
         width: 100%;
+        position: relative;
+        display: flex;
         align-items: center;
-        margin-bottom: 28px;
+        background-color: var(--BecomeValidator-bg-2);
+        border: 1px solid var(--BecomeValidator-bg-3);
+        justify-content: space-between;
 
-        .csmInput {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            max-width: 392px;
-            min-width: 260px;
+        .logo {
+          display: flex;
+          align-items: center;
 
-            .balance {
-                font-size: 13px;
-                font-weight: 500;
-                color: var(--BecomeValidator-text-2);
-                text-align: end;
-                margin-bottom: 6px;
+          img {
+            margin: 0px 15px 0px 11px;
+          }
+
+          span {
+            margin-right: 90px;
+            font-size: 14px;
+            font-weight: 500;
+
+            @media (max-width: 400px) {
+              margin-right: 30px;
             }
-
-            .insideBox {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                position: relative;
-                border-radius: 8px;
-                background-color: var(--BecomeValidator-bg-2);
-                border: 1px solid var(--BecomeValidator-bg-3);
-
-                .logo {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 25px;
-
-                    @media(max-width: 1060px) {
-                        margin-left: 5px;
-                    }
-                }
-
-                .input {
-                    margin: -1px;
-                    max-width: 217px;
-                    width: 100%;
-
-                    input {
-                        border-top-left-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                    }
-                }
-
-                .maxButton {
-                    position: absolute;
-                    top: 23px;
-                    right: 21px;
-                }
-            }
+          }
         }
 
-        .vecsmInput {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            max-width: 392px;
-            margin-left: 30px;
-            min-width: 260px;
+        .input {
+          width: 100%;
+          margin: -1px;
 
-            .balance {
-                font-size: 13px;
-                font-weight: 500;
-                color: var(--BecomeValidator-text-2);
-                text-align: end;
-                margin-bottom: 6px;
+          input {
+            border-radius: 0px;
+          }
+        }
+      }
+    }
+
+    .vecsmInput {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-bottom: 14px;
+
+      .initialVeCSM {
+        margin-bottom: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--BecomeValidator-text-2);
+      }
+
+      .inputBox {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: var(--BecomeValidator-bg-2);
+        border: 1px solid var(--BecomeValidator-bg-3);
+        justify-content: space-between;
+
+        .logo {
+          display: flex;
+          align-items: center;
+
+          img {
+            margin: 0px 15px 0px 11px;
+          }
+
+          span {
+            margin-right: 72px;
+            font-size: 14px;
+            font-weight: 500;
+
+            @media (max-width: 400px) {
+              margin-right: 12px;
             }
-
-            .insideBox {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                position: relative;
-                border-radius: 8px;
-                background-color: var(--BecomeValidator-bg-2);
-                border: 1px solid var(--BecomeValidator-bg-3);
-
-                .logo {
-                    display: flex;
-                    align-items: center;
-                    margin-left: 25px;
-
-                    @media(max-width: 1100px) {
-                        margin-left: 5px;
-                    }
-                }
-
-                .input {
-                    margin: -1px;
-                    max-width: 217px;
-                    width: 100%;
-
-                    input {
-                        border-top-left-radius: 0px;
-                        border-bottom-left-radius: 0px;
-                    }
-                }
-
-                .maxButton {
-                    position: absolute;
-                    top: 23px;
-                    right: 21px;
-                }
-            }
+          }
         }
 
-        .lockButton {
-            margin-left: 23px;
-            padding-top: 16px;
-            margin-right: 15px;
-            width: 100%;
+        .input {
+          width: 100%;
+          margin: -1px;
+
+          input {
+            border-radius: 0px;
+          }
         }
+      }
+    }
+
+    .lockButton {
+      margin-bottom: 12px;
     }
 
     .duration {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-right: 15px;
-        height: 56px;
-        border-radius: 8px;
-        background-color: var(--BecomeValidator-bg-2);
-        overflow-y: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 0px;
+      margin: 0px -11px;
+      height: 42px;
+      border-radius: 0px;
+      background-color: var(--BecomeValidator-bg-2);
+      margin-bottom: 16px;
 
-        button {
-            min-width: 100px;
-            border-color: transparent !important;
+      button {
+        min-width: 100px;
+        border-color: transparent !important;
+      }
+
+      .active {
+        background-color: #ededed;
+
+        span {
+          color: black !important;
+          font-weight: bold !important;
         }
-
-        .active {
-            background-color: #EDEDED;
-
-            span {
-                color: black !important;
-                font-weight: bold !important;
-            }
-        }
+      }
     }
+  }
+}
 
-    .phoneBody {
-        .csmInput {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-bottom: 14px;
-
-            .balance {
-                margin-bottom: 8px;
-                font-size: 12px;
-                font-weight: 500;
-                color: var(--BecomeValidator-text-2);
-            }
-
-            .inputBox {
-                width: 100%;
-                position: relative;
-                display: flex;
-                align-items: center;
-                background-color: var(--BecomeValidator-bg-2);
-                border: 1px solid var(--BecomeValidator-bg-3);
-                justify-content: space-between;
-
-                .logo {
-                    display: flex;
-                    align-items: center;
-
-                    img {
-                        margin: 0px 15px 0px 11px;
-                    }
-
-                    span {
-                        margin-right: 90px;
-                        font-size: 14px;
-                        font-weight: 500;
-
-                        @media(max-width:400px){
-                            margin-right: 30px;
-                        }
-                    }
-                }
-
-                .input {
-                    width: 100%;
-                    margin: -1px;
-
-                    input {
-                        border-radius: 0px;
-                    }
-                }
-
-                .maxButton {
-                    top: 17px;
-                    right: 17px;
-                    position: absolute;
-                }
-            }
-        }
-
-        .vecsmInput {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-bottom: 14px;
-
-            .initialVeCSM {
-                margin-bottom: 8px;
-                font-size: 12px;
-                font-weight: 500;
-                color: var(--BecomeValidator-text-2);
-            }
-
-            .inputBox {
-                width: 100%;
-                position: relative;
-                display: flex;
-                align-items: center;
-                background-color: var(--BecomeValidator-bg-2);
-                border: 1px solid var(--BecomeValidator-bg-3);
-                justify-content: space-between;
-
-                .logo {
-                    display: flex;
-                    align-items: center;
-
-                    img {
-                        margin: 0px 15px 0px 11px;
-                    }
-
-                    span {
-                        margin-right: 72px;
-                        font-size: 14px;
-                        font-weight: 500;
-
-                        @media(max-width:400px){
-                            margin-right: 12px;
-                        }
-                    }
-                }
-
-                .input {
-                    width: 100%;
-                    margin: -1px;
-
-                    input {
-                        border-radius: 0px;
-                    }
-                }
-
-                .maxButton {
-                    top: 17px;
-                    right: 17px;
-                    position: absolute;
-                }
-            }
-        }
-
-        .lockButton {
-            margin-bottom: 12px;
-        }
-
-        .duration {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-right: 0px;
-            margin: 0px -11px;
-            height: 56px;
-            border-radius: 0px;
-            background-color: var(--BecomeValidator-bg-2);
-            overflow-y: auto;
-            margin-bottom: 16px;
-
-            button {
-                min-width: 100px;
-                border-color: transparent !important;
-            }
-
-            .active {
-                background-color: #EDEDED;
-
-                span {
-                    color: black !important;
-                    font-weight: bold !important;
-                }
-            }
-        }
-    }
+.maxButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 21px;
 }

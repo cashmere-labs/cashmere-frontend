@@ -3,6 +3,7 @@ import { ResponsivePie } from "@nivo/pie";
 import {
   BecomeValidator,
   ExecutingModal,
+  LockModal,
   ProposalModal,
   Statistics,
 } from "components";
@@ -35,7 +36,7 @@ const Test = () => {
   return (
     <div style={{ width: "500px", height: "500px" }}>
       <div onClick={modal.open}>Hey</div>
-      <BecomeValidator modal={modal} />
+      <LockModal modal={modal} />
     </div>
   );
 };

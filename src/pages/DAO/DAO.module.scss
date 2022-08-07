@@ -1,3 +1,30 @@
 .wrapper {
-    
+  padding-top: 40px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.space {
+  width: 24px;
+
+  @media (max-width: 992px) {
+    height: 24px;
+    width: 0px;
+  }
+}
+
+.layer {
+  justify-content: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  margin-top: 2rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
 }

@@ -11,7 +11,13 @@ import { useFormValidator } from "hooks/useFormValidator";
 import { ethers } from "ethers";
 import { isValidNumberInput } from "utils/isValidNumberInput";
 
-const BecomeValidator = ({ modal }: { modal: ModalController }) => {
+const BecomeValidator = ({
+  modal,
+  onSuccess,
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+}) => {
   const { theme } = useTheme();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 950px)",
@@ -63,6 +69,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
       setErrors(validator.errors);
       validator.clearErrors();
     } else {
+      onSuccess?.();
       setErrors({});
     }
   };
@@ -84,7 +91,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
           value={from}
           onChange={(e) => setFrom(e.target.value)}
           placeholder="From"
-          height={isPhoneOrLaptop ? "59px" : "71px"}
+          height={"60px"}
         />
       </div>
       <div className={styles.commissionRate}>
@@ -101,7 +108,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
           value={rate}
           onChange={(e) => setRate(e.target.value)}
           placeholder="Commission Rate"
-          height={isPhoneOrLaptop ? "59px" : "71px"}
+          height={"60px"}
         />
       </div>
       {!isPhoneOrLaptop ? (
@@ -131,7 +138,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                       setLeftAmount(e.target.value);
                     }}
                     placeholder="Amount"
-                    height={"71px"}
+                    height={"56px"}
                   />
                 </div>
                 <div className={styles.maxButton}>
@@ -169,7 +176,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
                     absoluteError
                     error={errors.rightAmount}
                     placeholder="Amount"
-                    height={"71px"}
+                    height={"56px"}
                   />
                 </div>
                 <div className={styles.maxButton}>
@@ -187,7 +194,7 @@ const BecomeValidator = ({ modal }: { modal: ModalController }) => {
               <Button
                 width={"100%"}
                 style={{ maxWidth: "355px", minWidth: "250px" }}
-                height={"48px"}
+                height={"40px"}
                 color={theme === "light" ? "gray" : "transparentBlack"}
               >
                 LOCK {"&"} BECOME VALIDATOR

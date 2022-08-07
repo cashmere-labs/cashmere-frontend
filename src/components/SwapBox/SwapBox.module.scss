@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 120px 12px;
+  margin: 60px 12px;
   height: max-content;
   background-color: var(--swap-box-bg);
   padding: 18px 24px;
@@ -25,9 +25,20 @@
 
 .select {
   width: 80%;
+  text-overflow: clip;
+
+  @media (max-width: 540px) {
+    width: 100%;
+    overflow-x: auto;
+  }
 }
 .input {
   width: 100%;
+
+  @media (max-width: 540px) {
+    width: 100%;
+    overflow-x: auto;
+  }
 }
 
 .swapContentBox {
@@ -43,8 +54,9 @@
 
 @media (max-width: 768px) {
   .wrapper {
+    padding: 18px 12px;
     margin: 0px;
-    width: 95vh;
+    width: 98vh;
     background-color: transparent;
   }
 }

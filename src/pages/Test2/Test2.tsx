@@ -1,4 +1,4 @@
-import { Footer, Navbar, BecomeValidatorError } from "components";
+import { Footer, Navbar, BecomeValidatorError, Manage } from "components";
 import styles from "./Test2.module.scss";
 import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
@@ -12,8 +12,9 @@ const Test2 = () => {
     <Layout>
       <Navbar />
       <div className={styles.wrapper}>
-        <button onClick={() => trialModal.open()}>acccc</button>
-        <BecomeValidatorError modal={trialModal} />
+        {/* <button onClick={() => trialModal.open()}>acccc</button>
+        <BecomeValidatorError modal={trialModal} /> */}
+        <Manage/>
       </div>
       <Footer />
     </Layout>

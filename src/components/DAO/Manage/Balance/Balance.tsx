@@ -3,20 +3,15 @@ import CLOCK from "assets/icons/clock.png";
 import CALENDER from "assets/icons/calender.png";
 import LOGO from "assets/images/cashmereGray.png";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
+import useDimensions from "react-cool-dimensions";
 
 const Balance = () => {
   const value = 0.65;
-  const divRef = useRef<HTMLDivElement>(null);
-  const [currentWidth, setCurrentWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    if (divRef.current === null) return;
-    setCurrentWidth(divRef.current.clientWidth);
-  }, []);
-
-  useEffect(() =>{
-    if(currentWidth<1000)  console.log(currentWidth)
-  }, []);
+  const { observe, width, } = useDimensions({
+    onResize: ({ observe}) => {
+      observe(); // To re-start observing the current target element
+    },
+  });
 
   return (
     <div className={styles.wrapper}>
@@ -26,10 +21,10 @@ const Balance = () => {
           562.93 <span className={styles.token}>veCSM</span>
         </div>
       </div>
-      <div ref={divRef} className={styles.bar}>
+      <div ref={observe} className={styles.bar}>
         <div
           className={styles.value}
-          style={{ width: `${121 * value}px` }}
+          style={{ width: `${width * value}px` }}
         ></div>
       </div>
       <div className={styles.subTitle}>

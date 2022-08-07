@@ -4,10 +4,47 @@ import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { useTheme } from "hooks";
 import { Icon, Tooltip, Input, Button } from "ui";
-import { useState } from "react";
+import React, { useState } from "react";
 import { clsnm } from "utils/clsnm";
 import { InfoIcon } from "assets/icons";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import DatePicker, {
+  DayValue,
+  DayRange,
+  Day,
+} from "react-modern-calendar-datepicker";
+
+const Calender = () => {
+  const [day, setDay] = useState<DayValue>(null);
+  const date = new Date();
+  const currentDate =
+    date.getDay().toString() +
+    "/" +
+    date.getMonth().toString() +
+    "/" +
+    date.getFullYear().toString();
+  const renderCustomInput = ({ ref }: any) => (
+    <input
+      readOnly
+      ref={ref} // necessary
+      placeholder={currentDate}
+      value={day ? `${day.day}/${day.month}/${day.year}` : ""}
+      className={styles.calender} // a styling class
+    />
+  );
+  return (
+    <>
+      <DatePicker
+        value={day}
+        inputPlaceholder={currentDate}
+        onChange={setDay}
+        renderInput={renderCustomInput}
+        calendarClassName={styles.calendarResponsive}
+      />
+    </>
+  );
+};
 
 const UpperBox = () => {
   const { theme } = useTheme();
@@ -105,7 +142,7 @@ const UpperBox = () => {
               Lock
             </Button>
             <Button
-              width={ "100%"}
+              width={"100%"}
               height="40px"
               fontWeight="fw600"
               color={
@@ -122,7 +159,7 @@ const UpperBox = () => {
           {durations.map((duration: string, i: number) => {
             return (
               <div
-              key={i}
+                key={i}
                 onClick={() => setWhichTime(i)}
                 className={clsnm(
                   styles.option,
@@ -145,7 +182,7 @@ const UpperBox = () => {
               </Tooltip>
             </div>
             <div className={styles.set}>
-              29/02/2022
+              <Calender />
               <span className={styles.icon}>
                 <FaChevronDown />
               </span>

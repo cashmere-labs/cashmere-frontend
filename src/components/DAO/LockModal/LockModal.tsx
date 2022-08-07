@@ -40,7 +40,7 @@ const LockModal = ({ modal }: { modal: ModalController }) => {
         <div className={styles.icon}>
           <img src={INFO}></img>
         </div>
-        <div>
+        <div className={styles.info}>
           Your Starting veCSM will be: 10989.905 You are locking 23689.905 CSM
           until dd/mm/yyy
         </div>

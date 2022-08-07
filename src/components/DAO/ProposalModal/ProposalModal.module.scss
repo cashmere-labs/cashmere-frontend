@@ -1,258 +1,264 @@
 .wrapper {
-    max-width: 761px;
+  max-width: 761px;
+  width: 100%;
+
+  .title {
     width: 100%;
-    min-height: 782px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--DAOProposal-text-1);
+    margin-bottom: 22px;
+  }
+
+  .titleInput {
+    margin-bottom: 19px;
+
+    .daoTitle {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--DAOProposal-text-1);
+      margin-bottom: 6px;
+    }
+  }
+
+  .proposalInput {
+    margin-bottom: 19px;
+
+    .proposalTitle {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--DAOProposal-text-1);
+      margin-bottom: 6px;
+    }
+  }
+
+  .inputTitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--DAOProposal-text-1);
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+
+    .balance {
+      white-space: nowrap;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  .input {
+    position: relative;
+    margin-bottom: 12px;
+
+    Button {
+      position: absolute;
+      top: 18px;
+      font-size: 12px;
+      right: 111px;
+      border: solid 1px #ededed !important;
+    }
+
+    img {
+      height: 28px;
+      width: 28px;
+      top: 30px;
+      transform: translateY(-50%);
+      right: 64px;
+      position: absolute;
+    }
+
+    .logo {
+      position: absolute;
+      top: 30px;
+      transform: translateY(-50%);
+      right: 20px;
+      font-weight: 500;
+      color: var(--DAOProposal-text-1);
+    }
+  }
+
+  .rewardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--DAOProposal-text-1);
+    margin-bottom: 21px;
+  }
+
+  .rewardBodyFirst {
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--DAOProposal-text-1);
+
+    .status > :nth-child(1) {
+      margin-bottom: 6px;
+    }
+
+    .status > :nth-child(2) {
+      margin-bottom: 17px;
+      width: 198px;
+      height: 60px;
+      border-radius: 8px;
+      border: solid 1px var(--DAOProposal-bg-2);
+      background-color: var(--DAOProposal-bg-1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contractAddress {
+      margin-left: 23px;
+      width: 100%;
+    }
+
+    .contractAddress > :nth-child(1) {
+      margin-bottom: 6px;
+    }
+  }
+
+  .rewardBodySecond {
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--DAOProposal-text-1);
+    justify-content: space-between;
+    margin-bottom: 33px;
+
+    .rewardsTo > :nth-child(1) {
+      margin-bottom: 6px;
+    }
+
+    .rewardsTo > :nth-child(2) {
+      width: 198px;
+      border-radius: 8px;
+    }
+
+    .amount {
+      width: 100%;
+      margin-left: 23px;
+    }
+
+    .amount > :nth-child(1) {
+      margin-bottom: 6px;
+    }
+  }
+
+  .submitButton {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 600px;
+    min-height: auto;
 
     .title {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        font-size: 20px;
-        font-weight: 500;
-        color: var(--DAOProposal-text-1);
-        margin-bottom: 22px;
+      font-size: 16px;
+      margin-bottom: 7px;
     }
 
     .titleInput {
-        margin-bottom: 19px;
+      margin-bottom: 17px;
 
-        .daoTitle {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--DAOProposal-text-1);
-            margin-bottom: 6px;
-        }
+      .daoTitle {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
     }
 
     .proposalInput {
-        margin-bottom: 19px;
+      margin-bottom: 17px;
 
-        .proposalTitle {
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--DAOProposal-text-1);
-            margin-bottom: 6px;
-        }
+      .proposalTitle {
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
     }
 
     .inputTitle {
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--DAOProposal-text-1);
-        margin-bottom: 6px;
-        display: flex;
-        justify-content: space-between;
-
-        .balance {
-            white-space: nowrap;
-            display: flex;
-            align-items: flex-end;
-        }
+      font-size: 12px;
+      margin-bottom: 8px;
     }
 
     .input {
-        position: relative;
-        margin-bottom: 27px;
+      margin-bottom: 17px;
 
-        Button {
-            position: absolute;
-            top: 23px;
-            font-size: 12px;
-            right: 111px;
-            border: solid 1px #ededed !important;
-        }
+      Button {
+        top: 17px;
+        right: 96px;
+        border: solid 1px var(--DAOProposal-bg-2) !important;
+      }
 
-        img {
-            height: 28px;
-            width: 28px;
-            top: 22px;
-            right: 64px;
-            position: absolute;
-        }
+      img {
+        height: 22px;
+        width: 22px;
+        top: 17px;
+        right: 58px;
+      }
 
-        .logo {
-            position: absolute;
-            top: 27px;
-            right: 20px;
-            font-weight: 500;
-            color: var(--DAOProposal-text-1);
-        }
+      .logo {
+        top: 23px;
+        right: 17px;
+      }
     }
 
     .rewardTitle {
-        font-size: 18px;
-        font-weight: bold;
-        color: var(--DAOProposal-text-1);
-        margin-bottom: 21px;
+      font-size: 16px;
+      margin-bottom: 17px;
     }
 
     .rewardBodyFirst {
-        display: flex;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--DAOProposal-text-1);
+      font-size: 12px;
 
-        .status> :nth-child(1) {
-            margin-bottom: 6px;
-        }
+      .status > :nth-child(1) {
+        margin-bottom: 5px;
+      }
 
-        .status> :nth-child(2) {
-            margin-bottom: 17px;
-            width: 198px;
-            height: 71px;
-            border-radius: 8px;
-            border: solid 1px var(--DAOProposal-bg-2);
-            background-color: var(--DAOProposal-bg-1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      .status > :nth-child(2) {
+        margin-bottom: 14px;
+        width: 76px;
+        height: 59px;
+      }
 
-        .contractAddress {
-            margin-left: 23px;
-            width: 100%;
-        }
+      .contractAddress {
+        margin-left: 9px;
+      }
 
-        .contractAddress> :nth-child(1) {
-            margin-bottom: 6px;
-        }
+      .contractAddress > :nth-child(1) {
+        margin-bottom: 5px;
+      }
     }
 
     .rewardBodySecond {
-        display: flex;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--DAOProposal-text-1);
-        justify-content: space-between;
-        margin-bottom: 33px;
+      font-size: 12px;
+      margin-bottom: 20px;
 
-        .rewardsTo> :nth-child(1) {
-            margin-bottom: 6px;
-        }
+      .rewardsTo > :nth-child(1) {
+        margin-bottom: 5px;
+      }
 
-        .rewardsTo> :nth-child(2) {
-            width: 198px;
-            border-radius: 8px;
-        }
+      .rewardsTo > :nth-child(2) {
+        width: 136px;
+      }
 
-        .amount {
-            width: 100%;
-            margin-left: 23px;
-        }
+      .amount {
+        margin-left: 8px;
+      }
 
-        .amount> :nth-child(1) {
-            margin-bottom: 6px;
-        }
+      .amount > :nth-child(1) {
+        margin-bottom: 5px;
+      }
     }
-
-    .submitButton {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
+  }
 }
 
-@media(max-width: 600px) {
-    .wrapper {
-        max-width: 600px;
-        min-height: auto;
-
-        .title {
-            font-size: 16px;
-            margin-bottom: 7px;
-        }
-
-        .titleInput {
-            margin-bottom: 17px;
-
-            .daoTitle {
-                font-size: 12px;
-                margin-bottom: 5px;
-            }
-        }
-
-        .proposalInput {
-            margin-bottom: 17px;
-
-            .proposalTitle {
-                font-size: 12px;
-                margin-bottom: 5px;
-            }
-        }
-
-        .inputTitle {
-            font-size: 12px;
-            margin-bottom: 8px;
-        }
-
-        .input {
-            margin-bottom: 17px;
-
-            Button {
-                top: 17px;
-                right: 96px;
-                border: solid 1px var(--DAOProposal-bg-2) !important;
-            }
-
-            img {
-                height: 22px;
-                width: 22px;
-                top: 17px;
-                right: 58px;
-            }
-
-            .logo {
-                top: 23px;
-                right: 17px;
-            }
-        }
-
-        .rewardTitle {
-            font-size: 16px;
-            margin-bottom: 17px;
-        }
-
-        .rewardBodyFirst {
-            font-size: 12px;
-
-            .status> :nth-child(1) {
-                margin-bottom: 5px;
-            }
-
-            .status> :nth-child(2) {
-                margin-bottom: 14px;
-                width: 76px;
-                height: 59px;
-            }
-
-            .contractAddress {
-                margin-left: 9px;
-            }
-
-            .contractAddress> :nth-child(1) {
-                margin-bottom: 5px;
-            }
-        }
-
-        .rewardBodySecond {
-            font-size: 12px;
-            margin-bottom: 20px;
-
-            .rewardsTo> :nth-child(1) {
-                margin-bottom: 5px;
-            }
-
-            .rewardsTo> :nth-child(2) {
-                width: 136px;
-            }
-
-            .amount {
-                margin-left: 8px;
-            }
-
-            .amount> :nth-child(1) {
-                margin-bottom: 5px;
-            }
-        }
-    }
+.body {
+  max-height: 80vh;
 }

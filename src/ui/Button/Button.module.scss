@@ -48,7 +48,7 @@
   }
 
   &.gray {
-    background: #E6E6E6;
+    background: #e6e6e6;
     border: solid 1px #e5e5e5 !important;
     color: black !important;
   }
@@ -97,7 +97,8 @@
 
   &.disabled {
     opacity: 0.5;
-    pointer-events: none;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
   }
 
   &.loading {
@@ -136,7 +137,7 @@
     font-weight: 700;
   }
 
-  .lhNormal{
+  .lhNormal {
     line-height: normal;
   }
 }
@@ -176,4 +177,3 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-

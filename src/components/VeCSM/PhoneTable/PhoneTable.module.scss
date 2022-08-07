@@ -1,90 +1,88 @@
 .tableTitle {
-    height: 46px;
-    display: flex;
-    align-items: center;
-    padding: 0px 8px;
-    color: var(--veCSM-text-1);
-    font-weight: 600;
-    font-size: 13px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  color: var(--veCSM-text-1);
+  font-weight: 600;
+  font-size: 13px;
 }
 
-.tableTitle> :nth-child(1) {
-    width: 11.25%;
+.tableTitle > :nth-child(1) {
+  width: 11.25%;
 }
 
-.tableTitle> :nth-child(2) {
-    width: 29.25%;
+.tableTitle > :nth-child(2) {
+  width: 29.25%;
 }
 
-.tableTitle> :nth-child(3) {
-    width: 36.50%;
+.tableTitle > :nth-child(3) {
+  width: 36.5%;
 }
 
-.tableTitle> :nth-child(4) {
-    display: flex;
-    justify-content: end;
-    width: 23%;
+.tableTitle > :nth-child(4) {
+  display: flex;
+  justify-content: end;
+  width: 23%;
 }
-
 
 .tableBody {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--veCSM-bg-1);
+
+  .line {
+    width: 100%;
+    height: 0;
+    border: solid 1px var(--veCSM-text-5);
+  }
+
+  .datas {
     display: flex;
     flex-direction: column;
-    background-color: var(--veCSM-bg-1);
+    justify-content: center;
+    align-items: center;
+    color: var(--veCSM-text-4);
+  }
 
-    .line {
-        width: 100%;
-        height: 0;
-        border: solid 1px var(--veCSM-text-5);
-    }
+  .datas > :nth-child(1) {
+    margin-top: 22.5px;
+    margin-bottom: 3.5px;
+    padding: 0px 10px;
+    width: 100%;
+    display: flex;
+    font-size: 13px;
+    font-weight: 600;
+  }
 
-    .datas{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: var(--veCSM-text-4);
-    }
+  .datas > :nth-child(2) {
+    margin: 15px 0px;
+    max-width: 600px;
+    width: 100%;
+    padding: 0px 8px;
+  }
 
-    .datas > :nth-child(1) {
-        margin-top: 22.5px;
-        margin-bottom: 3.5px;
-        padding: 0px 10px;
-        width: 100%;
-        display: flex;
-        font-size: 13px;
-        font-weight: 600;
-    }
+  .datas > :nth-child(1) > :nth-child(1) {
+    width: 11.25%;
+    font-size: 14px;
+  }
 
-    .datas > :nth-child(2) {
-        margin: 15px 0px;
-        max-width: 600px;
-        width: 100%;
-        padding: 0px 8px;
-    }
+  .datas > :nth-child(1) > :nth-child(2) {
+    width: 29.25%;
+  }
 
-    .datas > :nth-child(1) > :nth-child(1){
-        width: 11.25%;
-        font-size: 14px;
-    }
+  .datas > :nth-child(1) > :nth-child(3) {
+    width: 36.5%;
+  }
 
-    .datas > :nth-child(1) > :nth-child(2){
-        width: 29.25%;
-    }
+  .datas > :nth-child(1) > :nth-child(4) {
+    width: 23%;
+    padding-right: 7px;
+    display: flex;
+    justify-content: end;
+  }
 
-    .datas > :nth-child(1) > :nth-child(3){
-        width: 36.50%;
-    }
-
-    .datas > :nth-child(1) > :nth-child(4){
-        width: 23%;
-        padding-right: 7px;
-        display: flex;
-        justify-content: end;
-
-    }
-
-    button{
-        width: 100% !important;
-    }
+  button {
+    width: 100% !important;
+  }
 }

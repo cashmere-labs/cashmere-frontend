@@ -1,77 +1,75 @@
 .tableTitle {
-    height: 72px;
-    display: flex;
-    align-items: center;
-    margin-left: 36.4px;
-    color: var(--veCSM-text-1);
-    font-weight: 600;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  margin-left: 36.4px;
+  color: var(--veCSM-text-1);
+  font-weight: 600;
 }
 
-.tableTitle> :nth-child(1) {
-    width: 12%;
+.tableTitle > :nth-child(1) {
+  width: 12%;
 }
 
-.tableTitle> :nth-child(2) {
-    width: 22.5%;
+.tableTitle > :nth-child(2) {
+  width: 22.5%;
 }
 
-.tableTitle> :nth-child(3) {
-    width: 28.5%;
+.tableTitle > :nth-child(3) {
+  width: 28.5%;
 }
 
-.tableTitle> :nth-child(4) {
-    width: 9%;
+.tableTitle > :nth-child(4) {
+  width: 9%;
 }
 
-.tableTitle> :nth-child(5) {
-    width: 28%;
+.tableTitle > :nth-child(5) {
+  width: 28%;
 }
-
 
 .tableBody {
+  display: flex;
+  flex-direction: column;
+
+  .line {
+    width: 100%;
+    height: 0;
+    border: solid 1px var(--veCSM-text-5);
+  }
+
+  .datas {
     display: flex;
-    flex-direction: column;
+    padding: 15.5px 0px;
+    padding-left: 36.4px;
+    justify-content: center;
+    align-items: center;
+    color: var(--veCSM-text-4);
+  }
 
-    .line {
-        width: 100%;
-        height: 0;
-        border: solid 1px var(--veCSM-text-5);
-    }
+  .datas > :nth-child(1) {
+    width: 12%;
+    font-weight: 600;
+    color: var(--veCSM-text-4);
+  }
 
-    .datas{
-        display: flex;
-        padding: 15.5px 0px;
-        padding-left: 36.4px;
-        justify-content: center;
-        align-items: center;
-        color: var(--veCSM-text-4);
-    }
+  .datas > :nth-child(2) {
+    width: 22.5%;
+  }
 
+  .datas > :nth-child(3) {
+    width: 28.5%;
+  }
 
-    .datas> :nth-child(1) {
-        width: 12%;
-        font-weight: 600;
-        color: var(--veCSM-text-4);
-    }
+  .datas > :nth-child(4) {
+    width: 9%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .datas> :nth-child(2) {
-        width: 22.5%;
-    }
-
-    .datas> :nth-child(3) {
-        width: 28.5%;
-    }
-
-    .datas> :nth-child(4) {
-        width: 9%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .datas> :nth-child(5) {
-        width: 28%;
-        padding-right: 25px;
-        display: flex;
-        justify-content: end;
-    }
+  .datas > :nth-child(5) {
+    width: 28%;
+    padding-right: 25px;
+    display: flex;
+    justify-content: end;
+  }
 }

@@ -3,5 +3,6 @@ export enum PATHS {
   swap = "/swap",
   pool = "/pool",
   veCSM = "/vecsm",
+  manage = "/manage",
   dao = "/dao",
 }

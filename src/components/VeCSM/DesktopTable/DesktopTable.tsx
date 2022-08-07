@@ -3,6 +3,8 @@ import { useTheme } from "hooks";
 import { ActiveValidators, InactiveValidators } from "../datas";
 import { Button } from "ui";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
+import { PATHS } from "constants/paths";
 
 interface Table {
   whichValidator: boolean;
@@ -37,20 +39,26 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                     <div>{data.votingPower} veCSM</div>
                     <div>%{data.commission}</div>
                     <div>
-                      <Button
-                        height="40px"
-                        width="156px"
-                        color={theme === "light" ? "transparentWhite" : "transparentBlack"}
-                        fontWeight="fw600"
-                      >
-                        Manage
-                      </Button>
+                      <Link to={`${PATHS.manage}/${data.id}`}>
+                        <Button
+                          height="40px"
+                          width="156px"
+                          color={
+                            theme === "light"
+                              ? "transparentWhite"
+                              : "transparentBlack"
+                          }
+                          fontWeight="fw600"
+                        >
+                          Manage
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
               );
             } else {
-              return(<Fragment key={i}></Fragment>)
+              return <Fragment key={i}></Fragment>;
             }
           })
         : ActiveValidators.map((data: any, i: number) => {
@@ -64,20 +72,26 @@ const VeCSMDesktopTable = ({ whichValidator, validatorCount }: Table) => {
                     <div>{data.votingPower} veCSM</div>
                     <div>%{data.commission}</div>
                     <div>
-                      <Button
-                        height="40px"
-                        width="156px"
-                        color={theme === "light" ? "transparentWhite" : "transparentBlack"}
-                        fontWeight="fw600"
-                      >
-                        Manage
-                      </Button>
+                      <Link to={`${PATHS.manage}/${data.id}`}>
+                        <Button
+                          height="40px"
+                          width="156px"
+                          color={
+                            theme === "light"
+                              ? "transparentWhite"
+                              : "transparentBlack"
+                          }
+                          fontWeight="fw600"
+                        >
+                          Manage
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>
               );
             } else {
-              return(<Fragment key={i}></Fragment>)
+              return <Fragment key={i}></Fragment>;
             }
           })}
     </>

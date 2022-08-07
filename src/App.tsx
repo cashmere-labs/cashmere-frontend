@@ -1,7 +1,7 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Home, Pool, Swap, VeCSM, DAO } from "pages";
+import { Pool, Swap, VeCSM, DAO, ManagePage } from "pages";
 import {
   BrowserRouter,
   Route,
@@ -35,6 +35,7 @@ function App() {
           <Route path={PATHS.pool} element={<Pool />} />
           <Route path={PATHS.veCSM} element={<VeCSM />} />
           <Route path={PATHS.dao} element={<DAO />} />
+          <Route path={`${PATHS.manage}/:id`} element={<ManagePage />} />
           <Route path={"/test"} element={<Test />} />
           <Route path={"/test2"} element={<Test2 />} />
           <Route path="*" element={<div>Not found</div>} />

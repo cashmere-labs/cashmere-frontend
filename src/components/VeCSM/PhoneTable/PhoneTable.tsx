@@ -2,7 +2,9 @@ import styles from "./PhoneTable.module.scss";
 import { useTheme } from "hooks";
 import { ActiveValidators, InactiveValidators } from "../datas";
 import { Button } from "ui";
-import { Fragment } from "react";
+import { Validator } from "types/app";
+import { Link } from "react-router-dom";
+import { PATHS } from "constants/paths";
 
 interface Table {
   whichValidator: boolean;
@@ -10,87 +12,62 @@ interface Table {
 }
 
 const VeCSMPhoneTitle = () => {
+  const titles = ["Rank", "Name", "Voting Power", "Comission"];
+
   return (
     <div className={styles.tableTitle}>
-      <div>Rank</div>
-      <div>Name</div>
-      <div>Voting Power</div>
-      <div>Commission</div>
+      {titles.map((item, i) => (
+        <div key={i}>{item}</div>
+      ))}
+    </div>
+  );
+};
+
+const Row = ({ data, i }: { data: Validator; i: number }) => {
+  const { theme } = useTheme();
+
+  return (
+    <div className={styles.tableBody}>
+      <div className={styles.line}></div>
+      <div className={styles.datas}>
+        <div>
+          <div>{i + 1}</div>
+          <div>{data.name}</div>
+          <div>{data.votingPower} veCSM</div>
+          <div>%{data.commission}</div>
+        </div>
+        <div>
+          <Link to={`${PATHS.manage}/${data.id}`}>
+            <Button
+              height="40px"
+              width="156px"
+              color={
+                theme === "light" ? "transparentWhite" : "transparentBlack"
+              }
+              fontWeight="fw600"
+            >
+              Manage
+            </Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
 
 const VeCSMPhoneTable = ({ whichValidator, validatorCount }: Table) => {
-  const { theme } = useTheme();
-
   return (
     <>
       {whichValidator
-        ? InactiveValidators.map((data: any, i: number) => {
-            if (i < validatorCount) {
-              return (
-                <div className={styles.tableBody} key={i}>
-                  <div className={styles.line}></div>
-                  <div className={styles.datas}>
-                    <div>
-                      <div>{i + 1}</div>
-                      <div>{data.name}</div>
-                      <div>{data.votingPower} veCSM</div>
-                      <div>%{data.commission}</div>
-                    </div>
-                    <div>
-                      <Button
-                        height="40px"
-                        width="156px"
-                        color={
-                          theme === "light"
-                            ? "transparentWhite"
-                            : "transparentBlack"
-                        }
-                        fontWeight="fw600"
-                      >
-                        Manage
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              );
-            } else {
-              return <Fragment key={i}></Fragment>;
-            }
+        ? InactiveValidators.map((data, i) => {
+            return (
+              i < validatorCount && <Row key={data.id} i={i} data={data} />
+            );
           })
-        : ActiveValidators.map((data: any, i: number) => {
-            if (i < validatorCount) {
-              return (
-                <div className={styles.tableBody} key={i}>
-                  <div className={styles.line}></div>
-                  <div className={styles.datas}>
-                    <div>
-                      <div>{i + 1}</div>
-                      <div>{data.name}</div>
-                      <div>{data.votingPower} veCSM</div>
-                      <div>%{data.commission}</div>
-                    </div>
-                    <div>
-                      <Button
-                        height="40px"
-                        width="156px"
-                        color={
-                          theme === "light"
-                            ? "transparentWhite"
-                            : "transparentBlack"
-                        }
-                        fontWeight="fw600"
-                      >
-                        Manage
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              );
-            } else {
-              return <Fragment key={i}></Fragment>;
-            }
+        : ActiveValidators.map((data, i) => {
+            return (
+              i < validatorCount && <Row key={data.id} data={data} i={i} />
+            );
           })}
     </>
   );

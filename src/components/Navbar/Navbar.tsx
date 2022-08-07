@@ -44,7 +44,8 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         name: "veCSM",
         url: PATHS.veCSM,
         soon: false,
-        active: pathname.startsWith(PATHS.veCSM),
+        active:
+          pathname.startsWith(PATHS.veCSM) || pathname.startsWith(PATHS.manage),
       },
       {
         name: "DAO",

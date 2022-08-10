@@ -2,10 +2,28 @@ import { ModalController } from "hooks/useModal";
 import { Modal } from "ui";
 import styles from "./LiquidityStakeReward.module.scss";
 import { Liquidity, Reward, Stake } from "components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setValue } from "store/slicers/pool";
 
-const LiquidityStakeReward = ({ modal }: { modal: ModalController }) => {
+const LiquidityStakeReward = ({
+  modal,
+  onSuccess,
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+}) => {
   const [whichComponent, setWhichComponent] = useState(0);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    setWhichComponent(0);
+  }, [modal.isOpen]);
+
+  useEffect(() => {
+    dispatch(setValue(""))
+  }, [whichComponent]);
+
   return (
     <Modal isOpen={modal.isOpen} close={modal.close} className={styles.wrapper}>
       <div className={styles.options}>
@@ -35,11 +53,11 @@ const LiquidityStakeReward = ({ modal }: { modal: ModalController }) => {
         </div>
       </div>
       {whichComponent === 0 ? (
-        <Liquidity />
+        <Liquidity onSuccess={onSuccess} />
       ) : whichComponent === 1 ? (
-        <Stake />
+        <Stake onSuccess={onSuccess} />
       ) : (
-        <Reward />
+        <Reward onSuccess={onSuccess} />
       )}
     </Modal>
   );

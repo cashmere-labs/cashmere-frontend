@@ -2,9 +2,14 @@ import styles from "./Reward.module.scss";
 import { Button } from "ui";
 import { useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
+import { useDispatch } from "react-redux";
 
-const Reward = () => {
+import { setValue, setFunctionName } from "store/slicers/pool";
+
+const Reward = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();
+
+  const dispatch = useDispatch();
 
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 600px)",
@@ -27,6 +32,11 @@ const Reward = () => {
           height={isPhoneOrPC ? "34px" : "56px"}
           fontWeight="fw600"
           color={theme === "light" ? "black" : "white"}
+          onClick={() => {
+            onSuccess();
+            dispatch(setValue("145.67"));
+            dispatch(setFunctionName("Claim"));
+          }}
         >
           Claim
         </Button>

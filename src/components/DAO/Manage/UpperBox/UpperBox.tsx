@@ -2,52 +2,24 @@ import styles from "./UpperBox.module.scss";
 import { useMediaQuery } from "react-responsive";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { useTheme } from "hooks";
-import { Icon, Tooltip, Input, Button } from "ui";
-import React, { useState } from "react";
+import { useTheme, useModal } from "hooks";
+import { Icon, Tooltip, Input, Button, Modal } from "ui";
+import { useState } from "react";
 import { clsnm } from "utils/clsnm";
 import { InfoIcon } from "assets/icons";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker, {
-  DayValue,
-  DayRange,
-  Day,
-} from "react-modern-calendar-datepicker";
-
-const Calender = () => {
-  const [day, setDay] = useState<DayValue>(null);
-  const date = new Date();
-  const currentDate =
-    date.getDay().toString() +
-    "/" +
-    date.getMonth().toString() +
-    "/" +
-    date.getFullYear().toString();
-  const renderCustomInput = ({ ref }: any) => (
-    <input
-      readOnly
-      ref={ref} // necessary
-      placeholder={currentDate}
-      value={day ? `${day.day}/${day.month}/${day.year}` : ""}
-      className={styles.calender} // a styling class
-    />
-  );
-  return (
-    <>
-      <DatePicker
-        value={day}
-        inputPlaceholder={currentDate}
-        onChange={setDay}
-        renderInput={renderCustomInput}
-        calendarClassName={styles.calendarResponsive}
-      />
-    </>
-  );
-};
+import DatePicker, { DayValue } from "react-modern-calendar-datepicker";
+import { Waiting } from "components";
 
 const UpperBox = () => {
   const { theme } = useTheme();
+
+  const lockAndWithdrawModal = useModal();
+  const [functionName, setFunctionName] = useState("");
+  const [csmValue, setCSMValue] = useState("");
+  const [veCSMValue, setveCSMValue] = useState("");
+  const [whichValue, setWhichValue] = useState(0);
 
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 800px)",
@@ -92,6 +64,7 @@ const UpperBox = () => {
                 extendLeft
                 placeholder="Amount"
                 height={isPhoneOrPC ? "55px" : "71px"}
+                onChange={(e) => setCSMValue(e.target.value.toString())}
               />
             </div>
           </div>
@@ -122,6 +95,7 @@ const UpperBox = () => {
                 extendLeft
                 placeholder="Amount"
                 height={isPhoneOrPC ? "55px" : "71px"}
+                onChange={(e) => setveCSMValue(e.target.value.toString())}
               />
             </div>
           </div>
@@ -138,6 +112,11 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
+              onClick={()=>{
+                lockAndWithdrawModal.open()
+                setWhichValue(0)
+                setFunctionName("Lock")
+              }}
             >
               Lock
             </Button>
@@ -148,6 +127,11 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
+              onClick={()=>{
+                lockAndWithdrawModal.open()
+                setWhichValue(1)
+                setFunctionName("Withdraw")
+              }}
             >
               Withdraw
             </Button>
@@ -191,7 +175,52 @@ const UpperBox = () => {
           <div className={styles.text}>Increase Lock</div>
         </div>
       </div>
+
+      <Modal
+        isOpen={lockAndWithdrawModal.isOpen}
+        close={() => {
+          lockAndWithdrawModal.close();
+        }}
+      >
+        <Waiting
+          value={whichValue === 0 ? csmValue : veCSMValue}
+          iconName={whichValue === 0 ? "CSM" : "veCSM"}
+          icon={null}
+          functionName={functionName}
+        />
+      </Modal>
     </div>
+  );
+};
+
+const Calender = () => {
+  const [day, setDay] = useState<DayValue>(null);
+  const date = new Date();
+  const currentDate =
+    date.getDay().toString() +
+    "/" +
+    date.getMonth().toString() +
+    "/" +
+    date.getFullYear().toString();
+  const renderCustomInput = ({ ref }: any) => (
+    <input
+      readOnly
+      ref={ref} // necessary
+      placeholder={currentDate}
+      value={day ? `${day.day}/${day.month}/${day.year}` : ""}
+      className={styles.calender} // a styling class
+    />
+  );
+  return (
+    <>
+      <DatePicker
+        value={day}
+        inputPlaceholder={currentDate}
+        onChange={setDay}
+        renderInput={renderCustomInput}
+        calendarClassName={styles.calendarResponsive}
+      />
+    </>
   );
 };
 

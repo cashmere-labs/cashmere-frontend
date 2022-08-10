@@ -4,22 +4,29 @@ import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { useTheme, useModal } from "hooks";
 import { Icon, Tooltip, Input, Button, Modal } from "ui";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { clsnm } from "utils/clsnm";
 import { InfoIcon } from "assets/icons";
 import { FaChevronDown } from "react-icons/fa";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker, { DayValue } from "react-modern-calendar-datepicker";
-import { Waiting } from "components";
+import { Waiting, UnstakeWarning, LockModal } from "components";
+
+enum PAGE {
+  "WARNING",
+  "SUCCESS",
+}
 
 const UpperBox = () => {
   const { theme } = useTheme();
-
-  const lockAndWithdrawModal = useModal();
-  const [functionName, setFunctionName] = useState("");
   const [csmValue, setCSMValue] = useState("");
   const [veCSMValue, setveCSMValue] = useState("");
-  const [whichValue, setWhichValue] = useState(0);
+
+  const lockModal = useModal();
+  const withdrawModal = useModal();
+
+  const [lockStep, setLockStep] = useState<PAGE>(PAGE.WARNING);
+  const [withdrawStep, setWithdrawStep] = useState<PAGE>(PAGE.WARNING);
 
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 800px)",
@@ -34,6 +41,13 @@ const UpperBox = () => {
     "2 Years",
     "4 Years",
   ];
+
+  const date = new Date();
+  const [day, setDay] = useState<DayValue>({
+    day: date.getDate(),
+    month: date.getMonth(),
+    year: date.getFullYear(),
+  });
 
   return (
     <div className={styles.wrapper}>
@@ -112,10 +126,8 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
-              onClick={()=>{
-                lockAndWithdrawModal.open()
-                setWhichValue(0)
-                setFunctionName("Lock")
+              onClick={() => {
+                lockModal.open();
               }}
             >
               Lock
@@ -127,10 +139,8 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
-              onClick={()=>{
-                lockAndWithdrawModal.open()
-                setWhichValue(1)
-                setFunctionName("Withdraw")
+              onClick={() => {
+                withdrawModal.open();
               }}
             >
               Withdraw
@@ -166,7 +176,7 @@ const UpperBox = () => {
               </Tooltip>
             </div>
             <div className={styles.set}>
-              <Calender />
+              <Calender day={day} setDay={setDay} />
               <span className={styles.icon}>
                 <FaChevronDown />
               </span>
@@ -176,32 +186,62 @@ const UpperBox = () => {
         </div>
       </div>
 
-      <Modal
-        isOpen={lockAndWithdrawModal.isOpen}
-        close={() => {
-          lockAndWithdrawModal.close();
-        }}
-      >
-        <Waiting
-          value={whichValue === 0 ? csmValue : veCSMValue}
-          iconName={whichValue === 0 ? "CSM" : "veCSM"}
-          icon={null}
-          functionName={functionName}
+      {lockStep === PAGE.WARNING ? (
+        <LockModal
+          modal={lockModal}
+          onSuccess={() => setLockStep(PAGE.SUCCESS)}
+          day={day}
+          csmValue={csmValue}
+          veCSMValue={veCSMValue}
         />
-      </Modal>
+      ) : (
+        <Modal
+          isOpen={lockModal.isOpen}
+          close={() => {
+            lockModal.close();
+            setLockStep(PAGE.WARNING);
+          }}
+        >
+          <Waiting
+            value={csmValue}
+            iconName={"CSM"}
+            icon={null}
+            functionName={"Lock"}
+          />
+        </Modal>
+      )}
+      {withdrawStep === PAGE.WARNING ? (
+        <UnstakeWarning
+          modal={withdrawModal}
+          onSuccess={() => setWithdrawStep(PAGE.SUCCESS)}
+        />
+      ) : (
+        <Modal
+          isOpen={withdrawModal.isOpen}
+          close={() => {
+            withdrawModal.close();
+            setWithdrawStep(PAGE.WARNING);
+          }}
+        >
+          <Waiting
+            value={veCSMValue}
+            iconName={"veCSM"}
+            icon={null}
+            functionName={"Withdraw"}
+          />
+        </Modal>
+      )}
     </div>
   );
 };
 
-const Calender = () => {
-  const [day, setDay] = useState<DayValue>(null);
-  const date = new Date();
+const Calender = ({ day, setDay }: { day: any; setDay: any }) => {
   const currentDate =
-    date.getDay().toString() +
+    day?.day.toString() +
     "/" +
-    date.getMonth().toString() +
+    day?.month.toString() +
     "/" +
-    date.getFullYear().toString();
+    day?.year.toString();
   const renderCustomInput = ({ ref }: any) => (
     <input
       readOnly

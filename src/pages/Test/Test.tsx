@@ -36,7 +36,7 @@ const Test = () => {
   return (
     <div style={{ width: "500px", height: "500px" }}>
       <div onClick={modal.open}>Hey</div>
-      <LockModal modal={modal} />
+      {/* <LockModal modal={modal} /> */}
     </div>
   );
 };

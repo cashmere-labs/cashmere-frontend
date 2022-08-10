@@ -1,12 +1,19 @@
 import styles from "./UpperPage.module.scss";
-import { Icon, Tooltip, Button } from "ui";
+import { Icon, Tooltip, Button, Modal } from "ui";
 import { InfoIcon } from "assets/icons";
-import { useTheme } from "hooks";
+import { useTheme, useModal } from "hooks";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
+import { Waiting } from "components";
+import { useState } from "react";
 
 const UpperPage = () => {
   const { theme } = useTheme();
+
+  const waitingModal = useModal();
+
+  const [functionName, setFunctionName] = useState("");
+  const [whichModal, setWhichModal] = useState(0);
   return (
     <div className={styles.wrapper}>
       <div className={styles.infos}>
@@ -84,6 +91,11 @@ const UpperPage = () => {
             width="45px"
             height="40px"
             color={theme === "light" ? "black" : "white"}
+            onClick={() => {
+              setWhichModal(0);
+              setFunctionName("Claim");
+              waitingModal.open()
+            }}
           >
             Claim
           </Button>
@@ -108,11 +120,29 @@ const UpperPage = () => {
             width="45px"
             height="40px"
             color={theme === "light" ? "black" : "white"}
+            onClick={() => {
+              setWhichModal(1);
+              setFunctionName("Farm");
+              waitingModal.open()
+            }}
           >
             Farm
           </Button>
         </div>
       </div>
+      <Modal
+        isOpen={waitingModal.isOpen}
+        close={() => {
+          waitingModal.close();
+        }}
+      >
+        <Waiting
+          value={whichModal === 0 ? "2149$" : "2423"}
+          iconName={whichModal === 0 ? "Dolar" : "veCSM"}
+          icon={null}
+          functionName={functionName}
+        />
+      </Modal>
     </div>
   );
 };

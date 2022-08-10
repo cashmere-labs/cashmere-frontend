@@ -10,9 +10,15 @@ import { InfoIcon } from "assets/icons";
 import { FaChevronDown } from "react-icons/fa";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker, { DayValue } from "react-modern-calendar-datepicker";
-import { Waiting, UnstakeWarning, LockModal } from "components";
+import { Waiting, UnstakeWarning, LockModal, UnlockModal } from "components";
 
-enum PAGE {
+enum LOCK {
+  "WARNING",
+  "SUCCESS",
+}
+
+enum WITHDRAW {
+  "FORM",
   "WARNING",
   "SUCCESS",
 }
@@ -25,8 +31,8 @@ const UpperBox = () => {
   const lockModal = useModal();
   const withdrawModal = useModal();
 
-  const [lockStep, setLockStep] = useState<PAGE>(PAGE.WARNING);
-  const [withdrawStep, setWithdrawStep] = useState<PAGE>(PAGE.WARNING);
+  const [lockStep, setLockStep] = useState<LOCK>(LOCK.WARNING);
+  const [withdrawStep, setWithdrawStep] = useState<WITHDRAW>(WITHDRAW.FORM);
 
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 800px)",
@@ -186,10 +192,10 @@ const UpperBox = () => {
         </div>
       </div>
 
-      {lockStep === PAGE.WARNING ? (
+      {lockStep === LOCK.WARNING ? (
         <LockModal
           modal={lockModal}
-          onSuccess={() => setLockStep(PAGE.SUCCESS)}
+          onSuccess={() => setLockStep(LOCK.SUCCESS)}
           day={day}
           csmValue={csmValue}
           veCSMValue={veCSMValue}
@@ -199,7 +205,7 @@ const UpperBox = () => {
           isOpen={lockModal.isOpen}
           close={() => {
             lockModal.close();
-            setLockStep(PAGE.WARNING);
+            setLockStep(LOCK.WARNING);
           }}
         >
           <Waiting
@@ -210,17 +216,22 @@ const UpperBox = () => {
           />
         </Modal>
       )}
-      {withdrawStep === PAGE.WARNING ? (
+      {withdrawStep === WITHDRAW.WARNING ? (
         <UnstakeWarning
           modal={withdrawModal}
-          onSuccess={() => setWithdrawStep(PAGE.SUCCESS)}
+          onSuccess={() => setWithdrawStep(WITHDRAW.SUCCESS)}
+        />
+      ) : withdrawStep === WITHDRAW.FORM ? (
+        <UnlockModal
+          modal={withdrawModal}
+          onSuccess={() => setWithdrawStep(WITHDRAW.WARNING)}
         />
       ) : (
         <Modal
           isOpen={withdrawModal.isOpen}
           close={() => {
             withdrawModal.close();
-            setWithdrawStep(PAGE.WARNING);
+            setWithdrawStep(WITHDRAW.FORM);
           }}
         >
           <Waiting

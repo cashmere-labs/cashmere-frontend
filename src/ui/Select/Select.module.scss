@@ -9,6 +9,10 @@
   color: var(--select-text);
   display: flex;
   align-items: center;
+
+  @media (max-width: 540px) {
+    font-size: 12px;
+  }
 }
 
 .wrapper {

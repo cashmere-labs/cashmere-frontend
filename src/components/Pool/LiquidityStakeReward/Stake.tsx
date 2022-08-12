@@ -9,9 +9,12 @@ import GRAYPLUS from "assets/icons/grayPlus.png";
 import MINUS from "assets/icons/minus.png";
 import { useMediaQuery } from "react-responsive";
 import DAI from "assets/pool/dai.png";
+import { useDispatch } from "react-redux";
+import { setValue, setFunctionName } from "store/slicers/pool";
 
-const Stake = () => {
+const Stake = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();
+  const dispatch=useDispatch()
 
   const [isPlus, setIsPlus] = useState(true);
 
@@ -73,16 +76,14 @@ const Stake = () => {
       </div>
       <div className={styles.inputBox}>
         <div className={styles.pattern}>
-          <img
-            className={styles.image}
-            src={DAI}
-          ></img>
+          <img className={styles.image} src={DAI}></img>
           <div className={styles.text}>DAI</div>
         </div>
         <Input
           extendLeft
           placeholder="Amount"
           height={isPhoneOrPC ? "59px" : "71px"}
+          onChange={(e) => dispatch(setValue(e.target.value.toString()))}
         />
       </div>
       <div className={styles.depositingAmount}>
@@ -114,6 +115,14 @@ const Stake = () => {
           height={isPhoneOrPC ? "34px" : "56px"}
           fontWeight="fw600"
           color={theme === "light" ? "black" : "white"}
+          onClick={() => {
+            onSuccess();
+            if (isPlus) {
+              dispatch(setFunctionName("Stake Liquidity"));
+            } else {
+              dispatch(setFunctionName("Unstake Liquidity"));
+            }
+          }}
         >
           {isPlus ? "Stake Liquidity" : "Unstake Liquidity"}
         </Button>

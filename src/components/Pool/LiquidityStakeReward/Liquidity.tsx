@@ -10,9 +10,12 @@ import MINUS from "assets/icons/minus.png";
 import { useMediaQuery } from "react-responsive";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
+import { setValue, setFunctionName } from "store/slicers/pool";
+import { useDispatch } from "react-redux";
 
-const Liquidity = () => {
+const Liquidity = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();
+  const dispatch = useDispatch();
 
   const [isPlus, setIsPlus] = useState(true);
 
@@ -65,7 +68,6 @@ const Liquidity = () => {
             width={isPhoneOrPC ? "46px" : "65px"}
             height="34px"
             color={theme === "light" ? "transparentWhite" : "transparentBlack"}
-            // style={{backgroundColor: ""}}
           >
             MAX
           </Button>
@@ -84,6 +86,7 @@ const Liquidity = () => {
           extendLeft
           placeholder="Amount"
           height={isPhoneOrPC ? "59px" : "71px"}
+          onChange={(e) => dispatch(setValue(e.target.value.toString()))}
         />
       </div>
       <div className={styles.depositingAmount}>
@@ -139,6 +142,14 @@ const Liquidity = () => {
           height={isPhoneOrPC ? "34px" : "56px"}
           fontWeight="fw600"
           color={theme === "light" ? "black" : "white"}
+          onClick={() => {
+            onSuccess();
+            if (isPlus) {
+              dispatch(setFunctionName("Add Liquidity"));
+            } else {
+              dispatch(setFunctionName("Remove Liquidity"));
+            }
+          }}
         >
           {isPlus ? "Add Liquidity" : "Remove Liquidity"}
         </Button>

@@ -4,6 +4,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 }
 
 .input {
@@ -17,6 +18,10 @@
   color: var(--input-text);
   padding: 12px;
   font-size: 16px;
+
+  @media (max-width: 540px) {
+    font-size: 14px;
+  }
 }
 
 .hideRightBorder {

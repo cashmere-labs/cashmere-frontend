@@ -5,6 +5,8 @@ export interface PoolState {
   poolCount: number;
   whichGlobalModal: number;
   whichPersonalModal: number;
+  functionName: string;
+  value: string;
 }
 
 const initialState: PoolState = {
@@ -12,6 +14,8 @@ const initialState: PoolState = {
   poolCount: 6,
   whichGlobalModal: -1,
   whichPersonalModal: -1,
+  functionName: "",
+  value: "",
 };
 
 export const poolSlice = createSlice({
@@ -30,6 +34,12 @@ export const poolSlice = createSlice({
     setWhichPersonalModal: (state, action: PayloadAction<number>) => {
       state.whichPersonalModal = action.payload;
     },
+    setFunctionName: (state, action: PayloadAction<string>) => {
+      state.functionName = action.payload;
+    },
+    setValue: (state, action: PayloadAction<string>) => {
+      state.value = action.payload;
+    },
   },
 });
 
@@ -38,5 +48,7 @@ export const {
   setWhichPool,
   setWhichGlobalModal,
   setWhichPersonalModal,
+  setFunctionName,
+  setValue,
 } = poolSlice.actions;
 export default poolSlice.reducer;

@@ -5,7 +5,13 @@ import WARNING from "assets/icons/warning.png";
 import { useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
 
-const UnstakeWarning = ({ modal }: { modal: ModalController }) => {
+const UnstakeWarning = ({
+  modal,
+  onSuccess,
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+}) => {
   const { theme } = useTheme();
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 550px)",
@@ -30,6 +36,7 @@ const UnstakeWarning = ({ modal }: { modal: ModalController }) => {
         width={"100%"}
         color={theme === "light" ? "black" : "white"}
         className={styles.button1}
+        onClick={() => onSuccess()}
       >
         Unstake
       </Button>

@@ -2,52 +2,37 @@ import styles from "./UpperBox.module.scss";
 import { useMediaQuery } from "react-responsive";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { useTheme } from "hooks";
-import { Icon, Tooltip, Input, Button } from "ui";
-import React, { useState } from "react";
+import { useTheme, useModal } from "hooks";
+import { Icon, Tooltip, Input, Button, Modal } from "ui";
+import { useEffect, useState } from "react";
 import { clsnm } from "utils/clsnm";
 import { InfoIcon } from "assets/icons";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import DatePicker, {
-  DayValue,
-  DayRange,
-  Day,
-} from "react-modern-calendar-datepicker";
+import DatePicker, { DayValue } from "react-modern-calendar-datepicker";
+import { Waiting, UnstakeWarning, LockModal, UnlockModal } from "components";
 
-const Calender = () => {
-  const [day, setDay] = useState<DayValue>(null);
-  const date = new Date();
-  const currentDate =
-    date.getDay().toString() +
-    "/" +
-    date.getMonth().toString() +
-    "/" +
-    date.getFullYear().toString();
-  const renderCustomInput = ({ ref }: any) => (
-    <input
-      readOnly
-      ref={ref} // necessary
-      placeholder={currentDate}
-      value={day ? `${day.day}/${day.month}/${day.year}` : ""}
-      className={styles.calender} // a styling class
-    />
-  );
-  return (
-    <>
-      <DatePicker
-        value={day}
-        inputPlaceholder={currentDate}
-        onChange={setDay}
-        renderInput={renderCustomInput}
-        calendarClassName={styles.calendarResponsive}
-      />
-    </>
-  );
-};
+enum LOCK {
+  "WARNING",
+  "SUCCESS",
+}
+
+enum WITHDRAW {
+  "FORM",
+  "WARNING",
+  "SUCCESS",
+}
 
 const UpperBox = () => {
   const { theme } = useTheme();
+  const [csmValue, setCSMValue] = useState("");
+  const [veCSMValue, setveCSMValue] = useState("");
+
+  const lockModal = useModal();
+  const withdrawModal = useModal();
+
+  const [lockStep, setLockStep] = useState<LOCK>(LOCK.WARNING);
+  const [withdrawStep, setWithdrawStep] = useState<WITHDRAW>(WITHDRAW.FORM);
 
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 800px)",
@@ -62,6 +47,13 @@ const UpperBox = () => {
     "2 Years",
     "4 Years",
   ];
+
+  const date = new Date();
+  const [day, setDay] = useState<DayValue>({
+    day: date.getDate(),
+    month: date.getMonth(),
+    year: date.getFullYear(),
+  });
 
   return (
     <div className={styles.wrapper}>
@@ -92,6 +84,7 @@ const UpperBox = () => {
                 extendLeft
                 placeholder="Amount"
                 height={isPhoneOrPC ? "55px" : "71px"}
+                onChange={(e) => setCSMValue(e.target.value.toString())}
               />
             </div>
           </div>
@@ -122,6 +115,7 @@ const UpperBox = () => {
                 extendLeft
                 placeholder="Amount"
                 height={isPhoneOrPC ? "55px" : "71px"}
+                onChange={(e) => setveCSMValue(e.target.value.toString())}
               />
             </div>
           </div>
@@ -138,6 +132,9 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
+              onClick={() => {
+                lockModal.open();
+              }}
             >
               Lock
             </Button>
@@ -148,6 +145,9 @@ const UpperBox = () => {
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }
+              onClick={() => {
+                withdrawModal.open();
+              }}
             >
               Withdraw
             </Button>
@@ -182,7 +182,7 @@ const UpperBox = () => {
               </Tooltip>
             </div>
             <div className={styles.set}>
-              <Calender />
+              <Calender day={day} setDay={setDay} />
               <span className={styles.icon}>
                 <FaChevronDown />
               </span>
@@ -191,7 +191,87 @@ const UpperBox = () => {
           <div className={styles.text}>Increase Lock</div>
         </div>
       </div>
+
+      {lockStep === LOCK.WARNING ? (
+        <LockModal
+          modal={lockModal}
+          onSuccess={() => setLockStep(LOCK.SUCCESS)}
+          day={day}
+          csmValue={csmValue}
+          veCSMValue={veCSMValue}
+        />
+      ) : (
+        <Modal
+          isOpen={lockModal.isOpen}
+          close={() => {
+            lockModal.close();
+            setLockStep(LOCK.WARNING);
+          }}
+        >
+          <Waiting
+            value={csmValue}
+            iconName={"CSM"}
+            icon={null}
+            functionName={"Lock"}
+          />
+        </Modal>
+      )}
+      {withdrawStep === WITHDRAW.WARNING ? (
+        <UnstakeWarning
+          modal={withdrawModal}
+          onSuccess={() => setWithdrawStep(WITHDRAW.SUCCESS)}
+        />
+      ) : withdrawStep === WITHDRAW.FORM ? (
+        <UnlockModal
+          modal={withdrawModal}
+          onSuccess={() => setWithdrawStep(WITHDRAW.WARNING)}
+        />
+      ) : (
+        <Modal
+          isOpen={withdrawModal.isOpen}
+          close={() => {
+            withdrawModal.close();
+            setWithdrawStep(WITHDRAW.FORM);
+          }}
+        >
+          <Waiting
+            value={veCSMValue}
+            iconName={"veCSM"}
+            icon={null}
+            functionName={"Withdraw"}
+          />
+        </Modal>
+      )}
     </div>
+  );
+};
+
+const Calender = ({ day, setDay }: { day: any; setDay: any }) => {
+  const currentDate =
+    day?.day.toString() +
+    "/" +
+    day?.month.toString() +
+    "/" +
+    day?.year.toString();
+  const renderCustomInput = ({ ref }: any) => (
+    <input
+      readOnly
+      ref={ref} // necessary
+      placeholder={currentDate}
+      value={day ? `${day.day}/${day.month}/${day.year}` : ""}
+      className={styles.calender} // a styling class
+    />
+  );
+  return (
+    <>
+      <DatePicker
+        value={day}
+        inputPlaceholder={currentDate}
+        onChange={setDay}
+        renderInput={renderCustomInput}
+        calendarClassName={styles.calendarResponsive}
+      />
+    </>
   );
 };
 

@@ -7,8 +7,21 @@ import EXCHANGE from "assets/icons/exchange.png";
 import INFO from "assets/icons/info.png";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
+import { useEffect } from "react";
 
-const LockModal = ({ modal }: { modal: ModalController }) => {
+const LockModal = ({
+  modal,
+  onSuccess,
+  day,
+  csmValue,
+  veCSMValue
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+  day: any;
+  csmValue: string;
+  veCSMValue: string;
+}) => {
   const { theme } = useTheme();
 
   const isPhoneOrLaptop = useMediaQuery({
@@ -23,7 +36,7 @@ const LockModal = ({ modal }: { modal: ModalController }) => {
           <span>CSM</span>
         </div>
         <div className={styles.line}></div>
-        <div className={styles.value}>24.689.905</div>
+        <div className={styles.value}>{csmValue}</div>
       </div>
       <div className={styles.exchange}>
         <img src={EXCHANGE}></img>
@@ -34,15 +47,15 @@ const LockModal = ({ modal }: { modal: ModalController }) => {
           <span>veCSM</span>
         </div>
         <div className={styles.line}></div>
-        <div className={styles.value}>24.689.905</div>
+        <div className={styles.value}>{veCSMValue}</div>
       </div>
       <div className={styles.info}>
         <div className={styles.icon}>
           <img src={INFO}></img>
         </div>
-        <div className={styles.info}>
+        <div className={styles.infoText}>
           Your Starting veCSM will be: 10989.905 You are locking 23689.905 CSM
-          until dd/mm/yyy
+          until {day?.day}/{day?.month}/{day?.year}
         </div>
       </div>
       <div className={styles.button}>
@@ -50,6 +63,9 @@ const LockModal = ({ modal }: { modal: ModalController }) => {
           width={"100%"}
           height={isPhoneOrLaptop ? "34px" : "56px"}
           color={theme === "light" ? "black" : "white"}
+          onClick={() => {
+            onSuccess();
+          }}
         >
           Lock
         </Button>

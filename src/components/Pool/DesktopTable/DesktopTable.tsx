@@ -5,9 +5,11 @@ import { InfoIcon } from "assets/icons";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { useDispatch, useSelector } from "react-redux";
 
+import { ModalController } from "hooks/useModal";
 interface Table {
   whichPool?: boolean;
   bodyCount: number;
+  modal: ModalController;
 }
 
 const PoolDesktopTitle = () => {
@@ -23,9 +25,9 @@ const PoolDesktopTitle = () => {
   );
 };
 
-const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
+const PoolDesktopTable = ({ whichPool, bodyCount, modal }: Table) => {
   const dispatch = useDispatch();
-  const trial:any = useSelector((state:any) => state.pool.whichGlobalModal)
+  const trial: any = useSelector((state: any) => state.pool.whichGlobalModal);
   return (
     <>
       {whichPool
@@ -35,9 +37,9 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
                 className={styles.tableBody}
                 key={i}
                 onClick={() => {
+                  modal.open();
                   dispatch(setWhichPersonalModal(i));
                   dispatch(setWhichGlobalModal(-1));
-                  console.log(trial)
                 }}
               >
                 <div className={styles.datas}>
@@ -77,6 +79,7 @@ const PoolDesktopTable = ({ whichPool, bodyCount }: Table) => {
                   className={styles.tableBody}
                   key={i}
                   onClick={() => {
+                    modal.open();
                     dispatch(setWhichPersonalModal(-1));
                     dispatch(setWhichGlobalModal(i));
                   }}

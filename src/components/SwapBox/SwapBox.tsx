@@ -183,6 +183,11 @@ const SwapBox = () => {
           className={styles.input}
           extendLeft
           hideLeftBorder
+          rightEl={
+            <Button width="18px" color="white">
+              Max
+            </Button>
+          }
         />
       </Row>
       {/* FROM ENDS */}
@@ -271,6 +276,11 @@ const SwapBox = () => {
           className={styles.input}
           extendLeft
           hideLeftBorder
+          rightEl={
+            <Button width="18px" color="white">
+              Max
+            </Button>
+          }
         />
       </Row>
       {/* TO ENDS */}

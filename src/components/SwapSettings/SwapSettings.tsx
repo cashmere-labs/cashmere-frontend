@@ -3,7 +3,7 @@ import { Column } from "components/Column/Column";
 import { Row } from "components/Row/Row";
 import { SwapSettings as SwapSettingsType } from "components/SwapSettings/useSwapSettings";
 import { ModalController } from "hooks/useModal";
-import { Alert, Icon, Modal, Radio, Tooltip } from "ui";
+import { Alert, Icon, Input, Modal, Radio, Tooltip } from "ui";
 import styles from "./SwapSettings.module.scss";
 
 const regexp = /^-?\d*\.?\d*$/;
@@ -37,27 +37,45 @@ export const SwapSettings = ({
         <Row>
           <div>
             <Radio
-              isChecked={swapSettings.swapSlippage === "0.0"}
-              onClick={() => swapSettings.setSwapSlippage("0.0")}
               className={styles.radio}
-              label={<SwapSettingsBadge content="0.0%" />}
+              isChecked={swapSettings.swapSlippage === "1"}
+              onClick={() => swapSettings.setSwapSlippage("1")}
+              label={<SwapSettingsBadge content="1%" />}
               labelPlacement="right"
             />
           </div>
           <div>
             <Radio
+              className={styles.radio}
               isChecked={swapSettings.swapSlippage === "0.5"}
               onClick={() => swapSettings.setSwapSlippage("0.5")}
-              className={styles.radio}
               label={<SwapSettingsBadge content="0.5%" />}
               labelPlacement="right"
             />
           </div>
           <div>
             <Radio
-              isChecked={swapSettings.swapSlippage === "1"}
-              onClick={() => swapSettings.setSwapSlippage("1")}
-              label={<SwapSettingsBadge content="1%" />}
+              isChecked={!["0.5", "1.0"].includes(swapSettings.swapSlippage)}
+              onClick={() => swapSettings.setSwapSlippage("0.0")}
+              label={
+                <Input
+                  height="32px"
+                  style={{ border: "none", width: "64px" }}
+                  value={
+                    !["0.5", "1.0"].includes(swapSettings.swapSlippage)
+                      ? swapSettings.swapSlippage
+                      : "0.0"
+                  }
+                  onChange={(e) => {
+                    if (
+                      regexp.test(e.target.value) &&
+                      !e.target.value.includes("-")
+                    ) {
+                      swapSettings.setSwapSlippage(e.target.value);
+                    }
+                  }}
+                />
+              }
               labelPlacement="right"
             />
           </div>
@@ -84,11 +102,11 @@ export const SwapSettings = ({
         <Row marginBottom={12}>
           <div>
             <Radio
-              onClick={() => swapSettings.setWithdrawSlippage("0.0")}
               className={styles.radio}
-              label={<SwapSettingsBadge content="0.0%" />}
+              isChecked={swapSettings.withdrawSlippage === "1.0"}
+              onClick={() => swapSettings.setWithdrawSlippage("1.0")}
+              label={<SwapSettingsBadge content="1%" />}
               labelPlacement="right"
-              isChecked={swapSettings.withdrawSlippage === "0.0"}
             />
           </div>
           <div>
@@ -102,10 +120,30 @@ export const SwapSettings = ({
           </div>
           <div>
             <Radio
-              isChecked={swapSettings.withdrawSlippage === "1"}
-              onClick={() => swapSettings.setWithdrawSlippage("1")}
-              label={<SwapSettingsBadge content="1%" />}
+              onClick={() => swapSettings.setWithdrawSlippage("0.0")}
+              label={
+                <Input
+                  height="32px"
+                  style={{ border: "none", width: "64px" }}
+                  value={
+                    !["0.5", "1.0"].includes(swapSettings.withdrawSlippage)
+                      ? swapSettings.withdrawSlippage
+                      : "0.0"
+                  }
+                  onChange={(e) => {
+                    if (
+                      regexp.test(e.target.value) &&
+                      !e.target.value.includes("-")
+                    ) {
+                      swapSettings.setWithdrawSlippage(e.target.value);
+                    }
+                  }}
+                />
+              }
               labelPlacement="right"
+              isChecked={
+                !["0.5", "1.0"].includes(swapSettings.withdrawSlippage)
+              }
             />
           </div>
         </Row>

@@ -7,7 +7,13 @@ import { Warning } from "components/Modals/Warning/Warning";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 
-const UnlockModal = ({ modal }: { modal: ModalController }) => {
+const UnlockModal = ({
+  modal,
+  onSuccess,
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+}) => {
   const { theme } = useTheme();
 
   const isPhoneOrLaptop = useMediaQuery({
@@ -21,9 +27,7 @@ const UnlockModal = ({ modal }: { modal: ModalController }) => {
         <div className={styles.balance}>BALANCE 24689.905</div>
         <div className={styles.box}>
           <div className={styles.logo}>
-            <img
-              src={theme === "light" ? LOGOBLACK : LOGOWHITE}
-            ></img>
+            <img src={theme === "light" ? LOGOBLACK : LOGOWHITE}></img>
             <span>veCSM</span>
           </div>
           <div className={styles.input}>
@@ -49,6 +53,7 @@ const UnlockModal = ({ modal }: { modal: ModalController }) => {
           width={"100%"}
           height={isPhoneOrLaptop ? "34px" : "56px"}
           color={theme === "light" ? "black" : "white"}
+          onClick={() => onSuccess()}
         >
           Unlock
         </Button>

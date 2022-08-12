@@ -9,10 +9,12 @@ import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { useDispatch } from "react-redux";
+import { ModalController } from "hooks/useModal";
 
 interface Table {
   whichPool?: boolean;
   bodyCount: number;
+  modal: ModalController;
 }
 
 const PoolPhoneTitle = () => {
@@ -23,7 +25,7 @@ const PoolPhoneTitle = () => {
   );
 };
 
-const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
+const PoolPhoneTable = ({ whichPool, bodyCount, modal }: Table) => {
   const [bodyOpenGlobal, setBodyOpenGlobal] = useState<{
     [key: number]: boolean;
   }>({});
@@ -73,8 +75,11 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                   )}
                   key={i}
                   onClick={() => {
-                    dispatch(setWhichPersonalModal(-1));
-                    dispatch(setWhichGlobalModal(i));
+                    if (bodyOpenGlobal[i] === true) {
+                      dispatch(setWhichPersonalModal(-1));
+                      dispatch(setWhichGlobalModal(i));
+                      modal.open();
+                    }
                   }}
                 >
                   <div className={styles.line}></div>
@@ -161,8 +166,11 @@ const PoolPhoneTable = ({ whichPool, bodyCount }: Table) => {
                     )}
                     key={i}
                     onClick={() => {
-                      dispatch(setWhichPersonalModal(i));
-                      dispatch(setWhichGlobalModal(-1));
+                      if (bodyOpenPersonal[i] === true) {
+                        dispatch(setWhichPersonalModal(-1));
+                        dispatch(setWhichGlobalModal(i));
+                        modal.open();
+                      }
                     }}
                   >
                     <div className={styles.line}></div>

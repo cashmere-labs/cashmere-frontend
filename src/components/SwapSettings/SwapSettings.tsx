@@ -222,11 +222,11 @@ export const SwapSettings = ({
         <span>Seconds</span>
       </Row>
       <Row marginTop={20}>
-        {(swapSettings.deadline.trim() !== "" &&
-          Number(swapSettings.deadline) < 30) ||
-          (swapSettings.swapSlippage === "0.0" && (
-            <Alert label="Your transaction may fail" />
-          ))}
+        {(swapSettings.deadline.trim() === "" ||
+          Number(swapSettings.deadline) < 10 ||
+          swapSettings.swapSlippage === "0.0") && (
+          <Alert label="Your transaction may fail" />
+        )}
       </Row>
     </Modal>
   );

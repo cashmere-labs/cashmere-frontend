@@ -25,8 +25,8 @@ enum WITHDRAW {
 
 const UpperBox = () => {
   const { theme } = useTheme();
-  const [csmValue, setCSMValue] = useState("");
-  const [veCSMValue, setveCSMValue] = useState("");
+  const [csmValue, setCSMValue] = useState("0");
+  const [veCSMValue, setveCSMValue] = useState("0");
 
   const lockModal = useModal();
   const withdrawModal = useModal();

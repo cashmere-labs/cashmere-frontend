@@ -64,7 +64,7 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
         icon: OPTIMISM,
         name: "Optimism",
         text: "#fc0d20",
-        bg: "#ffd6d9;",
+        bg: "#ffd6d9",
       };
     }
     case NetworkTypes.FANTOM: {

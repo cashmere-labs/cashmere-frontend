@@ -8,6 +8,8 @@ import {
   Statistics,
 } from "components";
 import { useModal } from "hooks";
+import { NetworkBadge } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 const data = [
   {
@@ -37,6 +39,33 @@ const Test = () => {
     <div style={{ width: "500px", height: "500px" }}>
       <div onClick={modal.open}>Hey</div>
       {/* <LockModal modal={modal} /> */}
+      <div>
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.AVALANCE}
+        />
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.BNB}
+        />
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.ETHEREUM}
+        />{" "}
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.ARBITRUM}
+        />
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.OPTIMISM}
+        />
+        <NetworkBadge
+          style={{ marginBottom: "12px" }}
+          label={NetworkTypes.FANTOM}
+        />
+        <NetworkBadge style={{ marginBottom: "12px" }} label={"Other Badge"} />
+      </div>
     </div>
   );
 };

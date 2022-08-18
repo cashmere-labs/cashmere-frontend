@@ -2,8 +2,10 @@ import { useOnClickOutside } from "hooks/useOnClickOutside";
 import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { Icon } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 import { clsnm } from "utils/clsnm";
 import styles from "./Modal.module.scss";
+import { NetworkBadge } from "ui";
 
 type ModalProps = {
   children: ReactNode;
@@ -13,6 +15,7 @@ type ModalProps = {
   className?: string;
   bodyProps?: ComponentPropsWithoutRef<"div">;
   width?: string;
+  network?: NetworkTypes | string;
 };
 
 const Modal = ({
@@ -23,6 +26,7 @@ const Modal = ({
   className,
   bodyProps = {},
   width,
+  network,
 }: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -52,6 +56,9 @@ const Modal = ({
           ...(bodyProps.style || {}),
         }}
       >
+        {network != null && (
+          <NetworkBadge className={styles.network} label={network} />
+        )}
         <Icon
           hoverable
           onClick={close}

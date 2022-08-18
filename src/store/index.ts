@@ -3,12 +3,14 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 import themeSlice from "store/slicers/theme";
 import poolSlice from "store/slicers/pool";
 import veCSMSlice from "store/slicers/veCSM";
+import networkSlice from "store/slicers/network";
 
 export const store = configureStore({
   reducer: {
     theme: themeSlice,
     pool: poolSlice,
     veCSM: veCSMSlice,
+    network: networkSlice,
   },
   middleware: (getDefaultMiddleware) => {
     const customizedMiddleware = getDefaultMiddleware({

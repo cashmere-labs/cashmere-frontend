@@ -71,7 +71,7 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
       return {
         icon: FANTOM,
         name: "Fantom",
-        color: "#129cce",
+        text: "#129cce",
         bg: "#d6f4ff",
       };
     }
@@ -79,7 +79,7 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
       return {
         icon: QUESTIONMARK,
         name: label,
-        color: "#2c374b",
+        text: "#2c374b",
         bg: "#d6f4ff",
       };
   }

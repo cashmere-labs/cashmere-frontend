@@ -31,7 +31,7 @@ const NetworkBadge = ({
       >
         <img className={styles.icon} src={icon} />
       </div>
-      <span style={{ color: text }} className={styles.text}>
+      <span className={styles.text} style={{ color: text }}>
         {name}
       </span>
     </div>

@@ -11,6 +11,7 @@ import { NUMBER_REGEX } from "constants/utils";
 import { isValidNumberInput } from "utils/isValidNumberInput";
 import { ethers } from "ethers";
 import { useFormValidator } from "hooks/useFormValidator";
+import { useNetwork } from "store/hooks/networkHooks";
 
 const ProposalModal = ({
   modal,
@@ -36,6 +37,7 @@ const ProposalModal = ({
   const [amount, setAmount] = useState("");
   const [tokenAddress, setTokenAddress] = useState("");
   const { validator, errors, setErrors } = useFormValidator();
+  const network = useNetwork();
 
   const isDisabled = () => {
     if (
@@ -79,7 +81,12 @@ const ProposalModal = ({
   };
 
   return (
-    <Modal isOpen={modal.isOpen} close={modal.close} className={styles.wrapper}>
+    <Modal
+      network={network}
+      isOpen={modal.isOpen}
+      close={modal.close}
+      className={styles.wrapper}
+    >
       <div className={styles.body}>
         <div className={styles.title}>DAO Proposal</div>
         <div className={styles.titleInput}>

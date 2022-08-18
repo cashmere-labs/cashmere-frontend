@@ -16,7 +16,7 @@
   background: var(--modal-bg);
   border-radius: 12px;
   padding: 1.5rem;
-  padding-top: 2.5rem;
+  padding-top: 3.5rem;
   box-shadow: var(--shadow-1);
   animation: main 0.2s linear;
   color: var(--text);
@@ -27,9 +27,17 @@
     max-width: 95vw !important;
   }
 }
-.close {
+
+.network {
   position: absolute;
   top: 12px;
+  right: 56px;
+  color: none;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
   right: 12px;
   cursor: pointer;
   color: var(--text);

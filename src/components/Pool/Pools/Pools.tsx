@@ -48,7 +48,11 @@ const Pools = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
-        {isPhoneOrLaptop ? <PoolPhoneTitle /> : <PoolDesktopTitle />}
+        {isPhoneOrLaptop ? (
+          <PoolPhoneTitle />
+        ) : (
+          <PoolDesktopTitle whichPool={whichPool} />
+        )}
         {isPhoneOrLaptop ? (
           <PoolPhoneTable
             whichPool={whichPool}
@@ -60,6 +64,7 @@ const Pools = () => {
             whichPool={whichPool}
             bodyCount={poolCount}
             modal={stakeModal}
+            datas={whichPool ? PersonalData : GlobalData}
           />
         )}
       </div>

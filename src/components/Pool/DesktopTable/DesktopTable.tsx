@@ -1,121 +1,109 @@
 import styles from "./DesktopTable.module.scss";
 import { PersonalData, GlobalData } from "../datas";
-import { Icon, Tooltip } from "ui";
+import { Icon, Tooltip, NetworkBadge } from "ui";
 import { InfoIcon } from "assets/icons";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { useDispatch, useSelector } from "react-redux";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 import { ModalController } from "hooks/useModal";
 interface Table {
   whichPool?: boolean;
   bodyCount: number;
   modal: ModalController;
+  datas: any;
 }
 
-const PoolDesktopTitle = () => {
+interface Title {
+  whichPool?: boolean;
+}
+
+const PoolDesktopTitle = ({ whichPool }: Title) => {
   return (
     <div className={styles.tableTitle}>
       <div className={styles.title1}>Name</div>
       <div className={styles.title2}>Network</div>
-      <div className={styles.title3}>Liquidity</div>
-      <div className={styles.title4}>Volume (24h)</div>
-      <div className={styles.title5}>VEAPR</div>
-      <div className={styles.title6}>My Total APR</div>
+      <div className={styles.title3}>
+        Co. Ratio{" "}
+        <Tooltip placement="top" content="Content coming here">
+          <Icon size={16}>
+            <InfoIcon />
+          </Icon>
+        </Tooltip>
+      </div>
+      <div className={styles.title4}>Staked LP</div>
+      <div className={styles.title5}>
+        veAPR{" "}
+        <Tooltip placement="top" content="Content coming here">
+          <Icon size={16}>
+            <InfoIcon />
+          </Icon>
+        </Tooltip>
+      </div>
+      <div className={styles.title6}>My APR</div>
+      {whichPool === true && <div className={styles.title7}>Rewards</div>}
     </div>
   );
 };
 
-const PoolDesktopTable = ({ whichPool, bodyCount, modal }: Table) => {
+const PoolDesktopTable = ({ whichPool, bodyCount, modal, datas }: Table) => {
   const dispatch = useDispatch();
   const trial: any = useSelector((state: any) => state.pool.whichGlobalModal);
   return (
     <>
-      {whichPool
-        ? PersonalData.map((data, i) => {
-            return (
-              <div
-                className={styles.tableBody}
-                key={i}
-                onClick={() => {
-                  modal.open();
-                  dispatch(setWhichPersonalModal(i));
-                  dispatch(setWhichGlobalModal(-1));
-                }}
-              >
-                <div className={styles.datas}>
-                  <div className={styles.data1}>
-                    <span className={styles.logoAndName}>
-                      {data.logo && (
-                        <img
-                          style={{ width: "25px", marginRight: "14.5px" }}
-                          src={data.logo}
-                          alt="Logo of Token"
-                        ></img>
-                      )}
-                      <span>{data.name}</span>
-                    </span>
-                    <span className={styles.cRatio}>
-                      Compensation Ratio: %154.89{" "}
+      {datas.map((data: any, i: number) => {
+        if (i < bodyCount) {
+          return (
+            <div
+              className={styles.tableBody}
+              key={i}
+              onClick={() => {
+                modal.open();
+                dispatch(setWhichPersonalModal(-1));
+                dispatch(setWhichGlobalModal(i));
+              }}
+            >
+              <div className={styles.line}></div>
+              <div className={styles.datas}>
+                <div className={styles.data1}>
+                  <span className={styles.logoAndName}>
+                    {data.logo && (
+                      <img
+                        style={{ width: "25px", marginRight: "14.5px" }}
+                        src={data.logo}
+                        alt="Logo"
+                      ></img>
+                    )}
+                    <span>{data.name}</span>
+                  </span>
+                </div>
+                <div className={styles.data2}>
+                  <NetworkBadge
+                    label={NetworkTypes.ETHEREUM}
+                    className={styles.network}
+                  />
+                </div>
+                <div className={styles.data3}>%{data.CR}</div>
+                <div className={styles.data4}>%{data.stakedLP}</div>
+                <div className={styles.data5}>{data.veAPR}%</div>
+                <div className={styles.data6}>{data.myAPR}%</div>
+                {whichPool === true && (
+                  <div className={styles.data7}>
+                    {data.rewards}%{" "}
+                    {i === 0 && (
                       <Tooltip placement="top" content="Content coming here">
-                        <Icon size={16}>
+                        <Icon size={20} style={{ color: "#d3b200" }}>
                           <InfoIcon />
                         </Icon>
                       </Tooltip>
-                    </span>
+                    )}
                   </div>
-                  <div className={styles.data2}>{data.network}</div>
-                  <div className={styles.data3}>%{data.liquidity}</div>
-                  <div className={styles.data4}>%{data.volume}</div>
-                  <div className={styles.data5}>{data.veapr}%</div>
-                  <div className={styles.data6}>{data.myTotalApr}%</div>
-                </div>
+                )}
               </div>
-            );
-          })
-        : GlobalData.map((data, i) => {
-            if (i < bodyCount) {
-              return (
-                <div
-                  className={styles.tableBody}
-                  key={i}
-                  onClick={() => {
-                    modal.open();
-                    dispatch(setWhichPersonalModal(-1));
-                    dispatch(setWhichGlobalModal(i));
-                  }}
-                >
-                  <div className={styles.line}></div>
-                  <div className={styles.datas}>
-                    <div className={styles.data1}>
-                      <span className={styles.logoAndName}>
-                        {data.logo && (
-                          <img
-                            style={{ width: "25px", marginRight: "14.5px" }}
-                            src={data.logo}
-                            alt="Logo"
-                          ></img>
-                        )}
-                        <span>{data.name}</span>
-                      </span>
-                      <span className={styles.cRatio}>
-                        <span>Compensation Ratio: %154.89</span>
-                        <Tooltip placement="top" content="Content coming here">
-                          <Icon size={16}>
-                            <InfoIcon />
-                          </Icon>
-                        </Tooltip>
-                      </span>
-                    </div>
-                    <div className={styles.data2}>{data.network}</div>
-                    <div className={styles.data3}>%{data.liquidity}</div>
-                    <div className={styles.data4}>%{data.volume}</div>
-                    <div className={styles.data5}>{data.veapr}%</div>
-                    <div className={styles.data6}>{data.myTotalApr}%</div>
-                  </div>
-                </div>
-              );
-            }
-          })}
+            </div>
+          );
+        }
+      })}
     </>
   );
 };

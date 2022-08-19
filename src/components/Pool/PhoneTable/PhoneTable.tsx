@@ -120,15 +120,15 @@ const PoolPhoneTable = ({ whichPool, bodyCount, modal }: Table) => {
                     <div className={styles.openDatas}>
                       <div className={styles.openData}>
                         <div className={styles.text1}>Network</div>
-                        <div>{data.network}</div>
+                        {/* <div>{data.network}</div> */}
                       </div>
                       <div className={styles.openData}>
                         <div className={styles.text1}>Liquidity</div>
-                        <div>${data.liquidity}</div>
+                        <div>${data.veAPR}</div>
                       </div>
                       <div className={styles.openData}>
                         <div className={styles.text1}>Volume (24h)</div>
-                        <div>${data.volume}</div>
+                        <div>${data.veAPR}</div>
                       </div>
                       <div className={styles.openData}>
                         <div className={styles.text1}>
@@ -142,11 +142,11 @@ const PoolPhoneTable = ({ whichPool, bodyCount, modal }: Table) => {
                             </Icon>
                           </Tooltip>
                         </div>
-                        <div>{data.veapr}%</div>
+                        <div>{data.veAPR}%</div>
                       </div>
                       <div className={styles.openData}>
                         <div className={styles.text1}>My Total APR</div>
-                        <div>{data.myTotalApr}%</div>
+                        <div>{data.myAPR}%</div>
                       </div>
                     </div>
                   )}
@@ -218,15 +218,15 @@ const PoolPhoneTable = ({ whichPool, bodyCount, modal }: Table) => {
                       <div className={styles.openDatas}>
                         <div className={styles.openData}>
                           <div className={styles.text1}>Network</div>
-                          <div>{data.network}</div>
+                          <div>{data.CR}</div>
                         </div>
                         <div className={styles.openData}>
                           <div className={styles.text1}>Liquidity</div>
-                          <div>${data.liquidity}</div>
+                          <div>${data.CR}</div>
                         </div>
                         <div className={styles.openData}>
                           <div className={styles.text1}>Volume (24h)</div>
-                          <div>${data.volume}</div>
+                          <div>${data.CR}</div>
                         </div>
                         <div className={styles.openData}>
                           <div className={styles.text1}>
@@ -240,11 +240,11 @@ const PoolPhoneTable = ({ whichPool, bodyCount, modal }: Table) => {
                               </Icon>
                             </Tooltip>
                           </div>
-                          <div>{data.veapr}%</div>
+                          <div>{data.CR}%</div>
                         </div>
                         <div className={styles.openData}>
                           <div className={styles.text1}>My Total APR</div>
-                          <div>{data.myTotalApr}%</div>
+                          <div>{data.CR}%</div>
                         </div>
                       </div>
                     )}

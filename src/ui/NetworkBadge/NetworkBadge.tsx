@@ -3,7 +3,7 @@ import { getBadgeProps, NetworkTypes } from "ui/NetworkBadge/utils";
 import { ComponentPropsWithoutRef, CSSProperties } from "react";
 import { clsnm } from "utils/clsnm";
 
-interface NetworkBadgeProps extends ComponentPropsWithoutRef<"div"> {
+export interface NetworkBadgeProps extends ComponentPropsWithoutRef<"div"> {
   label: NetworkTypes | string;
   size?: number;
   className?: string;

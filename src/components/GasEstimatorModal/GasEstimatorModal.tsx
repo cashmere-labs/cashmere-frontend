@@ -34,35 +34,42 @@ const GasEstimatorModal = ({
     return _headers;
   }, [estimates]);
 
-  const _estimatedItems: ReactNode[] = [];
-  estimates.forEach((item, key) => {
-    const elements: ReactNode[] = [];
-    item.forEach((el) => {
-      elements.push(
-        <td className={styles.bodyCell}>
-          <div className={styles.bodyCellInner}>
-            <span className={styles.usd}>{el.usd}</span>
-            <span className={styles.native}>{el.native}</span>
-          </div>
-        </td>
-      );
-    });
-    _estimatedItems.push(
-      <tr>
-        <>
+  const estimatedItems = useMemo(() => {
+    const _estimatedItems: ReactNode[] = [];
+
+    //Iterate each network
+    estimates.forEach((item, key) => {
+      const elements: ReactNode[] = [];
+
+      //Iterate each entry in estimates
+      item.forEach((el) => {
+        elements.push(
           <td className={styles.bodyCell}>
             <div className={styles.bodyCellInner}>
-              <NetworkBadge
-                className={styles.tableNetwork}
-                label={stringToBadgeType(key.name)}
-              />
+              <span className={styles.usd}>{el.usd}</span>
+              <span className={styles.native}>{el.native}</span>
             </div>
           </td>
-          {elements}
-        </>
-      </tr>
-    );
-  });
+        );
+      });
+      _estimatedItems.push(
+        <tr>
+          <>
+            <td className={styles.bodyCell}>
+              <div className={styles.bodyCellInner}>
+                <NetworkBadge
+                  className={styles.tableNetwork}
+                  label={stringToBadgeType(key.name)}
+                />
+              </div>
+            </td>
+            {elements}
+          </>
+        </tr>
+      );
+    });
+    return _estimatedItems;
+  }, [estimates]);
 
   return (
     <Modal
@@ -91,7 +98,7 @@ const GasEstimatorModal = ({
               ))}
             </tr>
           </thead>
-          <tbody>{_estimatedItems}</tbody>
+          <tbody>{estimatedItems}</tbody>
         </table>
       </div>
     </Modal>

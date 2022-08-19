@@ -63,6 +63,7 @@ const Select = ({
 
   return (
     <div
+
       {...props}
       ref={mergeRefs(ref, menuRef)}
       className={clsnm(styles.wrapper, containerClassName)}

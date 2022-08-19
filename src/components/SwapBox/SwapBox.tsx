@@ -1,37 +1,38 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
-import { SwapSettings } from "components/SwapSettings/SwapSettings";
-import { useSwapSettings } from "components/SwapSettings/useSwapSettings";
-import { Aurora, Polygon } from "constants/networks";
+import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwapSettings";
+import { AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
 import { useModal, useTheme } from "hooks";
-import { ReactElement, useState } from "react";
+import { ReactElement } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
 import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
 import { Icon, Select, Option, Input, Button } from "ui";
 import styles from "./SwapBox.module.scss";
 import { useAccount, useConnection } from "ethylene/hooks";
+import { SwapState } from "pages/Swap/Swap";
+import { SwapSettings } from "components/SwapSettings/SwapSettings";
 
-const SwapBox = () => {
+const SwapBox = ({
+  state,
+  swapSettings,
+  setState,
+}: {
+  state: SwapState;
+  setState: (to: SwapState) => void;
+  swapSettings: SwapSettingType;
+}) => {
   const { auth } = useAccount();
   const { connect } = useConnection();
 
   const tokenOptions = [Tetherus, Dai];
-  const networkOptions = [Polygon, Aurora];
+  const networkOptions = [POLYGON, AURORA];
 
   const swapSettingsModal = useModal();
   const swapConfirmationModal = useModal();
-  const swapSettings = useSwapSettings();
-
   const { theme } = useTheme();
-  const [state, setState] = useState({
-    fromfrom: Aurora,
-    fromto: Tetherus,
-    tofrom: Polygon,
-    toto: Dai,
-  });
 
   /**
    * @dev Reverse the from and to positions
@@ -108,7 +109,6 @@ const SwapBox = () => {
           <SettingsIcon />
         </Icon>
       </div>
-
       {/* FROM */}
       <Row
         className={styles.inputLabel}
@@ -191,7 +191,6 @@ const SwapBox = () => {
         />
       </Row>
       {/* FROM ENDS */}
-
       {/* ROTATE CIRCLE */}
       <Row marginTop={20} marginBottom={8} justifyContent="center">
         <Icon
@@ -205,7 +204,6 @@ const SwapBox = () => {
         </Icon>
       </Row>
       {/* ROTATE CIRCLE ENDS */}
-
       {/* TO */}
       <Row
         className={styles.inputLabel}
@@ -301,7 +299,7 @@ const SwapBox = () => {
       >
         {getSwapButtonContent()}
       </Button>
-      <PathRenderer path={[Aurora, Polygon]} />
+      <PathRenderer path={[AURORA, POLYGON]} />
     </div>
   );
 };

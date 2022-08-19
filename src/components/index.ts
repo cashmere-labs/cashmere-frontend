@@ -56,3 +56,6 @@ export { Balance } from "./DAO/Manage/Balance/Balance";
 export { Manage } from "./DAO/Manage/Manage";
 export { Polls } from "./DAO/Polls/Polls";
 export { Poll } from "./Poll/Poll";
+
+// Gas Estimator
+export { GasEstimatorModal } from "./GasEstimatorModal/GasEstimatorModal";

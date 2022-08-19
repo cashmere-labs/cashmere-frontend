@@ -16,6 +16,7 @@ type ModalProps = {
   bodyProps?: ComponentPropsWithoutRef<"div">;
   width?: string;
   network?: NetworkTypes | string;
+  paddingTop?: string;
 };
 
 const Modal = ({
@@ -27,6 +28,7 @@ const Modal = ({
   bodyProps = {},
   width,
   network,
+  paddingTop = "3.5rem",
 }: ModalProps) => {
   useEffect(() => {
     if (isOpen) {
@@ -52,7 +54,8 @@ const Modal = ({
         ref={outsideRef}
         className={clsnm(styles.body, className)}
         style={{
-          width: width,
+          width,
+          paddingTop,
           ...(bodyProps.style || {}),
         }}
       >

@@ -7,8 +7,16 @@
   flex: 1;
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    align-items: flex-start;
+.estimator {
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text);
+  width: 668px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    max-width: 95vh !important;
+    width: 95%;
   }
 }

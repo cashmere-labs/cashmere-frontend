@@ -84,3 +84,30 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
       };
   }
 };
+
+export const stringToBadgeType = (_str: string) => {
+  const str = _str.toUpperCase();
+  switch (str) {
+    case "AVALANCE": {
+      return NetworkTypes.AVALANCE;
+    }
+    case "ETHEREUM": {
+      return NetworkTypes.ETHEREUM;
+    }
+    case "FANTOM": {
+      return NetworkTypes.FANTOM;
+    }
+    case "BNB": {
+      return NetworkTypes.BNB;
+    }
+    case "OPTIMISM": {
+      return NetworkTypes.OPTIMISM;
+    }
+    case "ARBITRUM": {
+      return NetworkTypes.ARBITRUM;
+    }
+    default: {
+      return _str;
+    }
+  }
+};

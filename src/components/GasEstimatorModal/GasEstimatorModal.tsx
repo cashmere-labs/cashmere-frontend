@@ -40,7 +40,10 @@ const GasEstimatorModal = ({
     item.forEach((el) => {
       elements.push(
         <td className={styles.bodyCell}>
-          <div className={styles.bodyCellInner}>{el.native}</div>
+          <div className={styles.bodyCellInner}>
+            <span className={styles.usd}>{el.usd}</span>
+            <span className={styles.native}>{el.native}</span>
+          </div>
         </td>
       );
     });

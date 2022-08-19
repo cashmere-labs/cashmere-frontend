@@ -48,9 +48,22 @@
 
   & .bodyCellInner {
     padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
   }
 
   &:first-child {
     text-align: center;
   }
+}
+
+.usd {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.native {
+  font-size: 12px;
+  color: var(--subtext);
 }

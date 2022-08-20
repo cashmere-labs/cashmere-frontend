@@ -96,13 +96,19 @@ const SwapConfirmation = ({
               <span style={{ fontSize: "12px", marginRight: "12px" }}>
                 From
               </span>
-              <TokenOrNetworkRenderer tokenOrNetwork={from.network} />
+              <TokenOrNetworkRenderer
+                type="badge"
+                tokenOrNetwork={from.network}
+              />
             </Row>
           }
           right={
             <Row justifyContent="flex-end">
               <span style={{ fontSize: "12px", marginRight: "12px" }}>To</span>
-              <TokenOrNetworkRenderer tokenOrNetwork={to.network} />
+              <TokenOrNetworkRenderer
+                type="badge"
+                tokenOrNetwork={to.network}
+              />
             </Row>
           }
         />

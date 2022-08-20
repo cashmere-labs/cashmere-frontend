@@ -34,7 +34,11 @@ const SelectNetwork = () => {
     <div ref={wrapperRef} className={styles.wrapper}>
       <div onClick={() => setExpand(!expand)} ref={reference}>
         <div ref={containerRef}>
-          <NetworkBadge className={styles.badge} label={currentNetwork} />
+          <NetworkBadge
+            size={28}
+            className={styles.badge}
+            label={currentNetwork}
+          />
           <Icon size={16} className={styles.chevron}>
             {expand ? <FaChevronUp /> : <FaChevronDown />}
           </Icon>

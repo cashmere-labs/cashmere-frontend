@@ -8,6 +8,7 @@ interface NetworkBadgeProps extends ComponentPropsWithoutRef<"div"> {
   size?: number;
   className?: string;
   style?: CSSProperties;
+  fontSize?: string;
 }
 
 const NetworkBadge = ({
@@ -15,6 +16,7 @@ const NetworkBadge = ({
   size = 30,
   style = {},
   className,
+  fontSize,
   ...props
 }: NetworkBadgeProps) => {
   const { name, icon, bg, text } = getBadgeProps(label);
@@ -31,7 +33,10 @@ const NetworkBadge = ({
       >
         <img className={styles.icon} src={icon} />
       </div>
-      <span className={styles.text} style={{ color: text }}>
+      <span
+        className={styles.text}
+        style={{ color: text, fontSize: fontSize ?? "16px" }}
+      >
         {name}
       </span>
     </div>

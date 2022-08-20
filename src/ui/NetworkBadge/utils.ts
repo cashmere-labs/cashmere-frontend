@@ -106,6 +106,9 @@ export const stringToBadgeType = (_str: string) => {
     case "ARBITRUM": {
       return NetworkTypes.ARBITRUM;
     }
+    case "POLYGON": {
+      return NetworkTypes.POLYGON;
+    }
     default: {
       return _str;
     }

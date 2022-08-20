@@ -2,7 +2,7 @@ import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
 import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwapSettings";
-import { AURORA, POLYGON } from "constants/networks";
+import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
 import { useModal, useTheme } from "hooks";
 import { ReactElement } from "react";
@@ -28,7 +28,7 @@ const SwapBox = ({
   const { connect } = useConnection();
 
   const tokenOptions = [Tetherus, Dai];
-  const networkOptions = [POLYGON, AURORA];
+  const networkOptions = [POLYGON, ARBITRUM];
 
   const swapSettingsModal = useModal();
   const swapConfirmationModal = useModal();

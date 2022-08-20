@@ -13,6 +13,7 @@ body.light {
   --hoverable-icon-bg: rgb(240, 236, 236);
   --alert-color: #e8717c;
   --table-divider: #c6c6c6;
+  --divider: #c6c6c6;
 
   // Navbar
   --navbar-bg: #f5f5f5;
@@ -201,8 +202,21 @@ body.light {
   // Unstake Warning
   --unstake-warning-text-1: black;
 
-  //Select network
+  // Select network
   --select-network-bg: white;
+
+  // TxProgressModal
+  --tx-progress-done-bg: black;
+  --tx-progress-done-color: white;
+  --tx-progress-done-border: black;
+  --tx-progress-inprogress-bg: transparent;
+  --tx-progress-inprogress-color: white;
+  --tx-progress-inprogress-border: #ef9931;
+  --tx-progress-notstarted-bg: transparent;
+  --tx-progress-notstarted-color: none;
+  --tx-progress-notstarted-border: #ececec;
+  --tx-progress-done-dash: #181818;
+  --tx-progress-disabled-dash: #c3c3c3;
 }
 
 body.dark {
@@ -406,6 +420,19 @@ body.dark {
 
   //Select network
   --select-network-bg: #232323;
+
+  // TxProgressModal
+  --tx-progress-done-bg: black;
+  --tx-progress-done-color: white;
+  --tx-progress-done-border: black;
+  --tx-progress-inprogress-bg: transparent;
+  --tx-progress-inprogress-color: white;
+  --tx-progress-inprogress-border: #ef9931;
+  --tx-progress-notstarted-bg: transparent;
+  --tx-progress-notstarted-color: none;
+  --tx-progress-notstarted-border: #ececec;
+  --tx-progress-done-dash: #cccccc;
+  --tx-progress-disabled-dash: #403f3f;
 }
 
 body {

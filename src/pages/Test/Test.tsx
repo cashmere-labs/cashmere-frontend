@@ -6,10 +6,12 @@ import {
   LockModal,
   ProposalModal,
   Statistics,
+  TxProgressModal,
 } from "components";
 import { useModal } from "hooks";
 import { NetworkBadge } from "ui";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
+import { mockTxSteps } from "constants/mockTxSteps";
 
 const data = [
   {
@@ -66,6 +68,11 @@ const Test = () => {
         />
         <NetworkBadge style={{ marginBottom: "12px" }} label={"Other Badge"} />
       </div>
+      <span style={{ color: "yellow" }} onClick={modal.open}>
+        OPEN PROGRESS
+      </span>
+
+      <TxProgressModal modalController={modal} steps={mockTxSteps} />
     </div>
   );
 };

@@ -59,3 +59,6 @@ export { Poll } from "./Poll/Poll";
 
 // Gas Estimator
 export { GasEstimatorModal } from "./GasEstimatorModal/GasEstimatorModal";
+
+// Transaction Progress Modal
+export { TxProgressModal } from "./TxProgressModal/TxProgressModal";

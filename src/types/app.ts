@@ -1,3 +1,5 @@
+import { NetworkTypes } from "ui/NetworkBadge/utils";
+
 export type MapStringToString = { [key: string]: string };
 
 export type Validator = {
@@ -5,4 +7,12 @@ export type Validator = {
   name: string;
   votingPower: string;
   commission: string;
+};
+
+export type TransactionStep = {
+  title: string;
+  image: string;
+  poweredBy: string;
+  url?: string;
+  progress: "not_started" | "done" | "in_progress";
 };

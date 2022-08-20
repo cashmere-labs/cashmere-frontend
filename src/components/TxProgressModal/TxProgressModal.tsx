@@ -26,8 +26,8 @@ const TxProgressModal = ({ modalController, steps }: TxProgressModalProps) => {
         <span>Transaction in Progress</span>
       </div>
       <div className={styles.body}>
-        {steps.map((item) => (
-          <div className={styles.step}>
+        {steps.map((item, key) => (
+          <div key={key} className={styles.step}>
             <div className={styles.progress}>
               <RenderProgress progress={item.progress} />
             </div>

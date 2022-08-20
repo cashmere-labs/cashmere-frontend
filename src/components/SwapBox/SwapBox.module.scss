@@ -6,6 +6,8 @@
   padding: 18px 24px;
   border-radius: 12px;
   width: 668px;
+  position: relative;
+  overflow: hidden;
 }
 .header {
   display: flex;
@@ -60,5 +62,96 @@
     margin: 0px;
     width: 98vh;
     background-color: transparent;
+  }
+}
+
+.networkSelector {
+  position: absolute;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--select-bg);
+  border: 1px solid var(--select-bg);
+  box-shadow: var(--shadow1);
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.top {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--select-bg);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 12px;
+  cursor: pointer;
+  color: var(--text);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+
+  background-color: var(--close-bg);
+  color: var(--close-icon);
+
+  &:hover {
+    background-color: var(--main-bg);
+    transform: scale(1.1);
+  }
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.options {
+  padding: 1.5rem;
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.search {
+  margin: 1rem 0rem;
+  margin-bottom: 0.5rem;
+}
+
+.option {
+  padding: 8px;
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  align-items: center;
+
+  & span {
+    color: var(--text);
+  }
+
+  & img {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: var(--option-hover);
+  }
+
+  &:active {
+    background-color: var(--option-active);
   }
 }

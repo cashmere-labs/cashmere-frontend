@@ -5,7 +5,7 @@ import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwap
 import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
 import { useModal, useTheme } from "hooks";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useRef } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
 import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
@@ -14,6 +14,8 @@ import styles from "./SwapBox.module.scss";
 import { useAccount, useConnection } from "ethylene/hooks";
 import { SwapState } from "pages/Swap/Swap";
 import { SwapSettings } from "components/SwapSettings/SwapSettings";
+import { SwapNetworkSelector } from "components/SwapBox/SwapNetworkSelector";
+import { Token } from "types/token";
 
 const SwapBox = ({
   state,
@@ -33,6 +35,15 @@ const SwapBox = ({
   const swapSettingsModal = useModal();
   const swapConfirmationModal = useModal();
   const { theme } = useTheme();
+
+  const onNetworkSelect = useRef<(item: Network | Token) => void>(
+    () => undefined
+  );
+  const onTokenSelect = useRef<(item: Network | Token) => void>(
+    () => undefined
+  );
+  const networkSelectorModal = useModal();
+  const tokenSelectorModal = useModal();
 
   /**
    * @dev Reverse the from and to positions
@@ -74,8 +85,38 @@ const SwapBox = ({
    * const {balance} = useERC20Balance(props);
    */
 
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+    if (networkSelectorModal.isOpen) {
+      wrapperRef.current.style.boxShadow = "var(--shadow1)";
+    } else {
+      wrapperRef.current.style.boxShadow = "none";
+    }
+  }, [networkSelectorModal.isOpen]);
+
   return (
-    <div className={styles.wrapper}>
+    <div ref={wrapperRef} className={styles.wrapper}>
+      {networkSelectorModal.isOpen && (
+        <SwapNetworkSelector
+          onSelect={onNetworkSelect.current}
+          modalController={networkSelectorModal}
+          options={{
+            data: networkOptions,
+            type: "network",
+          }}
+        />
+      )}
+      {tokenSelectorModal.isOpen && (
+        <SwapNetworkSelector
+          onSelect={onTokenSelect.current}
+          modalController={tokenSelectorModal}
+          options={{
+            data: tokenOptions,
+            type: "token",
+          }}
+        />
+      )}
       <SwapSettings modal={swapSettingsModal} swapSettings={swapSettings} />
       <SwapConfirmation
         data={{
@@ -121,6 +162,16 @@ const SwapBox = ({
       </Row>
       <Row>
         <Select
+          disableDefaultMode
+          onClick={() => {
+            networkSelectorModal.open();
+            onNetworkSelect.current = (item: Network | Token) => {
+              if (item instanceof Token) {
+                return;
+              }
+              setState({ ...state, fromfrom: item });
+            };
+          }}
           containerClassName={styles.select}
           extendRight
           isFullWidth
@@ -131,25 +182,9 @@ const SwapBox = ({
           setValue={() => undefined}
           options={networkOptions}
           hideRightBorder
-          optionRenderer={(close) => (
-            <>
-              {networkOptions.map((item, key) => (
-                <Option
-                  onClick={() => {
-                    setState({ ...state, fromfrom: item });
-                    close?.();
-                  }}
-                  style={{ marginRight: "8px" }}
-                  key={key}
-                  value={item.name}
-                >
-                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
-                </Option>
-              ))}
-            </>
-          )}
         />
         <Select
+          disableDefaultMode
           containerClassName={styles.select}
           extendRight
           extendLeft
@@ -160,23 +195,14 @@ const SwapBox = ({
           value={state.fromto}
           setValue={() => undefined}
           options={tokenOptions}
-          optionRenderer={(close) => (
-            <>
-              {tokenOptions.map((item, key) => (
-                <Option
-                  style={{ marginRight: "8px" }}
-                  key={key}
-                  value={item.name}
-                  onClick={() => {
-                    setState({ ...state, fromto: item });
-                    close?.();
-                  }}
-                >
-                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
-                </Option>
-              ))}
-            </>
-          )}
+          onClick={() => {
+            tokenSelectorModal.open();
+            onTokenSelect.current = (item: Network | Token) => {
+              if (item instanceof Token) {
+                setState({ ...state, fromto: item });
+              }
+            };
+          }}
         />
         <Input
           placeholder="Enter amount"
@@ -215,6 +241,7 @@ const SwapBox = ({
       </Row>
       <Row marginBottom={12}>
         <Select
+          disableDefaultMode
           containerClassName={styles.select}
           extendRight
           isFullWidth
@@ -224,25 +251,18 @@ const SwapBox = ({
           value={state.tofrom}
           options={networkOptions}
           hideRightBorder
-          optionRenderer={(close) => (
-            <>
-              {networkOptions.map((item, key) => (
-                <Option
-                  style={{ marginRight: "8px" }}
-                  key={key}
-                  onClick={() => {
-                    setState({ ...state, tofrom: item });
-                    close?.();
-                  }}
-                  value={item.name}
-                >
-                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
-                </Option>
-              ))}
-            </>
-          )}
+          onClick={() => {
+            networkSelectorModal.open();
+            onNetworkSelect.current = (item: Network | Token) => {
+              if (item instanceof Token) {
+                return;
+              }
+              setState({ ...state, tofrom: item });
+            };
+          }}
         />
         <Select
+          disableDefaultMode
           containerClassName={styles.select}
           extendRight
           extendLeft
@@ -252,22 +272,14 @@ const SwapBox = ({
             <TokenOrNetworkRenderer tokenOrNetwork={state.toto} />
           )}
           options={tokenOptions}
-          optionRenderer={(close) => (
-            <>
-              {tokenOptions.map((item, key) => (
-                <Option
-                  onClick={() => {
-                    setState({ ...state, toto: item });
-                    close?.();
-                  }}
-                  key={key}
-                  value={item.name}
-                >
-                  <TokenOrNetworkRenderer tokenOrNetwork={item} />
-                </Option>
-              ))}
-            </>
-          )}
+          onClick={() => {
+            tokenSelectorModal.open();
+            onTokenSelect.current = (item: Network | Token) => {
+              if (item instanceof Token) {
+                setState({ ...state, toto: item });
+              }
+            };
+          }}
         />
         <Input
           placeholder="Enter amount"

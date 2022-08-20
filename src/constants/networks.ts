@@ -26,7 +26,7 @@ export const AURORA: Network = {
   name: "Aurora",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "ADTX",
     symbol: "",
   },
   imageUrl: AuroraImage,
@@ -38,7 +38,7 @@ export const POLYGON: Network = {
   name: "Polygon",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "MATIC",
     symbol: "",
   },
   imageUrl: POLYGON_IMAGE,
@@ -50,7 +50,7 @@ export const AVALANCHE: Network = {
   name: "Avalance",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "AVAX",
     symbol: "",
   },
   imageUrl: AVALANCHE_IMAGE,
@@ -62,7 +62,7 @@ export const BNB: Network = {
   name: "BNB",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "BNB",
     symbol: "",
   },
   imageUrl: BNB_IMAGE,
@@ -74,7 +74,7 @@ export const OPTIMISM: Network = {
   name: "Optimism",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "OP",
     symbol: "",
   },
   imageUrl: OPTIMISM_IMAGE,
@@ -86,7 +86,7 @@ export const FANTOM: Network = {
   name: "Fantom",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "FTM",
     symbol: "",
   },
   imageUrl: FANTOM_IMAGE,
@@ -98,7 +98,7 @@ export const ARBITRUM: Network = {
   name: "Arbitrum",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "AETH",
     symbol: "",
   },
   imageUrl: ARBITRUM_IMAGE,
@@ -110,7 +110,7 @@ export const ETHEREUM: Network = {
   name: "Ethereum",
   nativeCurrency: {
     decimals: 18,
-    name: "",
+    name: "ETH",
     symbol: "",
   },
   imageUrl: ETHEREUM_IMAGE,

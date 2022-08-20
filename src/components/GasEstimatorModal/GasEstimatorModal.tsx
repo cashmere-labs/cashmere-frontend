@@ -42,7 +42,7 @@ const GasEstimatorModal = ({
       const elements: ReactNode[] = [];
 
       //Iterate each entry in estimates
-      item.forEach((el) => {
+      item.forEach((el, key) => {
         elements.push(
           <td className={styles.bodyCell}>
             <div className={styles.bodyCellInner}>

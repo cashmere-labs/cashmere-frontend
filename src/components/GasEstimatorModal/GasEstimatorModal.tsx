@@ -2,8 +2,9 @@ import { ModalController } from "hooks/useModal";
 import { ReactNode, useMemo } from "react";
 import { Network } from "types/network";
 import { Modal, NetworkBadge } from "ui";
-import { NetworkTypes, stringToBadgeType } from "ui/NetworkBadge/utils";
+import { stringToBadgeType } from "ui/NetworkBadge/utils";
 import styles from "./GasEstimatorModal.module.scss";
+import { v4 as uuid } from "uuid";
 
 export type EstimateMapping = Map<
   Network,
@@ -44,7 +45,7 @@ const GasEstimatorModal = ({
       //Iterate each entry in estimates
       item.forEach((el, key) => {
         elements.push(
-          <td className={styles.bodyCell}>
+          <td key={uuid()} className={styles.bodyCell}>
             <div className={styles.bodyCellInner}>
               <span className={styles.usd}>{el.usd}</span>
               <span className={styles.native}>{el.native}</span>
@@ -53,7 +54,7 @@ const GasEstimatorModal = ({
         );
       });
       _estimatedItems.push(
-        <tr>
+        <tr key={uuid()}>
           <>
             <td className={styles.bodyCell}>
               <div className={styles.bodyCellInner}>

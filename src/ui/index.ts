@@ -3,6 +3,7 @@ export { Button } from "./Button/Button";
 export { Container } from "./Container/Container";
 export { Spinner } from "./Spinner/Spinner";
 export { Select } from "./Select/Select";
+export { SelectNetwork } from "./SelectNetwork/SelectNetwork";
 export { Icon } from "./Icon/Icon";
 export { Input } from "./Input/Input";
 export { Layout } from "./Layout/Layout";

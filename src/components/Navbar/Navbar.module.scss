@@ -137,6 +137,10 @@
   align-items: center;
   box-shadow: 0px 3px 6px #00000029;
 
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+
   &.transparent {
     background-color: black;
   }
@@ -149,6 +153,9 @@
   right: 0px;
   top: 0px;
   background-color: rgba(0, 0, 0, 0.2);
+  @media (min-width: 768px) {
+    display: none !important;
+  }
 }
 
 .hide {
@@ -241,6 +248,7 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 3rem;
+    z-index: 1000;
   }
   .connectWalletMobileWrapper {
     margin-top: auto;
@@ -301,4 +309,3 @@
     width: 90vw;
   }
 }
-

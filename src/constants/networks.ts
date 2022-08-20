@@ -8,6 +8,7 @@ import POLYGON_IMAGE from "assets/images/networks/polygon.png";
 import ARBITRUM_IMAGE from "assets/images/networks/arbitrum.png";
 import OPTIMISM_IMAGE from "assets/images/networks/optimism.png";
 import FANTOM_IMAGE from "assets/images/networks/phantom.png";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 export const GOERLI: EthyleneNetwork = {
   rpcUrls: ["https://rpc.goerli.mudit.blog/"],
@@ -115,3 +116,13 @@ export const ETHEREUM: Network = {
   },
   imageUrl: ETHEREUM_IMAGE,
 };
+
+export const networkTypes = [
+  NetworkTypes.ARBITRUM,
+  NetworkTypes.AVALANCE,
+  NetworkTypes.BNB,
+  NetworkTypes.ETHEREUM,
+  NetworkTypes.FANTOM,
+  NetworkTypes.OPTIMISM,
+  NetworkTypes.POLYGON,
+];

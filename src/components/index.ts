@@ -62,3 +62,6 @@ export { GasEstimatorModal } from "./GasEstimatorModal/GasEstimatorModal";
 
 // Transaction Progress Modal
 export { TxProgressModal } from "./TxProgressModal/TxProgressModal";
+
+// AccountModal
+export { AccountModal } from "./AccountModal/AccountModal";

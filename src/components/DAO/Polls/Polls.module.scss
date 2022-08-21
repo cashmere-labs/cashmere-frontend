@@ -19,6 +19,8 @@
 .title {
   color: var(--text);
   white-space: nowrap;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .polls {
@@ -36,4 +38,10 @@
 .poll {
   display: flex;
   width: 100%;
+}
+
+.search {
+  margin-left: auto;
+  max-width: 140px;
+  margin-right: 8px;
 }

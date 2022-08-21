@@ -5,7 +5,7 @@ import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwap
 import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
 import { useModal, useTheme } from "hooks";
-import { ReactElement, useEffect, useRef } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
 import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
@@ -28,6 +28,7 @@ const SwapBox = ({
 }) => {
   const { auth } = useAccount();
   const { connect } = useConnection();
+  const [method, setMethod] = useState<"stable" | "aggregator">("stable");
 
   const tokenOptions = [Tetherus, Dai];
   const networkOptions = [POLYGON, ARBITRUM];
@@ -139,7 +140,30 @@ const SwapBox = ({
         }}
       />
       <div className={styles.header}>
-        <span style={{ color: `var(--text)`, fontSize: "16px" }}>Swap</span>
+        <div>
+          <span
+            onClick={() => setMethod("stable")}
+            style={{
+              cursor: "pointer",
+              color: method === "stable" ? `var(--text)` : `var(--subtext)`,
+              fontSize: "16px",
+            }}
+          >
+            Swap
+          </span>
+          <span
+            onClick={() => setMethod("aggregator")}
+            style={{
+              cursor: "pointer",
+              marginLeft: "12px",
+              color: method === "aggregator" ? `var(--text)` : `var(--subtext)`,
+              fontSize: "16px",
+            }}
+          >
+            Aggregator
+          </span>
+        </div>
+
         <Icon
           onClick={swapSettingsModal.open}
           style={{ color: `var(--icon-dark)` }}

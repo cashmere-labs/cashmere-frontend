@@ -26,6 +26,7 @@ interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   hideRightBorder?: boolean;
   height?: string;
   disableDefaultMode?: boolean;
+  width?: string;
 }
 
 const Select = ({
@@ -48,6 +49,7 @@ const Select = ({
   hideChevron,
   height = "58px",
   disableDefaultMode,
+  width,
   ...props
 }: SelectProps) => {
   const { isOpen, close, open } = useModal();
@@ -65,7 +67,6 @@ const Select = ({
 
   return (
     <div
-
       {...props}
       ref={mergeRefs(ref, menuRef)}
       className={clsnm(styles.wrapper, containerClassName)}
@@ -81,7 +82,7 @@ const Select = ({
         </span>
       )}
       <div
-        style={{ height }}
+        style={{ height, width }}
         onClick={disableDefaultMode ? props.onClick : isOpen ? close : open}
         ref={reference}
         className={clsnm(

@@ -58,6 +58,7 @@ const Pools = () => {
             whichPool={whichPool}
             bodyCount={poolCount}
             modal={stakeModal}
+            datas={whichPool ? PersonalData : GlobalData}
           />
         ) : (
           <PoolDesktopTable

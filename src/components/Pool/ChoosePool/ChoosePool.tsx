@@ -21,7 +21,7 @@ const ChoosePool = () => {
   });
 
   const selectWidth = useMediaQuery({
-    query: "(max-width: 470px)",
+    query: "(max-width: 620px)",
   });
 
   const minWidth = useMediaQuery({

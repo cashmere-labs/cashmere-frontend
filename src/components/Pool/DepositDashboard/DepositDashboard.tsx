@@ -13,14 +13,14 @@ const DepositDashboard = () => {
       <div className={styles.rewardWrapper}>
         <div className={styles.DBTexts}>
           <div className={styles.DBText}>
-            <span>My Total Deposits </span>
+            <span className={styles.name}>My Total Deposits </span>
             <span className={styles.text2}>$2.890,12</span>
           </div>
           <div className={styles.DBText}>
-            <span>My Pending Rewards</span>
-            <span className={styles.text2}>
+            <span className={styles.name}>My Pending Rewards</span>
+            <div className={styles.text2}>
               $1.890,24 <span>CSM</span>
-            </span>
+            </div>
           </div>
         </div>
         <div className={styles.buttons}>

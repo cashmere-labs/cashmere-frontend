@@ -26,27 +26,30 @@
 
         .DBText {
             color: var(--pool-text-2);
+            margin-right: 5px;
 
             .text2 {
                 font-weight: 700;
-                margin-left: 5px;
-                span{
+
+                span {
                     color: #8e8e8e;
                 }
             }
         }
     }
 
-    .buttons{
+    .buttons {
         display: flex;
+        margin-left: 10px;
 
-        .network{
+        .network {
             margin-right: 10px;
             width: 150px;
         }
 
-        .claimAll{
-            margin-left: 10px;}
+        .claimAll {
+            margin-left: 10px;
+        }
     }
 }
 
@@ -62,6 +65,8 @@
         height: 128px;
         flex-direction: column;
         justify-content: space-around;
+        padding: 0px;
+        background-color: transparent;
 
 
         .DBTexts {
@@ -74,20 +79,33 @@
             height: 41px;
             font-size: 14px;
             margin-left: 0px;
-            padding: 0px 17px;
+            padding: 0px;
+            padding-left: 17px;
 
             .DBText {
                 display: flex;
-                justify-content: space-between;
                 width: 100%;
+
+                .name {
+                    margin-right: 26px;
+                }
+
+                .text2 {
+                    font-size: 14px;
+                }
             }
         }
 
-        .claimAll {
-            margin-right: 0px;
+        .buttons {
             margin-left: 0px;
-            max-width: 325px !important;
-            width: 95% !important;
+            .network{
+                margin: 0px;
+                margin-right: 7.5px;
+            }
+
+            .claimAll {
+                margin-left: 7.5px;
+            }
         }
     }
 }

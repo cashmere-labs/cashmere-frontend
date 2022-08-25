@@ -1,9 +1,10 @@
 import styles from "./ClaimDashboard.module.scss";
 import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { Button, Modal } from "ui";
+import { Button, Modal, NetworkBadge } from "ui";
 import { useMediaQuery } from "react-responsive";
 import { Waiting } from "components/Modals/Waiting/Waiting";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 const ClaimDashboard = () => {
   const { theme } = useTheme();
@@ -20,34 +21,40 @@ const ClaimDashboard = () => {
           <div className={styles.text}>
             <div>
               <span>Name</span>
-              <span>Jump CRYPTO</span>
+              <span>CSM Locker</span>
             </div>
           </div>
           <div className={styles.text}>
             <div>
-              <span>Amount Locked</span>
+              <span>My Locked CSM</span>
               <span>12,193 CSM</span>
             </div>
           </div>
           <div className={styles.text}>
             <div>
               <span>Pending Profit</span>
-              <span>298.41 USN</span>
+              <span>$298.41</span>
             </div>
           </div>
           <div></div>
         </div>
-        <Button
-          height="40px"
-          width="156px"
-          fontSize={isPhoneOrLaptop ? "fs14" : "fs16"}
-          fontWeight="fw600"
-          onClick={() => claimModal.open()}
-          color={theme === "light" ? "black" : "white"}
-          className={clsnm(styles.claimAll)}
-        >
-          Claim
-        </Button>
+        <div className={styles.buttons}>
+          <NetworkBadge
+            label={NetworkTypes.ETHEREUM}
+            className={styles.network}
+          />
+          <Button
+            height="43px"
+            width="156px"
+            fontSize={isPhoneOrLaptop ? "fs14" : "fs16"}
+            fontWeight="fw600"
+            onClick={() => claimModal.open()}
+            color={theme === "light" ? "black" : "white"}
+            className={clsnm(styles.claimAll)}
+          >
+            Claim
+          </Button>
+        </div>
         <Modal
           bodyProps={{
             style: {

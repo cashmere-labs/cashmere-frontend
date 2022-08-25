@@ -32,7 +32,7 @@ const ChooseValidator = () => {
         <div className={styles.buttons}>
           <Button
             height={isPhoneOrPC ? "36px" : "46px"}
-            width={isPhoneOrPC ? "102px" : "204px"}
+            width={isPhoneOrPC ? "102px" : "162px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(false);
@@ -45,11 +45,11 @@ const ChooseValidator = () => {
             fontWeight={isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"
           >
-            Active Validators
+            Lockers
           </Button>
           <Button
             height={isPhoneOrPC ? "36px" : "46px"}
-            width={isPhoneOrPC ? "102px" : "204px"}
+            width={isPhoneOrPC ? "102px" : "162px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(true);
@@ -62,18 +62,9 @@ const ChooseValidator = () => {
             fontWeight={!isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"
           >
-            Inactive Validators
+            My Locks
           </Button>
         </div>
-        <div
-          className={styles.BecomeValidator}
-          onClick={() => {
-            becomeValidatorModal.open();
-          }}
-        >
-          Become a Validator
-        </div>
-
         {becomeValidatorPage === PAGE.FORM ? (
           <BecomeValidator
             onSuccess={() => setBecomeValidatorPage(PAGE.SUCCESS)}

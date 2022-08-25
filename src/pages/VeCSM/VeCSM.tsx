@@ -13,6 +13,10 @@ const VeCSM = () => {
       <div className={styles.wrapper}>
         <ClaimDashboard />
         <ChooseValidator />
+        <div className={styles.tvl}>
+          <div className={styles.title}>TVL:{" "}</div>
+          <div className={styles.value}>10,234,654 CSM</div>
+        </div>
         <Validators />
       </div>
       <Footer />

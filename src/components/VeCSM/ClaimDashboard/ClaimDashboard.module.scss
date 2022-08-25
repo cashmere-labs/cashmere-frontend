@@ -1,5 +1,5 @@
 .wrapper {
-    margin-top: 50px;
+    margin-top: 73px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -41,6 +41,18 @@
                 font-size: 16px;
                 font-weight: 700;
             }
+        }
+
+        .buttons{
+
+            display: flex;
+
+            .network{
+                width: 164px;
+                height: 43px;
+                margin-right: 21px;
+            }
+
         }
     }
 }

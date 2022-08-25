@@ -5,7 +5,8 @@ import { Row } from "components/Row/Row";
 import { mockPollData } from "constants/mockPollData";
 import { useModal, useTheme } from "hooks";
 import { useState } from "react";
-import { Button, Container, Modal } from "ui";
+import { FaSearch } from "react-icons/fa";
+import { Button, Container, Icon, Input, Modal, Select } from "ui";
 import styles from "./Polls.module.scss";
 
 enum PAGE {
@@ -17,6 +18,7 @@ const Polls = () => {
   const { theme } = useTheme();
   const proposalModal = useModal();
   const [page, setPage] = useState<PAGE>(PAGE.FORM);
+  const [search, setSearch] = useState("");
 
   return (
     <Container className={styles.wrapper} compact>
@@ -25,16 +27,32 @@ const Polls = () => {
         style={{ marginBottom: "1rem" }}
         justifyContent="space-between"
       >
-        <span className={styles.title}>Private polls</span>
+        <span className={styles.title}>Polls</span>
         <Row justifyContent="flex-end">
-          <Button height="40px" color={theme === "dark" ? "black" : "neutral"}>
-            In Progress
-          </Button>
+          <Input
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+            height="40px"
+            placeholder="Search"
+            rightEl={
+              <Icon size={14}>
+                <FaSearch />
+              </Icon>
+            }
+            className={styles.search}
+          />
+          <Select
+            height="36px"
+            menuRenderer={() => "In progress"}
+            value={""}
+            style={{ width: "max-content", whiteSpace: "nowrap" }}
+            options={[]}
+          />
           <Button
             onClick={proposalModal.open}
             height="40px"
             color={theme === "dark" ? "white" : "black"}
-            style={{ marginLeft: "8px" }}
+            style={{ marginLeft: "8px", whiteSpace: "nowrap" }}
           >
             Create Poll
           </Button>

@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.scss";
 import { useMemo, useRef, useState } from "react";
 import { clsnm } from "utils/clsnm";
-import { FaBars, FaCopy, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { PATHS } from "constants/paths";
 import { Link, useLocation } from "react-router-dom";
 import { Button, Container, Icon, Modal } from "ui";
@@ -13,10 +13,9 @@ import {
 } from "ethylene/hooks";
 import { formatAddress } from "utils/formatAddress";
 import { useModal, useTheme } from "hooks";
-import { toast } from "react-toastify";
 import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
-import { Logo, Row } from "components";
+import { Logo, AccountModal } from "components";
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const { pathname } = useLocation();
@@ -122,51 +121,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       className={clsnm(styles.navbar, transparent && styles.transparent)}
       id="CashmereHeader"
     >
-      <Modal isOpen={modal.isOpen} close={modal.close}>
-        <div className={styles.modal}>
-          <span>Ethereum Account</span>
-          <div className={styles.inner}>
-            <Row justifyContent="space-between">
-              <span>Connected</span>
-              <Button
-                onClick={() => {
-                  modal.close();
-                  disconnect();
-                }}
-                color="black"
-              >
-                Disconnect
-              </Button>
-            </Row>
-            {address && (
-              <div
-                style={{ justifyContent: "space-between" }}
-                className={styles.row}
-              >
-                <span className={styles.address}>{formatAddress(address)}</span>
-              </div>
-            )}
-            {address && (
-              <div
-                style={{ justifyContent: "space-between" }}
-                className={styles.row}
-              >
-                <span
-                  onClick={() => {
-                    navigator.clipboard.writeText(address).then(() => {
-                      toast("Address copied to clipboard", { autoClose: 1000 });
-                    });
-                  }}
-                  className={styles.copy}
-                >
-                  <FaCopy />
-                  <span>Copy to clipboard</span>
-                </span>
-              </div>
-            )}
-          </div>
-        </div>
-      </Modal>
+      <AccountModal modalContoller={modal} />
       <nav style={{ height: `var(--navbar-height)`, display: "flex" }}>
         <Container justifyContent="space-between" className={styles.container}>
           <div className={styles.left}>

@@ -1,0 +1,69 @@
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--text);
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  margin-top: 1.5rem;
+  color: var(--subtext);
+}
+
+.tableWrapper {
+  margin-top: 1rem;
+  width: 100%;
+  overflow-y: auto;
+
+  & table {
+    border-collapse: collapse;
+    border-spacing: -1px;
+  }
+}
+
+.headerCell {
+  text-align: right;
+  width: 200px;
+  flex-shrink: 0;
+  padding: 0px;
+
+  &:first-child {
+    text-align: left;
+  }
+
+  & div {
+    padding: 2.25rem 1rem;
+    border-top: 1px solid var(--table-divider);
+    border-bottom: 1px solid var(--table-divider);
+  }
+}
+
+.bodyCell {
+  padding: 0px;
+  width: 200px;
+  text-align: right;
+
+  & .bodyCellInner {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &:first-child {
+    text-align: center;
+  }
+}
+
+.usd {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.native {
+  font-size: 12px;
+  color: var(--subtext);
+}

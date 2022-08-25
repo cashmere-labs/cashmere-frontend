@@ -7,7 +7,6 @@ import TICK from "assets/images/tick.png";
 import { useState } from "react";
 import { Row } from "components/Row/Row";
 import { useMediaQuery } from "react-responsive";
-import { NUMBER_REGEX } from "constants/utils";
 import { isValidNumberInput } from "utils/isValidNumberInput";
 import { ethers } from "ethers";
 import { useFormValidator } from "hooks/useFormValidator";

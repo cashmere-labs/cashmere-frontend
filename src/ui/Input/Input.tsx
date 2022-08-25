@@ -18,6 +18,7 @@ interface InputProps extends ComponentPropsWithoutRef<"input"> {
   leftElClassName?: string;
   error?: string;
   absoluteError?: boolean;
+  inputRef?: any;
 }
 
 const Input = ({
@@ -39,6 +40,7 @@ const Input = ({
   style,
   error,
   absoluteError,
+  inputRef,
   ...props
 }: InputProps) => {
   return (
@@ -47,6 +49,7 @@ const Input = ({
       {...containerProps}
     >
       <input
+        ref={inputRef}
         style={{ height, ...style }}
         value={value}
         onChange={onChange}

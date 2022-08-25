@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--select-network-bg);
+  border-radius: 24px;
+  padding: 20px 18px;
+  margin-bottom: 2rem;
+
+  & h1 {
+    font-size: 24px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: var(--text);
+
+    @media (max-width: 540px) {
+      font-size: 20px;
+    }
+  }
+}

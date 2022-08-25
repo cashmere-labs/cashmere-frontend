@@ -9,7 +9,7 @@ import styles from "./Select.module.scss";
 interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   value: any;
   setValue?: (to: any) => void;
-  optionRenderer: (close: () => void) => ReactNode;
+  optionRenderer?: (close: () => void) => ReactNode;
   menuRenderer?: (isOpen: boolean) => ReactNode;
   options: any[];
   extendRight?: boolean;
@@ -25,6 +25,7 @@ interface SelectProps extends ComponentPropsWithoutRef<"div"> {
   hideLeftBorder?: boolean;
   hideRightBorder?: boolean;
   height?: string;
+  disableDefaultMode?: boolean;
 }
 
 const Select = ({
@@ -46,6 +47,7 @@ const Select = ({
   optionsClassName,
   hideChevron,
   height = "58px",
+  disableDefaultMode,
   ...props
 }: SelectProps) => {
   const { isOpen, close, open } = useModal();
@@ -80,7 +82,7 @@ const Select = ({
       )}
       <div
         style={{ height }}
-        onClick={isOpen ? close : open}
+        onClick={disableDefaultMode ? props.onClick : isOpen ? close : open}
         ref={reference}
         className={clsnm(
           styles.menu,
@@ -110,7 +112,7 @@ const Select = ({
           ref={floating}
           className={clsnm(styles.options, optionsClassName)}
         >
-          {optionRenderer(close)}
+          {optionRenderer?.(close)}
         </div>
       )}
     </div>

@@ -1,0 +1,127 @@
+.modal {
+  padding: 0px;
+}
+
+.body {
+  min-height: 220px;
+  padding: 32px 40px;
+
+  @media (max-width: 540px) {
+    padding: 20px 12px;
+  }
+}
+
+.header {
+  border-bottom: 1px solid var(--table-divider);
+  padding: 1.5rem;
+  padding-top: 0px;
+
+  & span {
+    font-size: 22px;
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--table-divider);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0rem;
+  text-align: center;
+  line-height: 20px;
+  color: var(--subtext);
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin-top: 0.4rem;
+
+  & img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  & span {
+    font-size: 14px;
+    color: var(--subtext);
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  & span {
+    font-size: 16px;
+  }
+}
+
+.progress {
+  margin-right: 1.2rem;
+  display: flex;
+}
+
+.link {
+  cursor: pointer;
+  transition: 0.2s linear;
+
+  &:hover {
+    transition: 0.2s linear;
+    transform: scale(1.1);
+  }
+}
+
+.circle {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 50%;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+
+  &:global(.done) {
+    width: 30px;
+    height: 30px;
+    background-color: var(--tx-progress-done-bg);
+    border: 2px solid var(--tx-progress-done-border);
+
+    &::before {
+      content: "";
+      height: 60px;
+      border-left: 2px dashed var(--tx-progress-done-dash);
+      transform: translateX(12px) translateY(48px);
+    }
+  }
+
+  &:global(.in_progress) {
+    background-color: var(--tx-progress-inprogress-bg);
+    border: 2px solid var(--tx-progress-inprogress-border);
+    &::before {
+      content: "";
+      height: 60px;
+      border-left: 2px dashed var(--tx-progress-disabled-dash);
+      transform: translateX(7px) translateY(50px);
+    }
+  }
+
+  &:global(.not_started) {
+    background-color: var(--tx-progress-notstarted-bg);
+    border: 2px solid var(--tx-progress-notstarted-border);
+  }
+}
+
+.spinner {
+  border-color: transparent;
+  border-top-color: var(--tx-progress-inprogress-border);
+}

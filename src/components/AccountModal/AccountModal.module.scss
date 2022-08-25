@@ -1,0 +1,170 @@
+.modalWrapper {
+  padding: 0px;
+  overflow: hidden;
+}
+
+.header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--divider);
+
+  & span {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-top: 1px solid var(--divider);
+
+  & span {
+    text-align: center;
+    color: var(--subtext);
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.body {
+  min-height: 120px;
+}
+
+.tabs {
+  padding: 2rem;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--account-modal-main-bg);
+}
+.avatar {
+  background-color: var(--account-modal-avatar-bg);
+  color: var(--text);
+  width: max-content;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  margin-right: 12px;
+}
+
+.title {
+  font-size: 12px;
+  color: var(--subtext);
+  margin-bottom: 0.25rem;
+}
+
+.address {
+  font-weight: 500;
+}
+
+.link {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s linear;
+  &:hover {
+    transition: 0.2s linear;
+    transform: scale(1.1);
+  }
+}
+
+.button {
+  margin-left: auto;
+  height: 40px;
+  border: 2px solid var(--text) !important;
+  background-color: transparent !important;
+  border-radius: 16px;
+
+  & span {
+    font-size: 16px !important;
+    color: var(--text) !important;
+  }
+}
+
+.tabsWrapper {
+  background-color: var(--account-modal-tabs-bg);
+  border-radius: 12px;
+  padding: 4px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+  & .space {
+    width: 8px;
+  }
+
+  & button {
+    width: 100%;
+    height: 32px;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.item {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--divider);
+  }
+}
+
+.itemImage {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--account-modal-main-bg);
+  border-radius: 50%;
+  padding: 12px;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.balanceWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+}
+
+.balanceItemHeader {
+  color: var(--subtext);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.amounts {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  & .usd {
+    font-size: 12px;
+    color: var(--subtext);
+    margin-bottom: 4px;
+  }
+}
+
+.tokenName {
+  font-weight: 500;
+  font-size: 16px;
+}

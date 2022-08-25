@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+  max-height: 320px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: var(--select-options-bg);
+  border-radius: 0px 12px 12px 12px;
+}
+
+.option {
+  padding: 2px 8px;
+}
+
+.optionInner {
+  padding: 12px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--select-text);
+
+  &:hover {
+    background-color: var(--option-hover);
+  }
+
+  &:active {
+    background-color: var(--option-active);
+  }
+}
+
+.badge {
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.chevron {
+  display: flex;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}

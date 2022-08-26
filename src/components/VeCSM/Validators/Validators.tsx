@@ -1,22 +1,25 @@
 import styles from "./Validators.module.scss";
 import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { ActiveValidators, InactiveValidators } from "../datas";
+import {
+  LockersDatas,
+  MyLocksDatas,
+} from "../datas";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "ui";
 import { useSelector } from "react-redux";
 import { useVeCSMStates } from "hooks";
 import {
   VeCSMDesktopTable,
-  VeCSMDesktopTitle,
-  VeCSMPhoneTable,
-  VeCSMPhoneTitle,
+  VeCSMTitle,
+  // VeCSMPhoneTable,
+  // VeCSMPhoneTitle,
 } from "components";
+import { useEffect } from "react";
 
 const Validators = () => {
-  const whichValidator = useSelector(
-    (state: any) => state.veCSM.isActive
-  );
+  const whichValidator = useSelector((state: any) => state.veCSM.isActive);
+  useEffect(() => console.log(whichValidator), [whichValidator]);
   const validatorCount = useSelector(
     (state: any) => state.veCSM.validatorCount
   );
@@ -29,24 +32,25 @@ const Validators = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
-        {isPhoneOrLaptop ? <VeCSMPhoneTitle /> : <VeCSMDesktopTitle />}
-        {isPhoneOrLaptop ? (
+        <VeCSMTitle whichLockers={whichValidator} />
+        {/* {isPhoneOrLaptop ? (
           <VeCSMPhoneTable
             whichValidator={whichValidator}
             validatorCount={validatorCount}
           />
         ) : (
+          )} */}
           <VeCSMDesktopTable
             whichValidator={whichValidator}
             validatorCount={validatorCount}
+            datas={!whichValidator ? LockersDatas : MyLocksDatas}
           />
-        )}
       </div>
       <div className={styles.footer}>
         The base emission rate is currently 1.5 CSM per second.
       </div>
       {whichValidator
-        ? InactiveValidators.length > validatorCount && (
+        ? MyLocksDatas.length > validatorCount && (
             <div className={styles.more}>
               <Button
                 height="40px"
@@ -62,7 +66,7 @@ const Validators = () => {
               </Button>
             </div>
           )
-        : ActiveValidators.length > validatorCount && (
+        : LockersDatas.length > validatorCount && (
             <div className={styles.more}>
               <Button
                 height="40px"

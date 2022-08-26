@@ -2,30 +2,56 @@
   height: 72px;
   display: flex;
   align-items: center;
-  margin-left: 36.4px;
+  padding: 0px 27px;
   color: var(--veCSM-text-1);
   font-weight: 600;
+
+  .lockers {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .network {
+      width: 125px;
+    }
+
+    .totalLCSM {
+      width: 170px;
+    }
+
+    .weeklyFees {
+      width: 100px;
+    }
+  }
+
+  .myLocks {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .network {
+      width: 130px;
+    }
+
+    .weekly {
+      width: 100px;
+
+    }
+
+    .claimableFees {
+      width: 120px;
+    }
+
+    .myVotePower {
+      width: 130px;
+    }
+
+    .myLockedCSM {
+      width: 125px;
+    }
+  }
 }
 
-.tableTitle > :nth-child(1) {
-  width: 12%;
-}
-
-.tableTitle > :nth-child(2) {
-  width: 22.5%;
-}
-
-.tableTitle > :nth-child(3) {
-  width: 28.5%;
-}
-
-.tableTitle > :nth-child(4) {
-  width: 9%;
-}
-
-.tableTitle > :nth-child(5) {
-  width: 28%;
-}
 
 .tableBody {
   display: flex;
@@ -39,37 +65,93 @@
 
   .datas {
     display: flex;
-    padding: 15.5px 0px;
-    padding-left: 36.4px;
+    padding: 15.5px 24px;
+    // padding-left: 36.4px;
     justify-content: center;
     align-items: center;
     color: var(--veCSM-text-4);
+
+    .number {
+      padding-left: 30px;
+    }
+
+    .lockers {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .network {
+        width: 128px;
+      }
+
+
+      .totalLCSM {
+        width: 170px;
+      }
+
+      .weekly {
+        width: 100px;
+      }
+    }
+
+    .myLocks {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .network {
+        width: 130px;
+      }
+
+      .weekly {
+        width: 100px;
+      }
+
+      .claimableFees {
+        width: 120px;
+      }
+
+      .myVotePower {
+        width: 130px;
+      }
+
+      .myLockedCSM {
+        width: 125px;
+      }
+    }
+
+    .manageButton {
+      padding-left: 40px;
+
+    }
   }
 
-  .datas > :nth-child(1) {
-    width: 12%;
-    font-weight: 600;
-    color: var(--veCSM-text-4);
-  }
+  // .datas > :nth-child(1) {
+  //   width: 12%;
+  //   font-weight: 600;
+  //   color: var(--veCSM-text-4);
+  // }
 
-  .datas > :nth-child(2) {
-    width: 22.5%;
-  }
+  // .datas > :nth-child(2) {
+  //   width: 22.5%;
+  // }
 
-  .datas > :nth-child(3) {
-    width: 28.5%;
-  }
+  // .datas > :nth-child(3) {
+  //   width: 28.5%;
+  // }
 
-  .datas > :nth-child(4) {
-    width: 9%;
-    display: flex;
-    justify-content: center;
-  }
+  // .datas > :nth-child(4) {
+  //   width: 9%;
+  //   display: flex;
+  //   justify-content: center;
+  // }
 
-  .datas > :nth-child(5) {
-    width: 28%;
-    padding-right: 25px;
-    display: flex;
-    justify-content: end;
-  }
+  // .datas > :nth-child(5) {
+  //   width: 28%;
+  //   padding-right: 25px;
+  //   display: flex;
+  //   justify-content: end;
+  // }
 }

@@ -22,12 +22,12 @@ export { ChooseValidator } from "./VeCSM/ChooseValidator/ChooseValidator";
 export { Validators } from "./VeCSM/Validators/Validators";
 export {
   VeCSMDesktopTable,
-  VeCSMDesktopTitle,
+  VeCSMTitle,
 } from "./VeCSM/DesktopTable/DesktopTable";
-export {
-  VeCSMPhoneTable,
-  VeCSMPhoneTitle,
-} from "./VeCSM/PhoneTable/PhoneTable";
+// export {
+//   VeCSMPhoneTable,
+//   VeCSMPhoneTitle,
+// } from "./VeCSM/PhoneTable/PhoneTable";
 
 // Modals
 export { Done } from "./Modals/Done/Done";

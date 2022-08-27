@@ -1,10 +1,7 @@
 import styles from "./Validators.module.scss";
 import { useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import {
-  LockersDatas,
-  MyLocksDatas,
-} from "../datas";
+import { LockersDatas, MyLocksDatas } from "../datas";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "ui";
 import { useSelector } from "react-redux";
@@ -16,6 +13,7 @@ import {
   // VeCSMPhoneTitle,
 } from "components";
 import { useEffect } from "react";
+import { VeCSMPhoneTable, VeCSMPhoneTitle } from "components/VeCSM/PhoneTable/PhoneTable";
 
 const Validators = () => {
   const whichValidator = useSelector((state: any) => state.veCSM.isActive);
@@ -26,63 +24,33 @@ const Validators = () => {
 
   const { increaseValidatorCount } = useVeCSMStates();
   const isPhoneOrLaptop = useMediaQuery({
-    query: "(max-width: 850px)",
+    query: "(max-width: 950px)",
   });
   const { theme } = useTheme();
+
+  var datas = !whichValidator ? LockersDatas : MyLocksDatas;
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
+        {isPhoneOrLaptop ?
+         <VeCSMPhoneTitle whichLockers={whichValidator}/> :
         <VeCSMTitle whichLockers={whichValidator} />
-        {/* {isPhoneOrLaptop ? (
+      }
+        {isPhoneOrLaptop ? (
           <VeCSMPhoneTable
-            whichValidator={whichValidator}
-            validatorCount={validatorCount}
+            whichLocker={whichValidator}
+            datas={datas}
+            bodyCount={validatorCount}
           />
         ) : (
-          )} */}
           <VeCSMDesktopTable
             whichValidator={whichValidator}
             validatorCount={validatorCount}
-            datas={!whichValidator ? LockersDatas : MyLocksDatas}
+            datas={datas}
           />
+        )}
       </div>
-      <div className={styles.footer}>
-        The base emission rate is currently 1.5 CSM per second.
-      </div>
-      {whichValidator
-        ? MyLocksDatas.length > validatorCount && (
-            <div className={styles.more}>
-              <Button
-                height="40px"
-                width="156px"
-                onClick={() => increaseValidatorCount()}
-                color={theme === "light" ? "black" : "white"}
-                className={clsnm(
-                  styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
-                )}
-              >
-                more
-              </Button>
-            </div>
-          )
-        : LockersDatas.length > validatorCount && (
-            <div className={styles.more}>
-              <Button
-                height="40px"
-                width="156px"
-                fontSize="fs16"
-                onClick={() => increaseValidatorCount()}
-                color={theme === "light" ? "black" : "white"}
-                className={clsnm(
-                  styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
-                )}
-              >
-                more
-              </Button>
-            </div>
-          )}
+      <div className={styles.footer}></div>
     </div>
   );
 };

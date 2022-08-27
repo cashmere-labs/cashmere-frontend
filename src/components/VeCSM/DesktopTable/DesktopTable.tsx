@@ -102,12 +102,10 @@ const Row = ({
             <div className={styles.myLockedCSM}>{data.myLockedCSM} CSM</div>
           </div>
         )}
-        {/* <div>{data.network}</div>
-        <div>{data.votingPower} veCSM</div>
-        <div>%{data.commission}</div> */}
-        <div className={styles.manageButton} style={
-          whichOne ? {paddingLeft: "30px"} : {paddingLeft: "40px"}
-        }>
+        <div
+          className={styles.manageButton}
+          style={whichOne ? { paddingLeft: "30px" } : { paddingLeft: "40px" }}
+        >
           <Link to={`${PATHS.manage}/${data.id}`}>
             <Button
               height="40px"

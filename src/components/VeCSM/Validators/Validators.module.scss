@@ -15,32 +15,10 @@
     }
 
     .footer {
-        color: var(--pool-text-5);
-        display: flex;
-        justify-content: center;
         margin-top: 32.5px;
         margin-bottom: 29.5px;
     }
 
-    .more {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 43px;
-
-        .white {
-            background-color: transparent;
-            border: solid 1px #e5e5e5 !important;
-            border-radius: 12px;
-            color: black;
-        }
-
-        .black {
-            background-color: transparent;
-            border: solid 1px #454545 !important;
-            border-radius: 12px;
-            color: white;
-        }
-    }
 }
 
 @media (max-width: 850px) {

@@ -55,7 +55,7 @@ const PoolPhoneTable = ({ whichPool, bodyCount, modal, datas }: Table) => {
       firstArray[i] = false;
     }
     setBodyOpenPersonal(firstArray);
-  }, []);
+  }, [whichPool]);
 
   const updateMyArray = (
     oldArray: any,

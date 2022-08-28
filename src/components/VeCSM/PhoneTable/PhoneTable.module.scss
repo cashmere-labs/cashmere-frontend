@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     color: var(--pool-text-4);
+    background-color: var(--pool-bg-4);
     font-weight: 600;
     height: 46.5px;
     padding: 15px;
@@ -35,6 +36,7 @@
     display: flex;
     flex-direction: column;
     height: 57px;
+    background-color: var(--pool-bg-4);
 
     .line {
       width: 100%;
@@ -159,7 +161,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 15px 0px;
+      padding: 15px 0px;
+      background-color: var(--pool-bg-5);
 
 
       .title {

@@ -9,7 +9,7 @@ import { NetworkTypes } from "ui/NetworkBadge/utils";
 const ClaimDashboard = () => {
   const { theme } = useTheme();
   const isPhoneOrLaptop = useMediaQuery({
-    query: "(max-width: 650px)",
+    query: "(max-width: 800px)",
   });
 
   const claimModal = useModal();
@@ -45,7 +45,7 @@ const ClaimDashboard = () => {
           />
           <Button
             height="43px"
-            width="156px"
+            width={"156px"}
             fontSize={isPhoneOrLaptop ? "fs14" : "fs16"}
             fontWeight="fw600"
             onClick={() => claimModal.open()}

@@ -15,7 +15,10 @@ enum PAGE {
 
 const ChooseValidator = () => {
   const isPhoneOrPC = useMediaQuery({
-    query: "(max-width: 650px)",
+    query: "(max-width: 800px)",
+  });
+  const miniPhone = useMediaQuery({
+    query: "(max-width: 380px)",
   });
   const { resetValidatorCount, changeIsActive } = useVeCSMStates();
   const isActive = useSelector((state: any) => state.veCSM.isActive);
@@ -31,8 +34,8 @@ const ChooseValidator = () => {
       <div className={styles.whichValidatorWrapper}>
         <div className={styles.buttons}>
           <Button
-            height={isPhoneOrPC ? "36px" : "46px"}
-            width={isPhoneOrPC ? "102px" : "162px"}
+            height={"46px"}
+            width={miniPhone? "120px":"171px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(false);
@@ -48,8 +51,8 @@ const ChooseValidator = () => {
             Lockers
           </Button>
           <Button
-            height={isPhoneOrPC ? "36px" : "46px"}
-            width={isPhoneOrPC ? "102px" : "162px"}
+            height={"46px"}
+            width={miniPhone? "120px":"171px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(true);

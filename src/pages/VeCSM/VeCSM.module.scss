@@ -17,3 +17,12 @@
         .value {}
     }
 }
+
+@media(max-width: 800px) {
+    .wrapper {
+        .tvl {
+            justify-content: center;
+        }
+    }
+
+}

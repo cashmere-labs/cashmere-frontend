@@ -51,18 +51,22 @@
     }
 }
 
-@media (max-width: 850px) {
-    .wrapper {
-        .whichValidatorWrapper {
-            margin: 25px 0px 0px 0px;
-            border-radius: 0px;
-        }
-    }
-}
+// @media (max-width: 850px) {
+//     .wrapper {
+//         .whichValidatorWrapper {
+//             margin: 25px 0px 0px 0px;
+//             border-radius: 0px;
+//         }
+//     }
+// }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
     .wrapper {
+        margin-top: -25px;
+        padding: 0px 8px;
         .whichValidatorWrapper {
+            display: flex;
+            justify-content: center;
 
             .BecomeValidator {
                 text-align: center;
@@ -75,21 +79,3 @@
 }
 
 
-@media (max-width: 370px) {
-    .wrapper {
-        padding: 0px 0px;
-    }
-
-    .whichPoolWrapper {
-        max-width: 850px;
-
-        .titleWrapper {
-            margin: 17px 0px 0px 0px;
-            border-radius: 0px;
-
-            .buttons {
-                margin-left: 19px;
-            }
-        }
-    }
-}

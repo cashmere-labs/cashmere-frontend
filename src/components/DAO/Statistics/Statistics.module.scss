@@ -1,16 +1,5 @@
 .wrapper {
-  width: 50%;
-
-  @media (max-width: 992px) {
-    width: 100%;
-  }
-
-  .title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--statistics-text-1);
-    margin-bottom: 14px;
-  }
+  width: 100%;
 
   .boxWrapper {
     background-color: var(--statistics-bg-1);
@@ -18,56 +7,25 @@
     padding: 19px;
 
     .options {
-      width: 100%;
-      height: 56px;
-      border-radius: 16px;
-      background-color: var(--statistics-bg-2);
-      padding: 5px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 71px;
+      margin-bottom: 30px;
     }
 
-    .options > :nth-child(1) {
-      height: 46px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 272px;
-      width: 100%;
-      border-radius: 13px;
-    }
-
-    .options > :nth-child(2) {
-      height: 46px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 272px;
-      width: 100%;
-      border-radius: 13px;
-    }
-
-    .selected {
-      background-color: var(--statistics-bg-1);
-    }
-    .selected:hover {
-      cursor: pointer;
-    }
-
-    .not:hover {
-      cursor: pointer;
-      transform: scale(1.05);
-      transition: 0.1s ease-in;
+    .date {
+      text-align: center;
+      margin-bottom: 10px;
+      padding-top: 30px;
+      font-size: 23px;
+      color: var(--text);
     }
 
     .graph {
-      height: 400px;
-      margin-bottom: 78px;
+      height: 500px;
+      margin-bottom: 30px;
       display: flex;
       justify-content: center;
+
       img {
-        max-width: 500px;
+        max-width: 625px;
         width: 100%;
       }
 
@@ -76,8 +34,64 @@
       }
     }
 
-    .claim {
-      margin-bottom: 30px;
+    .weeklyFees {
+      max-height: 650px;
+      overflow-y: auto;
+      &::-webkit-scrollbar{
+        width: 5px;
+      }
+
+      .mainDates {
+        text-align: center;
+        font-size: 18px;
+        color: var(--text);
+        margin-bottom: 30px;
+      }
+
+      .line {
+        width: 100%;
+        height: 0.5px;
+        opacity: 0.7;
+        background-color: var(--statistics-text-2);
+      }
+
+      .title {
+        text-align: end;
+        margin: 15px;
+        color: var(--statistics-text-2);
+      }
+
+      .datas {
+        display: flex;
+        flex-direction: column;
+        color: var(--text);
+
+        .data {
+          display: flex;
+          justify-content: space-between;
+          height: 51px;
+          align-items: center;
+          margin-bottom: 17px;
+          background-color: var(--statistics-bg-3);
+          border-radius: 8px;
+          padding: 0px 15px;
+
+          .whichDate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+
+            .progress {
+              margin-left: 3px;
+            }
+
+            .toolTip {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
     }
   }
 }

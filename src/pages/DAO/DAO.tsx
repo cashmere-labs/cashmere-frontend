@@ -24,12 +24,12 @@ const DAO = () => {
         <Container compact>
           <NetworkSelector />
           <UpperPage />
-          <div className={styles.layer}>
-            <Statistics />
+          {/* <div className={styles.layer}>
             <div className={styles.space}></div>
             <Gauge />
-          </div>
+          </div> */}
           <Polls />
+          <Statistics />
         </Container>
       </div>
 

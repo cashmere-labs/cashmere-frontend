@@ -3,7 +3,7 @@ import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button, Modal, NetworkBadge } from "ui";
 import { useMediaQuery } from "react-responsive";
-import { Waiting } from "components/Modals/Waiting/Waiting";
+import { Waiting } from "components";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 const ClaimDashboard = () => {

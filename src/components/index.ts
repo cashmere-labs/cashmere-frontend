@@ -31,7 +31,7 @@ export {
 
 // Modals
 export { Done } from "./Modals/Done/Done";
-export { Waiting } from "./Modals/Waiting/Waiting";
+export { Waiting } from "./Modals/BecomeValidatorError/Waiting/Waiting";
 export { Warning } from "./Modals/Warning/Warning";
 export { LiquidityStakeReward } from "./Pool/LiquidityStakeReward/LiquidityStakeReward";
 export { Liquidity } from "./Pool/LiquidityStakeReward/Liquidity";

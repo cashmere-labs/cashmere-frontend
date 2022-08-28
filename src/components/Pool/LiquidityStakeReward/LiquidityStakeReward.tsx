@@ -3,7 +3,7 @@ import { Modal } from "ui";
 import styles from "./LiquidityStakeReward.module.scss";
 import { Liquidity, Reward, Stake } from "components";
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setValue } from "store/slicers/pool";
 
 const LiquidityStakeReward = ({
@@ -14,18 +14,26 @@ const LiquidityStakeReward = ({
   onSuccess: () => void;
 }) => {
   const [whichComponent, setWhichComponent] = useState(0);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setWhichComponent(0);
   }, [modal.isOpen]);
 
   useEffect(() => {
-    dispatch(setValue(""))
+    dispatch(setValue(""));
   }, [whichComponent]);
 
+  const whichNetwork = useSelector((state: any) => state.network.network);
+
   return (
-    <Modal isOpen={modal.isOpen} close={modal.close} className={styles.wrapper}>
+    <Modal
+      isOpen={modal.isOpen}
+      close={modal.close}
+      className={styles.wrapper}
+      network={whichNetwork}
+    >
+      <div className={styles.line}></div>
       <div className={styles.options}>
         <div
           onClick={() => {

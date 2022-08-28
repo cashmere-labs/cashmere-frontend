@@ -1,5 +1,5 @@
 import { ProposalModal } from "components/DAO/ProposalModal/ProposalModal";
-import { Waiting } from "components/Modals/Waiting/Waiting";
+import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
 import { Poll } from "components/Poll/Poll";
 import { Row } from "components/Row/Row";
 import { mockPollData } from "constants/mockPollData";

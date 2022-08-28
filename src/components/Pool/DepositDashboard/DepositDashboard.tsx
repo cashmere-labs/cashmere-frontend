@@ -2,7 +2,7 @@ import styles from "./DepositDashboard.module.scss";
 import { useTheme, useModal } from "hooks";
 import { clsnm } from "utils/clsnm";
 import { Button, Modal, NetworkBadge } from "ui";
-import { Waiting } from "components/Modals/Waiting/Waiting";
+import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 const DepositDashboard = () => {

@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import { useSelector } from "react-redux";
 import { BecomeValidator } from "components/DAO/BecomeValidator/BecomeValidator";
 import { useState } from "react";
-import { Waiting } from "components/Modals/Waiting/Waiting";
+import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
 
 enum PAGE {
   "FORM",

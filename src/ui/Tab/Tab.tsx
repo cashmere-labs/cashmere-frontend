@@ -2,7 +2,6 @@ import styles from "./Tab.module.scss";
 import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
 import { clsnm } from "utils/clsnm";
 import { useState } from "react";
-import { useTabModal } from "hooks/useTabModal";
 
 interface TabProbs extends ComponentPropsWithoutRef<"div"> {
   className?: string;
@@ -10,6 +9,7 @@ interface TabProbs extends ComponentPropsWithoutRef<"div"> {
   maxWidth: string;
   padding?: string;
   height?: string;
+  tapModal?: any;
   names: string[];
 }
 
@@ -20,9 +20,10 @@ const Tab = ({
   padding = "5px",
   height = "56px",
   style = {},
+  tapModal,
   names = ["Empty", "Empty", "Empty"],
 }: TabProbs) => {
-  const tapModal = useTabModal();
+
   return (
     <div
       className={styles.wrapper}

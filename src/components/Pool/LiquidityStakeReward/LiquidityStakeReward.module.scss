@@ -11,6 +11,14 @@
     padding: 63px 12px 17px;
   }
 
+  .line {
+    border: solid 1px #ebebeb;
+    height: 1px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+
   .options {
     max-width: 524px;
     height: 56px;
@@ -65,9 +73,11 @@
         height: 36px;
       }
     }
+
     .thisOne:hover {
       cursor: pointer;
     }
+
     .no:hover {
       cursor: pointer;
       transform: scale(1.05);

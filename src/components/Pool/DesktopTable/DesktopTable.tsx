@@ -1,12 +1,11 @@
 import styles from "./DesktopTable.module.scss";
-import { PersonalData, GlobalData } from "../datas";
 import { Icon, Tooltip, NetworkBadge } from "ui";
 import { InfoIcon } from "assets/icons";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { useDispatch, useSelector } from "react-redux";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
-
 import { ModalController } from "hooks/useModal";
+
 interface Table {
   whichPool?: boolean;
   bodyCount: number;

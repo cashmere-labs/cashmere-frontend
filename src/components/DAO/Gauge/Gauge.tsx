@@ -1,12 +1,14 @@
 import styles from "./Gauge.module.scss";
-import { Select, Option, Input, Button } from "ui";
+import { Select, Option, Input, Button, Modal } from "ui";
+import { ModalController } from "hooks/useModal";
 import { Row } from "components";
 import { useState } from "react";
 import { useTheme } from "hooks";
-const Gauge = () => {
+
+const Gauge = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();
   const [state, setState] = useState({
-    from: "Option 1",
+    from: "Select a gauge",
     duration: "1 year",
   });
 
@@ -16,7 +18,7 @@ const Gauge = () => {
   const durationOptions = ["3 Months", "1 Year", "3 Years"];
 
   return (
-    <div className={styles.wrapper}>
+    <Modal isOpen={modal.isOpen} close={modal.close} className={styles.wrapper}>
       <div className={styles.title}>Gauge Boost Calculator</div>
       <div className={styles.boxWrapper}>
         <div className={styles.options}>
@@ -66,7 +68,7 @@ const Gauge = () => {
                   className={whichToken === 0 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div style={{ color: `var(--text)` }}>CSM</div>
+              <div style={{ color: `var(--text)`, fontWeight: "500" }}>CRV</div>
             </div>
           </div>
           <div className={styles.veCSM}>
@@ -76,7 +78,9 @@ const Gauge = () => {
                   className={whichToken === 1 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div style={{ color: `var(--text)` }}>veCSM</div>
+              <div style={{ color: `var(--text)`, fontWeight: "500" }}>
+                veCRV
+              </div>
             </div>
           </div>
         </div>
@@ -125,7 +129,7 @@ const Gauge = () => {
           </div>
         </div>
         <div className={styles.input3}>
-          <div>Total VeCSM</div>
+          <div>Total VeCRV</div>
           <Input placeholder="0" height={"71px"} />
         </div>
 
@@ -140,8 +144,8 @@ const Gauge = () => {
         </div>
 
         <div className={styles.boost}>
-          <div>Boost:</div>
-          <div>1.00x</div>
+          <div>veCSM Share:</div>
+          <div>0.01%</div>
         </div>
 
         <div className={styles.line}></div>
@@ -154,7 +158,7 @@ const Gauge = () => {
         <div className={styles.line}></div>
 
         <div className={styles.minCSM}>
-          <div>Min veCSM for max boost:</div>
+          <div>Min veCRV for max boost:</div>
           <div>Please enter a deposit amount</div>
         </div>
 
@@ -183,7 +187,7 @@ const Gauge = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 

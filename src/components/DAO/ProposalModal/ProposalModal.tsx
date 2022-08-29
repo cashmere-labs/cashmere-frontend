@@ -88,6 +88,7 @@ const ProposalModal = ({
     >
       <div className={styles.body}>
         <div className={styles.title}>DAO Proposal</div>
+        <div className={styles.line}></div>
         <div className={styles.titleInput}>
           <div className={styles.daoTitle}>Title</div>
           <Input
@@ -173,7 +174,7 @@ const ProposalModal = ({
                   <>
                     {tokenOptions.map((item, key) => (
                       <Option
-                        style={{ marginRight: "8px" }}
+                        style={{ marginRight: "8px"}}
                         key={key}
                         value={"item.name"}
                         onClick={() => {

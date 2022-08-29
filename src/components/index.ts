@@ -56,6 +56,15 @@ export { Balance } from "./DAO/Manage/Balance/Balance";
 export { Manage } from "./DAO/Manage/Manage";
 export { Polls } from "./DAO/Polls/Polls";
 export { Poll } from "./Poll/Poll";
+export {
+  VoteGaugeDesktopTable,
+  VoteGaugeDesktopTitle,
+} from "./DAO/VoteGaugeDesktop/VoteGaugeDesktop";
+export {
+  VoteGaugePhoneTitle,
+  VoteGaugePhoneTable,
+} from "./DAO/VoteGaugePhone/VoteGaugePhone";
+export { VoteGauge } from "./DAO/VoteGauge/VoteGauge";
 
 // Gas Estimator
 export { GasEstimatorModal } from "./GasEstimatorModal/GasEstimatorModal";

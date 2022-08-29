@@ -151,7 +151,7 @@ body.light {
   --gauge-boost-text-1: #1f1f1f;
   --gauge-boost-text-2: #9b9b9b;
 
-// Statistics
+  // Statistics
   --statistics-bg-1: white;
   --statistics-bg-2: #f7f7f7;
   --statistics-bg-3: #FAFAFA;
@@ -233,7 +233,14 @@ body.light {
 
   // Tab
   --tab-text-1: black;
-  --tab-bg-1:white;
+  --tab-bg-1: white;
+
+  // Vote Gauge
+  --vote-gauge-text-1: #adadad;
+  --vote-gauge-text-2: #0b0b0b;
+  --vote-gauge-text-3: rgba(31, 31, 31, 0.9);
+  --vote-gauge-bg-1: white;
+  --vote-gauge-bg-2: #e5e5e5;
 }
 
 body.dark {
@@ -465,7 +472,14 @@ body.dark {
 
   // Tab
   --tab-text-1: white;
-  --tab-bg-1:#212121;
+  --tab-bg-1: #212121;
+
+  // Vote Gauge
+  --vote-gauge-text-1: #adadad;
+  --vote-gauge-text-2: white;
+  --vote-gauge-text-3: white;
+  --vote-gauge-bg-1: #232323;
+  --vote-gauge-bg-2: #E5E5E5;
 }
 
 body {

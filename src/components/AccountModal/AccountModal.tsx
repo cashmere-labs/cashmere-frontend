@@ -137,8 +137,8 @@ const AccountModal = ({ modalContoller }: AccountModalProps) => {
         </div>
         <div className={styles.items}>
           {page === Page.ACCOUNT
-            ? balances.map((item) => (
-                <div className={styles.item}>
+            ? balances.map((item:any, i:number) => (
+                <div className={styles.item} key={i}>
                   <div className={styles.itemImage}>
                     <img src={item.image} alt={item.token} />
                   </div>

@@ -1,0 +1,36 @@
+.wrapper{
+    margin-bottom: 50px;
+
+    .title{
+        margin: 25px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media(max-width: 975px){
+            margin: 12px;
+        }
+
+        .text{
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text);
+        }
+        .date{
+            display: flex;
+            align-items: center;
+            padding: 7.5px;
+            border: 1px solid var(--vote-gauge-bg-2);
+            border-radius: 12px;
+            font-size: 18;
+            color: var(--text);
+            font-weight: 600;
+
+            .image{
+                width: 25px;
+                height: 25px;
+                margin-left: 10px;
+            }
+        }
+    }
+}

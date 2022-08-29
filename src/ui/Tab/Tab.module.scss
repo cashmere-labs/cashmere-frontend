@@ -11,6 +11,11 @@
     font-weight: 600;
     width: 100%;
 
+    @media(max-width: 600px){
+        font-size: 14px;
+        text-align: center;
+    }
+
     .thisOne {
         height: 100%;
         border-radius: 12px;

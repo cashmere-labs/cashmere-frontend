@@ -1,0 +1,116 @@
+.tableTitle {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding: 0px 24px;
+    color: var(--vote-gauge-text-1);
+    background-color: var(--vote-gauge-bg-1);
+    font-weight: 600;
+    justify-content: space-between;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+
+
+    .gauge {
+        width: 14%;
+    }
+
+    .network {
+        width: 18.25%;
+    }
+
+    .totalVotedveCSM {
+        width: 22%;
+    }
+
+    .currentAPY {
+        width: 17.4%;
+    }
+
+    .futureAPY {
+        width: 15.2%;
+    }
+
+    .usedPower {
+        width: 13.1%;
+    }
+
+    .manage {
+        max-width: 156px;
+        width: 100%;
+    }
+
+}
+
+
+.tableBody {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--vote-gauge-bg-1);
+
+    .line {
+        width: 100%;
+        height: 0;
+        border: solid 1px var(--veCSM-text-5);
+    }
+
+    .datas {
+        display: flex;
+        padding: 18.5px 24px;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--vote-gauge-text-3);
+
+        .logo {
+            display: flex;
+            align-items: center;
+            width: 14%;
+            color: var(--vote-gauge-text-2);
+
+            img {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
+
+            .name {
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+
+        .network {
+            width: 18.25%;
+        }
+
+        .totalVotedveCSM {
+            width: 22%;
+        }
+
+        .currentAPY {
+            width: 17%;
+        }
+
+        .futureAPY {
+            width: 15.2%;
+        }
+
+        .usedPower {
+            width: 13.1%;
+            div{
+                text-align: center;
+                width: 95px;
+            }
+        }
+
+        .voteButton {
+            max-width: 156px;
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+    }
+}
+
+.table{
+}

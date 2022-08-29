@@ -1,5 +1,6 @@
 .wrapper {
   width: 100%;
+  margin-bottom: 130px;
 
   .boxWrapper {
     background-color: var(--statistics-bg-1);
@@ -29,7 +30,7 @@
         width: 100%;
       }
 
-      @media (max-width: 540px) {
+      @media (max-width: 625px) {
         height: 300px;
       }
     }

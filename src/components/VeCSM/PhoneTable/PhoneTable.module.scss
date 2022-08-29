@@ -131,6 +131,9 @@
       .lockers {
         .openData {
           margin-bottom: 20px;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
         }
       }
 

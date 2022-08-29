@@ -6,6 +6,7 @@ import {
   UpperPage,
   Statistics,
   Gauge,
+  VoteGauge,
 } from "components";
 import styles from "./DAO.module.scss";
 import { Container, Layout } from "ui";
@@ -24,10 +25,7 @@ const DAO = () => {
         <Container compact>
           <NetworkSelector />
           <UpperPage />
-          {/* <div className={styles.layer}>
-            <div className={styles.space}></div>
-            <Gauge />
-          </div> */}
+          <VoteGauge />
           <Polls />
           <Statistics />
         </Container>

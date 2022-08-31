@@ -51,7 +51,7 @@
                     display: flex;
                     justify-content: center;
                     font-size: 18px;
-                    color: var(--text-1);
+                    color: var(--text) !important;
                     font-weight: 600;
                 }
             }
@@ -135,20 +135,20 @@
             display: flex;
             flex-direction: column;
 
-            .buttons{
+            .buttons {
                 margin-top: 5px;
                 margin-bottom: 9px;
             }
 
-            .options{
+            .options {
                 display: flex;
                 flex-direction: column;
 
-                .select{
+                .select {
                     margin: 4px 0px;
                     width: 100%;
 
-                    .option{
+                    .option {
                         justify-content: normal;
                     }
                 }

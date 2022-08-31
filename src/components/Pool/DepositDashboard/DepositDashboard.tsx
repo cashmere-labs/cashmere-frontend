@@ -1,7 +1,7 @@
 import styles from "./DepositDashboard.module.scss";
 import { useTheme, useModal } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { Button, Modal, NetworkBadge } from "ui";
+import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
 import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 
@@ -17,14 +17,15 @@ const DepositDashboard = () => {
             <span className={styles.text2}>$2.890,12</span>
           </div>
           <div className={styles.DBText}>
-            <span className={styles.name}>My Pending Rewards</span>
+            <div className={styles.name}>My Pending Rewards</div>
             <div className={styles.text2}>
-              $1.890,24 <span>CSM</span>
+              1.890,24 <span>CSM</span>
             </div>
           </div>
         </div>
         <div className={styles.buttons}>
-          <NetworkBadge label={NetworkTypes.ETHEREUM} className={styles.network}/>
+          {/* <NetworkBadge label={NetworkTypes.ETHEREUM} className={styles.network}/> */}
+          <SelectNetwork />
           <Button
             height="40px"
             width="156px"

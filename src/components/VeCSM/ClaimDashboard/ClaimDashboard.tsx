@@ -1,7 +1,7 @@
 import styles from "./ClaimDashboard.module.scss";
 import { useModal, useTheme } from "hooks";
 import { clsnm } from "utils/clsnm";
-import { Button, Modal, NetworkBadge } from "ui";
+import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
 import { useMediaQuery } from "react-responsive";
 import { Waiting } from "components";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
@@ -39,10 +39,9 @@ const ClaimDashboard = () => {
           <div></div>
         </div>
         <div className={styles.buttons}>
-          <NetworkBadge
-            label={NetworkTypes.ETHEREUM}
-            className={styles.network}
-          />
+          {/* <div className={styles.network}> */}
+            <SelectNetwork />
+          {/* </div> */}
           <Button
             height="43px"
             width={"156px"}

@@ -19,6 +19,11 @@
             padding: 9px;
             border-radius: 12px;
             border: solid 1px var(--manage-bg-1);
+            cursor: pointer;
+
+            &:hover{
+                background-color: rgb(133, 133, 133, 0.3);
+            }
 
             @media(max-width: 450px) {
                 margin: 0px 10px;

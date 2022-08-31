@@ -16,13 +16,11 @@ import { NetworkSelector } from "components/DAO/NetworkSelector/NetworkSelector"
 
 const DAO = () => {
   useTitle("DAO");
-
-  const trialModal = useModal();
+  
   return (
     <Layout>
       <Navbar />
       <div className={styles.wrapper}>
-        <VoteGaugeModal modal={trialModal} />
         <Container compact>
           <NetworkSelector />
           <UpperPage />

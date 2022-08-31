@@ -1,7 +1,8 @@
 import styles from "./Manage.module.scss";
-import { Balance, UpperBox } from "components";
+import { Balance, UpperBox, Gauge } from "components";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Container } from "ui";
+import { useModal } from "hooks";
 const Manage = () => {
   return (
     <Container className={styles.wrapper} compact>

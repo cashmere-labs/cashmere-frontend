@@ -130,10 +130,10 @@ const ChoosePool = () => {
             value={state.chain}
             setValue={() => undefined}
             menuClassName={styles.option}
-            options={tokenOptions}
+            options={chainOptions}
             optionRenderer={(close) => (
               <>
-                {tokenOptions.map((item, key) => (
+                {chainOptions.map((item, key) => (
                   <Option
                     style={{ marginRight: "8px" }}
                     key={key}

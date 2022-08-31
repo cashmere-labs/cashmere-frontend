@@ -13,6 +13,7 @@ import { useMediaQuery } from "react-responsive";
 
 interface Table {
   datas: any;
+  open: () => void;
 }
 
 const VoteGaugePhoneTitle = () => {
@@ -24,7 +25,7 @@ const VoteGaugePhoneTitle = () => {
   );
 };
 
-const VoteGaugePhoneTable = ({ datas }: Table) => {
+const VoteGaugePhoneTable = ({ datas, open }: Table) => {
   const miniPhone = useMediaQuery({
     query: "(max-width: 340px)",
   });
@@ -119,20 +120,19 @@ const VoteGaugePhoneTable = ({ datas }: Table) => {
                     <div>{data.usedPower}%</div>
                   </div>
                   <div className={styles.manageButton}>
-                    <Link to={`${PATHS.manage}/${data.id}`}>
-                      <Button
-                        height="36px"
-                        width="100%"
-                        color={
-                          theme === "light"
-                            ? "transparentWhite"
-                            : "transparentBlack"
-                        }
-                        fontWeight="fw600"
-                      >
-                        Vote / Reset
-                      </Button>
-                    </Link>
+                    <Button
+                      height="36px"
+                      width="100%"
+                      color={
+                        theme === "light"
+                          ? "transparentWhite"
+                          : "transparentBlack"
+                      }
+                      fontWeight="fw600"
+                      onClick={() => open()}
+                    >
+                      Vote / Reset
+                    </Button>
                   </div>
                 </div>
               </div>

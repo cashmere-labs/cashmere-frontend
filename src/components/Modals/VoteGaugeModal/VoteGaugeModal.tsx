@@ -10,7 +10,13 @@ import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { useMediaQuery } from "react-responsive";
 import { InfoIcon } from "assets/icons";
 
-const VoteGaugeModal = ({ modal }: { modal: ModalController }) => {
+const VoteGaugeModal = ({
+  modal,
+  onSuccess,
+}: {
+  modal: ModalController;
+  onSuccess: () => void;
+}) => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 500px)",
   });
@@ -120,6 +126,7 @@ const VoteGaugeModal = ({ modal }: { modal: ModalController }) => {
         width={"100%"}
         color={theme === "light" ? "black" : "white"}
         className={styles.button}
+        onClick={()=> onSuccess()}
       >
         Vote Gauge
       </Button>

@@ -44,13 +44,17 @@
         }
 
         .buttons {
-
+            // width: 70%;
             display: flex;
 
             .network {
                 width: 164px;
                 height: 43px;
                 margin-right: 21px;
+            }
+
+            .claimAll {
+                margin-left: 21px;
             }
 
         }
@@ -113,6 +117,8 @@
 
             .buttons {
                 display: flex;
+                max-width: 345px;
+                width: 100%;
 
                 .network {
                     width: 164px;

@@ -7,6 +7,7 @@ import { VOTEGAUGE } from "../VoteGauge/datas";
 
 interface Table {
   datas: any;
+  open: () => void;
 }
 
 const VoteGaugeDesktopTitle = () => {
@@ -23,7 +24,7 @@ const VoteGaugeDesktopTitle = () => {
   );
 };
 
-const Row = ({ data, i }: { data: any; i: number }) => {
+const Row = ({ data, i, open }: { data: any; i: number; open: () => void }) => {
   const { theme } = useTheme();
 
   return (
@@ -54,29 +55,26 @@ const Row = ({ data, i }: { data: any; i: number }) => {
           <div>{data.usedPower}%</div>
         </div>
         <div className={styles.voteButton}>
-          <Link to={`${PATHS.manage}/${data.id}`}>
-            <Button
-              height="40px"
-              width="156px"
-              color={
-                theme === "light" ? "transparentWhite" : "transparentBlack"
-              }
-              fontWeight="fw600"
-            >
-              Vote / Reset
-            </Button>
-          </Link>
+          <Button
+            height="40px"
+            width="156px"
+            color={theme === "light" ? "transparentWhite" : "transparentBlack"}
+            fontWeight="fw600"
+            onClick={() => open()}
+          >
+            Vote / Reset
+          </Button>
         </div>
       </div>
     </div>
   );
 };
 
-const VoteGaugeDesktopTable = ({ datas }: Table) => {
+const VoteGaugeDesktopTable = ({ datas, open }: Table) => {
   return (
     <div className={styles.table}>
       {datas.map((data: any, i: number) => {
-        return <Row data={data} i={i} key={data.id} />;
+        return <Row data={data} i={i} key={data.id} open={open} />;
       })}
     </div>
   );

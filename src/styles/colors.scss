@@ -243,6 +243,13 @@ body.light {
   --vote-gauge-text-3: rgba(31, 31, 31, 0.9);
   --vote-gauge-bg-1: white;
   --vote-gauge-bg-2: #e5e5e5;
+
+  // Vote Gauge Modal
+  --vote-gauge-modal-text-1: #1f1f1f;
+  --vote-gauge-modal-bg-1: #ddd;
+  --vote-gauge-modal-bg-2: #f8f8f8;
+  --vote-gauge-modal-bg-3: #ededed;
+  --vote-gauge-modal-bg-4: #ededed;
 }
 
 body.dark {
@@ -484,6 +491,14 @@ body.dark {
   --vote-gauge-text-3: white;
   --vote-gauge-bg-1: #232323;
   --vote-gauge-bg-2: #E5E5E5;
+
+  // Vote Gauge Modal
+  --vote-gauge-modal-text-1: #fff;
+  --vote-gauge-modal-bg-1: #707070;
+  --vote-gauge-modal-bg-2: #2e2e2e;
+  --vote-gauge-modal-bg-3: transparent;
+  --vote-gauge-modal-bg-4: #ededed;
+
 }
 
 body {

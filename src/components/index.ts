@@ -39,6 +39,7 @@ export { Stake } from "./Pool/LiquidityStakeReward/Stake";
 export { Reward } from "./Pool/LiquidityStakeReward/Reward";
 export { UnstakeWarning } from "./Modals/UnstakeWarning/UnstakeWarning";
 export { BecomeValidatorError } from "./Modals/BecomeValidatorError/BecomeValidatorError";
+export { VoteGaugeModal } from "./Modals/VoteGaugeModal/VoteGaugeModal";
 
 // DAO
 export { ExecutedModal } from "./DAO/ExecutedModal/ExecutedModal";

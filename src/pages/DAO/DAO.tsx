@@ -5,7 +5,7 @@ import {
   UpperPage,
   Statistics,
   VoteGauge,
-  Gauge,
+  VoteGaugeModal,
   ProposalModal,
 } from "components";
 import styles from "./DAO.module.scss";
@@ -22,8 +22,7 @@ const DAO = () => {
     <Layout>
       <Navbar />
       <div className={styles.wrapper}>
-        <button onClick={() => trialModal.open()}>basBana</button>
-        <ProposalModal modal={trialModal} onSuccess={trialModal.close}/>
+        <VoteGaugeModal modal={trialModal} />
         <Container compact>
           <NetworkSelector />
           <UpperPage />

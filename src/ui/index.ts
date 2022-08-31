@@ -13,3 +13,4 @@ export { Radio } from "./Radio/Radio";
 export { Option } from "./Select/Option";
 export { Tab } from "./Tab/Tab";
 export { Tooltip } from "./Tooltip/Tooltip";
+export { Token } from "./Token/Token";

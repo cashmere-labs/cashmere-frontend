@@ -11,8 +11,9 @@ import { VOTEGAUGE } from "./datas";
 import CALENDER from "assets/icons/calender.png";
 import { useMediaQuery } from "react-responsive";
 import { useModal } from "hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Modal } from "ui";
+import { useNetwork } from "store/hooks/networkHooks";
 
 enum PAGE {
   "FORM",
@@ -27,6 +28,7 @@ const VoteGauge = () => {
   const currentDate = new Date();
   const [whichNetwork, setWhichNetwork] = useState(1);
   const voteGaugeModal = useModal();
+  const network = useNetwork();
 
   useEffect(() => {
     if (page === PAGE.SUCCESS) {
@@ -37,6 +39,11 @@ const VoteGauge = () => {
   const onSuccess = () => {
     setPage(PAGE.SUCCESS);
   };
+
+  const voteData = useMemo(() => {
+    return VOTEGAUGE.filter((item) => item.network === network);
+  }, [network]);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -50,13 +57,13 @@ const VoteGauge = () => {
       {isPhoneOrLaptop ? <VoteGaugePhoneTitle /> : <VoteGaugeDesktopTitle />}
       {isPhoneOrLaptop ? (
         <VoteGaugePhoneTable
-          datas={VOTEGAUGE}
+          datas={voteData}
           open={voteGaugeModal.open}
           setWhichNetwork={setWhichNetwork}
         />
       ) : (
         <VoteGaugeDesktopTable
-          datas={VOTEGAUGE}
+          datas={voteData}
           open={voteGaugeModal.open}
           setWhichNetwork={setWhichNetwork}
         />

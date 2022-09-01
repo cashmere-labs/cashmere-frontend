@@ -22,11 +22,12 @@ const Validators = () => {
   });
   const network = useNetwork();
   const filteredData = useMemo(() => {
-    console.log(network);
     if (whichValidator) {
-      return MyLocksDatas.filter((item) => item.network === network);
+      return MyLocksDatas;
+      //return MyLocksDatas.filter((item) => item.network === network);
     } else {
-      return LockersDatas.filter((item) => item.network === network);
+      return LockersDatas;
+      //return LockersDatas.filter((item) => item.network === network);
     }
   }, [network]);
 

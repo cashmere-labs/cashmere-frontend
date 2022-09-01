@@ -11,5 +11,5 @@ export const useTitle = (title?: string) => {
     return () => {
       document.title = "Cashmere App";
     };
-  }, []);
+  }, [title]);
 };

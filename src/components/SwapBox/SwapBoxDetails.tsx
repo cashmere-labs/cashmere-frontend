@@ -54,7 +54,7 @@ const SwapBoxDetails = ({ data }: { data: SwapDetailsData }) => {
           >
             <span>{data.rataAfterFee}</span>
             <Icon
-              style={{ color: `var(--icon-dark)`, marginLeft: "8px" }}
+              style={{ color: "var(--icon-dark)", marginLeft: "8px" }}
               hoverable
             >
               <RotateIcon />

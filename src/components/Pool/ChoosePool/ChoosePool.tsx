@@ -1,7 +1,6 @@
 import { Row } from "components";
 import { useTheme } from "hooks";
 import { usePoolStates } from "hooks";
-import { useEffect, useState } from "react";
 import useDimensions from "react-cool-dimensions";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
@@ -105,7 +104,7 @@ const ChoosePool = ({
                     }}
                   >
                     <Row style={{ width: "max-content" }} alignItems="center">
-                      <span style={{ color: `var(--text)` }}>{item}</span>
+                      <span style={{ color: "var(--text)" }}>{item}</span>
                     </Row>
                   </Option>
                 ))}
@@ -133,7 +132,7 @@ const ChoosePool = ({
                     }}
                   >
                     <Row style={{ width: "max-content" }} alignItems="center">
-                      <span style={{ color: `var(--text)` }}>{item}</span>
+                      <span style={{ color: "var(--text)" }}>{item}</span>
                     </Row>
                   </Option>
                 ))}

@@ -3,7 +3,6 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { useTypedSelector } from "store";
-import { useNetwork } from "store/hooks/networkHooks";
 
 import {
   VeCSMPhoneTable,
@@ -21,7 +20,7 @@ const Validators = () => {
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 950px)",
   });
-  const network = useNetwork();
+  //const network = useNetwork();
   const filteredData = useMemo(() => {
     if (whichValidator) {
       return MyLocksDatas;
@@ -30,7 +29,7 @@ const Validators = () => {
       return LockersDatas;
       //return LockersDatas.filter((item) => item.network === network);
     }
-  }, [network]);
+  }, [whichValidator]);
 
   return (
     <div className={styles.wrapper}>

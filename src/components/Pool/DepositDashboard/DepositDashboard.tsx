@@ -1,6 +1,6 @@
 import { Waiting } from "components";
 import { useModal, useTheme } from "hooks";
-import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
+import { Button, Modal, SelectNetwork } from "ui";
 import { clsnm } from "utils/clsnm";
 
 import styles from "./DepositDashboard.module.scss";

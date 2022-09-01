@@ -22,7 +22,7 @@ const Icon = ({
   borderRadius = "4px",
   ...props
 }: IconProps) => {
-  let mainStyles = {
+  const mainStyles = {
     fontSize: `${size}px`,
     borderRadius: borderRadius,
     padding: hoverPadding,

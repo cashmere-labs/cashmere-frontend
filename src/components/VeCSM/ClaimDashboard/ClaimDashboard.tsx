@@ -1,8 +1,7 @@
 import { Waiting } from "components";
 import { useModal, useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
-import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
-import { NetworkTypes } from "ui/NetworkBadge/utils";
+import { Button, Modal, SelectNetwork } from "ui";
 import { clsnm } from "utils/clsnm";
 
 import styles from "./ClaimDashboard.module.scss";

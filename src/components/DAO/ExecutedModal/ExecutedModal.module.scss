@@ -1,478 +1,478 @@
 .app {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 0px 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 25px;
 }
 
 .wrapper {
-    max-width: 1165px;
+  max-width: 1165px;
+  width: 100%;
+  min-height: 584px;
+  padding: 0px 57px;
+  padding-bottom: 10px;
+  border-radius: 24px;
+  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07),
+    inset 1px 1px 2px 0 var(--DAO-bg-1);
+  background-color: var(--DAO-bg-1);
+  position: relative;
+
+  .exit {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    right: 17px;
+    top: 17px;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.1s;
+    }
+  }
+}
+
+.wrapper > :nth-child(2) {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title > :nth-child(1) {
+    font-size: 20px;
+    color: var(--DAO-text-1);
+    margin-bottom: 31px;
+    font-weight: 500px;
+  }
+
+  .title > :nth-child(2) {
+    font-size: 32px;
+    color: var(--DAO-text-2);
+    font-weight: normal;
+    margin-bottom: 23px;
+  }
+
+  .title > :nth-child(3) {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.13;
+    color: var(--DAO-text-3);
+    margin-bottom: 24px;
+  }
+
+  .title > :nth-child(4) {
+    font-size: 20px;
+    color: var(--DAO-text-1);
+    font-weight: 500;
+  }
+
+  .voteInfos {
+    height: 144px;
+    max-width: 401px;
     width: 100%;
-    min-height: 584px;
-    padding: 0px 57px;
+    display: flex;
+    flex-direction: column;
+
+    .votes {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .votes > :nth-child(1) {
+      max-width: 121px;
+      width: 100%;
+      height: 83px;
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--DAO-bg-2);
+    }
+
+    .votes > :nth-child(1) > :nth-child(1) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: #818181;
+    }
+
+    .votes > :nth-child(1) > :nth-child(2) {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--DAO-text-4);
+    }
+
+    .votes > :nth-child(2) {
+      max-width: 121px;
+      width: 100%;
+      height: 83px;
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--DAO-bg-2);
+    }
+
+    .votes > :nth-child(2) > :nth-child(1) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: #818181;
+    }
+
+    .votes > :nth-child(2) > :nth-child(2) {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #58b76a;
+    }
+
+    .votes > :nth-child(3) {
+      max-width: 121px;
+      width: 100%;
+      height: 83px;
+      border-radius: 17px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--DAO-bg-2);
+    }
+
+    .votes > :nth-child(3) > :nth-child(1) {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.06;
+      color: #818181;
+    }
+
+    .votes > :nth-child(3) > :nth-child(2) {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #f8415f;
+    }
+  }
+
+  .voteInfos > :nth-child(2) {
+    font-size: 18px;
+    line-height: 1.06;
+    color: var(--DAO-text-4);
+    margin-bottom: 8px;
+  }
+
+  .voteInfos > :nth-child(3) {
+    width: 401px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #ededed;
+  }
+
+  .voteInfos > :nth-child(3) > :nth-child(1) {
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--DAO-bg-3);
+  }
+}
+
+.wrapper > :nth-child(3) {
+  display: flex;
+  flex-direction: column;
+
+  .infoRow {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 49px;
+  }
+
+  .infoRow > :nth-child(1) {
+    width: 100%;
+  }
+
+  .infoRow > :nth-child(1) > :nth-child(1) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.63;
+    color: var(--DAO-text-4);
+  }
+
+  .infoRow > :nth-child(1) > :nth-child(2) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0.88;
+    color: var(--DAO-text-1);
+  }
+
+  .infoRow > :nth-child(2) {
+    width: 100%;
+
+    .tip {
+      display: flex;
+    }
+  }
+
+  .infoRow > :nth-child(2) > :nth-child(1) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.63;
+    color: var(--DAO-text-4);
+  }
+
+  .infoRow > :nth-child(2) > :nth-child(2) {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 0.88;
+    color: var(--DAO-text-1);
+  }
+}
+
+@media (max-width: 750px) {
+  .app {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0px 10px;
+  }
+
+  .wrapper {
+    max-width: 730px;
+    width: 100%;
+    min-height: 455px;
+    padding: 0px 11px;
     padding-bottom: 10px;
-    border-radius: 24px;
-    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07), inset 1px 1px 2px 0 var(--DAO-bg-1);
+    border-radius: 19px;
+    box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07),
+      inset 1px 1px 2px 0 var(--DAO-bg-1);
     background-color: var(--DAO-bg-1);
     position: relative;
 
     .exit {
-        width: 34px;
-        height: 34px;
-        position: absolute;
-        right: 17px;
-        top: 17px;
+      width: 29px;
+      height: 29px;
+      position: absolute;
+      right: 14px;
+      top: 14px;
 
-        &:hover {
-            transform: scale(1.05);
-            transition: all 0.1s;
-        }
+      &:hover {
+        transform: scale(1.05);
+        transition: all 0.1s;
+      }
     }
-}
+  }
 
-.wrapper> :nth-child(2) {
-    margin-top: 55px;
+  .wrapper > :nth-child(2) {
+    margin-top: 23px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
 
-    .title> :nth-child(1) {
-        font-size: 20px;
-        color: var(--DAO-text-1);
-        margin-bottom: 31px;
-        font-weight: 500px;
+    .title > :nth-child(1) {
+      font-size: 14px;
+      color: var(--DAO-text-1);
+      margin-bottom: 6px;
+      font-weight: 500px;
     }
 
-    .title> :nth-child(2) {
-        font-size: 32px;
-        color: var(--DAO-text-2);
-        font-weight: normal;
-        margin-bottom: 23px;
+    .title > :nth-child(2) {
+      font-size: 16px;
+      color: var(--DAO-text-2);
+      font-weight: normal;
+      margin-bottom: 6px;
     }
 
-    .title> :nth-child(3) {
-        font-size: 32px;
-        font-weight: bold;
-        line-height: 1.13;
-        color: var(--DAO-text-3);
-        margin-bottom: 24px;
+    .title > :nth-child(3) {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: var(--DAO-text-3);
+      margin-bottom: 20px;
     }
 
-    .title> :nth-child(4) {
-        font-size: 20px;
-        color: var(--DAO-text-1);
-        font-weight: 500;
+    .title > :nth-child(4) {
+      font-size: 20px;
+      color: var(--DAO-text-1);
+      font-weight: 500;
+      margin-bottom: 10px;
     }
 
     .voteInfos {
-        height: 144px;
-        max-width: 401px;
+      height: 144px;
+      max-width: 345px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .votes {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        gap: 2px;
+      }
+
+      .votes > :nth-child(1) {
+        max-width: 107px;
         width: 100%;
+        height: 51px;
+        border-radius: 17px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--DAO-bg-2);
+      }
 
-        .votes {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-        }
+      .votes > :nth-child(1) > :nth-child(1) {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.36;
+        color: #818181;
+      }
 
-        .votes> :nth-child(1) {
-            max-width: 121px;
-            width: 100%;
-            height: 83px;
-            border-radius: 17px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--DAO-bg-2);
-        }
-
-        .votes> :nth-child(1)> :nth-child(1) {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.06;
-            color: #818181;
-        }
-
-        .votes> :nth-child(1)> :nth-child(2) {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.2;
-            color: var(--DAO-text-4);
-        }
-
-        .votes> :nth-child(2) {
-            max-width: 121px;
-            width: 100%;
-            height: 83px;
-            border-radius: 17px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--DAO-bg-2);
-        }
-
-        .votes> :nth-child(2)> :nth-child(1) {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.06;
-            color: #818181;
-        }
-
-        .votes> :nth-child(2)> :nth-child(2) {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.2;
-            color: #58b76a;
-        }
-
-        .votes> :nth-child(3) {
-            max-width: 121px;
-            width: 100%;
-            height: 83px;
-            border-radius: 17px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--DAO-bg-2);
-        }
-
-        .votes> :nth-child(3)> :nth-child(1) {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.06;
-            color: #818181;
-        }
-
-        .votes> :nth-child(3)> :nth-child(2) {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 1.2;
-            color: #f8415f;
-        }
-    }
-
-    .voteInfos> :nth-child(2) {
-        font-size: 18px;
-        line-height: 1.06;
+      .votes > :nth-child(1) > :nth-child(2) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
         color: var(--DAO-text-4);
-        margin-bottom: 8px;
+      }
+
+      .votes > :nth-child(2) {
+        max-width: 107px;
+        width: 100%;
+        height: 51px;
+        border-radius: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--DAO-bg-2);
+      }
+
+      .votes > :nth-child(2) > :nth-child(1) {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.36;
+        color: #818181;
+      }
+
+      .votes > :nth-child(2) > :nth-child(2) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #58b76a;
+      }
+
+      .votes > :nth-child(3) {
+        max-width: 107px;
+        width: 100%;
+        height: 51px;
+        border-radius: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--DAO-bg-2);
+      }
+
+      .votes > :nth-child(3) > :nth-child(1) {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.36;
+        color: #818181;
+      }
+
+      .votes > :nth-child(3) > :nth-child(2) {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5;
+        color: #f8415f;
+      }
     }
 
-    .voteInfos> :nth-child(3) {
-        width: 401px;
-        height: 10px;
-        border-radius: 5px;
-        background-color: #ededed;
+    .voteInfos > :nth-child(2) {
+      font-size: 14px;
+      line-height: 1.36;
+      color: var(--DAO-text-4);
+      margin-bottom: 9px;
     }
 
-    .voteInfos> :nth-child(3)> :nth-child(1) {
-        height: 10px;
-        border-radius: 5px;
-        background-color: var(--DAO-bg-3);
+    .voteInfos > :nth-child(3) {
+      width: 337px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #ededed;
     }
-}
 
+    .voteInfos > :nth-child(3) > :nth-child(1) {
+      height: 10px;
+      border-radius: 5px;
+      background-color: var(--DAO-bg-3);
+    }
+  }
 
-.wrapper> :nth-child(3) {
+  .wrapper > :nth-child(3) {
     display: flex;
     flex-direction: column;
 
     .infoRow {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .infoRow > :nth-child(1) {
+      width: 100%;
+    }
+
+    .infoRow > :nth-child(1) > :nth-child(1) {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.86;
+      color: var(--DAO-text-4);
+    }
+
+    .infoRow > :nth-child(1) > :nth-child(2) {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--DAO-text-1);
+    }
+
+    .infoRow > :nth-child(2) {
+      width: 100%;
+      text-align: right;
+
+      .tip {
         display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-top: 49px;
+        justify-content: end;
+      }
     }
 
-    .infoRow> :nth-child(1) {
-        width: 100%;
+    .infoRow > :nth-child(2) > :nth-child(1) {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.86;
+      color: var(--DAO-text-4);
     }
 
-    .infoRow> :nth-child(1)> :nth-child(1) {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.63;
-        color: var(--DAO-text-4);
+    .infoRow > :nth-child(2) > :nth-child(2) {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--DAO-text-1);
     }
-
-    .infoRow> :nth-child(1)> :nth-child(2) {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 0.88;
-        color: var(--DAO-text-1);
-    }
-
-    .infoRow> :nth-child(2) {
-        width: 100%;
-
-        .tip {
-            display: flex;
-        }
-    }
-
-    .infoRow> :nth-child(2)> :nth-child(1) {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 1.63;
-        color: var(--DAO-text-4);
-    }
-
-    .infoRow> :nth-child(2)> :nth-child(2) {
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 0.88;
-        color: var(--DAO-text-1);
-    }
-}
-
-@media (max-width: 750px) {
-    .app {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        padding: 0px 10px;
-    }
-
-    .wrapper {
-        max-width: 730px;
-        width: 100%;
-        min-height: 455px;
-        padding: 0px 11px;
-        padding-bottom: 10px;
-        border-radius: 19px;
-        box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07), inset 1px 1px 2px 0 var(--DAO-bg-1);
-        background-color: var(--DAO-bg-1);
-        position: relative;
-
-        .exit {
-            width: 29px;
-            height: 29px;
-            position: absolute;
-            right: 14px;
-            top: 14px;
-
-            &:hover {
-                transform: scale(1.05);
-                transition: all 0.1s;
-            }
-        }
-    }
-
-    .wrapper> :nth-child(2) {
-        margin-top: 23px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .title> :nth-child(1) {
-            font-size: 14px;
-            color: var(--DAO-text-1);
-            margin-bottom: 6px;
-            font-weight: 500px;
-        }
-
-        .title> :nth-child(2) {
-            font-size: 16px;
-            color: var(--DAO-text-2);
-            font-weight: normal;
-            margin-bottom: 6px;
-        }
-
-        .title> :nth-child(3) {
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 1.33;
-            color: var(--DAO-text-3);
-            margin-bottom: 20px;
-        }
-
-        .title> :nth-child(4) {
-            font-size: 20px;
-            color: var(--DAO-text-1);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        .voteInfos {
-            height: 144px;
-            max-width: 345px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-
-            .votes {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 25px;
-                gap: 2px;
-            }
-
-            .votes> :nth-child(1) {
-                max-width: 107px;
-                width: 100%;
-                height: 51px;
-                border-radius: 17px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--DAO-bg-2);
-            }
-
-            .votes> :nth-child(1)> :nth-child(1) {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1.36;
-                color: #818181;
-            }
-
-            .votes> :nth-child(1)> :nth-child(2) {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.5;
-                color: var(--DAO-text-4);
-            }
-
-            .votes> :nth-child(2) {
-                max-width: 107px;
-                width: 100%;
-                height: 51px;
-                border-radius: 17px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--DAO-bg-2);
-            }
-
-            .votes> :nth-child(2)> :nth-child(1) {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1.36;
-                color: #818181;
-            }
-
-            .votes> :nth-child(2)> :nth-child(2) {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.5;
-                color: #58b76a;
-            }
-
-            .votes> :nth-child(3) {
-                max-width: 107px;
-                width: 100%;
-                height: 51px;
-                border-radius: 17px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--DAO-bg-2);
-            }
-
-            .votes> :nth-child(3)> :nth-child(1) {
-                font-size: 14px;
-                font-weight: 500;
-                line-height: 1.36;
-                color: #818181;
-            }
-
-            .votes> :nth-child(3)> :nth-child(2) {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 1.5;
-                color: #f8415f;
-            }
-        }
-
-        .voteInfos> :nth-child(2) {
-            font-size: 14px;
-            line-height: 1.36;
-            color: var(--DAO-text-4);
-            margin-bottom: 9px;
-        }
-
-        .voteInfos> :nth-child(3) {
-            width: 337px;
-            height: 10px;
-            border-radius: 5px;
-            background-color: #ededed;
-        }
-
-        .voteInfos> :nth-child(3)> :nth-child(1) {
-            height: 10px;
-            border-radius: 5px;
-            background-color: var(--DAO-bg-3);
-        }
-    }
-
-
-    .wrapper> :nth-child(3) {
-        display: flex;
-        flex-direction: column;
-
-        .infoRow {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin-top: 18px;
-        }
-
-        .infoRow> :nth-child(1) {
-            width: 100%;
-        }
-
-        .infoRow> :nth-child(1)> :nth-child(1) {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.86;
-            color: var(--DAO-text-4);
-        }
-
-        .infoRow> :nth-child(1)> :nth-child(2) {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-            color: var(--DAO-text-1);
-        }
-
-        .infoRow> :nth-child(2) {
-            width: 100%;
-            text-align: right;
-
-            .tip {
-                display: flex;
-                justify-content: end;
-            }
-        }
-
-        .infoRow> :nth-child(2)> :nth-child(1) {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1.86;
-            color: var(--DAO-text-4);
-        }
-
-        .infoRow> :nth-child(2)> :nth-child(2) {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 1;
-            color: var(--DAO-text-1);
-        }
-    }
+  }
 }
 
 @media (max-width: 375px) {
-    .wrapper> :nth-child(2) {
-        .voteInfos> :nth-child(3) {
-            background-color: red;
-            width: 100%;
-        }
+  .wrapper > :nth-child(2) {
+    .voteInfos > :nth-child(3) {
+      background-color: red;
+      width: 100%;
     }
+  }
 }

@@ -1,7 +1,7 @@
 import { Liquidity, Reward, Stake } from "components";
 import { ModalController } from "hooks/useModal";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setValue } from "store/slicers/pool";
 import { Modal } from "ui";
 
@@ -25,7 +25,7 @@ const LiquidityStakeReward = ({
 
   useEffect(() => {
     dispatch(setValue(""));
-  }, [whichComponent]);
+  }, [whichComponent, dispatch]);
 
   return (
     <Modal

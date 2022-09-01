@@ -8,7 +8,7 @@ import {
 } from "components";
 import { useModal, useTheme } from "hooks";
 import { usePoolStates } from "hooks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Button, Modal } from "ui";

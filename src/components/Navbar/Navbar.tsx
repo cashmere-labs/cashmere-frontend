@@ -12,7 +12,7 @@ import { useMemo, useRef, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
 import { Link, useLocation } from "react-router-dom";
-import { Button, Container, Icon, Modal } from "ui";
+import { Button, Container, Icon } from "ui";
 import { clsnm } from "utils/clsnm";
 import { formatAddress } from "utils/formatAddress";
 
@@ -97,7 +97,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         {!isRightNetwork && auth
           ? "Switch network"
           : auth && address
-          ? `${formatAddress(address)}`
+          ? formatAddress(address)
           : "Connect Wallet"}
       </Button>
     );
@@ -123,7 +123,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
       id="CashmereHeader"
     >
       <AccountModal modalContoller={modal} />
-      <nav style={{ height: `var(--navbar-height)`, display: "flex" }}>
+      <nav style={{ height: "var(--navbar-height)", display: "flex" }}>
         <Container justifyContent="space-between" className={styles.container}>
           <div className={styles.left}>
             <Logo />
@@ -169,7 +169,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
           <div className={styles.buttons}>
             <ThemeChangerButton mobile={true} />
             <Icon
-              style={{ color: `var(--icon-dark)` }}
+              style={{ color: "var(--icon-dark)" }}
               onClick={navbarMenuHandler}
               borderRadius="12px"
               hoverable

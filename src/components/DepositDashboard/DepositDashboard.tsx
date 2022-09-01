@@ -1,4 +1,4 @@
-import { useModal, useTheme } from "hooks";
+import { useTheme } from "hooks";
 import { Button } from "ui";
 import { clsnm } from "utils/clsnm";
 

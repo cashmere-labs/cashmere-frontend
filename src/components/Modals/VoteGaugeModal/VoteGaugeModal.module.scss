@@ -1,188 +1,185 @@
 .wrapper {
-    max-width: 610px;
+  max-width: 610px;
+  width: 100%;
+
+  .line {
+    border: solid 1px var(--vote-gauge-modal-bg-1);
+    height: 1px;
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 18px;
+  }
 
-    .line {
-        border: solid 1px var(--vote-gauge-modal-bg-1);
-        height: 1px;
-        width: 100%;
-        margin-top: 5px;
-        margin-bottom: 18px;
+  .firstTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vote-gauge-modal-text-1);
+    opacity: 0.5;
+  }
+
+  .firstTitleValue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .date {
+      display: flex;
+      align-items: center;
+      padding: 7.5px;
+      background-color: var(--vote-gauge-modal-bg-3);
+      border: solid 1px var(--vote-gauge-modal-bg-4);
+      border-radius: 12px;
+      font-size: 16px;
+      color: var(--text);
+      font-weight: 600;
+      max-width: 137px;
+      width: 100%;
+
+      .image {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .secondTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vote-gauge-modal-text-1);
+    opacity: 0.5;
+  }
+
+  .inputBox {
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-radius: 8px;
+    border: solid 1px var(--liquidity-bg-7);
+    background-color: var(--liquidity-bg-8);
+    justify-content: flex-end;
+    margin-bottom: 11px;
+
+    @media (max-width: 600px) {
+      margin-bottom: 22px;
     }
 
-    .firstTitle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--vote-gauge-modal-text-1);
-        opacity: 0.5;
+    .pattern {
+      position: absolute;
+      top: 22px;
+      left: 19px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @media (max-width: 600px) {
+        top: 16px;
+        left: 15px;
+      }
     }
 
-    .firstTitleValue {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 24px;
-
-        .date {
-            display: flex;
-            align-items: center;
-            padding: 7.5px;
-            background-color: var(--vote-gauge-modal-bg-3);
-            border: solid 1px var(--vote-gauge-modal-bg-4);
-            border-radius: 12px;
-            font-size: 16px;
-            color: var(--text);
-            font-weight: 600;
-            max-width: 137px;
-            width: 100%;
-
-            .image {
-                width: 25px;
-                height: 25px;
-                margin-right: 10px;
-            }
-        }
+    .image {
+      width: 28px;
+      height: 28px;
     }
 
-    .secondTitle {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--vote-gauge-modal-text-1);
-        opacity: 0.5;
+    .text {
+      font-weight: 500;
+      color: var(--liquidity-text-5);
+
+      @media (max-width: 600px) {
+        font-size: 14px;
+      }
     }
 
-    .inputBox {
-        position: relative;
-        display: flex;
-        width: 100%;
-        border-radius: 8px;
-        border: solid 1px var(--liquidity-bg-7);
-        background-color: var(--liquidity-bg-8);
-        justify-content: flex-end;
-        margin-bottom: 11px;
+    button {
+      position: absolute;
+      right: 24px;
+      top: 19px;
 
-        @media (max-width: 600px) {
-            margin-bottom: 22px;
-        }
+      @media (max-width: 350px) {
+        right: 10px;
+      }
+    }
+  }
 
-        .pattern {
-            position: absolute;
-            top: 22px;
-            left: 19px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+  .inputBox > :nth-child(2) {
+    width: 75%;
+    margin: -1px;
 
-            @media (max-width: 600px) {
-                top: 16px;
-                left: 15px;
-            }
-        }
-
-        .image {
-            width: 28px;
-            height: 28px;
-        }
-
-        .text {
-            font-weight: 500;
-            color: var(--liquidity-text-5);
-
-            @media (max-width: 600px) {
-                font-size: 14px;
-            }
-        }
-
-        button {
-            position: absolute;
-            right: 24px;
-            top: 19px;
-
-
-
-            @media (max-width: 350px) {
-                right: 10px;
-            }
-        }
+    @media (max-width: 600px) {
+      font-size: 14px;
     }
 
-    .inputBox> :nth-child(2) {
-        width: 75%;
-        margin: -1px;
-
-        @media (max-width: 600px) {
-            font-size: 14px;
-        }
-
-        @media (max-width: 470px) {
-            width: 65%;
-        }
-
-        @media (max-width: 350px) {
-            width: 60%;
-        }
+    @media (max-width: 470px) {
+      width: 65%;
     }
 
-    .rest {
-        text-align: end;
-        font-size: 13px;
-        font-weight: 500;
-        margin-bottom: 25px;
-        color: var(--vote-gauge-modal-text-1);
-        opacity: 0.5;
+    @media (max-width: 350px) {
+      width: 60%;
+    }
+  }
+
+  .rest {
+    text-align: end;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: var(--vote-gauge-modal-text-1);
+    opacity: 0.5;
+  }
+
+  .info {
+    max-width: 446px;
+    width: 100%;
+    font-size: 18px;
+
+    .infoToolTip {
+      display: inline-flex;
+      justify-content: end;
     }
 
-    .info {
-        max-width: 446px;
-        width: 100%;
-        font-size: 18px;
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+  }
 
-        .infoToolTip {
-            display: inline-flex;
-            justify-content: end;
-        }
+  .line2 {
+    border-radius: 2.5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.01),
+      inset 1px 1px 2px 0 rgba(85, 85, 85, 0.16);
+    background-color: var(--vote-gauge-modal-bg-2);
+    height: 5px;
+    width: 100%;
+    margin: 13px 0px;
+  }
 
-        @media(max-width: 500px) {
-            font-size: 14px;
-        }
+  .data {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 500px) {
+      font-size: 14px;
     }
 
-    .line2 {
-        border-radius: 2.5px;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.01), inset 1px 1px 2px 0 rgba(85, 85, 85, 0.16);
-        background-color: var(--vote-gauge-modal-bg-2);
-        height: 5px;
-        width: 100%;
-        margin: 13px 0px;
+    .title {
+      display: flex;
+      align-items: center;
     }
+  }
 
-    .data {
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @media(max-width: 500px) {
-            font-size: 14px;
-        }
-
-        .title {
-            display: flex;
-            align-items: center;
-        }
-
-    }
-
-    .button {
-        margin-top: 30px;
-    }
-
+  .button {
+    margin-top: 30px;
+  }
 }

@@ -17,13 +17,12 @@ const TokenOrNetworkRenderer = ({
     <Row style={{ width: "max-content" }} alignItems="center">
       {tokenOrNetwork instanceof Token || type === "default" ? (
         <>
-          {" "}
           <img
             style={{ marginRight: "8px" }}
             width={imgSize}
             src={tokenOrNetwork.imageUrl}
           />
-          <span style={{ color: `var(--text)` }}>{tokenOrNetwork.name}</span>
+          <span style={{ color: "var(--text)" }}>{tokenOrNetwork.name}</span>
         </>
       ) : (
         <NetworkBadge

@@ -36,7 +36,7 @@ const VoteGauge = () => {
     if (page === PAGE.SUCCESS) {
       setPage(PAGE.FORM);
     }
-  }, [voteGaugeModal.isOpen]);
+  }, [voteGaugeModal.isOpen, page]);
 
   const onSuccess = () => {
     setPage(PAGE.SUCCESS);

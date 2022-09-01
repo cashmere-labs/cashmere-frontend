@@ -1,6 +1,4 @@
-import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
-import { useState } from "react";
-import { clsnm } from "utils/clsnm";
+import { ComponentPropsWithoutRef } from "react";
 
 import styles from "./Tab.module.scss";
 

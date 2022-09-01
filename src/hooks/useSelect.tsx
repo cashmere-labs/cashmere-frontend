@@ -1,5 +1,4 @@
-import { ReactNode, useMemo, useState } from "react";
-import { Option } from "ui";
+import { ReactNode, useState } from "react";
 
 interface UseSelectProps {
   initialValue?: any;

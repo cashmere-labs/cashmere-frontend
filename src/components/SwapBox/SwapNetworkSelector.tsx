@@ -4,7 +4,6 @@ import { IoMdClose } from "react-icons/io";
 import { Network } from "types/network";
 import { Token } from "types/token";
 import { Icon, Input } from "ui";
-import { getBadgeProps, stringToBadgeType } from "ui/NetworkBadge/utils";
 
 import styles from "./SwapBox.module.scss";
 
@@ -92,8 +91,9 @@ const SwapNetworkSelector = ({
 
       <div>
         <div className={styles.options}>
-          {filteredOptions.map((item) => (
+          {filteredOptions.map((item, i) => (
             <div
+              key={i}
               onClick={() => {
                 modalController.close();
                 onSelect?.(item);

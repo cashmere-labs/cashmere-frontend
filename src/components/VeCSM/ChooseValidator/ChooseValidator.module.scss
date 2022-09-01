@@ -1,54 +1,53 @@
 .wrapper {
-    max-width: 1217px;
-    width: 100%;
-    margin: 30px 0px;
+  max-width: 1217px;
+  width: 100%;
+  margin: 30px 0px;
 
-    .whichValidatorWrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 56px;
-        border-radius: 16px;
-        background-color: var(--veCSM-bg-2);
+  .whichValidatorWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    border-radius: 16px;
+    background-color: var(--veCSM-bg-2);
 
-        .buttons {
-            display: flex;
-            margin-left: 6px;
+    .buttons {
+      display: flex;
+      margin-left: 6px;
 
-            .poolButtonOn {
-                background-color: white !important;
-            }
+      .poolButtonOn {
+        background-color: white !important;
+      }
 
-            .poolButtonOff {
-                background-color: transparent !important;
-                color: var(--veCSM-text-3);
-
-            }
-        }
-
-        .BecomeValidator {
-            margin-right: 6px;
-            color: var(--veCSM-text-2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            height: 46px;
-            padding: 0px 19px;
-            border-radius: 10px;
-            cursor: pointer;
-
-            &:hover {
-                transform: scale(1.025);
-            }
-        }
+      .poolButtonOff {
+        background-color: transparent !important;
+        color: var(--veCSM-text-3);
+      }
     }
 
-    .bodyWrapper {
-        height: 535px;
-        background-color: var(--pool-bg);
-        border-radius: 25px;
+    .BecomeValidator {
+      margin-right: 6px;
+      color: var(--veCSM-text-2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      height: 46px;
+      padding: 0px 19px;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.025);
+      }
     }
+  }
+
+  .bodyWrapper {
+    height: 535px;
+    background-color: var(--pool-bg);
+    border-radius: 25px;
+  }
 }
 
 // @media (max-width: 850px) {
@@ -61,21 +60,19 @@
 // }
 
 @media (max-width: 800px) {
-    .wrapper {
-        margin-top: -25px;
-        padding: 0px 8px;
-        .whichValidatorWrapper {
-            display: flex;
-            justify-content: center;
+  .wrapper {
+    margin-top: -25px;
+    padding: 0px 8px;
+    .whichValidatorWrapper {
+      display: flex;
+      justify-content: center;
 
-            .BecomeValidator {
-                text-align: center;
-                height: 36px;
-                font-size: 14px;
-                width: 120px;
-            }
-        }
+      .BecomeValidator {
+        text-align: center;
+        height: 36px;
+        font-size: 14px;
+        width: 120px;
+      }
     }
+  }
 }
-
-

@@ -42,51 +42,54 @@ const AccountModal: React.FC<AccountModalProps> = ({
     }
   };
 
-  const balances: AccountBalance[] = [
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
+  const balances: AccountBalance[] = useMemo(
+    () => [
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
 
-    {
-      token: "CSM",
-      usd: "$0.00",
-      native: "0 CSM",
-      image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
-    },
-  ];
+      {
+        token: "CSM",
+        usd: "$0.00",
+        native: "0 CSM",
+        image: getBadgeProps(NetworkTypes.ETHEREUM).icon,
+      },
+    ],
+    [],
+  );
 
   const accountModalItems = useMemo(() => {
     if (page === Page.ACCOUNT) {

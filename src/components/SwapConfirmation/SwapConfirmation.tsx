@@ -150,7 +150,7 @@ const VerticalDivider = ({ showArrow }: { showArrow: boolean }) => {
     <div className={styles.arrowWrapper}>
       {showArrow ? (
         <div className={styles.arrow}>
-          <Icon style={{ color: `var(--text)` }} size={12}>
+          <Icon style={{ color: "var(--text)" }} size={12}>
             <FaChevronRight />
           </Icon>
         </div>

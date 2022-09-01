@@ -16,5 +16,5 @@ export const useInitialTheme = () => {
       document.body.classList.remove("dark");
       document.body.classList.add("light");
     }
-  }, []);
+  }, [dispatch]);
 };

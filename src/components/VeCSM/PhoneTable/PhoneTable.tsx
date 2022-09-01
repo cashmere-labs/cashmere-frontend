@@ -1,13 +1,11 @@
-import { InfoIcon } from "assets/icons";
 import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { PATHS } from "constants/paths";
 import { useTheme } from "hooks";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
-import { Button, Icon, NetworkBadge, Tooltip } from "ui";
+import { Button, NetworkBadge } from "ui";
 import { clsnm } from "utils/clsnm";
 
 import styles from "./PhoneTable.module.scss";
@@ -42,19 +40,18 @@ const VeCSMPhoneTable = ({ whichLocker, bodyCount, datas }: Table) => {
   }>({});
 
   useEffect(() => {
-    let firstArray = [];
+    const firstArray = [];
     for (let i = 0; i < datas.length; i++) {
       firstArray[i] = false;
     }
     setBodyOpenGlobal(firstArray);
-  }, [whichLocker]);
+  }, [whichLocker, datas.length]);
 
   const updateMyArray = (
     oldArray: any,
     setOldArray: any,
     whichIndex: number,
   ) => {
-    let x: boolean = oldArray[whichIndex];
     setOldArray((items: any) => {
       return items.map((item: any, i: number): boolean => {
         return whichIndex === i ? !item : item;
@@ -81,7 +78,7 @@ const VeCSMPhoneTable = ({ whichLocker, bodyCount, datas }: Table) => {
                   : {}
               }
               key={i}
-              onClick={() => {}}
+              onClick={() => undefined}
             >
               <div className={styles.line}></div>
               <div className={styles.titles}>

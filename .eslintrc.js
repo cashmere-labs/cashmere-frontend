@@ -16,15 +16,17 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "unused-imports"],
+  plugins: ["react", "@typescript-eslint", "unused-imports", "react-hooks"],
   rules: {
+    "react-hooks/exhaustive-deps": "error",
     "react/react-in-jsx-scope": "off",
-    indent: ["error", 2],
+    indent: ["warn", 2],
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-empty-interface": "warn",
     "unused-imports/no-unused-vars": [
       "warn",
       {

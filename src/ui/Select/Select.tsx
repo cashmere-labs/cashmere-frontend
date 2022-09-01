@@ -64,7 +64,7 @@ const Select = ({
   const menuWidth = useMemo(() => {
     if (!menuRef.current || !isFullWidth) return null;
     return menuRef.current.offsetWidth;
-  }, [isFullWidth, menuRenderer, isOpen]);
+  }, [isFullWidth]);
 
   return (
     <div

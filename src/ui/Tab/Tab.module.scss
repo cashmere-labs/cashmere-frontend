@@ -1,53 +1,51 @@
 .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  background-color: var(--liquidity-stake-reward-bg-2);
+  border: solid 1px var(--liquidity-stake-reward-bg-3);
+  gap: 5px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .thisOne {
+    height: 100%;
+    border-radius: 12px;
+    background-color: var(--tab-bg-1);
+    color: var(--tab-text-1);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 56px;
-    background-color: var(--liquidity-stake-reward-bg-2);
-    border: solid 1px var(--liquidity-stake-reward-bg-3);
-    gap: 5px;
-    border-radius: 16px;
-    font-size: 18px;
-    font-weight: 600;
     width: 100%;
+  }
 
-    @media(max-width: 600px){
-        font-size: 14px;
-        text-align: center;
-    }
+  .no {
+    height: 46px;
+    border-radius: 12px;
+    background-color: transparent;
+    color: var(--liquidity-stake-reward-text-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+  }
 
-    .thisOne {
-        height: 100%;
-        border-radius: 12px;
-        background-color: var(--tab-bg-1);
-        color: var(--tab-text-1);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
+  .thisOne:hover {
+    cursor: pointer;
+  }
 
-    }
-
-    .no {
-        height: 46px;
-        border-radius: 12px;
-        background-color: transparent;
-        color: var(--liquidity-stake-reward-text-2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .thisOne:hover {
-        cursor: pointer;
-    }
-
-    .no:hover {
-        cursor: pointer;
-        transform: scale(1.05);
-        transition: 0.2s ease-in-out;
-    }
-
+  .no:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+  }
 }

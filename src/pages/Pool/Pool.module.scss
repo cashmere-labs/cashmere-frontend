@@ -1,126 +1,119 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 25px;
 }
 
 .whichPoolWrapper {
-    max-width: 1217px;
-    width: 100%;
+  max-width: 1217px;
+  width: 100%;
+
+  .titleWrapper {
+    margin: 32px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    border-radius: 16px;
+    background-color: var(--pool-bg-2);
+
+    .buttons {
+      display: flex;
+      margin-left: 6px;
+
+      .poolButtonOn {
+        background-color: white !important;
+      }
+
+      .poolButtonOff {
+        background-color: transparent !important;
+        color: var(--pool-text-6);
+      }
+    }
+
+    .TVLInfo {
+      margin-right: 25px;
+      color: var(--pool-text-2);
+      display: flex;
+
+      .text2 {
+        font-weight: 600;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .bodyWrapper {
+    height: 535px;
+    background-color: var(--pool-bg);
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    padding: 0px 0px;
+  }
+
+  .whichPoolWrapper {
+    max-width: 850px;
 
     .titleWrapper {
-        margin: 32px 0px;
+      margin: 17px 0px 0px 0px;
+      border-radius: 0px;
+
+      .buttons {
+        margin-left: 19px;
+      }
+
+      .TVLInfo {
+        margin-right: 19px;
+        font-size: 14px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        height: 56px;
-        border-radius: 16px;
-        background-color: var(--pool-bg-2);
-
-        .buttons {
-            display: flex;
-            margin-left: 6px;
-
-            .poolButtonOn {
-                background-color: white !important;
-            }
-
-            .poolButtonOff {
-                background-color: transparent !important;
-                color: var(--pool-text-6);
-
-            }
-        }
-
-        .TVLInfo {
-            margin-right: 25px;
-            color: var(--pool-text-2);
-            display: flex;
-
-            .text2 {
-                font-weight: 600;
-                margin-left: 5px;
-
-            }
-        }
+      }
     }
 
     .bodyWrapper {
-        height: 535px;
-        background-color: var(--pool-bg);
-        border-radius: 25px;
+      height: 535px;
+      background-color: var(--pool-bg);
+      border-radius: 25px;
     }
+  }
 }
-
-
-@media (max-width: 850px) {
-    .wrapper {
-        padding: 0px 0px;
-    }
-
-    .whichPoolWrapper {
-        max-width: 850px;
-
-        .titleWrapper {
-            margin: 17px 0px 0px 0px;
-            border-radius: 0px;
-
-            .buttons {
-                margin-left: 19px;
-            }
-
-            .TVLInfo {
-                margin-right: 19px;
-                font-size: 14px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        .bodyWrapper {
-            height: 535px;
-            background-color: var(--pool-bg);
-            border-radius: 25px;
-        }
-    }
-
-}
-
 
 @media (max-width: 370px) {
-    .wrapper {
-        padding: 0px 0px;
+  .wrapper {
+    padding: 0px 0px;
+  }
+
+  .whichPoolWrapper {
+    max-width: 850px;
+
+    .titleWrapper {
+      margin: 17px 0px 0px 0px;
+      border-radius: 0px;
+
+      .buttons {
+        margin-left: 19px;
+      }
+
+      .TVLInfo {
+        margin-right: 19px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+      }
     }
 
-    .whichPoolWrapper {
-        max-width: 850px;
-
-        .titleWrapper {
-            margin: 17px 0px 0px 0px;
-            border-radius: 0px;
-
-            .buttons {
-                margin-left: 19px;
-            }
-
-            .TVLInfo {
-                margin-right: 19px;
-                font-size: 12px;
-                display: flex;
-                flex-direction: column;
-
-            }
-        }
-
-        .bodyWrapper {
-            height: 535px;
-            background-color: var(--pool-bg);
-            border-radius: 25px;
-        }
+    .bodyWrapper {
+      height: 535px;
+      background-color: var(--pool-bg);
+      border-radius: 25px;
     }
-
+  }
 }

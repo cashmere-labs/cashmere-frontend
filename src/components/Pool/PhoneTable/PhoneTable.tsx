@@ -51,19 +51,18 @@ const PoolPhoneTable = ({
   }>({});
 
   useEffect(() => {
-    let firstArray = [];
+    const firstArray = [];
     for (let i = 0; i < datas.length; i++) {
       firstArray[i] = false;
     }
     setBodyOpenGlobal(firstArray);
-  }, [whichPool]);
+  }, [whichPool, datas.length]);
 
   const updateMyArray = (
     oldArray: any,
     setOldArray: any,
     whichIndex: number,
   ) => {
-    let x: boolean = oldArray[whichIndex];
     setOldArray((items: any) => {
       return items.map((item: any, i: number) => {
         return whichIndex === i ? !item : item;

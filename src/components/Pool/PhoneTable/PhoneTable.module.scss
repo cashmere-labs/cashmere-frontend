@@ -1,190 +1,184 @@
 @media (max-width: 850px) {
-    .tableTitle {
+  .tableTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--pool-text-4);
+    font-weight: 600;
+    height: 46.5px;
+    padding: 25px;
+    .coRatio {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .phoneTableWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 57px;
+
+    .line {
+      width: 100%;
+      height: 0;
+      border: solid 1px var(--pool-text-9);
+    }
+
+    .titles {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+      .title {
+        width: 100%;
         display: flex;
-        align-items: center;
         justify-content: space-between;
-        color: var(--pool-text-4);
-        font-weight: 600;
-        height: 46.5px;
-        padding: 25px;
-        .coRatio{
-            display: flex;
-            align-items: center;
+        align-items: center;
 
-        }
-    }
-
-    .phoneTableWrapper {
-        display: flex;
-        flex-direction: column;
-        height: 57px;
-
-        .line {
-            width: 100%;
-            height: 0;
-            border: solid 1px var(--pool-text-9);
+        .logoAndName {
+          margin-left: 25px;
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+          font-size: 14px;
+          color: var(--pool-text-6);
+          width: 33%;
         }
 
-        .titles {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-
-            .title {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .logoAndName {
-                    margin-left: 25px;
-                    display: flex;
-                    align-items: center;
-                    font-weight: 600;
-                    font-size: 14px;
-                    color: var(--pool-text-6);
-                    width: 33%;
-                }
-
-                .cRatio {
-                    display: flex;
-                    align-items: center;
-                    justify-content: end;
-                    text-align: right;
-                    font-size: 13px;
-                    color: var(--pool-text-1);
-                    width: 33%;
-                    text-align: end;
-                    padding-right: 5px;
-                }
-            }
-
-            .modalKey {
-                margin: 0px 8px;
-                width: 12px;
-                cursor: pointer;
-
-                &:hover {
-                    transform: scale(1.5);
-                    transition: transform 0.1s;
-                }
-            }
-
-            .reverse {
-                transform: rotate(180deg);
-
-                &:hover {
-                    transform: scale(1.5) rotate(180deg);
-                    transition: transform 0.1s;
-
-                }
-            }
+        .cRatio {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          text-align: right;
+          font-size: 13px;
+          color: var(--pool-text-1);
+          width: 33%;
+          text-align: end;
+          padding-right: 5px;
         }
-    }
+      }
 
-
-    .openIt {
-        display: flex;
-        flex-direction: column;
-        height: 231px;
-        background-color: var(--pool-bg);
+      .modalKey {
+        margin: 0px 8px;
+        width: 12px;
         cursor: pointer;
 
-        .line {
-            width: 100%;
-            height: 0;
-            border: solid 1px var(--pool-text-9);
+        &:hover {
+          transform: scale(1.5);
+          transition: transform 0.1s;
         }
+      }
 
-        .openDatas {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin:  9px 30px 0px 25px;
-            padding-bottom: 32px;
-            height: 164px;
+      .reverse {
+        transform: rotate(180deg);
 
-            .openData {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                font-size: 14px;
-                color: var(--pool-text-3);
-
-                .text1 {
-                    color: var(--pool-text-4);
-                    font-weight: 600;
-                    display: flex;
-                    align-items: center;
-                    font-size: 14px;
-                }
-
-                .toolTip{
-                    display: flex;
-                    align-items: center;
-                }
-
-            }
+        &:hover {
+          transform: scale(1.5) rotate(180deg);
+          transition: transform 0.1s;
         }
+      }
+    }
+  }
 
-        .titles {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 15px 0px;
+  .openIt {
+    display: flex;
+    flex-direction: column;
+    height: 231px;
+    background-color: var(--pool-bg);
+    cursor: pointer;
 
-            .title {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .logoAndName {
-                    margin-left: 25px;
-                    display: flex;
-                    align-items: center;
-                    width: 33%;
-
-                    .name {
-                        font-weight: 600;
-                        font-size: 14px;
-                        color: var(--pool-text-6);
-                    }
-                }
-
-                .cRatio {
-                    display: flex;
-                    align-items: center;
-                    justify-content: end;
-                    width: 33%;
-                    text-align: right;
-                    font-size: 13px;
-                    color: var(--pool-text-1);
-                    margin-right: 5px;
-                }
-            }
-
-            .modalKey {
-                margin: 0px 8px;
-                width: 12px;
-
-                &:hover {
-                    transform: scale(1.5);
-                    transition: transform 0.1s;
-                }
-            }
-
-            .reverse {
-                transform: rotate(180deg);
-
-                &:hover {
-                    transform: scale(1.5) rotate(180deg);
-                    transition: transform 0.1s;
-
-                }
-            }
-        }
+    .line {
+      width: 100%;
+      height: 0;
+      border: solid 1px var(--pool-text-9);
     }
 
+    .openDatas {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 9px 30px 0px 25px;
+      padding-bottom: 32px;
+      height: 164px;
+
+      .openData {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 14px;
+        color: var(--pool-text-3);
+
+        .text1 {
+          color: var(--pool-text-4);
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+        }
+
+        .toolTip {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .titles {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 0px;
+
+      .title {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logoAndName {
+          margin-left: 25px;
+          display: flex;
+          align-items: center;
+          width: 33%;
+
+          .name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--pool-text-6);
+          }
+        }
+
+        .cRatio {
+          display: flex;
+          align-items: center;
+          justify-content: end;
+          width: 33%;
+          text-align: right;
+          font-size: 13px;
+          color: var(--pool-text-1);
+          margin-right: 5px;
+        }
+      }
+
+      .modalKey {
+        margin: 0px 8px;
+        width: 12px;
+
+        &:hover {
+          transform: scale(1.5);
+          transition: transform 0.1s;
+        }
+      }
+
+      .reverse {
+        transform: rotate(180deg);
+
+        &:hover {
+          transform: scale(1.5) rotate(180deg);
+          transition: transform 0.1s;
+        }
+      }
+    }
+  }
 }

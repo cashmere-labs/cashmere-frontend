@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 
 export function useDebounce(
-  fnToBeDebounced: Function,
+  fnToBeDebounced: (...args: any) => void,
   time = 350,
   { stopOnUnmount = true } = {},
 ) {

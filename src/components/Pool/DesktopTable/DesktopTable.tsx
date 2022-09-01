@@ -1,6 +1,5 @@
 import { InfoIcon } from "assets/icons";
 import { ModalController } from "hooks/useModal";
-import { Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { Icon, NetworkBadge, Tooltip } from "ui";

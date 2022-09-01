@@ -25,7 +25,8 @@ const Tooltip = ({
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    if (!wrapperRef.current) return;
+    const el = wrapperRef.current;
+    if (el == null) return;
 
     let timer: any;
 
@@ -39,13 +40,13 @@ const Tooltip = ({
       setIsOpen(false);
     };
 
-    wrapperRef.current.addEventListener("mouseenter", openHandler);
-    wrapperRef.current.addEventListener("mouseleave", closeHandler);
+    el.addEventListener("mouseenter", openHandler);
+    el.addEventListener("mouseleave", closeHandler);
 
     return () => {
-      if (!wrapperRef.current) return;
-      wrapperRef.current.removeEventListener("mouseenter", openHandler);
-      wrapperRef.current.removeEventListener("mouseleave", closeHandler);
+      if (el == null) return;
+      el.removeEventListener("mouseenter", openHandler);
+      el.removeEventListener("mouseleave", closeHandler);
     };
   }, []);
 

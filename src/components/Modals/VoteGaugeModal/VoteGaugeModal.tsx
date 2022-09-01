@@ -4,10 +4,8 @@ import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
-import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Button, Icon, Input, Modal, Token, Tooltip } from "ui";
-import { TokenTypes } from "ui/Token/utils";
 
 import styles from "./VoteGaugeModal.module.scss";
 

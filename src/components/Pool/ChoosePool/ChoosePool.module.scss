@@ -1,173 +1,164 @@
 .whichPoolWrapper {
-    max-width: 1217px;
-    width: 100%;
+  max-width: 1217px;
+  width: 100%;
+
+  .titleWrapper {
+    margin: 25px 0px 66px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    border-radius: 16px;
+    background-color: var(--pool-bg-2);
+    padding: 6px;
+
+    .buttons {
+      display: flex;
+
+      .poolButtonOn {
+        background-color: white !important;
+      }
+
+      .poolButtonOff {
+        background-color: transparent !important;
+        color: var(--pool-text-6);
+      }
+    }
+
+    .TVLInfo {
+      margin-right: 25px;
+      color: var(--pool-text-2);
+      display: flex;
+
+      .text2 {
+        font-weight: 600;
+        margin-left: 5px;
+      }
+    }
+
+    .options {
+      display: flex;
+
+      .select {
+        width: 204px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .option {
+          display: flex;
+          justify-content: center;
+          font-size: 18px;
+          color: var(--text) !important;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .options > :nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  .bodyWrapper {
+    height: 535px;
+    background-color: var(--pool-bg);
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 850px) {
+  .whichPoolWrapper {
+    max-width: 850px;
 
     .titleWrapper {
-        margin: 25px 0px 66px 0px;
+      margin: 20px 0px 0px 0px;
+      border-radius: 0px;
+      padding: 0px 5px;
+
+      .TVLInfo {
+        margin-right: 19px;
+        font-size: 14px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        height: 56px;
-        border-radius: 16px;
-        background-color: var(--pool-bg-2);
-        padding: 6px;
+      }
 
-        .buttons {
+      .options {
+        display: flex;
+
+        .select {
+          width: 118px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .option {
             display: flex;
-
-            .poolButtonOn {
-                background-color: white !important;
-            }
-
-            .poolButtonOff {
-                background-color: transparent !important;
-                color: var(--pool-text-6);
-
-            }
+            justify-content: center;
+            font-size: 14px;
+            color: var(--text-1);
+            font-weight: 600;
+          }
         }
+      }
 
-        .TVLInfo {
-            margin-right: 25px;
-            color: var(--pool-text-2);
-            display: flex;
-
-            .text2 {
-                font-weight: 600;
-                margin-left: 5px;
-
-            }
-        }
-
-        .options {
-            display: flex;
-
-            .select {
-                width: 204px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                .option {
-                    display: flex;
-                    justify-content: center;
-                    font-size: 18px;
-                    color: var(--text) !important;
-                    font-weight: 600;
-                }
-            }
-        }
-
-        .options> :nth-child(1) {
-            margin-right: 10px;
-        }
+      .options > :nth-child(1) {
+        margin-right: 10px;
+      }
     }
 
     .bodyWrapper {
-        height: 535px;
-        background-color: var(--pool-bg);
-        border-radius: 25px;
+      height: 535px;
+      background-color: var(--pool-bg);
+      border-radius: 25px;
     }
+  }
 }
-
-
-@media (max-width: 850px) {
-
-    .whichPoolWrapper {
-        max-width: 850px;
-
-        .titleWrapper {
-            margin: 20px 0px 0px 0px;
-            border-radius: 0px;
-            padding: 0px 5px;
-
-            .TVLInfo {
-                margin-right: 19px;
-                font-size: 14px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .options {
-                display: flex;
-
-                .select {
-                    width: 118px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    .option {
-                        display: flex;
-                        justify-content: center;
-                        font-size: 14px;
-                        color: var(--text-1);
-                        font-weight: 600;
-                    }
-                }
-            }
-
-            .options> :nth-child(1) {
-                margin-right: 10px;
-            }
-        }
-
-        .bodyWrapper {
-            height: 535px;
-            background-color: var(--pool-bg);
-            border-radius: 25px;
-        }
-    }
-
-}
-
 
 @media (max-width: 620px) {
+  .whichPoolWrapper {
+    max-width: 850px;
+    margin-bottom: 110px;
 
-    .whichPoolWrapper {
-        max-width: 850px;
-        margin-bottom: 110px;
+    .titleWrapper {
+      margin: 17px 0px 0px 0px;
+      border-radius: 0px;
+      padding: 0px 5px;
+      display: flex;
+      flex-direction: column;
 
-        .titleWrapper {
-            margin: 17px 0px 0px 0px;
-            border-radius: 0px;
-            padding: 0px 5px;
-            display: flex;
-            flex-direction: column;
+      .buttons {
+        margin-top: 5px;
+        margin-bottom: 9px;
+      }
 
-            .buttons {
-                margin-top: 5px;
-                margin-bottom: 9px;
-            }
+      .options {
+        display: flex;
+        flex-direction: column;
 
-            .options {
-                display: flex;
-                flex-direction: column;
+        .select {
+          margin: 4px 0px;
+          width: 100%;
 
-                .select {
-                    margin: 4px 0px;
-                    width: 100%;
-
-                    .option {
-                        justify-content: normal;
-                    }
-                }
-            }
-
-            .TVLInfo {
-                margin-right: 19px;
-                font-size: 12px;
-                display: flex;
-                flex-direction: column;
-
-            }
+          .option {
+            justify-content: normal;
+          }
         }
+      }
 
-        .bodyWrapper {
-            height: 535px;
-            background-color: var(--pool-bg);
-            border-radius: 25px;
-        }
+      .TVLInfo {
+        margin-right: 19px;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+      }
     }
 
+    .bodyWrapper {
+      height: 535px;
+      background-color: var(--pool-bg);
+      border-radius: 25px;
+    }
+  }
 }

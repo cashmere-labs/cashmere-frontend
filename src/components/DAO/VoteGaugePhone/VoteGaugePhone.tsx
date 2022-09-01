@@ -44,7 +44,7 @@ const VoteGaugePhoneTable = ({
       firstArray[i] = false;
     }
     setBodyOpenGlobal(firstArray);
-  }, []);
+  }, [datas.length]);
 
   const updateMyArray = (
     oldArray: any,

@@ -15,7 +15,7 @@ export const VOTEGAUGE = [
   {
     logo: USDC,
     name: "USDC",
-    network: NetworkTypes.ETHEREUM,
+    network: NetworkTypes.ARBITRUM,
     totalVotedveCSM: "5,739,012.04",
     currentAPY: "3.2% -> 13.2",
     futureAPY: "3.2% -> 13.2",
@@ -24,7 +24,7 @@ export const VOTEGAUGE = [
   {
     logo: USDT,
     name: "USDT",
-    network: NetworkTypes.ETHEREUM,
+    network: NetworkTypes.OPTIMISM,
     totalVotedveCSM: "5,739,012.04",
     currentAPY: "3.2% -> 13.2",
     futureAPY: "3.2% -> 13.2",
@@ -33,7 +33,7 @@ export const VOTEGAUGE = [
   {
     logo: DAI,
     name: "DAI",
-    network: NetworkTypes.ETHEREUM,
+    network: NetworkTypes.FANTOM,
     totalVotedveCSM: "5,739,012.04",
     currentAPY: "3.2% -> 13.2",
     futureAPY: "3.2% -> 13.2",
@@ -42,7 +42,7 @@ export const VOTEGAUGE = [
   {
     logo: USDC,
     name: "USDC",
-    network: NetworkTypes.ETHEREUM,
+    network: NetworkTypes.AVALANCE,
     totalVotedveCSM: "5,739,012.04",
     currentAPY: "3.2% -> 13.2",
     futureAPY: "3.2% -> 13.2",
@@ -51,7 +51,7 @@ export const VOTEGAUGE = [
   {
     logo: USDT,
     name: "USDT",
-    network: NetworkTypes.ETHEREUM,
+    network: NetworkTypes.POLYGON,
     totalVotedveCSM: "5,739,012.04",
     currentAPY: "3.2% -> 13.2",
     futureAPY: "3.2% -> 13.2",

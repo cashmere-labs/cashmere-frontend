@@ -14,6 +14,7 @@ import { useMediaQuery } from "react-responsive";
 interface Table {
   datas: any;
   open: () => void;
+  setWhichNetwork: any;
 }
 
 const VoteGaugePhoneTitle = () => {
@@ -25,7 +26,7 @@ const VoteGaugePhoneTitle = () => {
   );
 };
 
-const VoteGaugePhoneTable = ({ datas, open }: Table) => {
+const VoteGaugePhoneTable = ({ datas, open, setWhichNetwork }: Table) => {
   const miniPhone = useMediaQuery({
     query: "(max-width: 340px)",
   });
@@ -129,7 +130,10 @@ const VoteGaugePhoneTable = ({ datas, open }: Table) => {
                           : "transparentBlack"
                       }
                       fontWeight="fw600"
-                      onClick={() => open()}
+                      onClick={() => {
+                        open();
+                        setWhichNetwork(data.network);
+                      }}
                     >
                       Vote / Reset
                     </Button>

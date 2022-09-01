@@ -21,6 +21,7 @@ export type SwapState = {
 
 const Swap = () => {
   useTitle("Swap");
+  console.log("Coded by Ethylene Blockchain Studio!");
 
   const swapSettings = useSwapSettings();
   const [state, setState] = useState({

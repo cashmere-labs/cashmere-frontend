@@ -8,6 +8,7 @@ import { VOTEGAUGE } from "../VoteGauge/datas";
 interface Table {
   datas: any;
   open: () => void;
+  setWhichNetwork: any;
 }
 
 const VoteGaugeDesktopTitle = () => {
@@ -24,7 +25,17 @@ const VoteGaugeDesktopTitle = () => {
   );
 };
 
-const Row = ({ data, i, open }: { data: any; i: number; open: () => void }) => {
+const Row = ({
+  data,
+  i,
+  open,
+  setWhichNetwork,
+}: {
+  data: any;
+  i: number;
+  open: () => void;
+  setWhichNetwork: any;
+}) => {
   const { theme } = useTheme();
 
   return (
@@ -60,7 +71,10 @@ const Row = ({ data, i, open }: { data: any; i: number; open: () => void }) => {
             width="156px"
             color={theme === "light" ? "transparentWhite" : "transparentBlack"}
             fontWeight="fw600"
-            onClick={() => open()}
+            onClick={() => {
+              open();
+              setWhichNetwork(data.network);
+            }}
           >
             Vote / Reset
           </Button>
@@ -70,11 +84,18 @@ const Row = ({ data, i, open }: { data: any; i: number; open: () => void }) => {
   );
 };
 
-const VoteGaugeDesktopTable = ({ datas, open }: Table) => {
+const VoteGaugeDesktopTable = ({ datas, open, setWhichNetwork }: Table) => {
   return (
     <div className={styles.table}>
       {datas.map((data: any, i: number) => {
-        return <Row data={data} i={i} key={data.id} open={open} />;
+        return (
+          <Row
+            data={data}
+            i={i}
+            open={open}
+            setWhichNetwork={setWhichNetwork}
+          />
+        );
       })}
     </div>
   );

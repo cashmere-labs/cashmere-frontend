@@ -25,14 +25,14 @@ const VoteGauge = () => {
     query: "(max-width: 975px)",
   });
   const currentDate = new Date();
-
+  const [whichNetwork, setWhichNetwork] = useState(1);
   const voteGaugeModal = useModal();
 
-  useEffect(()=>{
-    if(page === PAGE.SUCCESS ){
-      setPage(PAGE.FORM)
+  useEffect(() => {
+    if (page === PAGE.SUCCESS) {
+      setPage(PAGE.FORM);
     }
-  },[voteGaugeModal.isOpen])
+  }, [voteGaugeModal.isOpen]);
 
   const onSuccess = () => {
     setPage(PAGE.SUCCESS);
@@ -49,13 +49,25 @@ const VoteGauge = () => {
       </div>
       {isPhoneOrLaptop ? <VoteGaugePhoneTitle /> : <VoteGaugeDesktopTitle />}
       {isPhoneOrLaptop ? (
-        <VoteGaugePhoneTable datas={VOTEGAUGE} open={voteGaugeModal.open} />
+        <VoteGaugePhoneTable
+          datas={VOTEGAUGE}
+          open={voteGaugeModal.open}
+          setWhichNetwork={setWhichNetwork}
+        />
       ) : (
-        <VoteGaugeDesktopTable datas={VOTEGAUGE} open={voteGaugeModal.open} />
+        <VoteGaugeDesktopTable
+          datas={VOTEGAUGE}
+          open={voteGaugeModal.open}
+          setWhichNetwork={setWhichNetwork}
+        />
       )}
 
       {page === PAGE.FORM ? (
-        <VoteGaugeModal modal={voteGaugeModal} onSuccess={onSuccess} />
+        <VoteGaugeModal
+          modal={voteGaugeModal}
+          onSuccess={onSuccess}
+          whichNetwork={whichNetwork}
+        />
       ) : (
         <Modal isOpen={voteGaugeModal.isOpen} close={voteGaugeModal.close}>
           <Waiting

@@ -13,15 +13,16 @@ import { InfoIcon } from "assets/icons";
 const VoteGaugeModal = ({
   modal,
   onSuccess,
+  whichNetwork,
 }: {
   modal: ModalController;
   onSuccess: () => void;
+  whichNetwork: any;
 }) => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 500px)",
   });
   const { theme } = useTheme();
-  const whichNetwork = useSelector((state: any) => state.network.network);
   const currentDate = new Date();
   return (
     <Modal
@@ -126,7 +127,7 @@ const VoteGaugeModal = ({
         width={"100%"}
         color={theme === "light" ? "black" : "white"}
         className={styles.button}
-        onClick={()=> onSuccess()}
+        onClick={() => onSuccess()}
       >
         Vote Gauge
       </Button>

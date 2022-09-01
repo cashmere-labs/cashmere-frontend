@@ -2,10 +2,12 @@ import DAI from "assets/pool/dai.png";
 import USDC from "assets/pool/usdc.png";
 import USDT from "assets/pool/usdt.png";
 
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.ETHEREUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -15,6 +17,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.ETHEREUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -24,6 +27,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.ETHEREUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -33,6 +37,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.OPTIMISM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -42,6 +47,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.OPTIMISM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -51,6 +57,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.OPTIMISM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -60,6 +67,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.POLYGON,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -69,6 +77,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.POLYGON,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -78,6 +87,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.POLYGON,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -87,6 +97,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.ARBITRUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -96,6 +107,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.ARBITRUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -105,6 +117,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.ARBITRUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -114,6 +127,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.AVALANCE,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -123,6 +137,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.AVALANCE,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -132,6 +147,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.AVALANCE,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -141,6 +157,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.FANTOM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -150,6 +167,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.FANTOM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -159,6 +177,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.FANTOM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -168,6 +187,7 @@ export const GlobalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.BNB,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -177,6 +197,7 @@ export const GlobalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.BNB,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -186,87 +207,7 @@ export const GlobalData = [
   {
     logo: USDT,
     name: "USDT",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: DAI,
-    name: "DAI",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDC,
-    name: "USDC",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDT,
-    name: "USDT",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: DAI,
-    name: "DAI",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDC,
-    name: "USDC",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDT,
-    name: "USDT",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: DAI,
-    name: "DAI",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDC,
-    name: "USDC",
-    CR: "54.89",
-    stakedLP: "57390124",
-    veAPR: "3.9 -> 21.2",
-    myAPR: "25.2331",
-    rewards: "390.124",
-  },
-  {
-    logo: USDT,
-    name: "USDT",
+    network: NetworkTypes.BNB,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -279,6 +220,7 @@ export const PersonalData = [
   {
     logo: DAI,
     name: "DAI",
+    network: NetworkTypes.ETHEREUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -288,6 +230,7 @@ export const PersonalData = [
   {
     logo: USDC,
     name: "USDC",
+    network: NetworkTypes.ARBITRUM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",
@@ -297,6 +240,7 @@ export const PersonalData = [
   {
     logo: USDT,
     name: "USDT",
+    network: NetworkTypes.OPTIMISM,
     CR: "54.89",
     stakedLP: "57390124",
     veAPR: "3.9 -> 21.2",

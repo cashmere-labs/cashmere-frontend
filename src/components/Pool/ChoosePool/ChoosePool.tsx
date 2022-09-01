@@ -9,7 +9,19 @@ import { Row } from "components";
 import { useState, useEffect } from "react";
 import useDimensions from "react-cool-dimensions";
 
-const ChoosePool = () => {
+interface ChoosePool {
+  filter: any;
+  setFilter: any;
+  tokenOptions: any;
+  chainOptions: any;
+}
+
+const ChoosePool = ({
+  filter,
+  setFilter,
+  tokenOptions,
+  chainOptions,
+}: ChoosePool) => {
   const { observe, width } = useDimensions({
     onResize: ({ observe }) => {
       observe(); // To re-start observing the current target element
@@ -31,30 +43,6 @@ const ChoosePool = () => {
   const whichPool = useSelector((state: any) => state.pool.whichPool);
   const { theme } = useTheme();
 
-  const [state, setState] = useState({
-    token: "All Tokens",
-    chain: "All Chain",
-  });
-
-  const tokenOptions = [
-    "All Tokens",
-    "DAI",
-    "USDC",
-    "FRAX",
-    "USDT",
-    "BUSD",
-    "TUSD",
-  ];
-  const chainOptions = [
-    "All Chain",
-    "Ethereum",
-    "Avalanche",
-    "Arbitrum",
-    "Optimism",
-    "Polygon",
-    "BNBChain",
-    "Fantom",
-  ];
   return (
     <div className={styles.whichPoolWrapper} ref={observe}>
       <div className={styles.titleWrapper}>
@@ -97,7 +85,7 @@ const ChoosePool = () => {
             containerClassName={styles.select}
             isFullWidth
             height={"46px"}
-            value={state.token}
+            value={filter.token}
             setValue={() => undefined}
             options={tokenOptions}
             menuClassName={styles.option}
@@ -105,13 +93,13 @@ const ChoosePool = () => {
             width={selectWidth ? `${width - 16}px` : ""}
             optionRenderer={(close) => (
               <>
-                {tokenOptions.map((item, key) => (
+                {tokenOptions.map((item:any, key:number) => (
                   <Option
                     style={{ marginRight: "8px" }}
                     key={key}
                     value={"item.name"}
                     onClick={() => {
-                      setState({ ...state, token: item });
+                      setFilter({ ...filter, token: item });
                       close?.();
                     }}
                   >
@@ -127,19 +115,19 @@ const ChoosePool = () => {
             containerClassName={styles.select}
             isFullWidth
             height={"46px"}
-            value={state.chain}
+            value={filter.chain}
             setValue={() => undefined}
             menuClassName={styles.option}
             options={chainOptions}
             optionRenderer={(close) => (
               <>
-                {chainOptions.map((item, key) => (
+                {chainOptions.map((item:any, key:number) => (
                   <Option
                     style={{ marginRight: "8px" }}
                     key={key}
                     value={"item.name"}
                     onClick={() => {
-                      setState({ ...state, chain: item });
+                      setFilter({ ...filter, chain: item });
                       close?.();
                     }}
                   >

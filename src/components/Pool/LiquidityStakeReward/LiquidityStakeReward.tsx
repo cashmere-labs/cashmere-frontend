@@ -9,9 +9,11 @@ import { setValue } from "store/slicers/pool";
 const LiquidityStakeReward = ({
   modal,
   onSuccess,
+  whichNetwork,
 }: {
   modal: ModalController;
   onSuccess: () => void;
+  whichNetwork: any;
 }) => {
   const [whichComponent, setWhichComponent] = useState(0);
   const dispatch = useDispatch();
@@ -23,8 +25,6 @@ const LiquidityStakeReward = ({
   useEffect(() => {
     dispatch(setValue(""));
   }, [whichComponent]);
-
-  const whichNetwork = useSelector((state: any) => state.network.network);
 
   return (
     <Modal

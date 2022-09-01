@@ -21,29 +21,23 @@ enum PAGE {
   "SUCCESS",
 }
 
-const Pools = () => {
+const Pools = ({ filter }: any) => {
   const whichPool = useSelector((state: any) => state.pool.whichPool);
   const poolCount = useSelector((state: any) => state.pool.poolCount);
   const functionName = useSelector((state: any) => state.pool.functionName);
   const value = useSelector((state: any) => state.pool.value);
 
-  const whichGlobalModal = useSelector(
-    (state: any) => state.pool.whichGlobalModal
-  );
-
-  const whichPersonalModal = useSelector(
-    (state: any) => state.pool.whichPersonalModal
-  );
-
   const [whichModal, setWhichModal] = useState<PAGE>(PAGE.FORM);
 
   const stakeModal = useModal();
+  const [whichNetwork, setWhichNetwork] = useState();
 
   const { increasePoolCount } = usePoolStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
   const { theme } = useTheme();
+  const whichData = whichPool ? PersonalData : GlobalData;
 
   return (
     <div className={styles.wrapper}>
@@ -58,14 +52,18 @@ const Pools = () => {
             whichPool={whichPool}
             bodyCount={poolCount}
             modal={stakeModal}
-            datas={whichPool ? PersonalData : GlobalData}
+            datas={whichData}
+            filter={filter}
+            setWhichNetwork={setWhichNetwork}
           />
         ) : (
           <PoolDesktopTable
             whichPool={whichPool}
             bodyCount={poolCount}
             modal={stakeModal}
-            datas={whichPool ? PersonalData : GlobalData}
+            datas={whichData}
+            filter={filter}
+            setWhichNetwork={setWhichNetwork}
           />
         )}
       </div>
@@ -110,6 +108,7 @@ const Pools = () => {
         <LiquidityStakeReward
           modal={stakeModal}
           onSuccess={() => setWhichModal(PAGE.SUCCESS)}
+          whichNetwork={whichNetwork}
         />
       ) : (
         <Modal

@@ -1,111 +1,115 @@
 .tableTitle {
-    height: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  margin-left: 32.4px;
+  color: var(--pool-text-4);
+  font-weight: 600;
+
+  .title1 {
+    width: 10.8%;
+  }
+
+  .title2 {
+    width: 18.5%;
+  }
+
+  .title3 {
+    width: 15.5%;
     display: flex;
     align-items: center;
-    margin-left: 32.4px;
-    color: var(--pool-text-4);
-    font-weight: 600;
+  }
 
-    .title1 {
-        width: 10.8%;
-    }
+  .title4 {
+    width: 15%;
+  }
 
-    .title2 {
-        width: 18.5%;
-    }
+  .title5 {
+    width: 14%;
+    display: flex;
+    align-items: center;
+  }
 
-    .title3 {
-        width: 15.5%;
-        display: flex;
-        align-items: center;
-    }
-
-    .title4 {
-        width: 15%;
-    }
-
-    .title5 {
-        width: 14%;
-        display: flex;
-        align-items: center;
-    }
-
-    .title6 {
-        width: 14.2%;
-    }
+  .title6 {
+    width: 14.2%;
+  }
 }
 
 .tableBody {
-    height: 72px;
-    color: var(--pool-text-3);
-    font-weight: 600;
-    cursor: pointer;
+  height: 72px;
+  color: var(--pool-text-3);
+  font-weight: 600;
+  cursor: pointer;
 
-    .line {
-        width: 100%;
-        height: 0;
-        border: solid 1px var(--pool-text-8);
+  .line {
+    width: 100%;
+    height: 0;
+    border: solid 1px var(--pool-text-8);
+  }
+
+  .datas {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: 32px;
+
+    &:hover {
+      background-color: var(--pool-table-hover);
     }
 
-    .datas {
+    .data1 {
+      width: 10.8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logoAndName {
         display: flex;
         align-items: center;
-        height: 100%;
-        margin-left: 32.4px;
+        justify-content: center;
+      }
 
-        .data1 {
-            width: 10.8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+      .cRatio {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--pool-text-1);
+        text-align: right;
+        margin-right: 11.6%;
+        display: flex;
+        align-items: center;
 
-            .logoAndName {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .cRatio {
-                font-size: 14px;
-                font-weight: 500;
-                color: var(--pool-text-1);
-                text-align: right;
-                margin-right: 11.6%;
-                display: flex;
-                align-items: center;
-
-                text-align: right;
-                position: relative;
-            }
-        }
-
-        .data2 {
-            width: 18.5%;
-            .network{
-                width: 127px;
-                height: 37px;
-            }
-        }
-
-        .data3 {
-            width: 15.5%;
-        }
-
-        .data4 {
-            width: 15%;
-        }
-
-        .data5 {
-            width: 14%;
-        }
-
-        .data6 {
-            width: 14.2%;
-        }
-
-        .data7 {
-            display: flex;
-            align-items: center;
-        }
+        text-align: right;
+        position: relative;
+      }
     }
+
+    .data2 {
+      width: 18.5%;
+      .network {
+        width: 127px;
+        height: 37px;
+      }
+    }
+
+    .data3 {
+      width: 15.5%;
+    }
+
+    .data4 {
+      width: 15%;
+    }
+
+    .data5 {
+      width: 14%;
+    }
+
+    .data6 {
+      width: 14.2%;
+    }
+
+    .data7 {
+      display: flex;
+      align-items: center;
+    }
+  }
 }

@@ -25,7 +25,7 @@ const DepositDashboard = () => {
         </div>
         <div className={styles.buttons}>
           {/* <NetworkBadge label={NetworkTypes.ETHEREUM} className={styles.network}/> */}
-          <SelectNetwork />
+          <SelectNetwork style={{ height: "40px" }} />
           <Button
             height="40px"
             width="156px"

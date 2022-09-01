@@ -63,7 +63,7 @@ body.light {
   --pool-bg-2: #efefef;
   --pool-bg-3: #f5f5f5;
   --pool-bg-4: white;
-  --pool-bg-5: #F8F8F8;
+  --pool-bg-5: #f8f8f8;
   --pool-text-1: rgba(31, 31, 31, 0.9);
   --pool-text-2: #1f1f1f;
   --pool-text-3: #0b0b0b;
@@ -73,6 +73,7 @@ body.light {
   --pool-text-7: white;
   --pool-text-8: #f5f5f5;
   --pool-text-9: #eaeaea;
+  --pool-table-hover: rgb(240, 240, 240);
 
   // Tooltip
   --tooltip-bg: white;
@@ -156,11 +157,10 @@ body.light {
   // Statistics
   --statistics-bg-1: white;
   --statistics-bg-2: #f7f7f7;
-  --statistics-bg-3: #FAFAFA;
-  --statistics-bg-4: #F2F2F2;
+  --statistics-bg-3: #fafafa;
+  --statistics-bg-4: #f2f2f2;
   --statistics-text-1: #1f1f1f;
   --statistics-text-2: #989898;
-
 
   // Liquidity Stake Reward
   --liquidity-stake-reward-bg-1: black;
@@ -322,6 +322,7 @@ body.dark {
   --pool-text-7: black;
   --pool-text-8: #2d2d2d;
   --pool-text-9: #727272;
+  --pool-table-hover: black;
 
   // Tooltip
   --tooltip-bg: black;
@@ -406,7 +407,7 @@ body.dark {
   --statistics-bg-1: #232323;
   --statistics-bg-2: black;
   --statistics-bg-3: #393939;
-  --statistics-bg-4: #2E2E2E;
+  --statistics-bg-4: #2e2e2e;
   --statistics-text-1: white;
   --statistics-text-2: #989898;
 
@@ -490,7 +491,7 @@ body.dark {
   --vote-gauge-text-2: white;
   --vote-gauge-text-3: white;
   --vote-gauge-bg-1: #232323;
-  --vote-gauge-bg-2: #E5E5E5;
+  --vote-gauge-bg-2: #e5e5e5;
 
   // Vote Gauge Modal
   --vote-gauge-modal-text-1: #fff;
@@ -498,7 +499,6 @@ body.dark {
   --vote-gauge-modal-bg-2: #2e2e2e;
   --vote-gauge-modal-bg-3: transparent;
   --vote-gauge-modal-bg-4: #ededed;
-
 }
 
 body {

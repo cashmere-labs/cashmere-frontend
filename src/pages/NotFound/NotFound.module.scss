@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+  width: 100%;
+  align-items: center;
+}
+
+.text {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: calc(var(--navbar-height));
+}

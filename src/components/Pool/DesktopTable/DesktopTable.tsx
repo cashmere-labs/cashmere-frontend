@@ -65,15 +65,14 @@ const PoolDesktopTable = ({
           filter.chain === "All Chains"
         ) {
           return (
-            <>
-              <Row
-                whichPool={whichPool}
-                modal={modal}
-                index={i}
-                data={data}
-                setWhichNetwork={setWhichNetwork}
-              />
-            </>
+            <Row
+              key={i}
+              whichPool={whichPool}
+              modal={modal}
+              index={i}
+              data={data}
+              setWhichNetwork={setWhichNetwork}
+            />
           );
         } else if (
           !(filter.token === "All Tokens" && filter.chain === "All Chains") &&
@@ -83,6 +82,7 @@ const PoolDesktopTable = ({
         ) {
           return (
             <Row
+              key={i}
               whichPool={whichPool}
               modal={modal}
               index={i}
@@ -91,7 +91,7 @@ const PoolDesktopTable = ({
             />
           );
         } else {
-          return <Fragment />;
+          return null;
         }
       })}
     </div>

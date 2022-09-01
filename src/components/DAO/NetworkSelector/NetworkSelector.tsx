@@ -11,7 +11,7 @@ const NetworkSelector = () => {
         <h1>Select Network</h1>
       </div>
       <div>
-        <SelectNetwork />
+        <SelectNetwork style={{ height: "40px" }} />
       </div>
     </div>
   );

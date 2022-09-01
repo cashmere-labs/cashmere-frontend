@@ -1,52 +1,54 @@
 import styles from "./Validators.module.scss";
-import { useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
 import { LockersDatas, MyLocksDatas } from "../datas";
 import { useMediaQuery } from "react-responsive";
-import { Button } from "ui";
 import { useSelector } from "react-redux";
-import { useVeCSMStates } from "hooks";
+import { VeCSMDesktopTable, VeCSMTitle } from "components";
+import { useEffect, useMemo } from "react";
 import {
-  VeCSMDesktopTable,
-  VeCSMTitle,
-  // VeCSMPhoneTable,
-  // VeCSMPhoneTitle,
-} from "components";
-import { useEffect } from "react";
-import { VeCSMPhoneTable, VeCSMPhoneTitle } from "components/VeCSM/PhoneTable/PhoneTable";
+  VeCSMPhoneTable,
+  VeCSMPhoneTitle,
+} from "components/VeCSM/PhoneTable/PhoneTable";
+import { useNetwork } from "store/hooks/networkHooks";
+import { useTypedSelector } from "store";
+import { ILockData, Lockers, MyLocks } from "types/app";
 
 const Validators = () => {
-  const whichValidator = useSelector((state: any) => state.veCSM.isActive);
-  useEffect(() => console.log(whichValidator), [whichValidator]);
+  const whichValidator = useTypedSelector((state) => state.veCSM.isActive);
   const validatorCount = useSelector(
     (state: any) => state.veCSM.validatorCount
   );
-
-  const { increaseValidatorCount } = useVeCSMStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 950px)",
   });
-  const { theme } = useTheme();
+  const network = useNetwork();
+  const filteredData = useMemo(() => {
+    console.log(network);
+    if (whichValidator) {
+      return MyLocksDatas.filter((item) => item.network === network);
+    } else {
+      return LockersDatas.filter((item) => item.network === network);
+    }
+  }, [network]);
 
-  var datas = !whichValidator ? LockersDatas : MyLocksDatas;
   return (
     <div className={styles.wrapper}>
       <div className={styles.dashboard}>
-        {isPhoneOrLaptop ?
-         <VeCSMPhoneTitle whichLockers={whichValidator}/> :
-        <VeCSMTitle whichLockers={whichValidator} />
-      }
+        {isPhoneOrLaptop ? (
+          <VeCSMPhoneTitle whichLockers={whichValidator} />
+        ) : (
+          <VeCSMTitle whichLockers={whichValidator} />
+        )}
         {isPhoneOrLaptop ? (
           <VeCSMPhoneTable
             whichLocker={whichValidator}
-            datas={datas}
+            datas={filteredData}
             bodyCount={validatorCount}
           />
         ) : (
           <VeCSMDesktopTable
             whichValidator={whichValidator}
             validatorCount={validatorCount}
-            datas={datas}
+            datas={filteredData}
           />
         )}
       </div>

@@ -40,7 +40,7 @@ const ClaimDashboard = () => {
         </div>
         <div className={styles.buttons}>
           {/* <div className={styles.network}> */}
-            <SelectNetwork />
+          <SelectNetwork style={{ height: "40px" }} />
           {/* </div> */}
           <Button
             height="43px"

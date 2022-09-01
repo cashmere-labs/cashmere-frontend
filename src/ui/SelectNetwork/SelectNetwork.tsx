@@ -3,11 +3,26 @@ import { useNetwork, useSetNetwork } from "store/hooks/networkHooks";
 import { NetworkBadge } from "ui/NetworkBadge/NetworkBadge";
 import styles from "./SelectNetwork.module.scss";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
+import {
+  ComponentPropsWithoutRef,
+  CSSProperties,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useOnClickOutside, usePopper } from "hooks";
 import { Icon } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
-const SelectNetwork = () => {
+export interface SelectNetworkProps extends ComponentPropsWithoutRef<"div"> {
+  label?: NetworkTypes | string;
+  size?: number;
+  className?: string;
+  style?: CSSProperties;
+  fontSize?: string;
+}
+
+const SelectNetwork = (props: SelectNetworkProps) => {
   const networkOptions = networkTypes;
   const currentNetwork = useNetwork();
   const setCurrentNetwork = useSetNetwork();
@@ -38,6 +53,7 @@ const SelectNetwork = () => {
             size={28}
             className={styles.badge}
             label={currentNetwork}
+            {...props}
           />
           <Icon size={16} className={styles.chevron}>
             {expand ? <FaChevronUp /> : <FaChevronDown />}

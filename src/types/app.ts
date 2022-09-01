@@ -1,21 +1,21 @@
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 export type MapStringToString = { [key: string]: string };
 
-export type Lockers = {
+export type ILockData<Data = {}> = {
   id: string | number;
   network: NetworkTypes;
-  totalLockedCSM: string;
   weeklyFees: string;
-};
+} & Data;
 
-export type MyLocks = {
-  id: string | number;
-  network: NetworkTypes;
-  weeklyFees: string;
+export type Lockers = ILockData<{
+  totalLockedCSM: string;
+}>;
+
+export type MyLocks = ILockData<{
   claimableFees: string;
   myVotePower: string;
-  myLockedCSM: string
-};
+  myLockedCSM: string;
+}>;
 
 export type TransactionStep = {
   title: string;

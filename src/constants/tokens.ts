@@ -4,22 +4,22 @@ import UsdcImage from "assets/pool/usdc.png";
 import { Token } from "types/token";
 
 export const Dai = new Token({
-  name: "Dai",
-  decimal: 18,
   address: "",
+  decimal: 18,
   imageUrl: DaiImage,
+  name: "Dai",
 });
 
 export const Tetherus = new Token({
-  name: "USDT",
-  decimal: 18,
   address: "",
+  decimal: 18,
   imageUrl: TetherusImage,
+  name: "USDT",
 });
 
 export const Usdc = new Token({
-  name: "USDC",
-  decimal: 18,
   address: "",
+  decimal: 18,
   imageUrl: UsdcImage,
+  name: "USDC",
 });

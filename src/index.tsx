@@ -20,3 +20,6 @@ ReactDOM.render(
 );
 
 reportWebVitals();
+
+window.console.log =
+  process.env.NODE_ENV === "production" ? () => undefined : window.console.log;

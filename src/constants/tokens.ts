@@ -1,7 +1,7 @@
-import { Token } from "types/token";
 import DaiImage from "assets/images/tokens/dai.png";
 import TetherusImage from "assets/images/tokens/tetherus.png";
 import UsdcImage from "assets/pool/usdc.png";
+import { Token } from "types/token";
 
 export const Dai = new Token({
   name: "Dai",
@@ -16,7 +16,6 @@ export const Tetherus = new Token({
   address: "",
   imageUrl: TetherusImage,
 });
-
 
 export const Usdc = new Token({
   name: "USDC",

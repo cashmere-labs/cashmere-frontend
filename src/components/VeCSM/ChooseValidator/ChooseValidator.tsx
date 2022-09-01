@@ -1,11 +1,12 @@
-import { clsnm } from "utils/clsnm";
-import styles from "./ChooseValidator.module.scss";
+import { BecomeValidator, Waiting } from "components";
 import { useModal, useTheme, useVeCSMStates } from "hooks";
-import { Button, Modal } from "ui";
-import { useMediaQuery } from "react-responsive";
-import { useSelector } from "react-redux";
 import { useState } from "react";
-import { Waiting, BecomeValidator } from "components";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { Button, Modal } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./ChooseValidator.module.scss";
 
 enum PAGE {
   "FORM",
@@ -24,7 +25,7 @@ const ChooseValidator = () => {
   const { theme } = useTheme();
 
   const [becomeValidatorPage, setBecomeValidatorPage] = useState<PAGE>(
-    PAGE.FORM
+    PAGE.FORM,
   );
   const becomeValidatorModal = useModal();
 
@@ -42,7 +43,7 @@ const ChooseValidator = () => {
             }}
             color={theme === "light" ? "white" : "white"}
             className={clsnm(
-              isActive ? styles.poolButtonOff : styles.poolButtonOn
+              isActive ? styles.poolButtonOff : styles.poolButtonOn,
             )}
             fontWeight={isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"
@@ -59,7 +60,7 @@ const ChooseValidator = () => {
             }}
             color={theme === "light" ? "white" : "white"}
             className={clsnm(
-              !isActive ? styles.poolButtonOff : styles.poolButtonOn
+              !isActive ? styles.poolButtonOff : styles.poolButtonOn,
             )}
             fontWeight={!isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"

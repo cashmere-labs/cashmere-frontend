@@ -1,4 +1,5 @@
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Spinner.module.scss";
 
 const Spinner = ({

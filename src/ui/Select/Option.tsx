@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
+
 import styles from "./Option.module.scss";
 
 interface OptionProps extends ComponentPropsWithoutRef<"div"> {

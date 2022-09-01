@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from "react";
 export function useDebounce(
   fnToBeDebounced: Function,
   time = 350,
-  { stopOnUnmount = true } = {}
+  { stopOnUnmount = true } = {},
 ) {
   const timeout = useRef<any>(null);
   const timeRef = useRef<any>(time);
@@ -21,11 +21,11 @@ export function useDebounce(
       return new Promise((resolve) => {
         timeout.current = setTimeout(
           () => resolve(fnToBeDebounced(...(args ?? []))),
-          timeRef.current
+          timeRef.current,
         );
       });
     },
-    [fnToBeDebounced]
+    [fnToBeDebounced],
   );
 
   return callback;

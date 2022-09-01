@@ -1,22 +1,23 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
-import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
-import { SwapSettings } from "components/SwapSettings/SwapSettings";
-import { SwapNetworkSelector } from "components/SwapBox/SwapNetworkSelector";
-import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwapSettings";
+import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
 import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
+import { useAccount, useConnection } from "ethylene/hooks";
 import { useModal, useTheme } from "hooks";
+import { SwapState } from "pages/Swap/Swap";
 import { ReactElement, useEffect, useRef, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
-import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
-import { Icon, Select, Input, Button } from "ui";
-import styles from "./SwapBox.module.scss";
-import { useAccount, useConnection } from "ethylene/hooks";
-import { SwapState } from "pages/Swap/Swap";
-
 import { Token } from "types/token";
+import { Button, Icon, Input, Select } from "ui";
+
+import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
+import { SwapNetworkSelector } from "components/SwapBox/SwapNetworkSelector";
+import { SwapSettings } from "components/SwapSettings/SwapSettings";
+import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwapSettings";
+
+import styles from "./SwapBox.module.scss";
 
 const SwapBox = ({
   state,
@@ -39,10 +40,10 @@ const SwapBox = ({
   const { theme } = useTheme();
 
   const onNetworkSelect = useRef<(item: Network | Token) => void>(
-    () => undefined
+    () => undefined,
   );
   const onTokenSelect = useRef<(item: Network | Token) => void>(
-    () => undefined
+    () => undefined,
   );
   const networkSelectorModal = useModal();
   const tokenSelectorModal = useModal();
@@ -51,7 +52,7 @@ const SwapBox = ({
    * @dev Reverse the from and to positions
    */
   const reverse = () => {
-    let _state = { ...state };
+    const _state = { ...state };
     _state.fromfrom = state.tofrom;
     _state.fromto = state.toto;
     _state.tofrom = state.fromfrom;
@@ -146,7 +147,7 @@ const SwapBox = ({
             onClick={() => setMethod("stable")}
             style={{
               cursor: "pointer",
-              color: method === "stable" ? `var(--text)` : `var(--subtext)`,
+              color: method === "stable" ? "var(--text)" : "var(--subtext)",
               fontSize: "16px",
             }}
           >
@@ -157,7 +158,7 @@ const SwapBox = ({
             style={{
               cursor: "pointer",
               marginLeft: "12px",
-              color: method === "aggregator" ? `var(--text)` : `var(--subtext)`,
+              color: method === "aggregator" ? "var(--text)" : "var(--subtext)",
               fontSize: "16px",
             }}
           >
@@ -167,7 +168,7 @@ const SwapBox = ({
 
         <Icon
           onClick={swapSettingsModal.open}
-          style={{ color: `var(--icon-dark)` }}
+          style={{ color: "var(--icon-dark)" }}
           hoverPadding="6px"
           size={16}
           hoverable
@@ -248,7 +249,7 @@ const SwapBox = ({
           onClick={reverse}
           borderRadius="8px"
           size={26}
-          style={{ color: `var(--icon-dark)` }}
+          style={{ color: "var(--icon-dark)" }}
           hoverable
         >
           <RotateIcon />
@@ -356,7 +357,7 @@ const PathRenderer = ({ path }: { path: Network[] }): ReactElement => {
         >
           <TokenOrNetworkRenderer tokenOrNetwork={item} imgSize={20} />
           {key !== path.length - 1 && (
-            <Icon style={{ marginLeft: "16px", color: `var(--text)` }}>
+            <Icon style={{ marginLeft: "16px", color: "var(--text)" }}>
               <FaChevronRight />
             </Icon>
           )}

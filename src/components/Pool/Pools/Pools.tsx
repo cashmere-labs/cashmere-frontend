@@ -1,20 +1,21 @@
-import styles from "./Pools.module.scss";
-import { useModal, useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { PersonalData, GlobalData } from "../datas";
-import { useMediaQuery } from "react-responsive";
-import { Button, Modal } from "ui";
-import { useSelector } from "react-redux";
-import { usePoolStates } from "hooks";
 import {
-  PoolPhoneTable,
-  PoolPhoneTitle,
+  LiquidityStakeReward,
   PoolDesktopTable,
   PoolDesktopTitle,
-  LiquidityStakeReward,
+  PoolPhoneTable,
+  PoolPhoneTitle,
   Waiting,
 } from "components";
+import { useModal, useTheme } from "hooks";
+import { usePoolStates } from "hooks";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { Button, Modal } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import { GlobalData, PersonalData } from "../datas";
+import styles from "./Pools.module.scss";
 
 enum PAGE {
   "FORM",
@@ -80,7 +81,7 @@ const Pools = ({ filter }: any) => {
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
+                  theme === "light" ? styles.white : styles.black,
                 )}
               >
                 more
@@ -97,7 +98,7 @@ const Pools = ({ filter }: any) => {
                 color={theme === "light" ? "black" : "white"}
                 className={clsnm(
                   styles.moreButton,
-                  theme === "light" ? styles.white : styles.black
+                  theme === "light" ? styles.white : styles.black,
                 )}
               >
                 more

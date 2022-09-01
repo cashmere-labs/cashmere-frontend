@@ -1,8 +1,10 @@
 import { InfoIcon } from "assets/icons";
 import { Column, Row } from "components";
-import { SwapSettings as SwapSettingsType } from "components/SwapSettings/useSwapSettings";
 import { ModalController } from "hooks/useModal";
 import { Alert, Icon, Input, Modal, Radio, Tooltip } from "ui";
+
+import { SwapSettings as SwapSettingsType } from "components/SwapSettings/useSwapSettings";
+
 import styles from "./SwapSettings.module.scss";
 
 const regexp = /^-?\d*\.?\d*$/;

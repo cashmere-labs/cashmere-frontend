@@ -1,7 +1,8 @@
-import styles from "./NetworkBadge.module.scss";
-import { getBadgeProps, NetworkTypes } from "ui/NetworkBadge/utils";
-import { ComponentPropsWithoutRef, CSSProperties } from "react";
+import { CSSProperties, ComponentPropsWithoutRef } from "react";
+import { NetworkTypes, getBadgeProps } from "ui/NetworkBadge/utils";
 import { clsnm } from "utils/clsnm";
+
+import styles from "./NetworkBadge.module.scss";
 
 export interface NetworkBadgeProps extends ComponentPropsWithoutRef<"div"> {
   label: NetworkTypes | string;

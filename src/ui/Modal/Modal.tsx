@@ -2,10 +2,11 @@ import { useOnClickOutside } from "hooks/useOnClickOutside";
 import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
 import { Icon } from "ui";
+import { NetworkBadge } from "ui";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Modal.module.scss";
-import { NetworkBadge } from "ui";
 
 type ModalProps = {
   children: ReactNode;

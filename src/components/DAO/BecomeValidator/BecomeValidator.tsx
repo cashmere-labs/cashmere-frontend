@@ -1,15 +1,16 @@
-import styles from "./BecomeValidator.module.scss";
-import { Button, Modal, Input, Tooltip, Icon } from "ui";
-import { ModalController } from "hooks/useModal";
-import { useTheme } from "hooks";
+import { InfoIcon } from "assets/icons";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { InfoIcon } from "assets/icons";
-import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-import { useFormValidator } from "hooks/useFormValidator";
 import { ethers } from "ethers";
+import { useTheme } from "hooks";
+import { useFormValidator } from "hooks/useFormValidator";
+import { ModalController } from "hooks/useModal";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { Button, Icon, Input, Modal, Tooltip } from "ui";
 import { isValidNumberInput } from "utils/isValidNumberInput";
+
+import styles from "./BecomeValidator.module.scss";
 
 const BecomeValidator = ({
   modal,

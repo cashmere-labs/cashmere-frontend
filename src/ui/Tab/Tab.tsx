@@ -1,7 +1,8 @@
-import styles from "./Tab.module.scss";
 import { ComponentPropsWithoutRef, ReactNode, useEffect } from "react";
-import { clsnm } from "utils/clsnm";
 import { useState } from "react";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./Tab.module.scss";
 
 interface TabProbs extends ComponentPropsWithoutRef<"div"> {
   className?: string;
@@ -23,7 +24,6 @@ const Tab = ({
   tapModal,
   names = ["Empty", "Empty", "Empty"],
 }: TabProbs) => {
-
   return (
     <div
       className={styles.wrapper}

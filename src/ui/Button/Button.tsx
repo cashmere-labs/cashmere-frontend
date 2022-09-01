@@ -2,6 +2,7 @@ import { useTheme } from "hooks";
 import { ComponentPropsWithoutRef } from "react";
 import { Spinner } from "ui/Spinner/Spinner";
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Button.module.scss";
 
 interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
@@ -22,9 +23,9 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   fullwidth?: boolean;
   disabled?: boolean;
   loading?: boolean;
-  fontSize?: "fs12" |"fs14" | "fs16" | "fs18";
+  fontSize?: "fs12" | "fs14" | "fs16" | "fs18";
   fontWeight?: "fw400" | "fw500" | "fw600" | "fw700";
-  lineHeight?: "lhNormal" | "lh22"
+  lineHeight?: "lhNormal" | "lh22";
 }
 
 const Button = ({
@@ -55,7 +56,7 @@ const Button = ({
         styles[theme],
         disabled && styles.disabled,
         loading && styles.loading,
-        className
+        className,
       )}
       {...props}
     >
@@ -73,7 +74,7 @@ const Button = ({
           styles[fontWeight],
           styles[lineHeight],
           fullwidth && styles["fullwidth"],
-          loading && styles.loading
+          loading && styles.loading,
         )}
       >
         {children}

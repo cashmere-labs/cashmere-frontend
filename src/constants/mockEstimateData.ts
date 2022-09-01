@@ -1,4 +1,3 @@
-import { EstimateMapping } from "components/Modals/GasEstimatorModal/GasEstimatorModal";
 import {
   ARBITRUM,
   AVALANCHE,
@@ -8,7 +7,8 @@ import {
   OPTIMISM,
   POLYGON,
 } from "constants/networks";
-import { Network } from "types/network";
+
+import { EstimateMapping } from "components/Modals/GasEstimatorModal/GasEstimatorModal";
 
 export const mockEstimateNetworks = [
   ETHEREUM,

@@ -1,13 +1,13 @@
-import { EthyleneNetwork } from "ethylene/types/app";
-import AuroraImage from "assets/images/tokens/aurora.png";
-import { Network } from "types/network";
+import ARBITRUM_IMAGE from "assets/images/networks/arbitrum.png";
 import AVALANCHE_IMAGE from "assets/images/networks/avalanche.png";
 import BNB_IMAGE from "assets/images/networks/bnb.png";
 import ETHEREUM_IMAGE from "assets/images/networks/ethereum.svg";
-import POLYGON_IMAGE from "assets/images/networks/polygon.png";
-import ARBITRUM_IMAGE from "assets/images/networks/arbitrum.png";
 import OPTIMISM_IMAGE from "assets/images/networks/optimism.png";
 import FANTOM_IMAGE from "assets/images/networks/phantom.png";
+import POLYGON_IMAGE from "assets/images/networks/polygon.png";
+import AuroraImage from "assets/images/tokens/aurora.png";
+import { EthyleneNetwork } from "ethylene/types/app";
+import { Network } from "types/network";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 export const GOERLI: EthyleneNetwork = {

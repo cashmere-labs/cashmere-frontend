@@ -1,6 +1,7 @@
 import { Placement } from "@floating-ui/react-dom";
 import { usePopper } from "hooks";
 import { ReactNode, useEffect, useRef, useState } from "react";
+
 import styles from "./Tooltip.module.scss";
 
 interface TooltipProps {

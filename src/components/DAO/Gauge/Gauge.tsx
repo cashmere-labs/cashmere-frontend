@@ -1,9 +1,10 @@
-import styles from "./Gauge.module.scss";
-import { Select, Option, Input, Button, Modal } from "ui";
-import { ModalController } from "hooks/useModal";
 import { Row } from "components";
-import { useState } from "react";
 import { useTheme } from "hooks";
+import { ModalController } from "hooks/useModal";
+import { useState } from "react";
+import { Button, Input, Modal, Option, Select } from "ui";
+
+import styles from "./Gauge.module.scss";
 
 const Gauge = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();
@@ -42,7 +43,7 @@ const Gauge = ({ modal }: { modal: ModalController }) => {
                     }}
                   >
                     <Row style={{ width: "max-content" }} alignItems="center">
-                      <span style={{ color: `var(--text)` }}>{item}</span>
+                      <span style={{ color: "var(--text)" }}>{item}</span>
                     </Row>
                   </Option>
                 ))}
@@ -68,7 +69,7 @@ const Gauge = ({ modal }: { modal: ModalController }) => {
                   className={whichToken === 0 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div style={{ color: `var(--text)`, fontWeight: "500" }}>CRV</div>
+              <div style={{ color: "var(--text)", fontWeight: "500" }}>CRV</div>
             </div>
           </div>
           <div className={styles.veCSM}>
@@ -78,7 +79,7 @@ const Gauge = ({ modal }: { modal: ModalController }) => {
                   className={whichToken === 1 ? styles.yes : styles.no}
                 ></div>
               </div>
-              <div style={{ color: `var(--text)`, fontWeight: "500" }}>
+              <div style={{ color: "var(--text)", fontWeight: "500" }}>
                 veCRV
               </div>
             </div>
@@ -118,7 +119,7 @@ const Gauge = ({ modal }: { modal: ModalController }) => {
                           style={{ width: "max-content" }}
                           alignItems="center"
                         >
-                          <span style={{ color: `var(--text)` }}>{item}</span>
+                          <span style={{ color: "var(--text)" }}>{item}</span>
                         </Row>
                       </Option>
                     ))}

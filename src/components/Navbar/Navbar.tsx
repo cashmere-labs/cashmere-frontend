@@ -1,21 +1,22 @@
-import styles from "./Navbar.module.scss";
-import { useMemo, useRef, useState } from "react";
-import { clsnm } from "utils/clsnm";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { AccountModal, Logo } from "components";
 import { PATHS } from "constants/paths";
-import { Link, useLocation } from "react-router-dom";
-import { Button, Container, Icon, Modal } from "ui";
+import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
 import {
+  useAccount,
   useAuth,
   useConnection,
   useRightNetwork,
-  useAccount,
 } from "ethylene/hooks";
-import { formatAddress } from "utils/formatAddress";
 import { useModal, useTheme } from "hooks";
-import { AVAX_FUJI_C_CHAIN } from "ethylene/constants";
+import { useMemo, useRef, useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { IoMdMoon, IoMdSunny } from "react-icons/io";
-import { Logo, AccountModal } from "components";
+import { Link, useLocation } from "react-router-dom";
+import { Button, Container, Icon, Modal } from "ui";
+import { clsnm } from "utils/clsnm";
+import { formatAddress } from "utils/formatAddress";
+
+import styles from "./Navbar.module.scss";
 
 const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
   const { pathname } = useLocation();
@@ -90,7 +91,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         color={theme === "light" ? "black" : "black"}
         className={clsnm(
           !mobile ? styles.themeChanger : styles.themeChangerMobile,
-          styles.accountButton
+          styles.accountButton,
         )}
       >
         {!isRightNetwork && auth
@@ -160,7 +161,7 @@ const Navbar = ({ transparent = false }: { transparent?: boolean }) => {
         className={clsnm(
           styles.smallMenu,
           !show && styles.hide,
-          transparent && styles.transparent
+          transparent && styles.transparent,
         )}
       >
         <div className={styles.smallMenuHeader}>

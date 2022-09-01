@@ -1,12 +1,13 @@
+import { Row } from "components";
 import { ModalController } from "hooks/useModal";
+import { ReactNode } from "react";
+import { BiLinkExternal } from "react-icons/bi";
+import { FaCheck } from "react-icons/fa";
 import { TransactionStep } from "types/app";
 import { Icon, Modal, Spinner } from "ui";
-import styles from "./TxProgressModal.module.scss";
-import { BiLinkExternal } from "react-icons/bi";
-import { Row } from "components";
 import { clsnm } from "utils/clsnm";
-import { ReactNode } from "react";
-import { FaCheck } from "react-icons/fa";
+
+import styles from "./TxProgressModal.module.scss";
 
 type TxProgressModalProps = {
   modalController: ModalController;

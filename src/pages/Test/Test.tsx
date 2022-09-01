@@ -1,4 +1,3 @@
-import styles from "./Test.module.scss";
 import { ResponsivePie } from "@nivo/pie";
 import {
   BecomeValidator,
@@ -8,10 +7,12 @@ import {
   Statistics,
   TxProgressModal,
 } from "components";
+import { mockTxSteps } from "constants/mockTxSteps";
 import { useModal } from "hooks";
 import { NetworkBadge } from "ui";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
-import { mockTxSteps } from "constants/mockTxSteps";
+
+import styles from "./Test.module.scss";
 
 const data = [
   {

@@ -1,4 +1,4 @@
-import { autoUpdate, Placement, useFloating } from "@floating-ui/react-dom";
+import { Placement, autoUpdate, useFloating } from "@floating-ui/react-dom";
 
 type UsePopperProps = {
   strategy?: "fixed" | "absolute";

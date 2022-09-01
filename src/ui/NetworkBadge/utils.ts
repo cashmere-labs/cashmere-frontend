@@ -1,10 +1,10 @@
+import ARBITRUM_IMG from "assets/images/networks/arbitrum.png";
 import AVALANCHE_IMG from "assets/images/networks/avalanche.png";
 import BNB_IMG from "assets/images/networks/bnb.png";
 import ETHEREUM_IMG from "assets/images/networks/ethereum.svg";
-import POLYGON_IMG from "assets/images/networks/polygon.png";
-import ARBITRUM_IMG from "assets/images/networks/arbitrum.png";
 import OPTIMISM_IMG from "assets/images/networks/optimism.png";
 import FANTOM_IMG from "assets/images/networks/phantom.png";
+import POLYGON_IMG from "assets/images/networks/polygon.png";
 import QUESTIONMARK from "assets/images/networks/question.png";
 
 export enum NetworkTypes {

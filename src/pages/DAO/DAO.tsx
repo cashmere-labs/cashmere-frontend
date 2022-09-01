@@ -2,14 +2,16 @@ import {
   Footer,
   Navbar,
   Polls,
-  UpperPage,
   Statistics,
+  UpperPage,
   VoteGauge,
 } from "components";
-import styles from "./DAO.module.scss";
-import { Container, Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
+import { Container, Layout } from "ui";
+
 import { NetworkSelector } from "components/DAO/NetworkSelector/NetworkSelector";
+
+import styles from "./DAO.module.scss";
 
 const DAO = () => {
   useTitle("DAO");

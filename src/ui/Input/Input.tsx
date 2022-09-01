@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Alert } from "ui";
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Input.module.scss";
 
 interface InputProps extends ComponentPropsWithoutRef<"input"> {
@@ -62,7 +63,7 @@ const Input = ({
           extendRight && styles.extendRight,
           rightEl && styles.rightEl,
           leftEl && styles.leftEl,
-          className
+          className,
         )}
         {...props}
       />

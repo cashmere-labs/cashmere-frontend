@@ -1,20 +1,18 @@
 import { PATHS } from "constants/paths";
 import { useOnAccountsChange, useOnNetworkChange } from "ethylene/hooks";
 import { useInitialTheme, useTheme } from "hooks";
-import { Pool, Swap, VeCSM, DAO, ManagePage } from "pages";
+import { DAO, ManagePage, Pool, Swap, VeCSM } from "pages";
+import { NotFound } from "pages/NotFound/NotFound";
+import { useEffect } from "react";
 import {
   BrowserRouter,
+  Navigate,
   Route,
   Routes,
-  Navigate,
   useLocation,
 } from "react-router-dom";
-import { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Test } from "pages/Test/Test";
-import { Test2 } from "pages/Test2/Test2";
-import { NotFound } from "pages/NotFound/NotFound";
 
 const Main = () => {
   useInitialTheme();

@@ -1,7 +1,8 @@
-import styles from "./DepositDashboard.module.scss";
 import { useModal, useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
 import { Button } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./DepositDashboard.module.scss";
 
 const DepositDashboard = () => {
   const { theme } = useTheme();

@@ -2,5 +2,9 @@
   "semi": true,
   "trailingComma": "all",
   "singleQuote": false,
-  "printWidth": 80
+  "printWidth": 80,
+  "importOrder": ["^components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "tabWidth": 2
 }

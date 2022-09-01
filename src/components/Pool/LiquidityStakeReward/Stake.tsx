@@ -1,20 +1,21 @@
-import styles from "./Stake.module.scss";
-import { Button, Input } from "ui";
-import { useTheme } from "hooks";
-import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
-import { useState } from "react";
-import WHITEPLUS from "assets/icons/whitePlus.png";
 import GRAYPLUS from "assets/icons/grayPlus.png";
 import MINUS from "assets/icons/minus.png";
-import { useMediaQuery } from "react-responsive";
+import WHITEPLUS from "assets/icons/whitePlus.png";
 import DAI from "assets/pool/dai.png";
+import { useTheme } from "hooks";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { setValue, setFunctionName } from "store/slicers/pool";
+import { useMediaQuery } from "react-responsive";
+import { setFunctionName, setValue } from "store/slicers/pool";
+import { Button, Input } from "ui";
+import { Icon, Tooltip } from "ui";
+
+import styles from "./Stake.module.scss";
 
 const Stake = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   const [isPlus, setIsPlus] = useState(true);
 

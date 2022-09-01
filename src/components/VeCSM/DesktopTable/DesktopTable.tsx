@@ -1,11 +1,11 @@
-import styles from "./DesktopTable.module.scss";
-import { useTheme } from "hooks";
-import { Button, NetworkBadge } from "ui";
-import { Link } from "react-router-dom";
 import { PATHS } from "constants/paths";
+import { useTheme } from "hooks";
 import { useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import { Lockers, MyLocks } from "types/app";
+import { Button, NetworkBadge } from "ui";
+
+import styles from "./DesktopTable.module.scss";
 
 interface Table {
   whichValidator: boolean;

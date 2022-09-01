@@ -1,5 +1,3 @@
-import { NetworkTypes } from "ui/NetworkBadge/utils";
-
 import {
   ARBITRUM,
   AVALANCHE,
@@ -9,6 +7,7 @@ import {
   OPTIMISM,
   POLYGON,
 } from "constants/networks";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 export const networkMap = new Map([
   [NetworkTypes.ARBITRUM, ARBITRUM],

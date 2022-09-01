@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef } from "react";
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Icon.module.scss";
 
 interface IconProps extends ComponentPropsWithoutRef<"div"> {
@@ -38,7 +39,7 @@ const Icon = ({
       className={clsnm(
         styles.iconWrapper,
         className,
-        hoverable && styles.hoverable
+        hoverable && styles.hoverable,
       )}
       {...props}
     >

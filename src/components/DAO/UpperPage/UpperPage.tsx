@@ -1,11 +1,12 @@
-import styles from "./UpperPage.module.scss";
-import { Icon, Tooltip, Button, Modal } from "ui";
 import { InfoIcon } from "assets/icons";
-import { useTheme, useModal } from "hooks";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 import { Waiting } from "components";
+import { useModal, useTheme } from "hooks";
 import { useState } from "react";
+import { Button, Icon, Modal, Tooltip } from "ui";
+
+import styles from "./UpperPage.module.scss";
 
 const UpperPage = () => {
   const { theme } = useTheme();
@@ -94,7 +95,7 @@ const UpperPage = () => {
             onClick={() => {
               setWhichModal(0);
               setFunctionName("Claim");
-              waitingModal.open()
+              waitingModal.open();
             }}
           >
             Claim
@@ -123,7 +124,7 @@ const UpperPage = () => {
             onClick={() => {
               setWhichModal(1);
               setFunctionName("Farm");
-              waitingModal.open()
+              waitingModal.open();
             }}
           >
             Farm

@@ -5,6 +5,7 @@ import { Network } from "types/network";
 import { Token } from "types/token";
 import { Icon, Input } from "ui";
 import { getBadgeProps, stringToBadgeType } from "ui/NetworkBadge/utils";
+
 import styles from "./SwapBox.module.scss";
 
 type SwapNetworkSelectorProps = {
@@ -50,13 +51,13 @@ const SwapNetworkSelector = ({
       return options.data.filter(
         (item: Network) =>
           item.name.toUpperCase().includes(text.toUpperCase()) ||
-          item.chainId.includes(text)
+          item.chainId.includes(text),
       );
     } else {
       return options.data.filter(
         (item: Token) =>
           item.name.toUpperCase().includes(text.toUpperCase()) ||
-          item.address.toUpperCase().includes(text.toUpperCase())
+          item.address.toUpperCase().includes(text.toUpperCase()),
       );
     }
   }, [options, text]);

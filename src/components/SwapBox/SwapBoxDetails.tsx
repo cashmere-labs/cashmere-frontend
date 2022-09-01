@@ -3,6 +3,7 @@ import { Row } from "components";
 import { ReactNode } from "react";
 import { SwapDetailsData } from "types/swap";
 import { Icon, Tooltip } from "ui";
+
 import styles from "./SwapBox.module.scss";
 
 const SwapBoxDetails = ({ data }: { data: SwapDetailsData }) => {

@@ -1,18 +1,19 @@
 import { networkTypes } from "constants/networks";
-import { useNetwork, useSetNetwork } from "store/hooks/networkHooks";
-import { NetworkBadge } from "ui/NetworkBadge/NetworkBadge";
-import styles from "./SelectNetwork.module.scss";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useOnClickOutside, usePopper } from "hooks";
 import {
-  ComponentPropsWithoutRef,
   CSSProperties,
+  ComponentPropsWithoutRef,
   useEffect,
   useRef,
   useState,
 } from "react";
-import { useOnClickOutside, usePopper } from "hooks";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { useNetwork, useSetNetwork } from "store/hooks/networkHooks";
 import { Icon } from "ui";
+import { NetworkBadge } from "ui/NetworkBadge/NetworkBadge";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
+
+import styles from "./SelectNetwork.module.scss";
 
 export interface SelectNetworkProps extends ComponentPropsWithoutRef<"div"> {
   label?: NetworkTypes | string;

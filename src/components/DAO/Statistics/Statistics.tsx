@@ -1,11 +1,12 @@
-import styles from "./Statistics.module.scss";
-import { Tooltip, Icon, Tab } from "ui";
-import { useTheme } from "hooks";
-import { InfoIcon } from "assets/icons";
 import { ResponsivePie } from "@nivo/pie";
+import { InfoIcon } from "assets/icons";
 import { mockStatistics } from "constants/mockPollData";
-import { useMediaQuery } from "react-responsive";
+import { useTheme } from "hooks";
 import { useTabModal } from "hooks/useTabModal";
+import { useMediaQuery } from "react-responsive";
+import { Icon, Tab, Tooltip } from "ui";
+
+import styles from "./Statistics.module.scss";
 import { WEEKLYFEES } from "./WeeklyFeesDatas";
 
 const Statistics = () => {
@@ -70,7 +71,7 @@ const Statistics = () => {
             <div className={styles.datas}>
               {WEEKLYFEES.map((data: any, i: number) => {
                 return (
-                  <div className={styles.data}>
+                  <div className={styles.data} key={i}>
                     <div className={styles.whichDate}>
                       {data.date}{" "}
                       {i === 0 && (

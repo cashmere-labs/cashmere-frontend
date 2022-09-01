@@ -1,10 +1,10 @@
-import styles from "./Reward.module.scss";
-import { Button } from "ui";
 import { useTheme } from "hooks";
-import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { setFunctionName, setValue } from "store/slicers/pool";
+import { Button } from "ui";
 
-import { setValue, setFunctionName } from "store/slicers/pool";
+import styles from "./Reward.module.scss";
 
 const Reward = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();

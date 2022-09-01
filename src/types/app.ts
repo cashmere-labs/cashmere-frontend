@@ -1,4 +1,5 @@
 import { NetworkTypes } from "ui/NetworkBadge/utils";
+
 export type MapStringToString = { [key: string]: string };
 
 export type ILockData<Data = {}> = {

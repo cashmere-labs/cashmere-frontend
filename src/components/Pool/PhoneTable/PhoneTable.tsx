@@ -1,15 +1,17 @@
-import styles from "./PhoneTable.module.scss";
-import { useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { useEffect, useState } from "react";
+import { InfoIcon } from "assets/icons";
 import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
-import { Icon, Tooltip, NetworkBadge } from "ui";
-import { InfoIcon } from "assets/icons";
-import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
-import { useDispatch } from "react-redux";
+import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
+import { Icon, NetworkBadge, Tooltip } from "ui";
 import { getBadgeProps } from "ui/NetworkBadge/utils";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./PhoneTable.module.scss";
+
 interface Table {
   whichPool?: boolean;
   bodyCount: number;
@@ -59,7 +61,7 @@ const PoolPhoneTable = ({
   const updateMyArray = (
     oldArray: any,
     setOldArray: any,
-    whichIndex: number
+    whichIndex: number,
   ) => {
     let x: boolean = oldArray[whichIndex];
     setOldArray((items: any) => {
@@ -83,7 +85,7 @@ const PoolPhoneTable = ({
               className={clsnm(
                 bodyOpenGlobal[i] === true
                   ? styles.openIt
-                  : styles.phoneTableWrapper
+                  : styles.phoneTableWrapper,
               )}
               style={
                 bodyOpenGlobal[i] === true
@@ -132,7 +134,7 @@ const PoolPhoneTable = ({
                   }
                   className={clsnm(
                     styles.modalKey,
-                    bodyOpenGlobal[i] && styles.reverse
+                    bodyOpenGlobal[i] && styles.reverse,
                   )}
                   src={theme === "light" ? DOWNBLACK : DOWNWHITE}
                   alt="Down button"
@@ -186,7 +188,7 @@ const PoolPhoneTable = ({
               className={clsnm(
                 bodyOpenGlobal[i] === true
                   ? styles.openIt
-                  : styles.phoneTableWrapper
+                  : styles.phoneTableWrapper,
               )}
               style={
                 bodyOpenGlobal[i] === true
@@ -234,7 +236,7 @@ const PoolPhoneTable = ({
                   }
                   className={clsnm(
                     styles.modalKey,
-                    bodyOpenGlobal[i] && styles.reverse
+                    bodyOpenGlobal[i] && styles.reverse,
                   )}
                   src={theme === "light" ? DOWNBLACK : DOWNWHITE}
                   alt="Down button"
@@ -310,7 +312,7 @@ const Row = ({
       className={clsnm(
         bodyOpenGlobal[index] === true
           ? styles.openIt
-          : styles.phoneTableWrapper
+          : styles.phoneTableWrapper,
       )}
       style={
         bodyOpenGlobal[index] === true
@@ -358,7 +360,7 @@ const Row = ({
           }
           className={clsnm(
             styles.modalKey,
-            bodyOpenGlobal[index] && styles.reverse
+            bodyOpenGlobal[index] && styles.reverse,
           )}
           src={theme === "light" ? DOWNBLACK : DOWNWHITE}
           alt="Down button"

@@ -1,13 +1,14 @@
-import { clsnm } from "utils/clsnm";
-import styles from "./ChoosePool.module.scss";
-import { useTheme } from "hooks";
-import { Button, Option, Select } from "ui";
-import { useMediaQuery } from "react-responsive";
-import { usePoolStates } from "hooks";
-import { useSelector } from "react-redux";
 import { Row } from "components";
-import { useState, useEffect } from "react";
+import { useTheme } from "hooks";
+import { usePoolStates } from "hooks";
+import { useEffect, useState } from "react";
 import useDimensions from "react-cool-dimensions";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { Button, Option, Select } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./ChoosePool.module.scss";
 
 interface ChoosePool {
   filter: any;
@@ -57,7 +58,7 @@ const ChoosePool = ({
             }}
             color={theme === "light" ? "white" : "white"}
             className={clsnm(
-              whichPool ? styles.poolButtonOff : styles.poolButtonOn
+              whichPool ? styles.poolButtonOff : styles.poolButtonOn,
             )}
             fontWeight={whichPool ? "fw500" : "fw600"}
           >
@@ -73,7 +74,7 @@ const ChoosePool = ({
             }}
             color={theme === "light" ? "white" : "white"}
             className={clsnm(
-              !whichPool ? styles.poolButtonOff : styles.poolButtonOn
+              !whichPool ? styles.poolButtonOff : styles.poolButtonOn,
             )}
             fontWeight={!whichPool ? "fw500" : "fw600"}
           >
@@ -93,7 +94,7 @@ const ChoosePool = ({
             width={selectWidth ? `${width - 16}px` : ""}
             optionRenderer={(close) => (
               <>
-                {tokenOptions.map((item:any, key:number) => (
+                {tokenOptions.map((item: any, key: number) => (
                   <Option
                     style={{ marginRight: "8px" }}
                     key={key}
@@ -121,7 +122,7 @@ const ChoosePool = ({
             options={chainOptions}
             optionRenderer={(close) => (
               <>
-                {chainOptions.map((item:any, key:number) => (
+                {chainOptions.map((item: any, key: number) => (
                   <Option
                     style={{ marginRight: "8px" }}
                     key={key}

@@ -1,16 +1,17 @@
-import styles from "./UpperBox.module.scss";
-import { useMediaQuery } from "react-responsive";
+import { InfoIcon } from "assets/icons";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { useTheme, useModal } from "hooks";
-import { Icon, Tooltip, Input, Button, Modal } from "ui";
-import { useEffect, useState } from "react";
-import { clsnm } from "utils/clsnm";
-import { InfoIcon } from "assets/icons";
+import { LockModal, UnlockModal, UnstakeWarning, Waiting } from "components";
+import { useModal, useTheme } from "hooks";
+import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import DatePicker, { DayValue } from "react-modern-calendar-datepicker";
-import { Waiting, UnstakeWarning, LockModal, UnlockModal } from "components";
+import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import { useMediaQuery } from "react-responsive";
+import { Button, Icon, Input, Modal, Tooltip } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./UpperBox.module.scss";
 
 enum LOCK {
   "WARNING",
@@ -163,7 +164,7 @@ const UpperBox = () => {
                 onClick={() => setWhichTime(i)}
                 className={clsnm(
                   styles.option,
-                  whichTime === i && styles.thisOne
+                  whichTime === i && styles.thisOne,
                 )}
               >
                 {duration}

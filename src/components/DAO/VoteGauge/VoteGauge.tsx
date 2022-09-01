@@ -1,19 +1,20 @@
+import CALENDER from "assets/icons/calender.png";
 import {
   VoteGaugeDesktopTable,
   VoteGaugeDesktopTitle,
+  VoteGaugeModal,
   VoteGaugePhoneTable,
   VoteGaugePhoneTitle,
-  VoteGaugeModal,
   Waiting,
 } from "components";
-import styles from "./VoteGauge.module.scss";
-import { VOTEGAUGE } from "./datas";
-import CALENDER from "assets/icons/calender.png";
-import { useMediaQuery } from "react-responsive";
 import { useModal } from "hooks";
 import { useEffect, useMemo, useState } from "react";
-import { Modal } from "ui";
+import { useMediaQuery } from "react-responsive";
 import { useNetwork } from "store/hooks/networkHooks";
+import { Modal } from "ui";
+
+import styles from "./VoteGauge.module.scss";
+import { VOTEGAUGE } from "./datas";
 
 enum PAGE {
   "FORM",

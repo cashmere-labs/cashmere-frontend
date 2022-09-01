@@ -1,14 +1,14 @@
-import styles from "./Balance.module.scss";
-import CLOCK from "assets/icons/clock.png";
 import CALENDER from "assets/icons/calender.png";
+import CLOCK from "assets/icons/clock.png";
 import LOGO from "assets/images/cashmereGray.png";
-import { useRef, useState, useLayoutEffect, useEffect } from "react";
 import useDimensions from "react-cool-dimensions";
+
+import styles from "./Balance.module.scss";
 
 const Balance = () => {
   const value = 0.65;
-  const { observe, width, } = useDimensions({
-    onResize: ({ observe}) => {
+  const { observe, width } = useDimensions({
+    onResize: ({ observe }) => {
       observe(); // To re-start observing the current target element
     },
   });

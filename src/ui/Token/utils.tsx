@@ -1,7 +1,7 @@
+import QUESTIONMARK from "assets/images/networks/question.png";
 import DaiImage from "assets/images/tokens/dai.png";
 import TetherusImage from "assets/images/tokens/tetherus.png";
 import UsdcImage from "assets/pool/usdc.png";
-import QUESTIONMARK from "assets/images/networks/question.png";
 
 export enum TokenTypes {
   "DAI",

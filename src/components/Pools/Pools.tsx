@@ -1,8 +1,9 @@
-import styles from "./Pools.module.scss";
 import { useModal, useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { Button } from "ui";
 import { useState } from "react";
+import { Button } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./Pools.module.scss";
 
 const Pools = () => {
   const [whichPool, setWhichPool] = useState(false);
@@ -17,7 +18,7 @@ const Pools = () => {
             onClick={() => setWhichPool(false)}
             color={theme === "light" ? "neutral" : "neutral"}
             className={clsnm(
-              whichPool ? styles.poolButtonOff : styles.poolButtonOn
+              whichPool ? styles.poolButtonOff : styles.poolButtonOn,
             )}
           >
             All Pools
@@ -28,7 +29,7 @@ const Pools = () => {
             onClick={() => setWhichPool(true)}
             color={theme === "light" ? "neutral" : "neutral"}
             className={clsnm(
-              !whichPool ? styles.poolButtonOff : styles.poolButtonOn
+              !whichPool ? styles.poolButtonOff : styles.poolButtonOn,
             )}
           >
             My Pools
@@ -40,9 +41,7 @@ const Pools = () => {
         </div>
       </div>
 
-      <div className={styles.bodyWrapper}>
-
-      </div>
+      <div className={styles.bodyWrapper}></div>
     </div>
   );
 };

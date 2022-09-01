@@ -3,8 +3,9 @@ import { ReactNode, useMemo } from "react";
 import { Network } from "types/network";
 import { Modal, NetworkBadge } from "ui";
 import { stringToBadgeType } from "ui/NetworkBadge/utils";
-import styles from "./GasEstimatorModal.module.scss";
 import { v4 as uuid } from "uuid";
+
+import styles from "./GasEstimatorModal.module.scss";
 
 export type EstimateMapping = Map<
   Network,
@@ -50,7 +51,7 @@ const GasEstimatorModal = ({
               <span className={styles.usd}>{el.usd}</span>
               <span className={styles.native}>{el.native}</span>
             </div>
-          </td>
+          </td>,
         );
       });
       _estimatedItems.push(
@@ -66,7 +67,7 @@ const GasEstimatorModal = ({
             </td>
             {elements}
           </>
-        </tr>
+        </tr>,
       );
     });
     return _estimatedItems;

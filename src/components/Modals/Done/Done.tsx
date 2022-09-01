@@ -1,13 +1,14 @@
-import styles from "./Done.module.scss";
 import ExitBlack from "assets/icons/exit-black.png";
 import ExitWhite from "assets/icons/exit-white.png";
-import { useTheme } from "hooks";
-import { Button } from "ui";
-import { useMediaQuery } from "react-responsive";
-import { MdOutlineDone } from "react-icons/md";
 import { motion } from "framer-motion";
-import modalStyles from "../../../ui/Modal/Modal.module.scss";
+import { useTheme } from "hooks";
+import { MdOutlineDone } from "react-icons/md";
+import { useMediaQuery } from "react-responsive";
+import { Button } from "ui";
 import { clsnm } from "utils/clsnm";
+
+import modalStyles from "../../../ui/Modal/Modal.module.scss";
+import styles from "./Done.module.scss";
 
 const Done = ({
   onDone,

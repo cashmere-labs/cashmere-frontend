@@ -1,9 +1,10 @@
-import { clsnm } from "utils/clsnm";
-import styles from "./Poll.module.scss";
 import { ResponsivePie } from "@nivo/pie";
-import { useTheme } from "hooks";
 import { Column, Row } from "components";
+import { useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./Poll.module.scss";
 
 type PollData = {
   id: string;

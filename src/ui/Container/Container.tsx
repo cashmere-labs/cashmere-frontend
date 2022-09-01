@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, ReactNode } from "react";
 import { clsnm } from "utils/clsnm";
+
 import styles from "./Container.module.scss";
 
 interface ContainerProps extends ComponentPropsWithoutRef<"div"> {
@@ -30,7 +31,7 @@ const Container = ({
         styles.container,
         className,
         justifyContent && styles[justifyContent],
-        compact ? styles.compact : styles.normal
+        compact ? styles.compact : styles.normal,
       )}
       {...props}
     >

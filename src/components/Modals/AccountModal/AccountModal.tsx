@@ -1,15 +1,16 @@
 import { Row } from "components";
+import { useAccount } from "ethylene/hooks";
+import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
-import { useState } from "react";
+import React, { useMemo, useState } from "react";
 import { BiLinkExternal } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { Button, Icon, Modal } from "ui";
-import styles from "./AccountModal.module.scss";
-import { useAccount } from "ethylene/hooks";
-import { formatAddress } from "utils/formatAddress";
-import { useTheme } from "hooks";
 import { AccountBalance } from "types/app";
-import { getBadgeProps, NetworkTypes } from "ui/NetworkBadge/utils";
+import { Button, Icon, Modal } from "ui";
+import { NetworkTypes, getBadgeProps } from "ui/NetworkBadge/utils";
+import { formatAddress } from "utils/formatAddress";
+
+import styles from "./AccountModal.module.scss";
 
 type AccountModalProps = {
   modalContoller: ModalController;
@@ -20,7 +21,9 @@ enum Page {
   "TRANSACTIONS",
 }
 
-const AccountModal = ({ modalContoller }: AccountModalProps) => {
+const AccountModal: React.FC<AccountModalProps> = ({
+  modalContoller,
+}: AccountModalProps) => {
   const [page, setPage] = useState<Page>(Page.ACCOUNT);
   const { address } = useAccount();
   const { theme } = useTheme();
@@ -85,6 +88,18 @@ const AccountModal = ({ modalContoller }: AccountModalProps) => {
     },
   ];
 
+  const accountModalItems = useMemo(() => {
+    if (page === Page.ACCOUNT) {
+      return balances.map((item: any, i: number) => (
+        <AccountModalItem item={item} key={i} />
+      ));
+    } else {
+      return balances.map((item: any, i: number) => (
+        <AccountModalItem item={item} key={i} />
+      ));
+    }
+  }, [page, balances]);
+
   return (
     <Modal
       width="512px"
@@ -135,44 +150,36 @@ const AccountModal = ({ modalContoller }: AccountModalProps) => {
             </Button>
           </Row>
         </div>
-        <div className={styles.items}>
-          {page === Page.ACCOUNT
-            ? balances.map((item: any, i: number) => (
-                <div className={styles.item} key={i}>
-                  <div className={styles.itemImage}>
-                    <img src={item.image} alt={item.token} />
-                  </div>
-                  <div className={styles.balanceWrapper}>
-                    <span className={styles.balanceItemHeader}>Balance</span>
-                    <span className={styles.tokenName}>{item.token}</span>
-                  </div>
-                  <div className={styles.amounts}>
-                    <span className={styles.usd}>{item.usd}</span>
-                    <span>{item.native}</span>
-                  </div>
-                </div>
-              ))
-            : balances.map((item) => (
-                <div className={styles.item}>
-                  <div className={styles.itemImage}>
-                    <img src={item.image} alt={item.token} />
-                  </div>
-                  <div className={styles.balanceWrapper}>
-                    <span className={styles.balanceItemHeader}>Balance</span>
-                    <span className={styles.tokenName}>{item.token}</span>
-                  </div>
-                  <div className={styles.amounts}>
-                    <span className={styles.usd}>{item.usd}</span>
-                    <span>{item.native}</span>
-                  </div>
-                </div>
-              ))}
-        </div>
+        <div className={styles.items}>{accountModalItems}</div>
       </div>
       <div className={styles.footer}>
         <span>Click the icon to add the token to your wallet</span>
       </div>
     </Modal>
+  );
+};
+
+type AccountModalItemProps = {
+  item: AccountBalance;
+};
+
+const AccountModalItem: React.FC<AccountModalItemProps> = ({
+  item,
+}: AccountModalItemProps) => {
+  return (
+    <div className={styles.item}>
+      <div className={styles.itemImage}>
+        <img src={item.image} alt={item.token} />
+      </div>
+      <div className={styles.balanceWrapper}>
+        <span className={styles.balanceItemHeader}>Balance</span>
+        <span className={styles.tokenName}>{item.token}</span>
+      </div>
+      <div className={styles.amounts}>
+        <span className={styles.usd}>{item.usd}</span>
+        <span>{item.native}</span>
+      </div>
+    </div>
   );
 };
 

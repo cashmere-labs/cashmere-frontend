@@ -1,9 +1,10 @@
-import styles from "./BecomeValidatorError.module.scss";
-import { ModalController } from "hooks/useModal";
-import { Button, Modal } from "ui";
 import WARNING from "assets/icons/warning.png";
 import { useTheme } from "hooks";
+import { ModalController } from "hooks/useModal";
 import { useMediaQuery } from "react-responsive";
+import { Button, Modal } from "ui";
+
+import styles from "./BecomeValidatorError.module.scss";
 
 const BecomeValidatorError = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();

@@ -1,5 +1,6 @@
 import { useNetwork } from "store/hooks/networkHooks";
 import { SelectNetwork } from "ui";
+
 import styles from "./NetworkSelector.module.scss";
 
 const NetworkSelector = () => {

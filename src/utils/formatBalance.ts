@@ -4,7 +4,7 @@ import { IS_PROD } from "ethylene/constants";
 export const formatBalance = (
   balance: BigNumberish,
   decimals: number = 4,
-  tokenDecimal = 18
+  tokenDecimal = 18,
 ) => {
   if (!balance) {
     return "0";

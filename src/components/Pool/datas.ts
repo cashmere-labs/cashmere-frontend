@@ -1,8 +1,8 @@
 import DAI from "assets/pool/dai.png";
 import USDC from "assets/pool/usdc.png";
 import USDT from "assets/pool/usdt.png";
-
 import { NetworkTypes } from "ui/NetworkBadge/utils";
+
 export const GlobalData = [
   {
     logo: DAI,

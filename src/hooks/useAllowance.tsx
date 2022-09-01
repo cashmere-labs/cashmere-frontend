@@ -1,7 +1,7 @@
 import { BigNumber, ethers } from "ethers";
-import { useEffect, useState } from "react";
-import { useAccount } from "ethylene/hooks";
 import { ERC20 } from "ethylene/constants";
+import { useAccount } from "ethylene/hooks";
+import { useEffect, useState } from "react";
 
 export const useAllowance = (tokenAddress: string, contractAddress: string) => {
   const { auth, address, provider } = useAccount();

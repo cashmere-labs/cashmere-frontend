@@ -1,17 +1,18 @@
-import styles from "./Liquidity.module.scss";
-import { Button, Input } from "ui";
-import { useTheme } from "hooks";
-import { Icon, Tooltip } from "ui";
 import { InfoIcon } from "assets/icons";
-import { useState } from "react";
-import WHITEPLUS from "assets/icons/whitePlus.png";
 import GRAYPLUS from "assets/icons/grayPlus.png";
 import MINUS from "assets/icons/minus.png";
-import { useMediaQuery } from "react-responsive";
+import WHITEPLUS from "assets/icons/whitePlus.png";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { setValue, setFunctionName } from "store/slicers/pool";
+import { useTheme } from "hooks";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { setFunctionName, setValue } from "store/slicers/pool";
+import { Button, Input } from "ui";
+import { Icon, Tooltip } from "ui";
+
+import styles from "./Liquidity.module.scss";
 
 const Liquidity = ({ onSuccess }: { onSuccess: () => void }) => {
   const { theme } = useTheme();

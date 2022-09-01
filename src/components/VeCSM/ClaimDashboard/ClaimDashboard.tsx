@@ -1,10 +1,11 @@
-import styles from "./ClaimDashboard.module.scss";
-import { useModal, useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
-import { useMediaQuery } from "react-responsive";
 import { Waiting } from "components";
+import { useModal, useTheme } from "hooks";
+import { useMediaQuery } from "react-responsive";
+import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./ClaimDashboard.module.scss";
 
 const ClaimDashboard = () => {
   const { theme } = useTheme();

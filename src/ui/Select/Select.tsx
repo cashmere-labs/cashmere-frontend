@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Icon } from "ui";
 import { clsnm } from "utils/clsnm";
 import { mergeRefs } from "utils/mergeRefs";
+
 import styles from "./Select.module.scss";
 
 interface SelectProps extends ComponentPropsWithoutRef<"div"> {
@@ -75,7 +76,7 @@ const Select = ({
         <span
           className={clsnm(
             styles.label,
-            labelPlaceholder && styles.labelPlaceholder
+            labelPlaceholder && styles.labelPlaceholder,
           )}
         >
           {label ?? "L"}
@@ -93,7 +94,7 @@ const Select = ({
           menuClassName,
           !hideChevron && styles.menuChevron,
           hideRightBorder && styles.hideRightBorder,
-          hideLeftBorder && styles.hideLeftBorder
+          hideLeftBorder && styles.hideLeftBorder,
         )}
       >
         {menuRenderer ? menuRenderer(isOpen) : value}

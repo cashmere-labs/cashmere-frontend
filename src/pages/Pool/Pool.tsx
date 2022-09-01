@@ -1,14 +1,15 @@
-import styles from "./Pool.module.scss";
 import {
+  ChoosePool,
   DepositDashboard,
+  Footer,
   Navbar,
   Pools,
-  Footer,
-  ChoosePool,
 } from "components";
-import { Layout } from "ui";
 import { useTitle } from "hooks/useTitle";
 import { useState } from "react";
+import { Layout } from "ui";
+
+import styles from "./Pool.module.scss";
 
 const Pool = () => {
   useTitle("Pools");
@@ -42,7 +43,7 @@ const Pool = () => {
             tokenOptions={tokenOptions}
             chainOptions={chainOptions}
           />
-          <Pools filter={filter}/>
+          <Pools filter={filter} />
         </div>
         <Footer />
       </Layout>

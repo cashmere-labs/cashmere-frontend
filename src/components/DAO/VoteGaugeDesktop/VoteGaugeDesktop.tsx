@@ -1,9 +1,8 @@
-import styles from "./VoteGaugeDesktop.module.scss";
 import { useTheme } from "hooks";
 import { Button, NetworkBadge } from "ui";
-import { Link } from "react-router-dom";
-import { PATHS } from "constants/paths";
+
 import { VOTEGAUGE } from "../VoteGauge/datas";
+import styles from "./VoteGaugeDesktop.module.scss";
 
 interface Table {
   datas: any;
@@ -99,6 +98,7 @@ const VoteGaugeDesktopTable = ({
       {datas.map((data: any, i: number) => {
         return (
           <Row
+            key={i}
             data={data}
             i={i}
             open={open}

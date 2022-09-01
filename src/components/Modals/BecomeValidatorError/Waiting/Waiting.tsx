@@ -1,8 +1,9 @@
-import styles from "./Waiting.module.scss";
 import ExitBlack from "assets/icons/exit-black.png";
 import ExitWhite from "assets/icons/exit-white.png";
 import { useTheme } from "hooks";
 import SkewLoader from "react-spinners/SkewLoader";
+
+import styles from "./Waiting.module.scss";
 
 interface WaitingProps {
   functionName: string;

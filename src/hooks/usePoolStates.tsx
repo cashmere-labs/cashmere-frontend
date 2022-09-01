@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setWhichPool, setPoolCount } from "store/slicers/pool";
+import { setPoolCount, setWhichPool } from "store/slicers/pool";
 
 export const usePoolStates = () => {
   const poolCount = useSelector((state: any) => state.pool.poolCount);

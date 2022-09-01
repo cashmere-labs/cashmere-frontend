@@ -1,16 +1,18 @@
 import { Footer, Navbar, SwapBox } from "components";
-import { useSwapSettings } from "components/SwapSettings/useSwapSettings";
+import { GasEstimatorModal } from "components";
+import { getMockEstimations } from "constants/mockEstimateData";
 import { ARBITRUM, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
+import { useModal } from "hooks";
 import { useTitle } from "hooks/useTitle";
 import { useState } from "react";
 import { Network } from "types/network";
 import { Token } from "types/token";
 import { Layout } from "ui";
+
+import { useSwapSettings } from "components/SwapSettings/useSwapSettings";
+
 import styles from "./Swap.module.scss";
-import { getMockEstimations } from "constants/mockEstimateData";
-import { GasEstimatorModal } from "components";
-import { useModal } from "hooks";
 
 export type SwapState = {
   fromfrom: Network;

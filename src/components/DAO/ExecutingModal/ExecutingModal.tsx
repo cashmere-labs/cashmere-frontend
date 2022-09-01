@@ -1,13 +1,13 @@
-import styles from "./ExecutingModal.module.scss";
-
-import { useTheme, useModal } from "hooks";
-import { Button, Input, Tooltip, Icon, Modal, Alert } from "ui";
-import { useMediaQuery } from "react-responsive";
 import { InfoIcon } from "assets/icons";
+import { useTheme } from "hooks";
+import { useFormValidator } from "hooks/useFormValidator";
 import { ModalController } from "hooks/useModal";
 import { useState } from "react";
-import { useFormValidator } from "hooks/useFormValidator";
+import { useMediaQuery } from "react-responsive";
+import { Alert, Button, Icon, Input, Modal, Tooltip } from "ui";
 import { isValidNumberInput } from "utils/isValidNumberInput";
+
+import styles from "./ExecutingModal.module.scss";
 
 const ExecutingModal = ({ modal }: { modal: ModalController }) => {
   const { theme } = useTheme();
@@ -148,7 +148,7 @@ const ExecutingModal = ({ modal }: { modal: ModalController }) => {
               width="45px"
               fontSize={"fs12"}
               fontWeight="fw600"
-              onClick={() => {}}
+              onClick={() => undefined}
               color={theme === "light" ? "white" : "white"}
             >
               Max
@@ -176,7 +176,7 @@ const ExecutingModal = ({ modal }: { modal: ModalController }) => {
               width={isPhoneOrLaptop ? "300px" : "514px"}
               fontSize={"fs16"}
               fontWeight="fw600"
-              onClick={() => {}}
+              onClick={() => undefined}
               color={
                 theme === "light" ? "transparentWhite" : "transparentBlack"
               }

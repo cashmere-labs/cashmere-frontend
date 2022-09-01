@@ -1,10 +1,11 @@
-import styles from "./ExecutedModal.module.scss";
+import { InfoIcon } from "assets/icons";
 import ExitBlack from "assets/icons/exit-black.png";
 import ExitWhite from "assets/icons/exit-white.png";
 import { useTheme } from "hooks";
-import { Button, Input, Tooltip, Icon } from "ui";
 import { useMediaQuery } from "react-responsive";
-import { InfoIcon } from "assets/icons";
+import { Icon, Tooltip } from "ui";
+
+import styles from "./ExecutedModal.module.scss";
 
 const ExecutedModal = () => {
   const { theme } = useTheme();

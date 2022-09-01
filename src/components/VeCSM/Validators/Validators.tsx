@@ -1,20 +1,22 @@
-import styles from "./Validators.module.scss";
-import { LockersDatas, MyLocksDatas } from "../datas";
-import { useMediaQuery } from "react-responsive";
-import { useSelector } from "react-redux";
 import { VeCSMDesktopTable, VeCSMTitle } from "components";
 import { useMemo } from "react";
+import { useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { useTypedSelector } from "store";
+import { useNetwork } from "store/hooks/networkHooks";
+
 import {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "components/VeCSM/PhoneTable/PhoneTable";
-import { useNetwork } from "store/hooks/networkHooks";
-import { useTypedSelector } from "store";
+
+import { LockersDatas, MyLocksDatas } from "../datas";
+import styles from "./Validators.module.scss";
 
 const Validators = () => {
   const whichValidator = useTypedSelector((state) => state.veCSM.isActive);
   const validatorCount = useSelector(
-    (state: any) => state.veCSM.validatorCount
+    (state: any) => state.veCSM.validatorCount,
   );
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 950px)",

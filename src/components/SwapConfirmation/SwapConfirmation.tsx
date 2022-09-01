@@ -1,8 +1,5 @@
 import { RotateIcon } from "assets/icons";
 import { Done, Row } from "components";
-import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
-import { SwapSettings } from "components/SwapSettings/useSwapSettings";
-import { TokenOrNetworkRenderer } from "components/TokenOrNetworkRenderer/TokenOrNetworkRenderer";
 import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
 import { ReactNode, useEffect, useState } from "react";
@@ -11,6 +8,11 @@ import { Network } from "types/network";
 import { SwapDetailsData } from "types/swap";
 import { Token } from "types/token";
 import { Button, Icon, Modal } from "ui";
+
+import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
+import { SwapSettings } from "components/SwapSettings/useSwapSettings";
+import { TokenOrNetworkRenderer } from "components/TokenOrNetworkRenderer/TokenOrNetworkRenderer";
+
 import styles from "./SwapConfirmation.module.scss";
 
 type SwapConfirmationModal = {

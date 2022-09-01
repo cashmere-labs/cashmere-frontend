@@ -1,20 +1,21 @@
-import styles from "./VoteGaugeModal.module.scss";
-import { ModalController } from "hooks/useModal";
-import { Token, Modal, Input, Button, Tooltip, Icon } from "ui";
-import { useSelector } from "react-redux";
+import { InfoIcon } from "assets/icons";
 import CALENDER from "assets/icons/calender.png";
-import { TokenTypes } from "ui/Token/utils";
-import { useTheme } from "hooks";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
+import { useTheme } from "hooks";
+import { ModalController } from "hooks/useModal";
+import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import { InfoIcon } from "assets/icons";
+import { Button, Icon, Input, Modal, Token, Tooltip } from "ui";
+import { TokenTypes } from "ui/Token/utils";
+
+import styles from "./VoteGaugeModal.module.scss";
 
 const VoteGaugeModal = ({
   modal,
   onSuccess,
   whichNetwork,
-  whichToken
+  whichToken,
 }: {
   modal: ModalController;
   onSuccess: () => void;

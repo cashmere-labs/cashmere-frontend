@@ -1,9 +1,10 @@
-import { ProposalModal, Waiting, Poll, Row } from "components";
+import { Poll, ProposalModal, Row, Waiting } from "components";
 import { mockPollData } from "constants/mockPollData";
 import { useModal, useTheme } from "hooks";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { Button, Container, Icon, Input, Modal, Select } from "ui";
+
 import styles from "./Polls.module.scss";
 
 enum PAGE {

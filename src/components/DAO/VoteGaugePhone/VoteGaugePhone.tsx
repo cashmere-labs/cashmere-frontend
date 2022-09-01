@@ -1,15 +1,12 @@
-import styles from "./VoteGaugePhone.module.scss";
-import { useTheme } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { useEffect, useState } from "react";
 import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
-import { Icon, Tooltip, NetworkBadge, Button } from "ui";
-import { InfoIcon } from "assets/icons";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { PATHS } from "constants/paths";
+import { useTheme } from "hooks";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { Button, NetworkBadge } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./VoteGaugePhone.module.scss";
 
 interface Table {
   datas: any;
@@ -42,7 +39,7 @@ const VoteGaugePhoneTable = ({
   }>({});
 
   useEffect(() => {
-    let firstArray = [];
+    const firstArray = [];
     for (let i = 0; i < datas.length; i++) {
       firstArray[i] = false;
     }
@@ -52,9 +49,8 @@ const VoteGaugePhoneTable = ({
   const updateMyArray = (
     oldArray: any,
     setOldArray: any,
-    whichIndex: number
+    whichIndex: number,
   ) => {
-    let x: boolean = oldArray[whichIndex];
     setOldArray((items: any) => {
       return items.map((item: any, i: number): boolean => {
         return whichIndex === i ? !item : item;
@@ -71,11 +67,11 @@ const VoteGaugePhoneTable = ({
             className={clsnm(
               bodyOpenGlobal[i] === true
                 ? styles.openIt
-                : styles.phoneTableWrapper
+                : styles.phoneTableWrapper,
             )}
             style={bodyOpenGlobal[i] === true ? { height: "250px" } : {}}
             key={i}
-            onClick={() => {}}
+            onClick={() => undefined}
           >
             <div className={styles.line}></div>
             <div className={styles.titles}>
@@ -100,7 +96,7 @@ const VoteGaugePhoneTable = ({
                 }
                 className={clsnm(
                   styles.modalKey,
-                  bodyOpenGlobal[i] && styles.reverse
+                  bodyOpenGlobal[i] && styles.reverse,
                 )}
                 src={theme === "light" ? DOWNBLACK : DOWNWHITE}
                 alt="Down button"

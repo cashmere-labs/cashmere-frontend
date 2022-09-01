@@ -3,7 +3,7 @@ import { setIsActive, setValidatorCount } from "store/slicers/veCSM";
 
 export const useVeCSMStates = () => {
   const validatorCount = useSelector(
-    (state: any) => state.veCSM.validatorCount
+    (state: any) => state.veCSM.validatorCount,
   );
   const dispatch = useDispatch();
 

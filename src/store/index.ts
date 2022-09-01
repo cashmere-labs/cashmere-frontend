@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import themeSlice from "store/slicers/theme";
-import poolSlice from "store/slicers/pool";
-import veCSMSlice from "store/slicers/veCSM";
 import networkSlice from "store/slicers/network";
+import poolSlice from "store/slicers/pool";
+import themeSlice from "store/slicers/theme";
+import veCSMSlice from "store/slicers/veCSM";
 
 export const store = configureStore({
   reducer: {

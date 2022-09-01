@@ -1,10 +1,11 @@
-import { ModalController } from "hooks/useModal";
-import { Modal } from "ui";
-import styles from "./LiquidityStakeReward.module.scss";
 import { Liquidity, Reward, Stake } from "components";
-import { useState, useEffect } from "react";
+import { ModalController } from "hooks/useModal";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setValue } from "store/slicers/pool";
+import { Modal } from "ui";
+
+import styles from "./LiquidityStakeReward.module.scss";
 
 const LiquidityStakeReward = ({
   modal,

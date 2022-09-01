@@ -1,20 +1,20 @@
-import styles from "./LockModal.module.scss";
-import { useTheme } from "hooks";
-import { useMediaQuery } from "react-responsive";
-import { ModalController } from "hooks/useModal";
-import { Modal, Button, Input } from "ui";
 import EXCHANGE from "assets/icons/exchange.png";
 import INFO from "assets/icons/info.png";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { useEffect } from "react";
+import { useTheme } from "hooks";
+import { ModalController } from "hooks/useModal";
+import { useMediaQuery } from "react-responsive";
+import { Button, Modal } from "ui";
+
+import styles from "./LockModal.module.scss";
 
 const LockModal = ({
   modal,
   onSuccess,
   day,
   csmValue,
-  veCSMValue
+  veCSMValue,
 }: {
   modal: ModalController;
   onSuccess: () => void;

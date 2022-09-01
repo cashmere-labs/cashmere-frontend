@@ -1,11 +1,12 @@
-import styles from "./DesktopTable.module.scss";
-import { Icon, Tooltip, NetworkBadge } from "ui";
 import { InfoIcon } from "assets/icons";
-import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
-import { useDispatch } from "react-redux";
 import { ModalController } from "hooks/useModal";
-import { getBadgeProps } from "ui/NetworkBadge/utils";
 import { Fragment } from "react";
+import { useDispatch } from "react-redux";
+import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
+import { Icon, NetworkBadge, Tooltip } from "ui";
+import { getBadgeProps } from "ui/NetworkBadge/utils";
+
+import styles from "./DesktopTable.module.scss";
 
 interface Table {
   whichPool?: boolean;

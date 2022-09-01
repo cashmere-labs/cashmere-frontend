@@ -1,7 +1,8 @@
-import styles from "./Token.module.scss";
-import { getBadgeProps, TokenTypes } from "ui/Token/utils";
-import { ComponentPropsWithoutRef, CSSProperties } from "react";
+import { CSSProperties, ComponentPropsWithoutRef } from "react";
+import { TokenTypes, getBadgeProps } from "ui/Token/utils";
 import { clsnm } from "utils/clsnm";
+
+import styles from "./Token.module.scss";
 
 export interface TokenProps extends ComponentPropsWithoutRef<"div"> {
   label: TokenTypes | string;

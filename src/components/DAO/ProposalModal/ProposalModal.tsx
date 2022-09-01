@@ -1,16 +1,17 @@
-import styles from "./ProposalModal.module.scss";
-import { Button, Modal, Input, Select, Option } from "ui";
-import { ModalController } from "hooks/useModal";
-import { useTheme } from "hooks";
 import LOGO from "assets/images/cashmere.png";
 import TICK from "assets/images/tick.png";
-import { useState } from "react";
 import { Row } from "components";
-import { useMediaQuery } from "react-responsive";
-import { isValidNumberInput } from "utils/isValidNumberInput";
 import { ethers } from "ethers";
+import { useTheme } from "hooks";
 import { useFormValidator } from "hooks/useFormValidator";
+import { ModalController } from "hooks/useModal";
+import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useNetwork } from "store/hooks/networkHooks";
+import { Button, Input, Modal, Option, Select } from "ui";
+import { isValidNumberInput } from "utils/isValidNumberInput";
+
+import styles from "./ProposalModal.module.scss";
 
 const ProposalModal = ({
   modal,
@@ -186,7 +187,7 @@ const ProposalModal = ({
                           style={{ width: "max-content" }}
                           alignItems="center"
                         >
-                          <span style={{ color: `var(--text)` }}>{item}</span>
+                          <span style={{ color: "var(--text)" }}>{item}</span>
                         </Row>
                       </Option>
                     ))}

@@ -1,8 +1,9 @@
-import styles from "./DepositDashboard.module.scss";
-import { useTheme, useModal } from "hooks";
-import { clsnm } from "utils/clsnm";
-import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
 import { Waiting } from "components";
+import { useModal, useTheme } from "hooks";
+import { Button, Modal, NetworkBadge, SelectNetwork } from "ui";
+import { clsnm } from "utils/clsnm";
+
+import styles from "./DepositDashboard.module.scss";
 
 const DepositDashboard = () => {
   const claimModal = useModal();

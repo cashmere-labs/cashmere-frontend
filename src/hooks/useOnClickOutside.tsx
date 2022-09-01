@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 
 export function useOnClickOutside<T extends HTMLElement>(
   handler: Function,
-  elements?: any
+  elements?: any,
 ) {
   const ref = useRef<T | null>(null);
 

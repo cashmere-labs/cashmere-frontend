@@ -1,5 +1,5 @@
 import { InfoIcon, RotateIcon } from "assets/icons";
-import { Row } from "components/Row/Row";
+import { Row } from "components";
 import { ReactNode } from "react";
 import { SwapDetailsData } from "types/swap";
 import { Icon, Tooltip } from "ui";

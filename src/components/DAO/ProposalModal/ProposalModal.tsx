@@ -5,7 +5,7 @@ import { useTheme } from "hooks";
 import LOGO from "assets/images/cashmere.png";
 import TICK from "assets/images/tick.png";
 import { useState } from "react";
-import { Row } from "components/Row/Row";
+import { Row } from "components";
 import { useMediaQuery } from "react-responsive";
 import { isValidNumberInput } from "utils/isValidNumberInput";
 import { ethers } from "ethers";
@@ -174,7 +174,7 @@ const ProposalModal = ({
                   <>
                     {tokenOptions.map((item, key) => (
                       <Option
-                        style={{ marginRight: "8px"}}
+                        style={{ marginRight: "8px" }}
                         key={key}
                         value={"item.name"}
                         onClick={() => {

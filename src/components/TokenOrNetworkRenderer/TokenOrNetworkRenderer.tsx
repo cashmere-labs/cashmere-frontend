@@ -1,4 +1,4 @@
-import { Row } from "components/Row/Row";
+import { Row } from "components";
 import { Network } from "types/network";
 import { Token } from "types/token";
 import { NetworkBadge } from "ui";

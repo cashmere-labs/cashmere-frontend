@@ -1,10 +1,8 @@
 import { RotateIcon } from "assets/icons";
-import { Done } from "components/Modals/Done/Done";
-import { Row } from "components/Row/Row";
+import { Done, Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
 import { SwapSettings } from "components/SwapSettings/useSwapSettings";
 import { TokenOrNetworkRenderer } from "components/TokenOrNetworkRenderer/TokenOrNetworkRenderer";
-import { useAccount } from "ethylene/hooks";
 import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
 import { ReactNode, useEffect, useState } from "react";

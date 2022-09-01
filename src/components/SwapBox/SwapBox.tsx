@@ -1,6 +1,8 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
 import { SwapBoxDetails } from "components/SwapBox/SwapBoxDetails";
+import { SwapSettings } from "components/SwapSettings/SwapSettings";
+import { SwapNetworkSelector } from "components/SwapBox/SwapNetworkSelector";
 import { SwapSettings as SwapSettingType } from "components/SwapSettings/useSwapSettings";
 import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
 import { Dai, Tetherus } from "constants/tokens";
@@ -9,12 +11,11 @@ import { ReactElement, useEffect, useRef, useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { Network } from "types/network";
 import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
-import { Icon, Select, Option, Input, Button } from "ui";
+import { Icon, Select, Input, Button } from "ui";
 import styles from "./SwapBox.module.scss";
 import { useAccount, useConnection } from "ethylene/hooks";
 import { SwapState } from "pages/Swap/Swap";
-import { SwapSettings } from "components/SwapSettings/SwapSettings";
-import { SwapNetworkSelector } from "components/SwapBox/SwapNetworkSelector";
+
 import { Token } from "types/token";
 
 const SwapBox = ({

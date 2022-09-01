@@ -1,6 +1,5 @@
 import { InfoIcon } from "assets/icons";
-import { Column } from "components/Column/Column";
-import { Row } from "components/Row/Row";
+import { Column, Row } from "components";
 import { SwapSettings as SwapSettingsType } from "components/SwapSettings/useSwapSettings";
 import { ModalController } from "hooks/useModal";
 import { Alert, Icon, Input, Modal, Radio, Tooltip } from "ui";

@@ -3,14 +3,13 @@ import { LockersDatas, MyLocksDatas } from "../datas";
 import { useMediaQuery } from "react-responsive";
 import { useSelector } from "react-redux";
 import { VeCSMDesktopTable, VeCSMTitle } from "components";
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import {
   VeCSMPhoneTable,
   VeCSMPhoneTitle,
 } from "components/VeCSM/PhoneTable/PhoneTable";
 import { useNetwork } from "store/hooks/networkHooks";
 import { useTypedSelector } from "store";
-import { ILockData, Lockers, MyLocks } from "types/app";
 
 const Validators = () => {
   const whichValidator = useTypedSelector((state) => state.veCSM.isActive);

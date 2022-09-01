@@ -3,7 +3,7 @@ import { useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
 import { ModalController } from "hooks/useModal";
 import { Modal, Button, Input } from "ui";
-import { Warning } from "components/Modals/Warning/Warning";
+import { Warning } from "components";
 import LOGOBLACK from "assets/images/cashmere.png";
 import LOGOWHITE from "assets/images/cashmereWhite.png";
 

@@ -1,7 +1,4 @@
-import { ProposalModal } from "components/DAO/ProposalModal/ProposalModal";
-import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
-import { Poll } from "components/Poll/Poll";
-import { Row } from "components/Row/Row";
+import { ProposalModal, Waiting, Poll, Row } from "components";
 import { mockPollData } from "constants/mockPollData";
 import { useModal, useTheme } from "hooks";
 import { useState } from "react";

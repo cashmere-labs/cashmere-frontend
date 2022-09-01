@@ -2,8 +2,7 @@ import { clsnm } from "utils/clsnm";
 import styles from "./Poll.module.scss";
 import { ResponsivePie } from "@nivo/pie";
 import { useTheme } from "hooks";
-import { Column } from "components/Column/Column";
-import { Row } from "components/Row/Row";
+import { Column, Row } from "components";
 import { useMediaQuery } from "react-responsive";
 
 type PollData = {

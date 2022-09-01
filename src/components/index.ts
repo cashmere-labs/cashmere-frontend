@@ -68,10 +68,10 @@ export {
 export { VoteGauge } from "./DAO/VoteGauge/VoteGauge";
 
 // Gas Estimator
-export { GasEstimatorModal } from "./GasEstimatorModal/GasEstimatorModal";
+export { GasEstimatorModal } from "./Modals/GasEstimatorModal/GasEstimatorModal";
 
 // Transaction Progress Modal
-export { TxProgressModal } from "./TxProgressModal/TxProgressModal";
+export { TxProgressModal } from "./Modals/TxProgressModal/TxProgressModal";
 
 // AccountModal
-export { AccountModal } from "./AccountModal/AccountModal";
+export { AccountModal } from "./Modals/AccountModal/AccountModal";

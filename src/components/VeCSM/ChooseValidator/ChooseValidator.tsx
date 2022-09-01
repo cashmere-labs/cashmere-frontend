@@ -4,9 +4,8 @@ import { useModal, useTheme, useVeCSMStates } from "hooks";
 import { Button, Modal } from "ui";
 import { useMediaQuery } from "react-responsive";
 import { useSelector } from "react-redux";
-import { BecomeValidator } from "components/DAO/BecomeValidator/BecomeValidator";
 import { useState } from "react";
-import { Waiting } from "components/Modals/BecomeValidatorError/Waiting/Waiting";
+import { Waiting, BecomeValidator } from "components";
 
 enum PAGE {
   "FORM",
@@ -35,7 +34,7 @@ const ChooseValidator = () => {
         <div className={styles.buttons}>
           <Button
             height={"46px"}
-            width={miniPhone? "120px":"171px"}
+            width={miniPhone ? "120px" : "171px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(false);
@@ -52,7 +51,7 @@ const ChooseValidator = () => {
           </Button>
           <Button
             height={"46px"}
-            width={miniPhone? "120px":"171px"}
+            width={miniPhone ? "120px" : "171px"}
             fontSize={isPhoneOrPC ? "fs14" : "fs18"}
             onClick={() => {
               changeIsActive(true);

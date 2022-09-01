@@ -3,7 +3,7 @@ import { TransactionStep } from "types/app";
 import { Icon, Modal, Spinner } from "ui";
 import styles from "./TxProgressModal.module.scss";
 import { BiLinkExternal } from "react-icons/bi";
-import { Row } from "components/Row/Row";
+import { Row } from "components";
 import { clsnm } from "utils/clsnm";
 import { ReactNode } from "react";
 import { FaCheck } from "react-icons/fa";

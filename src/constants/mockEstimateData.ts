@@ -1,4 +1,4 @@
-import { EstimateMapping } from "components/GasEstimatorModal/GasEstimatorModal";
+import { EstimateMapping } from "components/Modals/GasEstimatorModal/GasEstimatorModal";
 import {
   ARBITRUM,
   AVALANCHE,

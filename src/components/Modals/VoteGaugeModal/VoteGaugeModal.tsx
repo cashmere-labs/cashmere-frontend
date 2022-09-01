@@ -14,10 +14,12 @@ const VoteGaugeModal = ({
   modal,
   onSuccess,
   whichNetwork,
+  whichToken
 }: {
   modal: ModalController;
   onSuccess: () => void;
   whichNetwork: any;
+  whichToken: any;
 }) => {
   const isPhoneOrPC = useMediaQuery({
     query: "(max-width: 500px)",
@@ -43,7 +45,7 @@ const VoteGaugeModal = ({
           {currentDate.getFullYear()}
         </div>
         <div className={styles.token}>
-          <Token label={TokenTypes.USDT} />
+          <Token label={whichToken} />
         </div>
       </div>
 

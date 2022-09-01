@@ -9,6 +9,7 @@ interface Table {
   datas: any;
   open: () => void;
   setWhichNetwork: any;
+  setWhichToken: any;
 }
 
 const VoteGaugeDesktopTitle = () => {
@@ -30,11 +31,13 @@ const Row = ({
   i,
   open,
   setWhichNetwork,
+  setWhichToken,
 }: {
   data: any;
   i: number;
   open: () => void;
   setWhichNetwork: any;
+  setWhichToken: any;
 }) => {
   const { theme } = useTheme();
 
@@ -74,6 +77,7 @@ const Row = ({
             onClick={() => {
               open();
               setWhichNetwork(data.network);
+              setWhichToken(data.token);
             }}
           >
             Vote / Reset
@@ -84,7 +88,12 @@ const Row = ({
   );
 };
 
-const VoteGaugeDesktopTable = ({ datas, open, setWhichNetwork }: Table) => {
+const VoteGaugeDesktopTable = ({
+  datas,
+  open,
+  setWhichNetwork,
+  setWhichToken,
+}: Table) => {
   return (
     <div className={styles.table}>
       {datas.map((data: any, i: number) => {
@@ -94,6 +103,7 @@ const VoteGaugeDesktopTable = ({ datas, open, setWhichNetwork }: Table) => {
             i={i}
             open={open}
             setWhichNetwork={setWhichNetwork}
+            setWhichToken={setWhichToken}
           />
         );
       })}

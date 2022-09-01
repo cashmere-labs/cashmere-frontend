@@ -31,7 +31,7 @@ export const getBadgeProps = (label: TokenTypes | string) => {
       return {
         icon: UsdcImage,
         name: "USDC",
-        text: "#29A17A",
+        text: "#288f9f",
         bg: "#d8dfff",
       };
     }

@@ -15,6 +15,7 @@ interface Table {
   datas: any;
   open: () => void;
   setWhichNetwork: any;
+  setWhichToken: any;
 }
 
 const VoteGaugePhoneTitle = () => {
@@ -26,7 +27,12 @@ const VoteGaugePhoneTitle = () => {
   );
 };
 
-const VoteGaugePhoneTable = ({ datas, open, setWhichNetwork }: Table) => {
+const VoteGaugePhoneTable = ({
+  datas,
+  open,
+  setWhichNetwork,
+  setWhichToken,
+}: Table) => {
   const miniPhone = useMediaQuery({
     query: "(max-width: 340px)",
   });
@@ -133,6 +139,7 @@ const VoteGaugePhoneTable = ({ datas, open, setWhichNetwork }: Table) => {
                       onClick={() => {
                         open();
                         setWhichNetwork(data.network);
+                        setWhichToken(data.token);
                       }}
                     >
                       Vote / Reset

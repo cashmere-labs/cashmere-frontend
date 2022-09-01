@@ -27,6 +27,7 @@ const VoteGauge = () => {
   });
   const currentDate = new Date();
   const [whichNetwork, setWhichNetwork] = useState(1);
+  const [whichToken, setWhichToken] = useState(1);
   const voteGaugeModal = useModal();
   const network = useNetwork();
 
@@ -60,12 +61,14 @@ const VoteGauge = () => {
           datas={voteData}
           open={voteGaugeModal.open}
           setWhichNetwork={setWhichNetwork}
+          setWhichToken={setWhichToken}
         />
       ) : (
         <VoteGaugeDesktopTable
           datas={voteData}
           open={voteGaugeModal.open}
           setWhichNetwork={setWhichNetwork}
+          setWhichToken={setWhichToken}
         />
       )}
 
@@ -74,6 +77,7 @@ const VoteGauge = () => {
           modal={voteGaugeModal}
           onSuccess={onSuccess}
           whichNetwork={whichNetwork}
+          whichToken={whichToken}
         />
       ) : (
         <Modal isOpen={voteGaugeModal.isOpen} close={voteGaugeModal.close}>

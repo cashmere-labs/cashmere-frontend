@@ -74,7 +74,7 @@ const SwapNetworkSelector = ({
         >
           <IoMdClose />
         </Icon>
-        <span className={styles.title}>
+        <span style={{ color: "var(--text)" }} className={styles.title}>
           Select {options.type === "network" ? "Network" : "Token"}
         </span>
         <div className={styles.search}>

@@ -16,7 +16,13 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "unused-imports", "react-hooks"],
+  plugins: [
+    "react",
+    "@typescript-eslint",
+    "unused-imports",
+    "react-hooks",
+    "sort-keys-fix",
+  ],
   rules: {
     "react-hooks/exhaustive-deps": "error",
     "react/react-in-jsx-scope": "off",
@@ -27,6 +33,7 @@ module.exports = {
     "no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-empty-interface": "warn",
+    "sort-keys-fix/sort-keys-fix": "warn",
     "unused-imports/no-unused-vars": [
       "warn",
       {

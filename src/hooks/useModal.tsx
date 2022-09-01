@@ -15,7 +15,7 @@ export const useModal = (): ModalController => {
   const open = useCallback(() => setIsOpen(true), []);
   const close = useCallback(() => setIsOpen(false), []);
 
-  const modal = useMemo(() => ({ isOpen, open, close }), [isOpen, open, close]);
+  const modal = useMemo(() => ({ close, isOpen, open }), [isOpen, open, close]);
 
   return modal;
 };

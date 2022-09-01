@@ -13,8 +13,6 @@ interface TabProbs extends ComponentPropsWithoutRef<"div"> {
 }
 
 const Tab = ({
-  className,
-  bodyProps = {},
   maxWidth = "126px",
   padding = "5px",
   height = "56px",

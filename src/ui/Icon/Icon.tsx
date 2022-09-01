@@ -23,8 +23,8 @@ const Icon = ({
   ...props
 }: IconProps) => {
   const mainStyles = {
-    fontSize: `${size}px`,
     borderRadius: borderRadius,
+    fontSize: `${size}px`,
     padding: hoverPadding,
     ...style,
   };

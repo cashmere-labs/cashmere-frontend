@@ -282,6 +282,7 @@
       justify-content: space-between;
       align-items: center;
       overflow-y: auto;
+      cursor: pointer;
 
       .option {
         height: 46px;
@@ -293,6 +294,7 @@
         border-radius: 12px;
         font-weight: 500;
         color: var(--upper-box-text-1);
+        cursor: pointer;
 
         @media (max-width: 800px) {
           max-width: 86px;
@@ -303,6 +305,7 @@
       .thisOne {
         background-color: var(--upper-box-bg-3);
         font-weight: 600;
+        cursor: pointer;
       }
     }
 

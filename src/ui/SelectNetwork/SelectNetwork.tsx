@@ -51,6 +51,7 @@ const SelectNetwork = (props: SelectNetworkProps) => {
       <div onClick={() => setExpand(!expand)} ref={reference}>
         <div ref={containerRef}>
           <NetworkBadge
+            hoverable
             size={28}
             className={styles.badge}
             label={currentNetwork}

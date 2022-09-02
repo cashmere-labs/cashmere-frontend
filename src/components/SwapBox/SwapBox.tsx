@@ -123,10 +123,10 @@ const SwapBox = ({
       <SwapSettings modal={swapSettingsModal} swapSettings={swapSettings} />
       <SwapConfirmation
         data={{
-          rataAfterFee: "1 UST = 1.017 USDT",
-          priceImpact: "0.05%",
           fee: "24.169.287 USDT",
           minimumReceived: "15.6235 USDT",
+          priceImpact: "0.05%",
+          rataAfterFee: "1 UST = 1.017 USDT",
         }}
         modalController={swapConfirmationModal}
         swapSettings={swapSettings}
@@ -144,22 +144,20 @@ const SwapBox = ({
       <div className={styles.header}>
         <div>
           <span
+            className={styles.tab}
             onClick={() => setMethod("stable")}
             style={{
-              cursor: "pointer",
               color: method === "stable" ? "var(--text)" : "var(--subtext)",
-              fontSize: "16px",
             }}
           >
             Swap
           </span>
           <span
+            className={styles.tab}
             onClick={() => setMethod("aggregator")}
             style={{
-              cursor: "pointer",
-              marginLeft: "12px",
               color: method === "aggregator" ? "var(--text)" : "var(--subtext)",
-              fontSize: "16px",
+              cursor: "pointer",
             }}
           >
             Aggregator
@@ -322,15 +320,15 @@ const SwapBox = ({
       {/* TO ENDS */}
       <SwapBoxDetails
         data={{
-          rataAfterFee: "1 UST = 1.017 USDT",
-          priceImpact: "0.05%",
           fee: "24.169.287 USDT",
           minimumReceived: "15.6235 USDT",
+          priceImpact: "0.05%",
+          rataAfterFee: "1 UST = 1.017 USDT",
         }}
       />
       <Button
         onClick={handleSwap}
-        style={{ marginTop: "2rem", marginBottom: "1.5rem" }}
+        style={{ marginBottom: "1.5rem", marginTop: "2rem" }}
         height="56px"
         width="100%"
         color={theme === "dark" ? "white" : "black"}

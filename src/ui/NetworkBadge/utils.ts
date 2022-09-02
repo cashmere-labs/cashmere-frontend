@@ -21,66 +21,74 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
   switch (label) {
     case NetworkTypes.AVALANCE: {
       return {
+        bg: "#ffd9da",
+        hoverBg: "#f7c1c3",
         icon: AVALANCHE_IMG,
         name: "Avalanche",
         text: "#e84142",
-        bg: "#ffd9da",
       };
     }
     case NetworkTypes.BNB: {
       return {
+        bg: "#ffe29b",
+        hoverBg: "#fada8c",
         icon: BNB_IMG,
         name: "BNBChain",
         text: "#282b32",
-        bg: "#ffe29b",
       };
     }
     case NetworkTypes.ETHEREUM: {
       return {
+        bg: "#d8dfff",
+        hoverBg: "#ccd5fc",
         icon: ETHEREUM_IMG,
         name: "Ethereum",
         text: "#627eea",
-        bg: "#d8dfff",
       };
     }
     case NetworkTypes.POLYGON: {
       return {
+        bg: "#f0e6ff",
+        hoverBg: "#e9dcfc",
         icon: POLYGON_IMG,
         name: "Polygon",
         text: "#8247e5",
-        bg: "#f0e6ff",
       };
     }
     case NetworkTypes.ARBITRUM: {
       return {
+        bg: "#e0f1ff",
+        hoverBg: "#d9eeff",
         icon: ARBITRUM_IMG,
         name: "Arbitrum",
         text: "#2c374b",
-        bg: "#e0f1ff",
       };
     }
     case NetworkTypes.OPTIMISM: {
       return {
+        bg: "#ffd6d9",
+        hoverBg: "#facace",
         icon: OPTIMISM_IMG,
         name: "Optimism",
         text: "#fc0d20",
-        bg: "#ffd6d9",
       };
     }
     case NetworkTypes.FANTOM: {
       return {
+        bg: "#d6f4ff",
+        hoverBg: "#caeffc",
         icon: FANTOM_IMG,
         name: "Fantom",
         text: "#129cce",
-        bg: "#d6f4ff",
       };
     }
     default:
       return {
+        bg: "#d6f4ff",
+        hoverBg: "#cff2ff",
         icon: QUESTIONMARK,
         name: label,
         text: "#2c374b",
-        bg: "#d6f4ff",
       };
   }
 };

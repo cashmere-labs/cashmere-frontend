@@ -46,7 +46,7 @@ const Swap = () => {
         />
       </div>
       <div onClick={estimateModal.open} className={styles.estimator}>
-        Estimate transfer gas fees
+        <span>Estimate transfer gas fees</span>
       </div>
       <GasEstimatorModal
         modalController={estimateModal}

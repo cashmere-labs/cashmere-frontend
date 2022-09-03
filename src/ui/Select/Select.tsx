@@ -1,5 +1,5 @@
 import { useModal, useOnClickOutside, usePopper } from "hooks";
-import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from "react";
+import { ComponentPropsWithoutRef, ReactNode, useRef } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Icon } from "ui";
 import { clsnm } from "utils/clsnm";
@@ -61,10 +61,8 @@ const Select = ({
   });
 
   const menuRef = useRef<HTMLDivElement>(null);
-  const menuWidth = useMemo(() => {
-    if (!menuRef.current || !isFullWidth) return null;
-    return menuRef.current.offsetWidth;
-  }, [isFullWidth]);
+  const menuWidth =
+    !menuRef.current || !isFullWidth ? null : menuRef.current.offsetWidth;
 
   return (
     <div
@@ -109,7 +107,7 @@ const Select = ({
         <div
           style={{
             ...popperStyles,
-            width: isFullWidth && menuWidth ? menuWidth : undefined,
+            width: isFullWidth && menuWidth ? `${menuWidth}px` : undefined,
           }}
           ref={floating}
           className={clsnm(styles.options, optionsClassName)}

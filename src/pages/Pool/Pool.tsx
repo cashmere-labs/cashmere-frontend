@@ -15,8 +15,8 @@ const Pool = () => {
   useTitle("Pools");
 
   const [filter, setFilter] = useState({
-    token: "All Tokens",
     chain: "All Chains",
+    token: "All Tokens",
   });
 
   const tokenOptions = ["All Tokens", "DAI", "USDC", "USDT"];

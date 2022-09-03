@@ -2,8 +2,8 @@ import { Row } from "components";
 import { useTheme } from "hooks";
 import { usePoolStates } from "hooks";
 import useDimensions from "react-cool-dimensions";
-import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
+import { useTypedSelector } from "store";
 import { Button, Option, Select } from "ui";
 import { clsnm } from "utils/clsnm";
 
@@ -40,7 +40,7 @@ const ChoosePool = ({
     query: "(max-width: 350px)",
   });
   const { resetPoolCount, changeWhichPool } = usePoolStates();
-  const whichPool = useSelector((state: any) => state.pool.whichPool);
+  const whichPool = useTypedSelector((state) => state.pool.whichPool);
   const { theme } = useTheme();
 
   return (
@@ -89,7 +89,6 @@ const ChoosePool = ({
             setValue={() => undefined}
             options={tokenOptions}
             menuClassName={styles.option}
-            // width={selectWidth ? `${width}px !important` : ""}
             width={selectWidth ? `${width - 16}px` : ""}
             optionRenderer={(close) => (
               <>

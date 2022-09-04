@@ -1,13 +1,16 @@
 import { InfoIcon } from "assets/icons";
-import ExitBlack from "assets/icons/exit-black.png";
-import ExitWhite from "assets/icons/exit-white.png";
 import { useTheme } from "hooks";
+import { ModalController } from "hooks/useModal";
 import { useMediaQuery } from "react-responsive";
-import { Icon, Tooltip } from "ui";
+import { Icon, Modal, Tooltip } from "ui";
 
 import styles from "./ExecutedModal.module.scss";
 
-const ExecutedModal = () => {
+type ExecutedModalProps = {
+  modalController: ModalController;
+};
+
+const ExecutedModal = ({ modalController }: ExecutedModalProps) => {
   const { theme } = useTheme();
 
   const isPhoneOrLaptop = useMediaQuery({
@@ -20,13 +23,9 @@ const ExecutedModal = () => {
 
   const barRate = 0.48;
   return (
-    <div className={styles.app}>
+    <Modal isOpen={modalController.isOpen} close={modalController.close}>
       <div className={styles.wrapper}>
-        <img
-          className={styles.exit}
-          src={theme === "light" ? ExitBlack : ExitWhite}
-        ></img>
-        <div>
+        <div className={styles.header}>
           <div className={styles.title}>
             <div>ID: 6</div>
             <div>Executing</div>
@@ -64,7 +63,7 @@ const ExecutedModal = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className={styles.body}>
           <div className={styles.infoRow}>
             <div>
               <div>Creator</div>
@@ -104,7 +103,7 @@ const ExecutedModal = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };
 

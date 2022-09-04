@@ -1,41 +1,18 @@
-.app {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0px 25px;
-}
-
 .wrapper {
-  max-width: 1165px;
   width: 100%;
-  min-height: 584px;
-  padding: 0px 57px;
   padding-bottom: 10px;
-  border-radius: 24px;
-  box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.07),
-    inset 1px 1px 2px 0 var(--DAO-bg-1);
-  background-color: var(--DAO-bg-1);
   position: relative;
-
-  .exit {
-    width: 34px;
-    height: 34px;
-    position: absolute;
-    right: 17px;
-    top: 17px;
-
-    &:hover {
-      transform: scale(1.05);
-      transition: all 0.1s;
-    }
-  }
+  padding: 12px;
 }
 
-.wrapper > :nth-child(2) {
-  margin-top: 55px;
+.wrapper .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .title {
+    margin-right: 32px;
+  }
 
   .title > :nth-child(1) {
     font-size: 20px;
@@ -178,9 +155,10 @@
   }
 }
 
-.wrapper > :nth-child(3) {
+.wrapper .body {
   display: flex;
   flex-direction: column;
+  margin-bottom: 24px;
 
   .infoRow {
     display: flex;

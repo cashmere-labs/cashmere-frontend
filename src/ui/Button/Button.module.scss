@@ -66,12 +66,20 @@
     background: transparent;
     border: solid 1px #e5e5e5 !important;
     color: black !important;
+
+    &:hover {
+      background: rgb(241, 241, 241);
+    }
   }
 
   &.transparentBlack {
     background: transparent;
     border: solid 1px #454545 !important;
     color: white !important;
+
+    &:hover {
+      background: rgb(17, 17, 17);
+    }
   }
 
   &.black {

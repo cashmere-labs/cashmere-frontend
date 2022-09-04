@@ -6,10 +6,16 @@
   box-shadow: var(--shadow4);
 
   padding: 20px 30px;
-
+  transition: 0.1s linear;
   @media (max-width: 768px) {
     flex-direction: column;
     padding: 24px 12px;
+  }
+
+  &:hover {
+    background-color: var(--poll-bg-hover);
+    cursor: pointer;
+    transition: 0.1s linear;
   }
 }
 .pollWrapper {

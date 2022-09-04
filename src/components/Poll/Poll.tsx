@@ -1,6 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import { Column, Row } from "components";
 import { useTheme } from "hooks";
+import { ComponentPropsWithoutRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { clsnm } from "utils/clsnm";
 
@@ -19,6 +20,7 @@ type PollProps = Readonly<{
   isExecuted: boolean;
   estimatedEndTime: string;
   votes: PollData;
+  props?: Partial<ComponentPropsWithoutRef<"div">>;
 }>;
 
 const Poll = ({
@@ -27,6 +29,7 @@ const Poll = ({
   isExecuted,
   estimatedEndTime,
   votes,
+  props,
 }: PollProps) => {
   const { theme } = useTheme();
   const isSmall = useMediaQuery({
@@ -34,7 +37,7 @@ const Poll = ({
   });
 
   return (
-    <div className={clsnm(styles.wrapper)}>
+    <div {...props} className={clsnm(styles.wrapper, props?.className)}>
       <Column className={styles.contentWrapper} justifyContent="space-between">
         <Row justifyContent="flex-start">
           <div className={styles.id}>ID: {id}</div>

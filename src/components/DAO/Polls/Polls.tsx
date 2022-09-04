@@ -60,6 +60,9 @@ const Polls = () => {
       <div className={styles.polls}>
         <div className={styles.poll}>
           <Poll
+            props={{
+              onClick: () => undefined,
+            }}
             id="6"
             title="Register Liquidation Queue Contract"
             isExecuted={true}

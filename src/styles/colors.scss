@@ -208,6 +208,7 @@ body.light {
 
   // Poll
   --poll-bg: white;
+  --poll-bg-hover: rgb(248, 248, 248);
   --poll-chartbox: #efeded;
 
   // Unstake Warning
@@ -458,6 +459,7 @@ body.dark {
 
   // Poll
   --poll-bg: #232323;
+  --poll-bg-hover: #1c1c1c;
   --poll-chartbox: #2f2f2f;
 
   // Unstake Warning

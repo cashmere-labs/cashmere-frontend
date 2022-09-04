@@ -33,7 +33,7 @@ const Polls = () => {
             height="40px"
             placeholder="Search"
             rightEl={
-              <Icon size={14}>
+              <Icon style={{ color: "var(--text)" }} size={14}>
                 <FaSearch />
               </Icon>
             }

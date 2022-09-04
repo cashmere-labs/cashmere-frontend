@@ -1,3 +1,8 @@
+.table {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
 .tableTitle {
   height: 72px;
   display: flex;
@@ -44,6 +49,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--vote-gauge-bg-1);
+  border-radius: inherit;
 
   .line {
     width: 100%;
@@ -57,6 +63,11 @@
     justify-content: space-between;
     align-items: center;
     color: var(--vote-gauge-text-3);
+
+    &:last-child {
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
 
     .logo {
       display: flex;

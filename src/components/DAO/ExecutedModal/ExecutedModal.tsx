@@ -3,14 +3,16 @@ import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
 import { useMediaQuery } from "react-responsive";
 import { Icon, Modal, Tooltip } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 import styles from "./ExecutedModal.module.scss";
 
 type ExecutedModalProps = {
   modalController: ModalController;
+  network: NetworkTypes | string;
 };
 
-const ExecutedModal = ({ modalController }: ExecutedModalProps) => {
+const ExecutedModal = ({ modalController, network }: ExecutedModalProps) => {
   const { theme } = useTheme();
 
   const isPhoneOrLaptop = useMediaQuery({
@@ -23,7 +25,11 @@ const ExecutedModal = ({ modalController }: ExecutedModalProps) => {
 
   const barRate = 0.48;
   return (
-    <Modal isOpen={modalController.isOpen} close={modalController.close}>
+    <Modal
+      network={network}
+      isOpen={modalController.isOpen}
+      close={modalController.close}
+    >
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <div className={styles.title}>

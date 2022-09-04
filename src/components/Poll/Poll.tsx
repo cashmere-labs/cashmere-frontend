@@ -1,5 +1,5 @@
 import { ResponsivePie } from "@nivo/pie";
-import { Column, ExecutedModal, Row } from "components";
+import { Column, ExecutingModal, Row } from "components";
 import { useModal, useTheme } from "hooks";
 import { useMediaQuery } from "react-responsive";
 import { useNetwork } from "store/hooks/networkHooks";
@@ -39,7 +39,7 @@ const Poll = ({
 
   return (
     <>
-      <ExecutedModal network={network} modalController={modal} />
+      <ExecutingModal network={network} modalController={modal} />
       <div onClick={modal.open} className={clsnm(styles.wrapper)}>
         <Column
           className={styles.contentWrapper}

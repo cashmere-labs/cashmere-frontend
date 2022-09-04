@@ -1,15 +1,19 @@
 import { InfoIcon } from "assets/icons";
 import { useTheme } from "hooks";
-import { useFormValidator } from "hooks/useFormValidator";
 import { ModalController } from "hooks/useModal";
-import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Alert, Button, Icon, Input, Modal, Tooltip } from "ui";
-import { isValidNumberInput } from "utils/isValidNumberInput";
+import { Button, Icon, Modal, Tooltip } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 import styles from "./ExecutingModal.module.scss";
 
-const ExecutingModal = ({ modal }: { modal: ModalController }) => {
+const ExecutingModal = ({
+  modalController,
+  network,
+}: {
+  modalController: ModalController;
+  network: NetworkTypes | string;
+}) => {
   const { theme } = useTheme();
   // const {ref} = useRef();
 
@@ -22,30 +26,16 @@ const ExecutingModal = ({ modal }: { modal: ModalController }) => {
   });
   const barRate = 0.78;
 
-  const [amount, setAmount] = useState<string>("");
-  const { validator, errors, setErrors } = useFormValidator();
-
   const onSubmit = () => {
-    if (amount.trim() === "") {
-      validator.setError("amount", "Enter amount");
-    }
-
-    // TODO: Change 100 with real balance
-    if (Number(amount) > 100) {
-      validator.setError("amount", "Insufficient balance");
-    }
-
-    if (validator.hasError()) {
-      setErrors(validator.errors);
-      validator.clearErrors();
-    } else {
-      setErrors({});
-      validator.clearErrors();
-    }
+    return null;
   };
 
   return (
-    <Modal isOpen={modal.isOpen} close={modal.close}>
+    <Modal
+      network={network}
+      isOpen={modalController.isOpen}
+      close={modalController.close}
+    >
       <div className={styles.app}>
         <div className={styles.wrapper}>
           <div></div>
@@ -128,39 +118,7 @@ const ExecutingModal = ({ modal }: { modal: ModalController }) => {
               </div>
             </div>
           </div>
-          <div>BALANCE 24,689.905</div>
-          <div>
-            <Input
-              value={amount}
-              onChange={(e) => {
-                if (!isValidNumberInput(e.target.value)) {
-                  return;
-                }
-                setAmount(e.target.value);
-              }}
-              placeholder="Amount"
-              className={styles.input}
-              extendLeft
-              hideBorder={true}
-            />
-            <Button
-              height="25px"
-              width="45px"
-              fontSize={"fs12"}
-              fontWeight="fw600"
-              onClick={() => undefined}
-              color={theme === "light" ? "white" : "white"}
-            >
-              Max
-            </Button>
-            <div>VeCSM</div>
-          </div>
-          {errors.amount ? (
-            <Alert style={{ marginTop: "8px" }} label={errors.amount} />
-          ) : (
-            <div></div>
-          )}
-          <div>
+          <div className={styles.buttons}>
             <Button
               height={isPhoneOrLaptop ? "34px" : "56px"}
               width={isPhoneOrLaptop ? "300px" : "514px"}

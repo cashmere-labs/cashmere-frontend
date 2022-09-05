@@ -43,7 +43,7 @@
 
   .title > :nth-child(3) {
     font-size: 32px;
-    font-weight: bold;
+    font-weight: normal; // bold
     line-height: 1.13;
     color: var(--DAO-text-3);
     margin-bottom: 24px;
@@ -280,7 +280,7 @@
 
     .title > :nth-child(3) {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: normal; // bold
       line-height: 1.33;
       color: var(--DAO-text-3);
       margin-bottom: 20px;

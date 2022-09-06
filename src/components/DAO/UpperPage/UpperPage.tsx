@@ -1,7 +1,5 @@
 import { InfoIcon } from "assets/icons";
-import LOGOBLACK from "assets/images/cashmere.png";
-import LOGOWHITE from "assets/images/cashmereWhite.png";
-import { Waiting } from "components";
+import { Logo, Waiting } from "components";
 import { useModal, useTheme } from "hooks";
 import { useState } from "react";
 import { Button, Icon, Modal, Tooltip } from "ui";
@@ -104,7 +102,7 @@ const UpperPage = () => {
       </div>
       <div className={styles.farm}>
         <div className={styles.logo}>
-          <img src={theme === "light" ? LOGOBLACK : LOGOWHITE}></img>
+          <Logo hideLabel disableLink />
         </div>
         <div className={styles.lp}>
           <div> CSM-USN LP</div>

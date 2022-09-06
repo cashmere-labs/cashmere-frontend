@@ -2,17 +2,27 @@ import BlackLogo from "assets/images/logos/black.svg";
 import WhiteLogo from "assets/images/logos/white.svg";
 import { useTheme } from "hooks";
 import { Link } from "react-router-dom";
+import { clsnm } from "utils/clsnm";
 
 import styles from "./Logo.module.scss";
 
-const Logo = ({ disableLink = false }: { disableLink?: boolean }) => {
+const Logo = ({
+  disableLink = false,
+  hideLabel = false,
+}: {
+  disableLink?: boolean;
+  hideLabel?: boolean;
+}) => {
   const { theme } = useTheme();
 
   return (
     <div className={styles.logoWrapper}>
-      <Link className="link" to={disableLink ? "#" : "/"}>
+      <Link
+        className={clsnm("link", disableLink && styles.disabled)}
+        to={disableLink ? "#" : "/"}
+      >
         <img alt="logo" src={theme === "dark" ? WhiteLogo : BlackLogo} />
-        <span>Cashmere</span>
+        {!hideLabel && <span>Cashmere</span>}
       </Link>
     </div>
   );

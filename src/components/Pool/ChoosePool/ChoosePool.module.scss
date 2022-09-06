@@ -14,15 +14,6 @@
 
     .buttons {
       display: flex;
-
-      .poolButtonOn {
-        background-color: white !important;
-      }
-
-      .poolButtonOff {
-        background-color: transparent !important;
-        color: var(--pool-text-6);
-      }
     }
 
     .TVLInfo {
@@ -161,4 +152,16 @@
       border-radius: 25px;
     }
   }
+}
+
+.poolButton {
+  color: var(--text) !important;
+}
+
+.poolButtonOn {
+  background-color: var(--pool-button-active) !important;
+}
+
+.poolButtonOff {
+  background-color: transparent !important;
 }

@@ -5,6 +5,7 @@ body {
 body.light {
   // Misc
   --text: black;
+  --text-inverse: white;
   --subtext: rgba(0, 0, 0, 0.478);
   --main-bg: #f5f5f5;
   --icon-dark: #999999;
@@ -75,6 +76,7 @@ body.light {
   --pool-text-8: #f5f5f5;
   --pool-text-9: #eaeaea;
   --pool-table-hover: rgb(240, 240, 240);
+  --pool-button-active: white;
 
   // Tooltip
   --tooltip-bg: white;
@@ -257,6 +259,7 @@ body.light {
 body.dark {
   // Misc
   --text: white;
+  --text-inverse: black;
   --subtext: rgba(205, 205, 205, 0.478);
   --main-bg: black;
   --icon-dark: #999999;
@@ -326,6 +329,7 @@ body.dark {
   --pool-text-8: #2d2d2d;
   --pool-text-9: #727272;
   --pool-table-hover: black;
+  --pool-button-active: #343434;
 
   // Tooltip
   --tooltip-bg: black;

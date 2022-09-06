@@ -55,9 +55,10 @@ const ChoosePool = ({
               changeWhichPool(false);
               resetPoolCount();
             }}
-            color={theme === "light" ? "white" : "white"}
+            color="white"
             className={clsnm(
               whichPool ? styles.poolButtonOff : styles.poolButtonOn,
+              styles.poolButton,
             )}
             fontWeight={whichPool ? "fw500" : "fw600"}
           >
@@ -74,6 +75,7 @@ const ChoosePool = ({
             color={theme === "light" ? "white" : "white"}
             className={clsnm(
               !whichPool ? styles.poolButtonOff : styles.poolButtonOn,
+              styles.poolButton,
             )}
             fontWeight={!whichPool ? "fw500" : "fw600"}
           >

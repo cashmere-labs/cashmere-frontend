@@ -1,16 +1,22 @@
 import { Balance, UpperBox } from "components";
-import { FaChevronDown } from "react-icons/fa";
-import { Container } from "ui";
+import { FaChevronRight } from "react-icons/fa";
+import { useNetwork } from "store/hooks/networkHooks";
+import { Container, NetworkBadge } from "ui";
 
 import styles from "./Manage.module.scss";
 
 const Manage = () => {
+  const network = useNetwork();
+
   return (
     <Container className={styles.wrapper} compact>
       <div className={styles.title}>
-        <div>DAO POOLS</div>
-        <FaChevronDown />
-        <div>Jump Crypto</div>
+        <div className={styles.left}>
+          <div>DAO POOLS</div>
+          <FaChevronRight />
+          <div>Jump Crypto</div>
+        </div>
+        <NetworkBadge label={network} />
       </div>
       <div className={styles.upperBox}>
         <UpperBox />

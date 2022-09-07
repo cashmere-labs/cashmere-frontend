@@ -27,7 +27,7 @@ const Liquidity = ({ onSuccess }: { onSuccess: () => void }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <div>Remove Liquidity</div>
+        <div>{`${isPlus ? "Add" : "Remove"}`} Liquidity</div>
         <div className={isPlus ? styles.bgPlus : styles.bgMinus}>
           <div className={styles.dot} onClick={() => setIsPlus(!isPlus)}>
             {isPlus ? (

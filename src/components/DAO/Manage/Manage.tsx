@@ -14,7 +14,9 @@ const Manage = () => {
         <div className={styles.left}>
           <div>DAO POOLS</div>
           <FaChevronRight />
-          <div>Jump Crypto</div>
+          <div className={styles.poolName}>
+            CSM<sub>ETH</sub>
+          </div>
         </div>
         <NetworkBadge label={network} />
       </div>

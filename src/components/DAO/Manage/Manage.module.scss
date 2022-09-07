@@ -36,6 +36,12 @@
   margin: 0px 8px;
 }
 
+.poolName {
+  & sub {
+    font-size: 10px;
+  }
+}
+
 .upperBox {
   width: 100%;
   display: flex;

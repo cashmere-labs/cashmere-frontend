@@ -88,11 +88,12 @@
         justify-content: center;
         align-items: center;
         margin-right: 10px;
+        padding: 5px;
 
         .bg {
           border-radius: 12px;
           background-color: var(--gauge-boost-bg-5);
-          max-width: 248px;
+          // max-width: 248px;
           width: 100%;
           height: 46px;
           position: relative;
@@ -136,11 +137,12 @@
         justify-content: center;
         align-items: center;
         margin-left: 10px;
+        padding: 5px;
 
         .bg {
           border-radius: 12px;
           background-color: var(--gauge-boost-bg-5);
-          max-width: 248px;
+          // max-width: 218px;
           width: 100%;
           height: 46px;
           position: relative;

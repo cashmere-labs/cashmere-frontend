@@ -14,15 +14,6 @@
     .buttons {
       display: flex;
       margin-left: 6px;
-
-      .poolButtonOn {
-        background-color: white !important;
-      }
-
-      .poolButtonOff {
-        background-color: transparent !important;
-        color: var(--veCSM-text-3);
-      }
     }
 
     .BecomeValidator {
@@ -75,4 +66,16 @@
       }
     }
   }
+}
+
+.poolButton {
+  color: var(--text) !important;
+}
+
+.poolButtonOn {
+  background-color: var(--pool-button-active) !important;
+}
+
+.poolButtonOff {
+  background-color: transparent !important;
 }

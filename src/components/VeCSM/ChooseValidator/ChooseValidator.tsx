@@ -41,9 +41,10 @@ const ChooseValidator = () => {
               changeIsActive(false);
               resetValidatorCount();
             }}
-            color={theme === "light" ? "white" : "white"}
+            color="white"
             className={clsnm(
               isActive ? styles.poolButtonOff : styles.poolButtonOn,
+              styles.poolButton,
             )}
             fontWeight={isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"
@@ -58,9 +59,10 @@ const ChooseValidator = () => {
               changeIsActive(true);
               resetValidatorCount();
             }}
-            color={theme === "light" ? "white" : "white"}
+            color="white"
             className={clsnm(
               !isActive ? styles.poolButtonOff : styles.poolButtonOn,
+              styles.poolButton,
             )}
             fontWeight={!isActive ? "fw500" : "fw600"}
             lineHeight="lhNormal"

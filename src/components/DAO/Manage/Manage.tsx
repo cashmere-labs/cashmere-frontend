@@ -1,12 +1,36 @@
 import { Balance, UpperBox } from "components";
+import { useManageParams } from "hooks/useManageParams";
+import { useMemo } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { useNetwork } from "store/hooks/networkHooks";
 import { Container, NetworkBadge } from "ui";
+import { NetworkTypes } from "ui/NetworkBadge/utils";
+
+import { LockersDatas, MyLocksDatas } from "components/VeCSM/datas";
 
 import styles from "./Manage.module.scss";
 
 const Manage = () => {
   const network = useNetwork();
+  const { id } = useManageParams();
+
+  const data = useMemo(() => {
+    const myLockCheck = MyLocksDatas.find((item) => item.id === Number(id));
+    const allLockCheck = LockersDatas.find((item) => item.id === Number(id));
+
+    return myLockCheck ?? allLockCheck ?? null;
+  }, [id]);
+
+  const shortenNetworkName = (network?: NetworkTypes | string) => {
+    if (network == null) {
+      return "";
+    }
+    const name = String(NetworkTypes[network as NetworkTypes]);
+    if (name === "ETHEREUM") {
+      return "ETH";
+    }
+    return name;
+  };
 
   return (
     <Container className={styles.wrapper} compact>
@@ -15,7 +39,7 @@ const Manage = () => {
           <div>DAO POOLS</div>
           <FaChevronRight />
           <div className={styles.poolName}>
-            CSM<sub>ETH</sub>
+            CSM<sub>{shortenNetworkName(data?.network)}</sub>
           </div>
         </div>
         <NetworkBadge label={network} />

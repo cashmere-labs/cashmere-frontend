@@ -48,7 +48,7 @@ export const LockersDatas: Lockers[] = [
 
 export const MyLocksDatas: MyLocks[] = [
   {
-    id: 1,
+    id: 8,
     network: NetworkTypes.ETHEREUM,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -56,7 +56,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 2,
+    id: 9,
     network: NetworkTypes.BNB,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -64,7 +64,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 3,
+    id: 10,
     network: NetworkTypes.AVALANCE,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -72,7 +72,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 4,
+    id: 11,
     network: NetworkTypes.POLYGON,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -80,7 +80,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 5,
+    id: 12,
     network: NetworkTypes.ARBITRUM,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -88,7 +88,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 6,
+    id: 13,
     network: NetworkTypes.OPTIMISM,
     weeklyFees: "285.150",
     claimableFees: "285.150",
@@ -96,7 +96,7 @@ export const MyLocksDatas: MyLocks[] = [
     myLockedCSM: "150,000",
   },
   {
-    id: 7,
+    id: 14,
     network: NetworkTypes.FANTOM,
     weeklyFees: "285.150",
     claimableFees: "285.150",

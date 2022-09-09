@@ -96,7 +96,7 @@ export const getBadgeProps = (label: NetworkTypes | string) => {
 export const stringToBadgeType = (_str: string) => {
   const str = _str.toUpperCase();
   switch (str) {
-    case "AVALANCE": {
+    case "AVALANCHE": {
       return NetworkTypes.AVALANCE;
     }
     case "ETHEREUM": {

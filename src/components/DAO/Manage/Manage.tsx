@@ -42,7 +42,7 @@ const Manage = () => {
             CSM<sub>{shortenNetworkName(data?.network)}</sub>
           </div>
         </div>
-        <NetworkBadge label={network} />
+        {data?.network != null && <NetworkBadge label={data?.network} />}
       </div>
       <div className={styles.upperBox}>
         <UpperBox />

@@ -26,7 +26,7 @@ const Stake = ({ onSuccess }: { onSuccess: () => void }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
-        <div>Stake Liquidity</div>
+        <div>{isPlus ? "Stake" : "Unstake"} Liquidity</div>
         <div className={isPlus ? styles.bgPlus : styles.bgMinus}>
           <div className={styles.dot} onClick={() => setIsPlus(!isPlus)}>
             {isPlus ? (

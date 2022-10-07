@@ -8,37 +8,41 @@ import {
 } from "components";
 import { useModal, useTheme } from "hooks";
 import { usePoolStates } from "hooks";
+import { FilterType, PoolTab } from "pages/Pool/Pool";
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
+import { useTypedSelector } from "store";
 import { Button, Modal } from "ui";
 import { clsnm } from "utils/clsnm";
 
 import { GlobalData, PersonalData } from "../datas";
 import styles from "./Pools.module.scss";
 
-enum PAGE {
+enum Page {
   "FORM",
   "SUCCESS",
 }
 
-const Pools = ({ filter }: any) => {
-  const whichPool = useSelector((state: any) => state.pool.whichPool);
-  const poolCount = useSelector((state: any) => state.pool.poolCount);
-  const functionName = useSelector((state: any) => state.pool.functionName);
-  const value = useSelector((state: any) => state.pool.value);
+type PoolsProps = {
+  filter: FilterType;
+  poolTab: PoolTab;
+};
 
-  const [whichModal, setWhichModal] = useState<PAGE>(PAGE.FORM);
+const Pools = ({ filter, poolTab }: PoolsProps) => {
+  const poolCount = useTypedSelector((state) => state.pool.poolCount);
+  const functionName = useTypedSelector((state) => state.pool.functionName);
+  const value = useTypedSelector((state) => state.pool.value);
+
+  const [whichModal, setWhichModal] = useState<Page>(Page.FORM);
 
   const stakeModal = useModal();
   const [whichNetwork, setWhichNetwork] = useState();
-
   const { increasePoolCount } = usePoolStates();
   const isPhoneOrLaptop = useMediaQuery({
     query: "(max-width: 850px)",
   });
   const { theme } = useTheme();
-  const whichData = whichPool ? PersonalData : GlobalData;
+  const whichData = poolTab === PoolTab.MY ? PersonalData : GlobalData;
 
   return (
     <div className={styles.wrapper}>
@@ -46,11 +50,11 @@ const Pools = ({ filter }: any) => {
         {isPhoneOrLaptop ? (
           <PoolPhoneTitle />
         ) : (
-          <PoolDesktopTitle whichPool={whichPool} />
+          <PoolDesktopTitle whichPool={poolTab === PoolTab.MY} />
         )}
         {isPhoneOrLaptop ? (
           <PoolPhoneTable
-            whichPool={whichPool}
+            whichPool={poolTab === PoolTab.MY}
             bodyCount={poolCount}
             modal={stakeModal}
             datas={whichData}
@@ -59,7 +63,7 @@ const Pools = ({ filter }: any) => {
           />
         ) : (
           <PoolDesktopTable
-            whichPool={whichPool}
+            whichPool={poolTab === PoolTab.MY}
             bodyCount={poolCount}
             modal={stakeModal}
             datas={whichData}
@@ -71,7 +75,7 @@ const Pools = ({ filter }: any) => {
       <div className={styles.footer}>
         The base emission rate is currently 1.5 CSM per second.
       </div>
-      {whichPool
+      {poolTab === PoolTab.MY
         ? PersonalData.length > poolCount && (
             <div className={styles.more}>
               <Button
@@ -105,10 +109,10 @@ const Pools = ({ filter }: any) => {
               </Button>
             </div>
           )}
-      {whichModal === PAGE.FORM ? (
+      {whichModal === Page.FORM ? (
         <LiquidityStakeReward
           modal={stakeModal}
-          onSuccess={() => setWhichModal(PAGE.SUCCESS)}
+          onSuccess={() => setWhichModal(Page.SUCCESS)}
           whichNetwork={whichNetwork}
         />
       ) : (
@@ -116,7 +120,7 @@ const Pools = ({ filter }: any) => {
           isOpen={stakeModal.isOpen}
           close={() => {
             stakeModal.close();
-            setWhichModal(PAGE.FORM);
+            setWhichModal(Page.FORM);
           }}
         >
           <Waiting

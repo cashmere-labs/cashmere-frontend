@@ -1,8 +1,9 @@
 import { RotateIcon, SettingsIcon } from "assets/icons";
 import { Row } from "components";
 import { SwapConfirmation, TokenOrNetworkRenderer } from "components";
-import { ARBITRUM, AURORA, POLYGON } from "constants/networks";
-import { Dai, Tetherus } from "constants/tokens";
+import { networkOptions } from "constants/networkOptions";
+import { ETHEREUM, POLYGON } from "constants/networks";
+import { tokenOptions } from "constants/tokenOptions";
 import { useAccount, useConnection } from "ethylene/hooks";
 import { useModal, useTheme } from "hooks";
 import { SwapState } from "pages/Swap/Swap";
@@ -31,9 +32,6 @@ const SwapBox = ({
   const { auth } = useAccount();
   const { connect } = useConnection();
   const [method, setMethod] = useState<"stable" | "aggregator">("stable");
-
-  const tokenOptions = [Tetherus, Dai];
-  const networkOptions = [POLYGON, ARBITRUM];
 
   const swapSettingsModal = useModal();
   const swapConfirmationModal = useModal();
@@ -335,7 +333,7 @@ const SwapBox = ({
       >
         {getSwapButtonContent()}
       </Button>
-      <PathRenderer path={[AURORA, POLYGON]} />
+      <PathRenderer path={[ETHEREUM, POLYGON]} />
     </div>
   );
 };
@@ -344,7 +342,7 @@ const PathRenderer = ({ path }: { path: Network[] }): ReactElement => {
   return (
     <Row
       marginBottom={8}
-      style={{ width: "max-content", marginLeft: "auto", marginRight: "auto" }}
+      style={{ marginLeft: "auto", marginRight: "auto", width: "max-content" }}
       justifyContent="center"
     >
       {path.map((item, key) => (
@@ -355,7 +353,7 @@ const PathRenderer = ({ path }: { path: Network[] }): ReactElement => {
         >
           <TokenOrNetworkRenderer tokenOrNetwork={item} imgSize={20} />
           {key !== path.length - 1 && (
-            <Icon style={{ marginLeft: "16px", color: "var(--text)" }}>
+            <Icon style={{ color: "var(--text)", marginLeft: "16px" }}>
               <FaChevronRight />
             </Icon>
           )}

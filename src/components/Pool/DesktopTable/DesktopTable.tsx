@@ -1,9 +1,10 @@
 import { InfoIcon } from "assets/icons";
 import { ModalController } from "hooks/useModal";
+import { FilterType } from "pages/Pool/Pool";
 import { useDispatch } from "react-redux";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
 import { Icon, NetworkBadge, Tooltip } from "ui";
-import { getBadgeProps } from "ui/NetworkBadge/utils";
+import { getNetworkFromNetwork } from "utils/getNetworkFromNetwork";
 
 import styles from "./DesktopTable.module.scss";
 
@@ -12,7 +13,7 @@ interface Table {
   bodyCount: number;
   modal: ModalController;
   datas: any;
-  filter: any;
+  filter: FilterType;
   setWhichNetwork: any;
 }
 
@@ -59,11 +60,7 @@ const PoolDesktopTable = ({
   return (
     <div>
       {datas.map((data: any, i: number) => {
-        if (
-          i < bodyCount &&
-          filter.token === "All Tokens" &&
-          filter.chain === "All Chains"
-        ) {
+        if (i < bodyCount && filter.token == null && filter.network === null) {
           return (
             <Row
               key={i}
@@ -75,10 +72,10 @@ const PoolDesktopTable = ({
             />
           );
         } else if (
-          !(filter.token === "All Tokens" && filter.chain === "All Chains") &&
-          (data.name === filter.token || filter.token === "All Tokens") &&
-          (filter.chain === "All Chains" ||
-            getBadgeProps(data.network).name === filter.chain)
+          !(filter.token == null && filter.network === null) &&
+          (data.name === filter.token?.name || filter.token === null) &&
+          (filter.network === null ||
+            getNetworkFromNetwork(data.network)?.name === filter.network.name)
         ) {
           return (
             <Row

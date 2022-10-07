@@ -2,7 +2,7 @@ import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 export type MapStringToString = { [key: string]: string };
 
-export type ILockData<Data = {}> = {
+export type ILockData<Data> = {
   id: string | number;
   network: NetworkTypes;
   weeklyFees: string;
@@ -31,4 +31,15 @@ export type AccountBalance = {
   native: string;
   usd: string;
   image: string;
+};
+
+export type PoolData = {
+  CR: string;
+  logo: string;
+  myAPR: string;
+  name: string;
+  network: NetworkTypes;
+  rewards: string;
+  stakedLP: string;
+  veAPR: string;
 };

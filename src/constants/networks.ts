@@ -11,7 +11,6 @@ import { Network } from "types/network";
 import { NetworkTypes } from "ui/NetworkBadge/utils";
 
 export const GOERLI: EthyleneNetwork = {
-  rpcUrls: ["https://rpc.goerli.mudit.blog/"],
   chainId: "0x5",
   name: "Goerly Testnet",
   nativeCurrency: {
@@ -19,102 +18,103 @@ export const GOERLI: EthyleneNetwork = {
     name: "Ether",
     symbol: "ETH",
   },
+  rpcUrls: ["https://rpc.goerli.mudit.blog/"],
 };
 
 export const AURORA: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: AuroraImage,
   name: "Aurora",
   nativeCurrency: {
     decimals: 18,
     name: "ADTX",
     symbol: "",
   },
-  imageUrl: AuroraImage,
+  rpcUrls: [""],
 };
 
 export const POLYGON: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: POLYGON_IMAGE,
   name: "Polygon",
   nativeCurrency: {
     decimals: 18,
     name: "MATIC",
     symbol: "",
   },
-  imageUrl: POLYGON_IMAGE,
+  rpcUrls: [""],
 };
 
 export const AVALANCHE: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: AVALANCHE_IMAGE,
   name: "Avalance",
   nativeCurrency: {
     decimals: 18,
     name: "AVAX",
     symbol: "",
   },
-  imageUrl: AVALANCHE_IMAGE,
+  rpcUrls: [""],
 };
 
 export const BNB: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: BNB_IMAGE,
   name: "BNB",
   nativeCurrency: {
     decimals: 18,
     name: "BNB",
     symbol: "",
   },
-  imageUrl: BNB_IMAGE,
+  rpcUrls: [""],
 };
 
 export const OPTIMISM: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: OPTIMISM_IMAGE,
   name: "Optimism",
   nativeCurrency: {
     decimals: 18,
     name: "OP",
     symbol: "",
   },
-  imageUrl: OPTIMISM_IMAGE,
+  rpcUrls: [""],
 };
 
 export const FANTOM: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: FANTOM_IMAGE,
   name: "Fantom",
   nativeCurrency: {
     decimals: 18,
     name: "FTM",
     symbol: "",
   },
-  imageUrl: FANTOM_IMAGE,
+  rpcUrls: [""],
 };
 
 export const ARBITRUM: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: ARBITRUM_IMAGE,
   name: "Arbitrum",
   nativeCurrency: {
     decimals: 18,
     name: "AETH",
     symbol: "",
   },
-  imageUrl: ARBITRUM_IMAGE,
+  rpcUrls: [""],
 };
 
 export const ETHEREUM: Network = {
-  rpcUrls: [""],
   chainId: "",
+  imageUrl: ETHEREUM_IMAGE,
   name: "Ethereum",
   nativeCurrency: {
     decimals: 18,
     name: "ETH",
     symbol: "",
   },
-  imageUrl: ETHEREUM_IMAGE,
+  rpcUrls: [""],
 };
 
 export const networkTypes = [

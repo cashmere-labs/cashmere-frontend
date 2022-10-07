@@ -3,12 +3,14 @@ import DOWNBLACK from "assets/pool/down-icon-black.png";
 import DOWNWHITE from "assets/pool/down-icon-white.png";
 import { useTheme } from "hooks";
 import { ModalController } from "hooks/useModal";
+import { FilterType } from "pages/Pool/Pool";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setWhichGlobalModal, setWhichPersonalModal } from "store/slicers/pool";
+import { PoolData } from "types/app";
 import { Icon, NetworkBadge, Tooltip } from "ui";
-import { getBadgeProps } from "ui/NetworkBadge/utils";
 import { clsnm } from "utils/clsnm";
+import { getNetworkFromNetwork } from "utils/getNetworkFromNetwork";
 
 import styles from "./PhoneTable.module.scss";
 
@@ -16,8 +18,8 @@ interface Table {
   whichPool?: boolean;
   bodyCount: number;
   modal: ModalController;
-  datas: any;
-  filter: any;
+  datas: PoolData[];
+  filter: FilterType;
   setWhichNetwork: any;
 }
 
@@ -73,12 +75,8 @@ const PoolPhoneTable = ({
   const dispatch = useDispatch();
   return (
     <>
-      {datas.map((data: any, i: number) => {
-        if (
-          i < bodyCount &&
-          filter.token === "All Tokens" &&
-          filter.chain === "All Chains"
-        ) {
+      {datas.map((data, i: number) => {
+        if (i < bodyCount && filter.token === null && filter.network == null) {
           return (
             <div
               className={clsnm(
@@ -109,7 +107,7 @@ const PoolPhoneTable = ({
                   <div className={styles.logoAndName}>
                     {data.logo && (
                       <img
-                        style={{ width: "25px", marginRight: "8.5px" }}
+                        style={{ marginRight: "8.5px", width: "25px" }}
                         src={data.logo}
                         alt="Logo"
                       ></img>
@@ -178,9 +176,9 @@ const PoolPhoneTable = ({
             </div>
           );
         } else if (
-          (data.name === filter.token || filter.token === "All Tokens") &&
-          (filter.chain === "All Chains" ||
-            getBadgeProps(data.network).name === filter.chain)
+          (data.name === filter.token?.name || filter.token == null) &&
+          (filter.network == null ||
+            getNetworkFromNetwork(data.network)?.name === filter.network.name)
         ) {
           return (
             <div
@@ -211,7 +209,7 @@ const PoolPhoneTable = ({
                   <div className={styles.logoAndName}>
                     {data.logo && (
                       <img
-                        style={{ width: "25px", marginRight: "8.5px" }}
+                        style={{ marginRight: "8.5px", width: "25px" }}
                         src={data.logo}
                         alt="Logo"
                       ></img>
@@ -288,7 +286,7 @@ const PoolPhoneTable = ({
 interface Row {
   whichPool?: boolean;
   modal: ModalController;
-  data: any;
+  data: PoolData;
   index: number;
   bodyOpenGlobal: any;
   setBodyOpenGlobal: any;
@@ -335,7 +333,7 @@ const Row = ({
           <div className={styles.logoAndName}>
             {data.logo && (
               <img
-                style={{ width: "25px", marginRight: "8.5px" }}
+                style={{ marginRight: "8.5px", width: "25px" }}
                 src={data.logo}
                 alt="Logo"
               ></img>
@@ -350,7 +348,7 @@ const Row = ({
             />
           </div>
           <div className={styles.cRatio}>
-            <span>{data[index].CR} %</span>
+            <span>{data.CR} %</span>
           </div>
         </div>
         <img

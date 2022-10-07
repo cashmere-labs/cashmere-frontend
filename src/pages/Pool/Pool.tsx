@@ -5,31 +5,35 @@ import {
   Navbar,
   Pools,
 } from "components";
+import { networkOptions } from "constants/networkOptions";
+import { tokenOptions } from "constants/tokenOptions";
 import { useTitle } from "hooks/useTitle";
 import { useState } from "react";
+import { Network } from "types/network";
+import { Token } from "types/token";
 import { Layout } from "ui";
 
 import styles from "./Pool.module.scss";
 
+export type FilterType = {
+  network: null | Network;
+  token: null | Token;
+};
+
+export enum PoolTab {
+  "ALL",
+  "MY",
+}
+
 const Pool = () => {
   useTitle("Pools");
 
-  const [filter, setFilter] = useState({
-    chain: "All Chains",
-    token: "All Tokens",
+  const [filter, setFilter] = useState<FilterType>({
+    network: null,
+    token: null,
   });
 
-  const tokenOptions = ["All Tokens", "DAI", "USDC", "USDT"];
-  const chainOptions = [
-    "All Chains",
-    "Ethereum",
-    "Avalanche",
-    "Arbitrum",
-    "Optimism",
-    "Polygon",
-    "BNBChain",
-    "Fantom",
-  ];
+  const [poolTab, setPoolTab] = useState<PoolTab>(PoolTab.ALL);
 
   return (
     <>
@@ -38,12 +42,14 @@ const Pool = () => {
         <div className={styles.wrapper}>
           <DepositDashboard />
           <ChoosePool
+            poolTab={poolTab}
+            setPoolTab={setPoolTab}
             filter={filter}
             setFilter={setFilter}
             tokenOptions={tokenOptions}
-            chainOptions={chainOptions}
+            networkOptions={networkOptions}
           />
-          <Pools filter={filter} />
+          <Pools filter={filter} poolTab={poolTab} />
         </div>
         <Footer />
       </Layout>
